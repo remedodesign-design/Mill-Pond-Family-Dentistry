@@ -1,6 +1,6 @@
 # Mill Pond Dental Care: Client-First setup for Webflow
 
-How to move the local style system in `dev/` into Webflow. The local files are the source of truth: if a value changes, change it in `css/client-first.css` first, then in Webflow.
+How to move the local style system (`index.html`, `Pages/`, `css/`, `js/`) into Webflow. The local files are the source of truth: if a value changes, change it in `css/client-first.css` first, then in Webflow.
 
 | Local file | What it holds | Webflow equivalent |
 |---|---|---|
@@ -9,7 +9,7 @@ How to move the local style system in `dev/` into Webflow. The local files are t
 | `css/styleguide.css` | `fs-styleguide_*` classes | Classes on the `/style-guide` page only |
 | `style-guide.html` | Every class shown in use | The `/style-guide` page |
 
-Preview locally: run `python -m http.server 5173` in the project folder and open `http://localhost:5173/dev/style-guide.html`. Opening the file directly also works in most browsers.
+Preview locally: run `python -m http.server 5173` in the project folder and open `http://localhost:5173/` (home) or `http://localhost:5173/Pages/style-guide.html`. Links are root-relative (`/css/...`, `/Pages/...`), so serve the folder rather than opening files directly.
 
 ## 1. Start point
 
@@ -141,7 +141,7 @@ Pages: `home`, `about`, `team`, `services`, `service-detail` (CMS template), `co
 | Placeholder tag | while content is unconfirmed | `placeholder_tag` (`is-dark`). Delete each one when the client confirms the fact |
 | Image slot | all photo areas until the shoot | `image-slot_*` |
 
-Locally, the header, footer, icon sprite, insurance band, location and contact form are kept identical with `python dev/tools/sync-shared.py`: edit `partials/*.html`, then run it. `js/site.js` maps to site-wide custom code. Each block only runs when its elements are on the page.
+Locally, the header, footer, icon sprite, insurance band, location and contact form are kept identical with `python tools/sync-shared.py`: edit `partials/*.html`, then run it. `js/site.js` maps to site-wide custom code. Each block only runs when its elements are on the page.
 
 ## Open items before or during the build
 

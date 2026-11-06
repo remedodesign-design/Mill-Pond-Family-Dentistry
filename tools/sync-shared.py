@@ -1,8 +1,8 @@
-"""Write the shared partials into every page in dev/.
+"""Write the shared partials into every site page (index.html + Pages/*.html).
 
-    python dev/tools/sync-shared.py
+    python tools/sync-shared.py
 
-Edit dev/partials/*.html (sprite, header, footer + mobile bar), then run this.
+Edit partials/*.html (sprite, header, footer + mobile bar), then run this.
 Each page gets the same markup between <!-- shared:NAME --> markers; the
 only difference per page is the current-nav state, taken from the file name:
 
@@ -14,10 +14,10 @@ These blocks map 1:1 to Webflow Components (Navbar, Footer, Mobile CTA).
 import re
 from pathlib import Path
 
-DEV = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent
 PAGES = ["home", "about", "team", "services", "service-detail", "contact"]
 NAMES = ("sprite", "header", "footer", "insurance", "location", "contact-form", "emergency")
-PARTS = {name: (DEV / "partials" / f"{name}.html").read_text(encoding="utf-8").rstrip() for name in NAMES}
+PARTS = {name: (ROOT / "partials" / f"{name}.html").read_text(encoding="utf-8").rstrip() for name in NAMES}
 
 # Section partials every page must have. If a page has none yet, they are
 # added at the end of <main>, in this order.
@@ -62,7 +62,7 @@ def set_current(html, page):
 
 
 def sync(page):
-    path = DEV / f"{page}.html"
+    path = ROOT / "index.html" if page == "home" else ROOT / "Pages" / f"{page}.html"
     html = path.read_text(encoding="utf-8")
     for name, body in PARTS.items():
         block = f"<!-- shared:{name} (edit partials/{name}.html, then run tools/sync-shared.py) -->\n{set_current(body, page)}\n<!-- /shared:{name} -->"
@@ -80,10 +80,10 @@ def sync(page):
 
     # One shared script; keep JSON-LD and any other typed scripts.
     html = re.sub(r"\n<script>\n\(\(\) => \{.*?\}\)\(\);\n</script>", "", html, flags=re.S)
-    if 'src="js/site.js"' not in html:
-        html = html.replace("</body>", '<script src="js/site.js" defer></script>\n</body>', 1)
+    if 'src="/js/site.js"' not in html:
+        html = html.replace("</body>", '<script src="/js/site.js" defer></script>\n</body>', 1)
     path.write_text(html, encoding="utf-8", newline="\n")
-    print(f"synced {page}.html")
+    print(f"synced {path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
