@@ -1,4 +1,4 @@
-"""Write the shared partials into every site page (index.html + Pages/*.html).
+"""Write the shared partials into every site page (index.html + the page files at the root).
 
     python tools/sync-shared.py
 
@@ -62,7 +62,7 @@ def set_current(html, page):
 
 
 def sync(page):
-    path = ROOT / "index.html" if page == "home" else ROOT / "Pages" / f"{page}.html"
+    path = ROOT / "index.html" if page == "home" else ROOT / f"{page}.html"
     html = path.read_text(encoding="utf-8")
     for name, body in PARTS.items():
         block = f"<!-- shared:{name} (edit partials/{name}.html, then run tools/sync-shared.py) -->\n{set_current(body, page)}\n<!-- /shared:{name} -->"

@@ -1,6 +1,6 @@
 # Mill Pond Dental Care: Client-First setup for Webflow
 
-How to move the local style system (`index.html`, `Pages/`, `css/`, `js/`) into Webflow. The local files are the source of truth: if a value changes, change it in `css/client-first.css` first, then in Webflow.
+How to move the local style system (`index.html` and the other page files at the root, `css/`, `js/`) into Webflow. The local files are the source of truth: if a value changes, change it in `css/client-first.css` first, then in Webflow.
 
 | Local file | What it holds | Webflow equivalent |
 |---|---|---|
@@ -9,7 +9,7 @@ How to move the local style system (`index.html`, `Pages/`, `css/`, `js/`) into 
 | `css/styleguide.css` | `fs-styleguide_*` classes | Classes on the `/style-guide` page only |
 | `style-guide.html` | Every class shown in use | The `/style-guide` page |
 
-Preview locally: run `python -m http.server 5173` in the project folder and open `http://localhost:5173/` (home) or `http://localhost:5173/Pages/style-guide.html`. Links are root-relative (`/css/...`, `/Pages/...`), so serve the folder rather than opening files directly.
+Preview locally: run `python -m http.server 5173` in the project folder and open `http://localhost:5173/` (home) or `http://localhost:5173/style-guide.html`. Links are root-relative (`/css/...`, `/team.html`), so serve the folder rather than opening files directly.
 
 ## 1. Start point
 

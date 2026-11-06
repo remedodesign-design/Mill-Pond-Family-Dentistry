@@ -8,9 +8,10 @@
     { "source": "/dev", "destination": "/", "permanent": true },
     { "source": "/dev/home", "destination": "/", "permanent": true },
     { "source": "/dev/wireframe-:page", "destination": "/wireframes/:page", "permanent": true },
-    { "source": "/dev/:page(about|contact|services|service-detail|team|style-guide)", "destination": "/Pages/:page", "permanent": true },
     { "source": "/dev/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/:page(about|contact|services|service-detail|team|style-guide)", "destination": "/Pages/:page", "permanent": true },
-    { "source": "/pages/:page*", "destination": "/Pages/:page*", "permanent": true }
+    { "source": "/Pages", "destination": "/", "permanent": true },
+    { "source": "/pages", "destination": "/", "permanent": true },
+    { "source": "/Pages/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/pages/:path*", "destination": "/:path*", "permanent": true }
   ]
 }
