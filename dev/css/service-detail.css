@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Mill Pond Dental Care — Service detail page (CMS template) (Client-First "folder_element")
+   Load after client-first.css and components.css. Only service-detail-specific
+   section classes live here; navbar, footer, breadcrumb, placeholder tag,
+   icon box, CTA band, emergency strip, FAQ, location and contact form are
+   shared components in components.css.
+   ========================================================================== */
+
+.section_service-detail-hero .breadcrumb_component { margin-bottom: 2rem; }
+.service-detail-hero_component { display: grid; grid-template-columns: 6fr 5fr; gap: 4rem; align-items: center; }
+.service-detail-hero_content { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.service-detail-hero_content .button-group { margin-top: 0.5rem; }
+.service-detail-hero_image-wrapper { aspect-ratio: 5 / 4; min-width: 0; }
+.service-detail-facts_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 3rem 0 0; padding: 0; list-style: none; }
+.service-detail-facts_item {
+  display: flex; align-items: center; gap: 1rem; margin: 0; padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary);
+}
+.service-detail-facts_label { color: var(--text-color--text-secondary); font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.service-detail-facts_value { margin-top: 0.125rem; font-weight: 600; line-height: 1.35; }
+/* 02 Body + sticky sidebar ------------------------------------------------- */
+.section_service-detail-body .padding-section-medium { padding-top: 1rem; }
+.service-detail-body_component { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; gap: 5rem; align-items: start; }
+.service-detail-body_rich-text { max-width: 40rem; }
+.service-detail-body_rich-text > h2:first-child { margin-top: 0; }
+.service-detail-body_figure { aspect-ratio: 16 / 9; height: auto; min-height: 0; }
+.service-detail-sidebar_component { position: sticky; top: calc(var(--navbar-height) + 2rem); display: flex; flex-direction: column; gap: 1rem; }
+.service-detail-sidebar_card {
+  display: flex; flex-direction: column; gap: 1rem; padding: 1.75rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary); box-shadow: var(--shadow--small);
+}
+.service-detail-sidebar_card.is-secondary { gap: 0.5rem; padding: 1.25rem 1.75rem; box-shadow: none; background-color: var(--background-color--background-secondary); }
+.service-detail-sidebar_buttons { display: flex; flex-direction: column; gap: 0.625rem; }
+.service-detail-sidebar_buttons .button { width: 100%; }
+.service-detail-sidebar_info { padding-top: 1rem; border-top: 1px solid var(--border-color--border-primary); font-size: 0.9375rem; }
+.service-detail-sidebar_card .badge_component { align-self: flex-start; }
+.service-detail-sidebar_links { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.service-detail-sidebar_links li { margin: 0; }
+.service-detail-sidebar_links li + li { border-top: 1px solid var(--border-color--border-primary); }
+.service-detail-sidebar_link {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0;
+  color: var(--text-color--text-primary); text-decoration: none; font-weight: 500;
+}
+.service-detail-sidebar_link svg { color: var(--text-color--text-brand); transition: transform 150ms ease; }
+.service-detail-sidebar_link:hover { color: var(--text-color--text-brand); }
+.service-detail-sidebar_link:hover svg { transform: translateX(0.25rem); }
+/* 03 How it works (horizontal timeline) ------------------------------------ */
+.service-detail-steps_list { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.service-detail-steps_list::before {
+  content: ""; position: absolute; top: 1.375rem; left: 1.375rem; right: 1.375rem; height: 2px;
+  background: repeating-linear-gradient(to right, var(--base-color-brand--pond) 0 0.5rem, transparent 0.5rem 0.875rem);
+}
+.service-detail-steps_item { position: relative; display: flex; flex-direction: column; gap: 0.5rem; margin: 0; }
+.service-detail-steps_number {
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-bottom: 0.75rem; border-radius: 50%;
+  background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate);
+  font-family: var(--font--heading); font-weight: 600; font-size: 1.25rem;
+  box-shadow: 0 0 0 0.375rem var(--background-color--background-secondary);
+}
+.service-detail-steps_item p { color: var(--text-color--text-secondary); }
+/* Responsive ------------------------------------------------------------------ */
+@media screen and (max-width: 991px) {
+  .service-detail-hero_component { grid-template-columns: 1fr; gap: 3rem; }
+  .service-detail-hero_image-wrapper { aspect-ratio: 16 / 10; }
+  .service-detail-body_component { grid-template-columns: 1fr; gap: 3rem; }
+  .service-detail-body_rich-text { max-width: none; }
+  .service-detail-sidebar_component { position: static; display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .service-detail-steps_list { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; }
+  .service-detail-steps_list::before { display: none; }
+}
+@media screen and (max-width: 767px) {
+  .section_service-detail-hero .breadcrumb_component { margin-bottom: 1.5rem; }
+  .service-detail-hero_image-wrapper { aspect-ratio: 4 / 3; }
+  .service-detail-facts_list { grid-template-columns: 1fr; gap: 0.75rem; margin-top: 2rem; }
+  .service-detail-facts_item { padding: 1rem 1.25rem; }
+  .service-detail-sidebar_component { grid-template-columns: 1fr; }
+  .service-detail-sidebar_card { padding: 1.5rem; }
+  .service-detail-steps_list { grid-template-columns: 1fr; row-gap: 2rem; }
+  .service-detail-steps_item { padding-left: 4rem; }
+  .service-detail-steps_number { position: absolute; left: 0; top: 0; margin-bottom: 0; }
+}
+
+/* Sits right above the shared Hours & location section: keep the gap at ~80px */
+@media screen and (min-width: 768px) { .section_service-detail-related .padding-section-large { padding-bottom: 5rem; } }

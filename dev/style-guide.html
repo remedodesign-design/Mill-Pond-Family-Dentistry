@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mill Pond Client-First Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="css/client-first.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.6 4-2.2 1.4a11 11 0 0 0 6.7 6.7l1.4-2.2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.5c1.6 0 2.7 1 4.5 1s2.9-1 4.5-1C19 3.5 20 5.6 20 8c0 3.2-1.2 6.4-2.2 9.2-.5 1.6-1 3.3-2.1 3.3-1.6 0-1.4-5.5-3.7-5.5S9.9 20.5 8.3 20.5c-1.1 0-1.6-1.7-2.1-3.3C5.2 14.4 4 11.2 4 8c0-2.4 1-4.5 3.5-4.5Z"/></symbol>
+  <symbol id="i-implant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10c.8 0 1.5.7 1.5 1.5 0 2-1.5 3.5-3.5 3.5H9C7 8.5 5.5 7 5.5 5c0-.8.7-1.5 1.5-1.5ZM9 11h6M9.5 14h5M10 17h4M11 20h2"/></symbol>
+  <symbol id="i-aligner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9c0-2 1.6-3.5 3.5-3.5h10c1.9 0 3.5 1.5 3.5 3.5v1.5c0 4.4-3.8 8-8.5 8s-8.5-3.6-8.5-8V9Z"/><path d="M7.5 9.5v2M10.5 9.5v2.5M13.5 9.5v2.5M16.5 9.5v2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 6v5.5c0 4.5-3.2 8-7.5 9-4.3-1-7.5-4.5-7.5-9V6L12 3.5Z"/><path d="m8.8 12 2.3 2.3 4.2-4.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12.5 4 4 8-9"/></symbol>
+</svg>
+
+<div class="page-wrapper">
+
+  <!-- Navbar component (real class names) -->
+  <div class="navbar_component">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="navbar_container">
+          <a href="#top" class="logo_component" aria-label="Mill Pond Dental Care home">
+            <img src="../assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon">
+            <span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span>
+          </a>
+          <nav class="navbar_menu" aria-label="Style guide sections">
+            <a href="#colors" class="navbar_link">Colors</a>
+            <a href="#typography" class="navbar_link">Typography</a>
+            <a href="#spacing" class="navbar_link">Spacing</a>
+            <a href="#components" class="navbar_link">Components</a>
+            <a href="#rich-text" class="navbar_link">Rich text</a>
+          </nav>
+          <div class="navbar_menu-buttons">
+            <a href="#components" class="navbar_phone">519-268-3351</a>
+            <a href="#buttons" class="button is-small">Book an Appointment</a>
+            <button type="button" class="navbar_menu-button" aria-label="Open menu"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-wrapper" id="top">
+
+    <!-- Header -->
+    <header class="fs-styleguide_header">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="fs-styleguide_header-grid">
+              <div class="section-header_component">
+                <div class="text-style-tagline">Development style guide · Client-First</div>
+                <h1 class="heading-style-h1">Mill Pond Dental Care</h1>
+                <p class="text-size-large text-color-secondary">Every class, variable and component the build uses, named with Finsweet Client-First. Build locally from this page, then rebuild it as the <code>/style-guide</code> page in Webflow.</p>
+                <p class="text-size-small text-color-secondary">Stylesheets: <code>css/client-first.css</code> · <code>css/components.css</code> · <code>css/styleguide.css</code> (this page only). Brand source: <a href="../brand/mill-pond-style-sheet.html">brand style sheet v1.1</a>.</p>
+              </div>
+              <ul class="fs-styleguide_index">
+                <li><a href="#structure"><span>01</span>Structure</a></li>
+                <li><a href="#colors"><span>02</span>Colors</a></li>
+                <li><a href="#typography"><span>03</span>Typography</a></li>
+                <li><a href="#spacing"><span>04</span>Spacing</a></li>
+                <li><a href="#buttons"><span>05</span>Buttons</a></li>
+                <li><a href="#forms"><span>06</span>Forms</a></li>
+                <li><a href="#icons"><span>07</span>Icons</a></li>
+                <li><a href="#components"><span>08</span>Components</a></li>
+                <li><a href="#utilities"><span>09</span>Utilities</a></li>
+                <li><a href="#naming"><span>10</span>Naming rules</a></li>
+                <li><a href="#rich-text"><span>11</span>Rich text</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 01 Structure -->
+    <section class="fs-styleguide_section" id="structure">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">01</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Page structure</h2>
+                <p class="text-color-secondary">Every page uses the same wrapper chain. Sections are named <code>section_[name]</code>; spacing lives on the <code>padding-section-*</code> wrapper, never on the section itself.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_nest">
+                <code>page-wrapper</code>
+                <div class="fs-styleguide_nest is-tint"><code>navbar_component</code> (global symbol)</div>
+                <div class="fs-styleguide_nest">
+                  <code>main-wrapper</code>
+                  <div class="fs-styleguide_nest is-tint">
+                    <code>section_home-hero</code>
+                    <div class="fs-styleguide_nest">
+                      <code>padding-global</code>
+                      <div class="fs-styleguide_nest is-tint">
+                        <code>container-large</code>
+                        <div class="fs-styleguide_nest"><code>padding-section-large</code><div class="fs-styleguide_nest is-tint"><code>home-hero_component</code> · content</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fs-styleguide_nest is-tint"><code>footer_component</code> (global symbol)</div>
+              </div>
+              <div class="fs-styleguide_list">
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>padding-global</code></div><div class="text-size-small">Side gutter: 2.5rem desktop, 2rem tablet, 1.25rem mobile.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>container-large</code></div><div class="text-size-small">75rem (1200px). Default for every section.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>container-medium</code></div><div class="text-size-small">64rem (1024px). Forms, service detail.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>container-small</code></div><div class="text-size-small">48rem (768px). Blog posts, policies.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>padding-section-large</code></div><div class="text-size-small">7.5rem / 5rem / 4rem (desktop / tablet / mobile). Standard sections.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>padding-section-medium</code></div><div class="text-size-small">5rem / 4rem / 3rem. Bands, CTA strips.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>padding-section-small</code></div><div class="text-size-small">3rem / 3rem / 2rem. Trust strip, footer bottom.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Colors -->
+    <section class="fs-styleguide_section background-color-secondary" id="colors">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">02</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Colors</h2>
+                <p class="text-color-secondary">Two layers of variables. <strong>Base color</strong> holds the raw palette. <strong>Text, Background, Border and Link color</strong> point at base colors and are the only ones applied to classes. Change a base value once and the site follows.</p>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Base color · brand</h3>
+            <div class="fs-styleguide_swatch-grid">
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-brand--pond)"></div><div class="fs-styleguide_swatch-info"><strong>Pond</strong><code>--base-color-brand--pond</code><span>#97C0E8</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-brand--deep)"></div><div class="fs-styleguide_swatch-info"><strong>Deep</strong><code>--base-color-brand--deep</code><span>#1F4E79</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-brand--deep-dark)"></div><div class="fs-styleguide_swatch-info"><strong>Deep dark</strong><code>--base-color-brand--deep-dark</code><span>#163A5C</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-brand--mist)"></div><div class="fs-styleguide_swatch-info"><strong>Mist</strong><code>--base-color-brand--mist</code><span>#E4EEF8</span></div></div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Base color · neutral</h3>
+            <div class="fs-styleguide_swatch-grid">
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-neutral--charcoal)"></div><div class="fs-styleguide_swatch-info"><strong>Charcoal</strong><code>--base-color-neutral--charcoal</code><span>#3B4046</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-neutral--slate)"></div><div class="fs-styleguide_swatch-info"><strong>Slate</strong><code>--base-color-neutral--slate</code><span>#5B6168</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-neutral--grey)"></div><div class="fs-styleguide_swatch-info"><strong>Grey</strong><code>--base-color-neutral--grey</code><span>#808080 · decoration only</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-neutral--border)"></div><div class="fs-styleguide_swatch-info"><strong>Border</strong><code>--base-color-neutral--border</code><span>#D9DEE4</span></div></div>
+              <div class="fs-styleguide_swatch"><div class="fs-styleguide_swatch-color" style="background-color:var(--base-color-neutral--cream)"></div><div class="fs-styleguide_swatch-info"><strong>Cream</strong><code>--base-color-neutral--cream</code><span>#F7F7F7</span></div></div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Semantic variables</h3>
+            <div class="fs-styleguide_table-wrapper">
+              <table class="fs-styleguide_table">
+                <thead><tr><th>Variable</th><th>Points to</th><th>Use</th></tr></thead>
+                <tbody>
+                  <tr><td><code>--text-color--text-primary</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-neutral--charcoal)"></span>charcoal</td><td>Headings, body</td></tr>
+                  <tr><td><code>--text-color--text-secondary</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-neutral--slate)"></span>slate</td><td>Captions, help text, intros</td></tr>
+                  <tr><td><code>--text-color--text-alternate</code></td><td><span class="fs-styleguide_chip" style="background:#fff"></span>white</td><td>Text on deep backgrounds</td></tr>
+                  <tr><td><code>--text-color--text-brand</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--deep)"></span>deep</td><td>Taglines, icons, accents</td></tr>
+                  <tr><td><code>--text-color--text-on-pond</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--deep-dark)"></span>deep-dark</td><td>Text on pond backgrounds (6.1:1)</td></tr>
+                  <tr><td><code>--background-color--background-primary</code></td><td><span class="fs-styleguide_chip" style="background:#fff"></span>white</td><td>Page, cards</td></tr>
+                  <tr><td><code>--background-color--background-secondary</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-neutral--cream)"></span>cream</td><td>Alternate sections</td></tr>
+                  <tr><td><code>--background-color--background-tertiary</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--mist)"></span>mist</td><td>Feature bands, badges, image slots</td></tr>
+                  <tr><td><code>--background-color--background-alternate</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--deep)"></span>deep</td><td>Insurance band, highlight tile (footer uses deep-dark)</td></tr>
+                  <tr><td><code>--background-color--background-brand</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--pond)"></span>pond</td><td>Small highlight areas only</td></tr>
+                  <tr><td><code>--border-color--border-primary</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-neutral--border)"></span>border</td><td>Cards, dividers, tables</td></tr>
+                  <tr><td><code>--link-color--link-primary</code> / <code>--link-hover</code></td><td><span class="fs-styleguide_chip" style="background:var(--base-color-brand--deep)"></span>deep / deep-dark</td><td>Inline links</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Background utilities</h3>
+            <div class="fs-styleguide_swatch-grid">
+              <div class="background-color-primary fs-styleguide_box" style="min-height:5rem"><code>background-color-primary</code></div>
+              <div class="background-color-secondary fs-styleguide_box" style="min-height:5rem"><code>background-color-secondary</code></div>
+              <div class="background-color-tertiary fs-styleguide_box" style="min-height:5rem"><code>background-color-tertiary</code></div>
+              <div class="background-color-alternate fs-styleguide_box text-color-alternate" style="min-height:5rem;border-color:transparent"><code>background-color-alternate</code></div>
+              <div class="background-color-brand fs-styleguide_box" style="min-height:5rem"><code>background-color-brand</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Typography -->
+    <section class="fs-styleguide_section" id="typography">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">03</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Typography</h2>
+                <p class="text-color-secondary">Headings: Barlow Semi Condensed 600 (<code>--font--heading</code>). Body: Barlow 400 (<code>--font--body</code>). HTML tags carry the default style; <code>heading-style-*</code> classes change the look without changing the tag, so SEO order stays correct.</p>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Headings</h3>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>heading-style-display</code><span>4 / 3.25 / 2.5rem · caps</span></div><div class="heading-style-display">Smile with confidence</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H1</code> · <code>heading-style-h1</code><span>3.5 / 3 / 2.5rem · lh 1.05</span></div><div class="heading-style-h1">Family dentistry in Dorchester</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H2</code> · <code>heading-style-h2</code><span>2.625 / 2.25 / 2rem · lh 1.1</span></div><div class="heading-style-h2">What to expect at your first visit</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H3</code> · <code>heading-style-h3</code><span>1.875 / 1.625 / 1.5rem · lh 1.2</span></div><div class="heading-style-h3">Dental implants</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H4</code> · <code>heading-style-h4</code><span>1.375 / 1.375 / 1.25rem · lh 1.3</span></div><div class="heading-style-h4">Is the procedure covered by insurance?</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H5</code> · <code>heading-style-h5</code><span>1.125rem · lh 1.4</span></div><div class="heading-style-h5">Before your appointment</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>H6</code> · <code>heading-style-h6</code><span>1rem · lh 1.4</span></div><div class="heading-style-h6">Office hours</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-style-tagline</code><span>0.875rem · caps · +0.12em · brand</span></div><div class="text-style-tagline">New patients welcome</div></div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Text size</h3>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-size-large</code><span>1.25 / 1.125rem · lh 1.55</span></div><p class="text-size-large text-style-measure">Gentle, unhurried care for every age, from a team that has looked after Dorchester families since 1982.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-size-medium</code><span>1.125rem · lh 1.55</span></div><p class="text-size-medium text-style-measure">We bill most insurance plans directly and accept the Canadian Dental Care Plan.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-size-regular</code> (body)<span>1.0625 / 1rem · lh 1.6</span></div><p class="text-size-regular text-style-measure">Invisalign uses a series of clear, removable aligners to move your teeth a little at a time. Most people wear each set for one to two weeks, and you can take them out to eat, brush and floss.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-size-small</code><span>0.875rem · lh 1.5</span></div><p class="text-size-small">Fees vary with treatment. We'll give you a written estimate before we begin.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-size-tiny</code><span>0.75rem · lh 1.5</span></div><p class="text-size-tiny">© 2026 Mill Pond Dental Care. All rights reserved.</p></div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Weight, style, alignment, color</h3>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-weight-*</code></div><p><span class="text-weight-normal">normal 400</span> · <span class="text-weight-medium">medium 500</span> · <span class="text-weight-semibold">semibold 600</span> · <span class="text-weight-bold">bold 700</span></p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-style-*</code></div><p><span class="text-style-allcaps">allcaps</span> · <span class="text-style-italic">italic</span> · <span class="text-style-muted">muted</span> · <span class="text-style-link">link</span> · <span class="text-style-strikethrough">strikethrough</span> · <span class="text-style-nowrap">nowrap</span></p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-style-quote</code></div><p class="text-style-quote">We'll call to confirm your appointment within one business day.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-style-2lines</code> / <code>3lines</code><span>Clamp for card summaries</span></div><p class="text-style-2lines text-style-measure">Root canal therapy removes infected tissue from inside the tooth, cleans and seals the canals, and saves the natural tooth. Most treatments take one or two visits, and local anaesthetic keeps you comfortable throughout.</p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-color-*</code></div><p><span class="text-color-primary">primary</span> · <span class="text-color-secondary">secondary</span> · <span class="text-color-brand">brand</span> · <span class="background-color-alternate" style="padding:0 .375rem;border-radius:.25rem"><span class="text-color-alternate">alternate</span></span></p></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>text-align-*</code></div><p>left · center · right (use on wrappers, not single words)</p></div>
+            </div>
+
+            <p class="text-size-small text-color-secondary" style="margin-top:1.5rem">Long-form content (blog posts, service pages, policies) uses <code>text-rich-text</code>. See <a href="#rich-text">11 · Rich text</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Spacing -->
+    <section class="fs-styleguide_section background-color-secondary" id="spacing">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">04</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Spacing</h2>
+                <p class="text-color-secondary">Space between elements comes from a wrapper with two classes: a direction and a size, for example <code>margin-bottom margin-medium</code>. Don't add margins to typography or component classes.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-tiny</code><span>0.125rem · 2px</span></div><span class="fs-styleguide_spacing-bar" style="width:0.125rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xxsmall</code><span>0.25rem · 4px</span></div><span class="fs-styleguide_spacing-bar" style="width:0.25rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xsmall</code><span>0.5rem · 8px</span></div><span class="fs-styleguide_spacing-bar" style="width:0.5rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-small</code><span>1rem · 16px</span></div><span class="fs-styleguide_spacing-bar" style="width:1rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-medium</code><span>2rem · 32px</span></div><span class="fs-styleguide_spacing-bar" style="width:2rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-large</code><span>3rem · 48px (mobile 2rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:3rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xlarge</code><span>4rem · 64px (3 / 2.5rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:4rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xxlarge</code><span>5rem · 80px (4 / 3rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:5rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-huge</code><span>6rem · 96px (5 / 3.5rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:6rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xhuge</code><span>8rem · 128px (6 / 4rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:8rem"></span></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>*-xxhuge</code><span>12rem · 192px (8 / 4.5rem)</span></div><span class="fs-styleguide_spacing-bar" style="width:12rem;max-width:100%"></span></div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Directions and spacers</h3>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_list">
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Direction</div><div class="text-size-small"><code>margin-top</code> <code>margin-bottom</code> <code>margin-left</code> <code>margin-right</code> <code>margin-vertical</code> <code>margin-horizontal</code>, and the same for <code>padding-*</code>.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Reset</div><div class="text-size-small"><code>margin-0</code> · <code>padding-0</code></div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Spacer</div><div class="text-size-small"><code>spacer-small</code> … <code>spacer-xxhuge</code>: an empty div whose padding-top creates the gap.</div></div>
+              </div>
+              <div class="fs-styleguide_card">
+                <div class="margin-bottom margin-xsmall"><div class="text-style-tagline">Example</div></div>
+                <div class="margin-bottom margin-small"><h3 class="heading-style-h3">Tagline, heading, text</h3></div>
+                <div class="margin-bottom margin-medium"><p class="text-color-secondary">Each wrapper uses <code>margin-bottom</code> plus a size: xsmall, small, then medium before the buttons.</p></div>
+                <div class="button-group"><a href="#spacing" class="button is-small">Primary</a><a href="#spacing" class="button is-secondary is-small">Secondary</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Buttons -->
+    <section class="fs-styleguide_section" id="buttons">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">05</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Buttons</h2>
+                <p class="text-color-secondary">One base class, <code>button</code>, with <code>is-</code> combo classes. One primary button per view; the phone number is the usual second action.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_card fs-styleguide_stack">
+                <div class="fs-styleguide_label">On light backgrounds</div>
+                <div class="button-group">
+                  <a href="#buttons" class="button is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an appointment</a>
+                  <a href="#buttons" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>519-268-3351</a>
+                </div>
+                <div class="text-size-small"><code>button</code> · <code>button is-secondary</code> · add <code>is-icon</code> when an icon sits inside</div>
+                <div class="button-group">
+                  <a href="#buttons" class="button is-small">Small</a>
+                  <a href="#buttons" class="button">Regular</a>
+                  <a href="#buttons" class="button is-large">Large</a>
+                </div>
+                <div class="text-size-small"><code>is-small</code> 2.5rem tall · default 3rem · <code>is-large</code> 3.5rem</div>
+                <a href="#buttons" class="button is-text is-icon">View all services <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+                <div class="text-size-small"><code>button is-text</code>: card links and “learn more”</div>
+              </div>
+              <div class="fs-styleguide_card background-color-alternate fs-styleguide_stack">
+                <div class="fs-styleguide_label text-color-alternate">On <code>background-color-alternate</code></div>
+                <div class="button-group">
+                  <a href="#buttons" class="button is-alternate is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an appointment</a>
+                  <a href="#buttons" class="button is-secondary is-alternate is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call us</a>
+                </div>
+                <div class="text-size-small"><code>button is-alternate</code> · <code>button is-secondary is-alternate</code></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Forms -->
+    <section class="fs-styleguide_section background-color-secondary" id="forms">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">06</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Forms</h2>
+                <p class="text-color-secondary">Appointment request and contact forms. Never ask for health details by email (PHIPA / PIPEDA).</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_2col">
+              <form class="form_component fs-styleguide_card fs-styleguide_stack" onsubmit="event.preventDefault()" style="align-items:stretch">
+                <div class="form_field-wrapper"><label for="sg-name" class="form_field-label">Full name</label><input id="sg-name" class="form_input" type="text" value="Jordan Smith"></div>
+                <div class="form_field-wrapper"><label for="sg-phone" class="form_field-label">Phone</label><input id="sg-phone" class="form_input" type="tel" placeholder="519-555-0123"><span class="form_help-text">We'll call to confirm a time.</span></div>
+                <div class="form_field-wrapper"><label for="sg-reason" class="form_field-label">Reason for visit</label><select id="sg-reason" class="form_input is-select-input"><option>Check-up and cleaning</option><option>New patient exam</option><option>Emergency</option></select></div>
+                <div class="form_field-wrapper"><label for="sg-msg" class="form_field-label">Message</label><textarea id="sg-msg" class="form_input is-text-area" placeholder="Best days and times to reach you"></textarea></div>
+                <label class="form_checkbox" for="sg-consent"><input id="sg-consent" type="checkbox" class="form_checkbox-icon" checked><span class="text-size-small">I agree to Mill Pond Dental Care contacting me about this request.</span></label>
+                <div><button type="submit" class="button">Send request</button></div>
+              </form>
+              <div class="fs-styleguide_stack" style="align-items:stretch">
+                <div class="fs-styleguide_list">
+                  <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>form_component</code></div><div class="text-size-small">Form block wrapper</div></div>
+                  <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>form_field-wrapper</code></div><div class="text-size-small">Label + input + help</div></div>
+                  <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>form_input</code></div><div class="text-size-small"><code>is-text-area</code> · <code>is-select-input</code></div></div>
+                  <div class="fs-styleguide_row"><div class="fs-styleguide_label"><code>form_checkbox</code></div><div class="text-size-small">Consent line</div></div>
+                </div>
+                <div class="form_message-success">Thank you. We'll call you within one business day.</div>
+                <div class="form_message-error">Something went wrong. Please call us at 519-268-3351.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Icons -->
+    <section class="fs-styleguide_section" id="icons">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">07</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Icons</h2>
+                <p class="text-color-secondary">Line icons as inline SVG (Webflow: HTML Embed) with <code>stroke="currentColor"</code>, so the parent's text color sets the icon color. Stroke 1.75 at 24px.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>icon-embed-xxsmall</code><span>1rem</span></div><div class="text-color-brand"><svg class="icon-embed-xxsmall"><use href="#i-tooth"/></svg></div></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>icon-embed-xsmall</code><span>1.5rem</span></div><div class="text-color-brand"><svg class="icon-embed-xsmall"><use href="#i-tooth"/></svg></div></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>icon-embed-small</code><span>2rem</span></div><div class="text-color-brand"><svg class="icon-embed-small"><use href="#i-tooth"/></svg></div></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>icon-embed-medium</code><span>3rem</span></div><div class="text-color-brand" style="display:flex;gap:1.5rem;flex-wrap:wrap"><svg class="icon-embed-medium"><use href="#i-tooth"/></svg><svg class="icon-embed-medium"><use href="#i-implant"/></svg><svg class="icon-embed-medium"><use href="#i-aligner"/></svg><svg class="icon-embed-medium"><use href="#i-shield"/></svg><svg class="icon-embed-medium"><use href="#i-cal"/></svg><svg class="icon-embed-medium"><use href="#i-phone"/></svg><svg class="icon-embed-medium"><use href="#i-clock"/></svg><svg class="icon-embed-medium"><use href="#i-pin"/></svg></div></div>
+              <div class="fs-styleguide_row is-center"><div class="fs-styleguide_label"><code>icon-embed-large</code><span>5rem</span></div><div class="text-color-brand"><svg class="icon-embed-large"><use href="#i-implant"/></svg></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 Components -->
+    <section class="fs-styleguide_section background-color-secondary" id="components">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">08</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Components</h2>
+                <p class="text-color-secondary">Custom classes in <code>css/components.css</code>, named <code>folder_element</code>. In Webflow each becomes a Component with the same class names.</p>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Logo · <code>logo_component</code></h3>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_card" style="display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;justify-content:center">
+                <a href="#components" class="logo_component"><img src="../assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon"><span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span></a>
+                <a href="#components" class="logo_component is-stacked"><img src="../assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon"><span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span></a>
+              </div>
+              <div class="fs-styleguide_card background-color-alternate" style="display:flex;align-items:center;justify-content:center">
+                <a href="#components" class="logo_component is-alternate"><img src="../assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon"><span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span></a>
+              </div>
+            </div>
+            <p class="text-size-small text-color-secondary" style="margin-top:.75rem"><code>logo_icon</code> · <code>logo_text</code> · <code>logo_text-line</code> · combos <code>is-stacked</code>, <code>is-alternate</code>. Swap the PNG for the SVG once the client sends it.</p>
+
+            <h3 class="fs-styleguide_subheading">Navbar · <code>navbar_component</code></h3>
+            <p class="text-size-small text-color-secondary">Shown live at the top of this page. Children: <code>navbar_container</code>, <code>navbar_menu</code>, <code>navbar_link</code>, <code>navbar_menu-buttons</code>, <code>navbar_phone</code>, <code>navbar_menu-button</code> (tablet and below). Current page uses Webflow's <code>w--current</code>.</p>
+
+            <h3 class="fs-styleguide_subheading">Section header · <code>section-header_component</code></h3>
+            <div class="fs-styleguide_card">
+              <div class="section-header_component is-center">
+                <div class="text-style-tagline">Our services</div>
+                <h2 class="heading-style-h2">Care for every stage of life</h2>
+                <p class="text-size-large text-color-secondary">From a child's first check-up to implants and Invisalign.</p>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Service card · <code>service-card_component</code></h3>
+            <div class="service-card_list">
+              <a href="#components" class="service-card_component"><div class="service-card_image-wrapper"><svg class="icon-embed-medium"><use href="#i-implant"/></svg></div><div class="service-card_content"><h3 class="heading-style-h4">Dental implants</h3><p class="service-card_description">A fixed, natural-looking replacement for a missing tooth.</p><span class="service-card_link button is-text is-icon">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span></div></a>
+              <a href="#components" class="service-card_component"><div class="service-card_image-wrapper"><svg class="icon-embed-medium"><use href="#i-aligner"/></svg></div><div class="service-card_content"><h3 class="heading-style-h4">Invisalign</h3><p class="service-card_description">Clear aligners that straighten teeth without brackets or wires.</p><span class="service-card_link button is-text is-icon">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span></div></a>
+              <a href="#components" class="service-card_component"><div class="service-card_image-wrapper"><svg class="icon-embed-medium"><use href="#i-shield"/></svg></div><div class="service-card_content"><h3 class="heading-style-h4">Preventive care</h3><p class="service-card_description">Check-ups and cleanings that keep small problems small.</p><span class="service-card_link button is-text is-icon">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span></div></a>
+            </div>
+            <p class="text-size-small text-color-secondary" style="margin-top:.75rem"><code>service-card_list</code> (3 / 2 / 1 columns) · <code>service-card_image-wrapper</code> (4:3, holds a photo with <code>image-cover</code> or an icon) · <code>service-card_content</code> · <code>service-card_description</code> · <code>service-card_link</code></p>
+
+            <h3 class="fs-styleguide_subheading">Badges, tags, info list</h3>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_card fs-styleguide_stack">
+                <span class="badge_component"><span class="badge_icon"><svg class="icon-embed-xxsmall"><use href="#i-check"/></svg></span>Canadian Dental Care Plan accepted</span>
+                <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="tag_component">Implants</span><span class="tag_component">Invisalign</span><span class="tag_component">IV sedation</span></div>
+                <div class="text-size-small"><code>badge_component</code> · <code>badge_icon</code> · <code>tag_component</code></div>
+              </div>
+              <div class="fs-styleguide_card fs-styleguide_stack">
+                <ul class="info-list_component">
+                  <li class="info-list_item"><svg class="icon-embed-xsmall info-list_icon"><use href="#i-clock"/></svg><span><strong>Mon–Thu</strong> 8:00 a.m. – 5:30 p.m.</span></li>
+                  <li class="info-list_item"><svg class="icon-embed-xsmall info-list_icon"><use href="#i-pin"/></svg><span>4085 Hamilton Rd, Dorchester, ON N0L 1G2</span></li>
+                  <li class="info-list_item"><svg class="icon-embed-xsmall info-list_icon"><use href="#i-phone"/></svg><span>519-268-3351</span></li>
+                </ul>
+                <div class="text-size-small"><code>info-list_component</code> · <code>info-list_item</code> · <code>info-list_icon</code></div>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Trust strip · <code>trust-strip_component</code></h3>
+            <div class="background-color-alternate radius-medium">
+              <div class="padding-section-small" style="padding-left:2rem;padding-right:2rem">
+                <div class="trust-strip_component"><span><span class="trust-strip_label">Since 1982</span>Serving Dorchester</span><span><span class="trust-strip_label">Direct billing</span>Most insurance plans</span><span><span class="trust-strip_label">Hours</span>Mon–Thu 8:00 a.m. – 5:30 p.m.</span></div>
+              </div>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Mobile CTA bar · <code>mobile-cta_component</code></h3>
+            <p class="text-size-small text-color-secondary">Fixed to the bottom of the screen at 767px and below (resize this page to see it). Two buttons: Book and Call. Hidden on larger screens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 Utilities -->
+    <section class="fs-styleguide_section" id="utilities">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">09</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Utilities</h2>
+                <p class="text-color-secondary">Single-purpose classes. Reach for these before creating a new custom class.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_list">
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Max width</div><div class="text-size-small"><code>max-width-xxsmall</code> 20 · <code>xsmall</code> 25 · <code>small</code> 30 · <code>medium</code> 35 · <code>large</code> 48 · <code>xlarge</code> 64 · <code>xxlarge</code> 80rem · <code>max-width-full</code>, plus <code>max-width-full-tablet</code> / <code>-mobile-landscape</code> / <code>-mobile-portrait</code></div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Hide</div><div class="text-size-small"><code>hide</code> · <code>hide-tablet</code> · <code>hide-mobile-landscape</code> · <code>hide-mobile-portrait</code></div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Aspect ratio</div><div class="text-size-small"><code>aspect-ratio-square</code> · <code>aspect-ratio-landscape</code> (4:3) · <code>aspect-ratio-widescreen</code> (16:9) · <code>aspect-ratio-portrait</code> (3:4)</div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Images</div><div class="text-size-small"><code>image-cover</code> · <code>radius-small</code> (0.5rem) · <code>radius-medium</code> (0.75rem, images and cards) · <code>radius-round</code></div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Position</div><div class="text-size-small"><code>layer</code> · <code>z-index-1</code> · <code>z-index-2</code> · <code>overflow-hidden</code> · <code>overflow-auto</code> · <code>pointer-events-none</code> · <code>align-center</code></div></div>
+              <div class="fs-styleguide_row"><div class="fs-styleguide_label">Other</div><div class="text-size-small"><code>divider</code> · <code>button-group</code> · <code>text-style-measure</code> (65ch line length)</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 Naming -->
+    <section class="fs-styleguide_section background-color-secondary" id="naming">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">10</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Naming rules</h2>
+                <p class="text-color-secondary">Client-First in short, for everyone building this site.</p>
+              </div>
+            </div>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_card">
+                <ul class="fs-styleguide_rule-list">
+                  <li><span class="fs-styleguide_yes">✓</span><span><strong>Custom classes use an underscore:</strong> <code>service-card_component</code>, <code>home-hero_image</code>. The part before the underscore is the folder.</span></li>
+                  <li><span class="fs-styleguide_yes">✓</span><span><strong>Utility classes use dashes only:</strong> <code>text-size-small</code>, <code>margin-bottom</code>.</span></li>
+                  <li><span class="fs-styleguide_yes">✓</span><span><strong>Combo classes start with <code>is-</code></strong> and sit on a base class: <code>button is-secondary</code>, <code>logo_component is-stacked</code>.</span></li>
+                  <li><span class="fs-styleguide_yes">✓</span><span><strong>Sections:</strong> <code>section_[page-or-purpose]</code>, for example <code>section_new-patients-steps</code>.</span></li>
+                  <li><span class="fs-styleguide_yes">✓</span><span>Full words, lowercase, dashes between words. No abbreviations.</span></li>
+                </ul>
+              </div>
+              <div class="fs-styleguide_card">
+                <ul class="fs-styleguide_rule-list">
+                  <li><span class="fs-styleguide_no">✕</span><span>No hex values or font names typed into a class. Use the variables.</span></li>
+                  <li><span class="fs-styleguide_no">✕</span><span>No margins on headings, text or components. Wrap and use spacing classes.</span></li>
+                  <li><span class="fs-styleguide_no">✕</span><span>No <code>text-transform: capitalize</code>. It breaks CDCP, Dr. and Invisalign.</span></li>
+                  <li><span class="fs-styleguide_no">✕</span><span>No “Div Block 12” or “Heading 3”. Every element gets a real class or none.</span></li>
+                  <li><span class="fs-styleguide_no">✕</span><span>No combo classes more than two deep, except the button alternates.</span></li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="fs-styleguide_subheading">Example section markup</h3>
+<pre class="fs-styleguide_pre"><span class="c">&lt;!-- Home: services --&gt;</span>
+&lt;section class="section_home-services"&gt;
+  &lt;div class="padding-global"&gt;
+    &lt;div class="container-large"&gt;
+      &lt;div class="padding-section-large"&gt;
+        &lt;div class="margin-bottom margin-xlarge"&gt;
+          &lt;div class="section-header_component"&gt;
+            &lt;div class="text-style-tagline"&gt;Our services&lt;/div&gt;
+            &lt;h2&gt;Care for every stage of life&lt;/h2&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="service-card_list"&gt; … &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 Rich text -->
+    <section class="fs-styleguide_section" id="rich-text">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="fs-styleguide_section-header">
+              <span class="fs-styleguide_number">11</span>
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Rich text</h2>
+                <p class="text-color-secondary">One class, <code>text-rich-text</code>, on every Webflow Rich Text element and CMS rich text field: blog posts, service pages, the new-patient page and policies. Place it inside <code>container-small</code> so lines stay near 65 characters. Editors only pick the tag; the class does the rest.</p>
+              </div>
+            </div>
+
+            <div class="fs-styleguide_card">
+              <article class="text-rich-text container-small">
+                <h2>What to expect at your first visit</h2>
+                <p>Your first appointment at Mill Pond Dental Care takes about an hour. We'll get to know you, look at your teeth and gums, and talk through anything that worries you before we suggest a plan. <strong>There's no pressure to book treatment on the day.</strong></p>
+                <p>If you're nervous about the dentist, tell us when you book. We can go at your pace, explain each step before we start, and talk about <a href="#rich-text">sedation options</a> if they'd help.</p>
+
+                <h3>Before you come in</h3>
+                <p>A few things make the visit quicker:</p>
+                <ul>
+                  <li>Your insurance card, or your Canadian Dental Care Plan member ID</li>
+                  <li>A list of medications you take, including vitamins</li>
+                  <li>Any X-rays from your last dentist, taken in the past two years
+                    <ul>
+                      <li>We can request these for you with your consent</li>
+                      <li>Digital copies by email are fine</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h3>During the appointment</h3>
+                <ol>
+                  <li>We review your health history and ask what you'd like help with.</li>
+                  <li>We take X-rays and a full set of photos.</li>
+                  <li>The dentist checks your teeth, gums, bite and jaw, and screens for oral cancer.</li>
+                  <li>We go over what we found and give you a written estimate for any treatment.</li>
+                </ol>
+
+                <blockquote><p>We bill most insurance plans directly, so you usually pay only your share on the day.</p></blockquote>
+
+                <figure class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                  <div><img src="../assets/reference/sign-4085-hamilton-rd.webp" alt="The Mill Pond Dental Care sign at 4085 Hamilton Road, Dorchester"></div>
+                  <figcaption>Our sign at 4085 Hamilton Rd, Dorchester.</figcaption>
+                </figure>
+
+                <h4>Office hours</h4>
+                <div class="w-embed">
+                  <table>
+                    <thead><tr><th>Day</th><th>Hours</th></tr></thead>
+                    <tbody>
+                      <tr><td>Monday to Thursday</td><td>8:00 a.m. – 5:30 p.m.</td></tr>
+                      <tr><td>Friday</td><td>Hygiene only, some weeks, 8:00 a.m. – 2:00 p.m.</td></tr>
+                      <tr><td>Saturday and Sunday</td><td>Closed</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h5>After hours</h5>
+                <p>For a dental emergency, call <code>519-268-3351</code>.</p>
+
+                <hr>
+
+                <h6>Related reading</h6>
+                <p>Read our guide to <a href="#rich-text">caring for your teeth after a filling</a>, or <a href="#rich-text">see the services we offer</a>.</p>
+              </article>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Element reference</h3>
+            <div class="fs-styleguide_table-wrapper">
+              <table class="fs-styleguide_table">
+                <thead><tr><th>Element</th><th>Style</th><th>Spacing (above / below)</th></tr></thead>
+                <tbody>
+                  <tr><td><code>h2</code></td><td>2.25rem (mobile 1.875) · heading font 600</td><td>3rem / 1rem</td></tr>
+                  <tr><td><code>h3</code></td><td>1.625rem (mobile 1.5)</td><td>2.5rem / 0.75rem</td></tr>
+                  <tr><td><code>h4</code></td><td>1.375rem (mobile 1.25)</td><td>2rem / 0.5rem</td></tr>
+                  <tr><td><code>h5</code></td><td>1.125rem</td><td>1.75rem / 0.5rem</td></tr>
+                  <tr><td><code>h6</code></td><td>0.875rem caps · brand colour (section labels such as “Related reading”)</td><td>1.75rem / 0.5rem</td></tr>
+                  <tr><td><code>p</code></td><td>1.0625rem (mobile 1rem) · line-height 1.7</td><td>0 / 1.25rem</td></tr>
+                  <tr><td><code>a</code></td><td>Deep pond, weight 500, 2px pond underline; hover darkens</td><td>–</td></tr>
+                  <tr><td><code>ul</code> / <code>ol</code></td><td>Pond dot bullets (ring for nested) · deep semibold numbers</td><td>0 / 1.5rem · items 0.5rem</td></tr>
+                  <tr><td><code>blockquote</code></td><td>Mist callout, pond left bar · for key facts, never testimonials</td><td>2rem / 2rem</td></tr>
+                  <tr><td><code>figure</code></td><td>12px radius · caption 0.875rem slate · supports Webflow centre, full width, float left/right (floats stack on mobile)</td><td>2.5rem / 2.5rem</td></tr>
+                  <tr><td><code>table</code></td><td>Via HTML Embed in rich text · tabular figures · cream header row</td><td>0 / 1.5rem</td></tr>
+                  <tr><td><code>hr</code></td><td>1px border colour</td><td>3rem / 3rem</td></tr>
+                  <tr><td><code>code</code></td><td>Mist chip · for phone numbers or codes that must not wrap</td><td>–</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="fs-styleguide_subheading">Compact · <code>text-rich-text is-small</code></h3>
+            <div class="fs-styleguide_2col">
+              <div class="fs-styleguide_card">
+                <div class="text-rich-text is-small">
+                  <h3>Does the Canadian Dental Care Plan cover check-ups?</h3>
+                  <p>Yes. The plan covers exams, cleanings and X-rays for eligible patients. Some treatments need approval first, and we'll check that for you before we begin.</p>
+                  <ul><li>Bring your member ID to your first visit</li><li>Co-payments depend on your family income</li></ul>
+                </div>
+              </div>
+              <div class="fs-styleguide_list">
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Use for</div><div class="text-size-small">FAQ answers, sidebar cards on service pages, team bios.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Changes</div><div class="text-size-small">Body 0.9375rem, smaller headings, tighter spacing. Everything else matches the base class.</div></div>
+                <div class="fs-styleguide_row"><div class="fs-styleguide_label">Editor rules</div><div class="text-size-small">Start at H2 inside a page (the page H1 is outside the rich text). Don't skip levels. No bold paragraphs as fake headings. No text colour changes.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="background-color-alternate">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="padding-section-small text-size-small" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+          <span>Mill Pond Dental Care · Client-First style guide v1 · Remedo, 6 Nov 2026</span>
+          <span>Next: rebuild as <code>/style-guide</code> in Webflow</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta_component">
+    <a href="#buttons" class="button is-small is-icon"><svg class="icon-embed-xxsmall"><use href="#i-cal"/></svg>Book</a>
+    <a href="#buttons" class="button is-secondary is-small is-icon"><svg class="icon-embed-xxsmall"><use href="#i-phone"/></svg>Call</a>
+  </div>
+
+</div>
+</body>
+</html>

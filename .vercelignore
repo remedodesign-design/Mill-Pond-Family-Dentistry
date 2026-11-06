@@ -1,0 +1,10 @@
+# Internal working files: never deploy these
+.claude/
+.impeccable/
+.playwright-mcp/
+analysis/
+*.md
+dev/partials/
+dev/tools/
+.env*
+.vercel/

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services Wireframe</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body data-title="Service listing wireframe v1">
+
+<details class="list">
+  <summary>Section list (5 blocks + global header and footer). Click to expand.</summary>
+  <ol>
+    <li>Page hero: breadcrumb, H1, intro, jump links to each group</li>
+    <li>Featured treatments: the four top services as large cards</li>
+    <li>All services by group: Everyday care, Restorative, Cosmetic and comfort, Urgent care</li>
+    <li>"Not sure what you need?" help block: call or book a consultation</li>
+    <li>Insurance and CDCP strip</li>
+  </ol>
+</details>
+
+<div class="frame">
+  <header data-wf="header"></header>
+
+  <section>
+    <span class="tag">01 Page hero</span>
+    <div class="pagehero simple">
+      <div>
+        <div class="crumbs">Home / Services</div>
+        <div class="h w40 mx" style="height:34px;margin-top:.75rem"></div>
+        <div class="t w60 mx" style="margin-top:1rem"></div><div class="t w40 mx"></div>
+        <div class="anchor" style="justify-content:center"><span class="chip">Featured</span><span class="chip">Everyday care</span><span class="chip">Restorative</span><span class="chip">Cosmetic &amp; comfort</span><span class="chip">Emergencies</span></div>
+      </div>
+    </div>
+    <div class="note">No big photo here: the cards below carry the imagery, so people reach the services faster. Chips are jump links to each group.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">02 Featured treatments</span>
+    <div style="margin-top:.75rem"><div class="lbl">Featured</div><div class="h w30" style="height:24px;margin-top:.4rem"></div></div>
+    <div class="grid g2" style="margin-top:1.5rem">
+      <div class="card"><div class="box img" style="height:220px">photo</div><div class="h w40" style="margin-top:.8rem"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Dental Implants · Learn more →</div></div>
+      <div class="card"><div class="box img" style="height:220px">photo</div><div class="h w40" style="margin-top:.8rem"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Invisalign · Learn more →</div></div>
+      <div class="card"><div class="box img" style="height:220px">photo</div><div class="h w40" style="margin-top:.8rem"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Smile Makeover · Learn more →</div></div>
+      <div class="card"><div class="box img" style="height:220px">photo</div><div class="h w40" style="margin-top:.8rem"></div><div class="t"></div><div class="t w80"></div><div class="lbl">IV Sedation · Learn more →</div></div>
+    </div>
+    <div class="note">2×2 large cards (CMS Services, featured = true). Bigger than the home page cards so this page feels like a step deeper.</div>
+  </section>
+
+  <section>
+    <span class="tag">03 All services by group</span>
+    <div class="grid grprow" style="margin-top:1rem">
+      <div><div class="h w80" style="height:20px"></div><div class="lbl">Everyday care</div><div class="t"></div></div>
+      <div class="grid g3">
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Family Dentistry →</div></div>
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Check-ups &amp; Cleanings →</div></div>
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Gum Care (wording TBC) →</div></div>
+      </div>
+    </div>
+    <div class="grid grprow" style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)">
+      <div><div class="h w80" style="height:20px"></div><div class="lbl">Restorative</div><div class="t"></div></div>
+      <div class="grid g3">
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Restorative Treatment →</div></div>
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Root Canal Therapy →</div></div>
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Prosthetics &amp; Appliances →</div></div>
+      </div>
+    </div>
+    <div class="grid grprow" style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)">
+      <div><div class="h w80" style="height:20px"></div><div class="lbl">Cosmetic &amp; comfort</div><div class="t"></div></div>
+      <div class="grid g3">
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Teeth Whitening →</div></div>
+        <div class="card"><div class="box" style="width:40px;height:40px">icon</div><div class="h w60" style="margin-top:.6rem"></div><div class="t"></div><div class="lbl">Facial Rejuvenation →</div></div>
+      </div>
+    </div>
+    <div class="grid grprow" style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)">
+      <div><div class="h w80" style="height:20px"></div><div class="lbl">Urgent care</div></div>
+      <div class="row" style="justify-content:space-between;border:2px solid #444;border-radius:8px;padding:1rem">
+        <div style="flex:1;min-width:200px"><div class="h w40"></div><div class="lbl">Emergencies: toothache, broken tooth, swelling. Call us; after hours, follow the answering service.</div></div>
+        <span class="btn solid">Call 519-268-3351</span>
+      </div>
+    </div>
+    <div class="note">Group title on the left, small icon cards on the right (no photos), so ten-plus services stay scannable. Groups and the final list are a proposal pending the client's service list. Mobile: group title above its cards.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">04 Not sure what you need?</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:center">
+      <div><div class="h w80" style="height:24px"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Tell us what's bothering you and we'll point you to the right appointment.</div></div>
+      <div class="row" style="justify-content:flex-end"><span class="btn solid">Book a consultation</span><span class="btn">Call us</span></div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <span class="tag">05 Insurance &amp; CDCP</span>
+    <div class="row" style="justify-content:space-between;margin-top:1rem">
+      <div style="flex:1;min-width:220px"><div class="h w60"></div><div class="t w80"></div></div>
+      <div class="row"><span class="chip" style="color:#fff">CDCP accepted</span><span class="chip" style="color:#fff">Direct billing (TBC)</span><span class="btn solid">Insurance info</span></div>
+    </div>
+  </section>
+
+  <footer class="dark" data-wf="footer"></footer>
+  <div class="sticky" data-wf="sticky"></div>
+</div>
+<script src="js/wireframe.js"></script>
+</body>
+</html>

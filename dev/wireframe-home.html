@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Wireframe</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body data-title="Home wireframe v3">
+<div class="bar">
+  <strong>Mill Pond Dental Care · Home wireframe v3 (layout only: no colour, no copy)</strong>
+  <div class="row">
+    <button id="bd" aria-pressed="true">Desktop 1280</button>
+    <button id="bm" aria-pressed="false">Mobile 390</button>
+  </div>
+</div>
+
+<details class="list">
+  <summary>Section list v3 (13 blocks + footer). Click to expand.</summary>
+  <ol>
+    <li>Header: logo, nav (Services ▾, New Patients, About ▾, Blog, Contact), phone, Book an Appointment</li>
+    <li>Hero: photo, H1, reassurance line, Book and Call buttons, CDCP line</li>
+    <li>Trust strip: CDCP accepted, serving Dorchester since 19XX, direct billing, Google reviews link</li>
+    <li>Services: heading with "View all services" on the right; Implants, Invisalign, Smile Makeover, IV Sedation</li>
+    <li>Practice story: sign or exterior photo, short history, link to About</li>
+    <li>Why choose us: bento grid, one photo tile and four reason tiles</li>
+    <li>New patient journey: split layout, 4-step timeline, "what to bring" card</li>
+    <li>Meet the dentists: dentist cards, link to the full team</li>
+    <li>Insurance and CDCP band</li>
+    <li>Emergency strip: phone and after-hours line</li>
+    <li>Hours and location: hours table, address, directions, large map</li>
+    <li>Contact form: dedicated section with "what happens next"</li>
+    <li>Latest from the blog: 3 posts</li>
+    <li>Footer: CTA band, NAP, hours, links, socials, legal</li>
+  </ol>
+</details>
+
+<div class="frame">
+
+  <header>
+    <span class="tag">01 Header (sticky)</span>
+    <div class="nav" style="margin-top:.75rem">
+      <div class="box" style="width:180px;height:44px">LOGO lockup</div>
+      <div class="links"><span>Services ▾</span><span>New Patients</span><span>About ▾</span><span>Blog</span><span>Contact</span></div>
+      <div class="row"><span class="phone lbl" style="margin:0">☎ 519-268-3351</span><span class="btn solid book">Book an Appointment</span></div>
+      <div class="box burger">☰</div>
+    </div>
+    <div class="note">About ▾ = Our Team, Hours &amp; Location, CDCP &amp; Insurance. Emergencies sits in the Services dropdown. Mobile: logo and menu button only; drawer holds everything.</div>
+  </header>
+
+  <section>
+    <span class="tag">02 Hero</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:center">
+      <div>
+        <div class="lbl">Tagline: Family dentistry in Dorchester, ON</div>
+        <div class="h" style="height:34px;width:90%;margin-top:.5rem"></div>
+        <div class="h" style="height:34px;width:70%;margin-top:.5rem"></div>
+        <div class="t w80" style="margin-top:1rem"></div><div class="t w60"></div>
+        <div class="row" style="margin-top:1.25rem"><span class="btn solid">Book an Appointment</span><span class="btn">Call 519-268-3351</span></div>
+        <div class="lbl" style="margin-top:.9rem">✓ Accepting the Canadian Dental Care Plan (CDCP)</div>
+      </div>
+      <div class="box img" style="height:380px">Real photo: team or reception<br>(stock placeholder until the shoot)</div>
+    </div>
+    <div class="note">Split hero, not full-bleed text over photo: keeps text readable with the light brand blue and gives a clean mobile crop (text first, photo below).</div>
+  </section>
+
+  <section class="alt" style="padding-top:2rem;padding-bottom:2rem">
+    <span class="tag">03 Trust strip</span>
+    <div class="grid g4 keep2" style="margin-top:.75rem">
+      <div class="box" style="height:54px">CDCP accepted</div>
+      <div class="box" style="height:54px">Serving Dorchester since 19XX</div>
+      <div class="box" style="height:54px">Direct billing to insurers</div>
+      <div class="box" style="height:54px">Read our Google reviews →</div>
+    </div>
+    <div class="note">No stars, quotes or counts (college rule). Founding year and direct billing need client confirmation.</div>
+  </section>
+
+  <section>
+    <span class="tag">04 Services</span>
+    <div class="row" style="justify-content:space-between;align-items:flex-end;margin-top:.75rem"><div style="flex:1;min-width:220px"><div class="lbl">Tagline</div><div class="h w60" style="height:24px;margin-top:.4rem"></div><div class="t w80"></div></div><span class="btn">View all services</span></div>
+    <div class="grid g4" style="margin-top:1.5rem">
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h" style="margin-top:.8rem;width:70%"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Dental Implants →</div></div>
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h" style="margin-top:.8rem;width:70%"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Invisalign →</div></div>
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h" style="margin-top:.8rem;width:70%"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Smile Makeover →</div></div>
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h" style="margin-top:.8rem;width:70%"></div><div class="t"></div><div class="t w80"></div><div class="lbl">IV Sedation →</div></div>
+    </div>
+    <div class="note">Single services block. Heading left, "View all services" right. The four top services get cards; family, preventative, restorative and the rest live on the Services page and in the nav dropdown.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">05 Practice story</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:center">
+      <div class="box img" style="height:320px">4085 Hamilton Rd sign / exterior photo (real)</div>
+      <div><div class="lbl">About the practice</div><div class="h w80" style="height:24px;margin-top:.4rem"></div><div class="t"></div><div class="t"></div><div class="t w80"></div><div class="t"></div><div class="t w60"></div><div class="btn" style="margin-top:1rem">About us</div></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="tag">06 Why choose us</span>
+    <div style="margin-top:2.25rem"><div class="lbl">Why Mill Pond</div><div class="h w40" style="height:26px;margin-top:.4rem"></div></div>
+    <div class="bento">
+      <div class="box img tall">Real photo: dentist with a patient, or reception</div>
+      <div class="card wide"><div class="row" style="align-items:flex-start;flex-wrap:nowrap"><div class="box" style="width:48px;height:48px;flex:none">icon</div><div style="flex:1"><div class="h w40"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Family care for every age: kids, adults and seniors under one roof</div></div></div></div>
+      <div class="card"><div class="box" style="width:48px;height:48px">icon</div><div class="h w60" style="margin-top:.7rem"></div><div class="t"></div><div class="lbl">Comfort first: calm chairside care and IV sedation</div></div>
+      <div class="card"><div class="big">19XX</div><div class="h w60" style="margin-top:.7rem"></div><div class="lbl">Your local practice in Dorchester for decades (year TBC)</div></div>
+      <div class="card wide" style="grid-column:2 / span 2"><div class="row" style="align-items:flex-start;flex-wrap:nowrap"><div class="box" style="width:48px;height:48px;flex:none">icon</div><div style="flex:1"><div class="h w40"></div><div class="t"></div><div class="lbl">Clear costs before treatment, CDCP accepted, help with your insurance</div></div></div></div>
+    </div>
+    <div class="note">Bento grid instead of three equal columns: a tall real photo anchors it, the tiles vary in size and one uses a big number. Five reasons max. On mobile: photo first, then the tiles stacked.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">07 New patient journey</span>
+    <div class="journey">
+      <div class="journey-intro">
+        <div class="lbl">New patients</div>
+        <div class="h w80" style="height:28px;margin-top:.4rem"></div><div class="h w60" style="height:28px;margin-top:.4rem"></div>
+        <div class="t" style="margin-top:1rem"></div><div class="t w80"></div>
+        <div class="row" style="margin-top:1.25rem"><span class="btn solid">Book your first visit</span><span class="btn">New patient info</span></div>
+        <div class="card" style="margin-top:1.5rem">
+          <div class="h w40"></div>
+          <div class="lbl">What to bring<br>☐ Photo ID and health card<br>☐ Insurance or CDCP details<br>☐ List of medications<br>☐ Previous X-rays, if you have them</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="card tl-step"><div class="num">1</div><div class="h w40"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Book online or call us</div><span class="chip">Takes 2 minutes</span></div>
+        <div class="card tl-step"><div class="num">2</div><div class="h w40"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Fill in your forms before you arrive</div><span class="chip">Online or at reception</span></div>
+        <div class="card tl-step"><div class="num">3</div><div class="h w40"></div><div class="t"></div><div class="t w80"></div><div class="lbl">First visit: exam, X-rays, cleaning, time for your questions</div><span class="chip">About 60–90 min (TBC)</span></div>
+        <div class="card tl-step"><div class="num">4</div><div class="h w40"></div><div class="t"></div><div class="t w80"></div><div class="lbl">Your plan: options and costs explained before anything starts</div><span class="chip">We bill your insurer directly (TBC)</span></div>
+      </div>
+    </div>
+    <div class="note">Split layout: the heading, buttons and checklist stay pinned on desktop while the four steps scroll beside them on a connected line. Each step gets a small chip with a practical detail (time, where, cost). On mobile it stacks: intro, timeline, then checklist.</div>
+  </section>
+
+  <section>
+    <span class="tag">08 Meet the dentists</span>
+    <div class="row" style="justify-content:space-between;margin-top:.75rem"><div style="flex:1"><div class="h w30" style="height:24px"></div><div class="t w40"></div></div><span class="btn">Meet the whole team</span></div>
+    <div class="grid g3" style="margin-top:1.5rem">
+      <div class="card"><div class="box img" style="height:220px">portrait</div><div class="h w60" style="margin-top:.8rem"></div><div class="lbl">Dr. Steven MacHardy</div></div>
+      <div class="card"><div class="box img" style="height:220px">portrait</div><div class="h w60" style="margin-top:.8rem"></div><div class="lbl">Dr. Aya Al Rafea</div></div>
+      <div class="card"><div class="box img" style="height:220px">portrait / group</div><div class="h w60" style="margin-top:.8rem"></div><div class="lbl">Dr. Lida Kiddie or hygiene team (TBC)</div></div>
+    </div>
+    <div class="note">Three slots; which people appear is still open with the client.</div>
+  </section>
+
+  <section class="dark">
+    <span class="tag">09 Insurance &amp; CDCP</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:center">
+      <div><div class="h w80" style="height:24px"></div><div class="t"></div><div class="t w80"></div><div class="row" style="margin-top:1rem"><span class="btn solid">CDCP &amp; insurance info</span></div></div>
+      <div class="grid g3" style="gap:.6rem"><div class="box" style="height:70px">CDCP</div><div class="box" style="height:70px">Direct billing</div><div class="box" style="height:70px">Payment options</div></div>
+    </div>
+    <div class="note" style="background:#fff">Deep-blue band in the build. The one strong colour moment mid-page.</div>
+  </section>
+
+  <section style="padding-top:1.5rem;padding-bottom:1.5rem">
+    <span class="tag">10 Emergency strip</span>
+    <div class="row" style="justify-content:space-between;margin-top:1rem;border:2px solid #444;border-radius:8px;padding:1rem">
+      <div style="flex:1;min-width:200px"><div class="h w40"></div><div class="t w60"></div><div class="lbl">Dental emergency? Call us; after hours, follow the answering service.</div></div>
+      <span class="btn solid">Call 519-268-3351</span>
+    </div>
+  </section>
+
+  <section>
+    <span class="tag">11 Hours &amp; location</span>
+    <div class="loc">
+      <div class="card">
+        <div class="lbl">Visit us</div><div class="h w60" style="height:22px;margin-top:.4rem"></div>
+        <div class="h w30" style="margin-top:1.25rem"></div>
+        <div class="hrs">
+          <span>Mon</span><span>8:00 – 5:30</span>
+          <span class="today">Tue</span><span class="today">8:00 – 5:30 · Open now</span>
+          <span>Wed</span><span>8:00 – 5:30</span>
+          <span>Thu</span><span>8:00 – 5:30</span>
+          <span>Fri</span><span>Occasional hygiene 8:00 – 2:00 (TBC)</span>
+          <span>Sat–Sun</span><span>Closed</span>
+        </div>
+        <div class="h w30" style="margin-top:1.25rem"></div>
+        <div class="lbl">4085 Hamilton Rd, Dorchester, ON N0L 1G2<br>☎ 519-268-3351 · reception@mpdental.ca<br>Parking and accessibility note (TBC)</div>
+        <div class="row" style="margin-top:1rem"><span class="btn solid">Get directions</span><span class="btn">Call</span></div>
+      </div>
+      <div class="box img" style="min-height:380px">Google map (large, click to load)</div>
+    </div>
+    <div class="note">Hours and map together. Today's row is highlighted. On mobile: hours card first, then a shorter map.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">12 Contact form</span>
+    <div class="formsplit">
+      <div>
+        <div class="lbl">Get in touch</div>
+        <div class="h w80" style="height:28px;margin-top:.4rem"></div>
+        <div class="t" style="margin-top:1rem"></div><div class="t w80"></div>
+        <div class="card" style="margin-top:1.5rem">
+          <div class="h w40"></div>
+          <div class="lbl">What happens next<br>1. Reception reads your message<br>2. We reply within one business day (TBC)<br>3. We book a time that suits you</div>
+        </div>
+        <div class="lbl" style="margin-top:1.25rem">Prefer to talk? ☎ 519-268-3351<br>Dental emergency? Call, don't email.</div>
+      </div>
+      <div class="card" style="padding:1.5rem">
+        <div class="grid g2" style="gap:.5rem"><div class="box field">First name</div><div class="box field">Last name</div></div>
+        <div class="grid g2" style="gap:.5rem"><div class="box field">Phone</div><div class="box field">Email</div></div>
+        <div class="box field">I'm a… ▾ (new patient / current patient / question)</div>
+        <div class="box field">Best time to reach me ▾</div>
+        <div class="box" style="height:96px;margin-top:.5rem">Message (please don't include medical details)</div>
+        <div class="lbl">☐ Consent to be contacted (privacy policy link)</div>
+        <div class="btn solid" style="margin-top:.75rem;width:100%">Send message</div>
+      </div>
+    </div>
+    <div class="note">Form gets its own section, with a reassuring "what happens next" column so it doesn't feel like a cold form. The dropdown helps reception spot new patients.</div>
+  </section>
+
+  <section>
+    <span class="tag">13 Blog</span>
+    <div class="row" style="justify-content:space-between;margin-top:.75rem"><div class="h w30" style="height:24px;flex:0 0 30%"></div><span class="btn">All articles</span></div>
+    <div class="grid g3" style="margin-top:1.25rem">
+      <div class="card"><div class="box img" style="height:150px">thumb</div><div class="lbl">Date · category</div><div class="h w80"></div><div class="t"></div></div>
+      <div class="card"><div class="box img" style="height:150px">thumb</div><div class="lbl">Date · category</div><div class="h w80"></div><div class="t"></div></div>
+      <div class="card"><div class="box img" style="height:150px">thumb</div><div class="lbl">Date · category</div><div class="h w80"></div><div class="t"></div></div>
+    </div>
+  </section>
+
+  <footer class="dark">
+    <span class="tag">14 Footer</span>
+    <div class="row" style="justify-content:space-between;margin-top:1rem;padding-bottom:1.5rem;border-bottom:1px solid #888">
+      <div style="flex:1;min-width:220px"><div class="h w60" style="height:22px"></div><div class="t w40"></div></div>
+      <div class="row"><span class="btn solid">Book an Appointment</span><span class="btn">Call us</span></div>
+    </div>
+    <div class="grid g4" style="margin-top:1.5rem">
+      <div><div class="box" style="height:40px;width:150px">LOGO</div><div class="t"></div><div class="t w80"></div><div class="lbl" style="color:#ccc">NAP + socials</div></div>
+      <div><div class="h w40"></div><div class="lbl" style="color:#ccc">Services links</div></div>
+      <div><div class="h w40"></div><div class="lbl" style="color:#ccc">Patients: New Patients, CDCP, Emergencies, Blog</div></div>
+      <div><div class="h w40"></div><div class="lbl" style="color:#ccc">Hours</div></div>
+    </div>
+    <div class="lbl" style="color:#ccc;margin-top:1.5rem">© 2026 Mill Pond Dental Care · Privacy · Accessibility</div>
+  </footer>
+
+  <div class="sticky"><span class="btn solid">Book</span><span class="btn">Call</span></div>
+</div>
+
+<script src="js/wireframe.js"></script>
+</body>
+</html>

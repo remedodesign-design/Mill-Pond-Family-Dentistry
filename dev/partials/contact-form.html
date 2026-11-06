@@ -1,0 +1,82 @@
+    <section class="section_contact-form background-color-secondary" id="contact-form">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="contact-form_component">
+              <div class="contact-form_intro reveal">
+                <div class="text-style-tagline">Send us a message</div>
+                <h2 class="heading-style-h2">Request an appointment or ask us anything</h2>
+                <p class="text-size-medium text-style-muted">Send us a note and our reception team will get back to you.</p>
+                <div class="contact-form_card">
+                  <h3 class="heading-style-h5">What happens next</h3>
+                  <ol class="contact-form_next">
+                    <li><span class="contact-form_next-number">1</span><span>Reception reads your message.</span></li>
+                    <li><span class="contact-form_next-number">2</span><span>We reply within one business day.</span></li>
+                    <li><span class="contact-form_next-number">3</span><span>We book a time that suits you.</span></li>
+                  </ol>
+                </div>
+                <div class="contact-form_card is-mist">
+                  <h3 class="heading-style-h5">Want to book right away?</h3>
+                  <p class="text-style-muted">Pick a time online in a couple of minutes.</p>
+                  <!-- PLACEHOLDER: Xact online booking URL TBC -->
+                  <a href="#" class="contact-form_link">Book online<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+                </div>
+              </div>
+              <div class="contact-form_form-card reveal">
+                <form class="form_component" data-contact-form novalidate aria-labelledby="form-title">
+                  <h3 class="heading-style-h4" id="form-title">Your details</h3>
+                  <p class="contact-form_required-note text-size-small text-style-muted"><span class="form_required" aria-hidden="true">*</span> Required field</p>
+                  <div class="contact-form_summary form_message-error" data-form-errors role="alert" tabindex="-1" hidden></div>
+                  <div class="form_grid">
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-first">First name <span class="form_required" aria-hidden="true">*</span></label>
+                      <input class="form_input" id="c-first" name="first" autocomplete="given-name" required aria-describedby="c-first-error">
+                      <span class="contact-form_error" id="c-first-error" data-error-for="c-first" hidden></span>
+                    </div>
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-last">Last name <span class="form_required" aria-hidden="true">*</span></label>
+                      <input class="form_input" id="c-last" name="last" autocomplete="family-name" required aria-describedby="c-last-error">
+                      <span class="contact-form_error" id="c-last-error" data-error-for="c-last" hidden></span>
+                    </div>
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-phone">Phone <span class="form_required" aria-hidden="true">*</span></label>
+                      <input class="form_input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+.\- ]{10,}" aria-describedby="c-phone-error">
+                      <span class="contact-form_error" id="c-phone-error" data-error-for="c-phone" hidden></span>
+                    </div>
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-email">Email</label>
+                      <input class="form_input" id="c-email" name="email" type="email" autocomplete="email" spellcheck="false" aria-describedby="c-email-error">
+                      <span class="contact-form_error" id="c-email-error" data-error-for="c-email" hidden></span>
+                    </div>
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-type">I’m a…</label>
+                      <select class="form_input is-select-input" id="c-type" name="type"><option>New patient</option><option>Current patient</option><option>Just have a question</option></select>
+                    </div>
+                    <div class="form_field-wrapper">
+                      <label class="form_field-label" for="c-time">Best time to reach me</label>
+                      <select class="form_input is-select-input" id="c-time" name="time"><option>Any time</option><option>Morning</option><option>Afternoon</option></select>
+                    </div>
+                    <div class="form_field-wrapper is-full">
+                      <label class="form_field-label" for="c-msg">Message</label>
+                      <textarea class="form_input is-text-area" id="c-msg" name="message" aria-describedby="c-msg-help"></textarea>
+                      <span class="form_help-text" id="c-msg-help">Please don’t include medical details. We’ll talk about those in person.</span>
+                    </div>
+                    <!-- Spam protection: honeypot, hidden from people and assistive tech -->
+                    <div class="contact-form_honeypot" aria-hidden="true">
+                      <label for="c-website">Leave this field empty</label>
+                      <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="is-full">
+                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree to be contacted about my request. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
+                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
+                    </div>
+                    <div class="is-full"><button type="submit" class="button is-large contact-form_submit">Send message</button></div>
+                    <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

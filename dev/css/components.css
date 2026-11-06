@@ -1,0 +1,504 @@
+/* ==========================================================================
+   Mill Pond Dental Care — custom classes (Client-First "folder_element" naming)
+   Load after client-first.css. Every value comes from a variable or the
+   Client-First scale; add new components here, never inline.
+   ========================================================================== */
+
+/* Logo lockup ------------------------------------------------------------- */
+.logo_component { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-color--text-primary); }
+.logo_component:hover { color: var(--text-color--text-primary); }
+.logo_icon { width: 2.25rem; height: auto; flex: none; }
+.logo_text {
+  font-family: var(--font--heading); font-weight: 600; text-transform: uppercase;
+  font-size: 1.125rem; line-height: 1; letter-spacing: 0.06em;
+}
+.logo_text-line { display: block; }
+.logo_component.is-stacked { flex-direction: column; text-align: center; gap: 0.875rem; }
+.logo_component.is-stacked .logo_icon { width: 4rem; }
+.logo_component.is-stacked .logo_text { font-size: 1.75rem; }
+.logo_component.is-alternate { color: var(--text-color--text-alternate); }
+
+/* Navbar ------------------------------------------------------------------ */
+.navbar_component {
+  position: sticky; top: 0; z-index: 100;
+  background-color: var(--background-color--background-primary);
+  border-bottom: 1px solid var(--border-color--border-primary);
+}
+.navbar_container { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 4.5rem; }
+.navbar_menu { display: flex; align-items: center; gap: 2rem; }
+.navbar_link {
+  padding: 0.5rem 0; color: var(--text-color--text-primary); text-decoration: none;
+  font-family: var(--font--heading); font-weight: 600; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.navbar_link:hover, .navbar_link.w--current { color: var(--text-color--text-brand); box-shadow: inset 0 -2px 0 var(--base-color-brand--pond); }
+.navbar_menu-buttons { display: flex; align-items: center; gap: 1.25rem; }
+.navbar_phone { color: var(--text-color--text-primary); font-weight: 600; text-decoration: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.navbar_phone:hover { color: var(--text-color--text-brand); }
+.navbar_menu-button { display: none; }
+
+@media screen and (max-width: 991px) {
+  .navbar_menu { display: none; }
+  .navbar_menu-button {
+    display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem;
+    border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--small);
+    background: transparent; color: var(--text-color--text-primary); cursor: pointer;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navbar_phone { display: none; }
+}
+
+/* Section header (tagline + heading + intro) ------------------------------ */
+.section-header_component { display: flex; flex-direction: column; gap: 1rem; max-width: 48rem; }
+.section-header_component.is-center { align-items: center; text-align: center; margin-left: auto; margin-right: auto; }
+
+/* Service card -------------------------------------------------------------- */
+.service-card_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.service-card_component {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary);
+  color: var(--text-color--text-primary); text-decoration: none;
+  transition: border-color 150ms ease;
+}
+.service-card_component:hover { border-color: var(--base-color-brand--pond); color: var(--text-color--text-primary); }
+.service-card_image-wrapper {
+  aspect-ratio: 4 / 3; max-width: 100%; display: flex; align-items: center; justify-content: center;
+  background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand);
+}
+.service-card_content { display: flex; flex-direction: column; gap: 0.625rem; padding: 1.5rem; flex: 1; }
+.service-card_description { color: var(--text-color--text-secondary); font-size: 1rem; }
+.service-card_link { margin-top: auto; padding-top: 0.5rem; align-self: flex-start; }
+
+@media screen and (max-width: 991px) { .service-card_list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media screen and (max-width: 767px) { .service-card_list { grid-template-columns: minmax(0, 1fr); } }
+
+/* Badge / tag ----------------------------------------------------------------- */
+.badge_component {
+  display: inline-flex; align-items: center; gap: 0.625rem;
+  padding: 0.5rem 0.875rem 0.5rem 0.5rem; border-radius: var(--radius--round);
+  background-color: var(--background-color--background-tertiary); color: var(--text-color--text-on-pond);
+  font-size: 0.875rem; font-weight: 600; line-height: 1.2;
+}
+.badge_icon {
+  display: flex; align-items: center; justify-content: center; width: 1.625rem; height: 1.625rem; border-radius: 50%;
+  background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate); flex: none;
+}
+.tag_component {
+  display: inline-block; padding: 0.375rem 0.75rem; border-radius: var(--radius--round);
+  background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand);
+  font-family: var(--font--heading); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* Info list (hours, address) ------------------------------------------------- */
+.info-list_component { display: flex; flex-direction: column; gap: 0.75rem; padding: 0; list-style: none; }
+.info-list_item { display: flex; align-items: flex-start; gap: 0.75rem; margin: 0; }
+.info-list_icon { color: var(--text-color--text-brand); margin-top: 0.125rem; }
+
+/* Trust strip ------------------------------------------------------------------ */
+.trust-strip_component { display: flex; flex-wrap: wrap; gap: 0.75rem 2.25rem; font-size: 0.9375rem; }
+.trust-strip_label {
+  margin-right: 0.5rem; color: var(--base-color-brand--pond);
+  font-family: var(--font--heading); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* Mobile sticky CTA bar ------------------------------------------------------- */
+.mobile-cta_component { display: none; }
+@media screen and (max-width: 767px) {
+  .mobile-cta_component {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    background-color: var(--background-color--background-primary);
+    box-shadow: var(--shadow--small);
+  }
+  .mobile-cta_component .button { width: 100%; }
+}
+
+/* ==========================================================================
+   Site shell + shared blocks (navbar dropdowns/drawer, footer, image slot,
+   cards, emergency strip, hours & location, contact form, reveal)
+   ========================================================================== */
+:root {
+  --arch-radius: 50% 50% var(--radius--medium) var(--radius--medium) / 14% 14% var(--radius--medium) var(--radius--medium);
+  --navbar-height: 4.5rem;
+}
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 1rem); }
+/* Image slot (stands in for real photography until the shoot) ------------ */
+.image-slot_component {
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; min-height: 12rem;
+  border-radius: var(--radius--medium);
+  background:
+  radial-gradient(120% 90% at 85% 10%, rgba(151, 192, 232, 0.55), transparent 60%),
+  radial-gradient(90% 70% at 10% 100%, rgba(31, 78, 121, 0.14), transparent 60%),
+  var(--base-color-brand--mist);
+  color: var(--base-color-brand--deep);
+}
+.image-slot_component.is-arch { border-radius: var(--arch-radius); }
+.image-slot_mark { width: 28%; max-width: 7rem; height: auto; opacity: 0.22; }
+.image-slot_label {
+  position: absolute; left: 1rem; bottom: 1rem; right: 1rem; width: fit-content; max-width: calc(100% - 2rem);
+  padding: 0.375rem 0.75rem; border-radius: var(--radius--round);
+  background-color: rgba(255, 255, 255, 0.88); color: var(--text-color--text-secondary);
+  font-size: 0.8125rem; font-weight: 500; line-height: 1.3;
+}
+.image-slot_component img.image-cover { position: absolute; inset: 0; }
+/* Navbar additions: dropdowns + mobile drawer ------------------------------ */
+.navbar_logo-link { flex: none; }
+.navbar_dropdown { position: relative; }
+.navbar_dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.5rem 0; border: 0; background: none; cursor: pointer;
+  color: var(--text-color--text-primary);
+  font-family: var(--font--heading); font-weight: 600; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.navbar_dropdown-toggle:hover, .navbar_dropdown:focus-within .navbar_dropdown-toggle { color: var(--text-color--text-brand); }
+.navbar_dropdown-toggle svg { transition: transform 150ms ease; }
+.navbar_dropdown-list {
+  position: absolute; top: calc(100% + 0.75rem); left: -1.25rem; min-width: 17rem;
+  display: flex; flex-direction: column; padding: 0.75rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary); box-shadow: var(--shadow--small);
+  opacity: 0; visibility: hidden; transform: translateY(-0.25rem);
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms;
+}
+.navbar_dropdown-list::before { content: ""; position: absolute; left: 0; right: 0; top: -0.875rem; height: 0.875rem; }
+.navbar_dropdown:hover .navbar_dropdown-list,
+.navbar_dropdown:focus-within .navbar_dropdown-list,
+.navbar_dropdown.is-open .navbar_dropdown-list { opacity: 1; visibility: visible; transform: none; }
+.navbar_dropdown:hover .navbar_dropdown-toggle svg,
+.navbar_dropdown.is-open .navbar_dropdown-toggle svg { transform: rotate(180deg); }
+.navbar_dropdown-group { padding: 0.5rem 0.75rem 0.25rem; color: var(--text-color--text-secondary); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.navbar_dropdown-link {
+  padding: 0.5rem 0.75rem; border-radius: var(--radius--small);
+  color: var(--text-color--text-primary); text-decoration: none; font-weight: 500; font-size: 1rem;
+}
+.navbar_dropdown-link:hover { background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand); text-decoration: none; }
+.navbar_dropdown-divider { height: 1px; margin: 0.5rem 0.75rem; background-color: var(--border-color--border-primary); }
+.navbar_drawer {
+  position: fixed; inset: var(--navbar-height) 0 0 0; z-index: 99;
+  display: none; flex-direction: column; gap: 0.25rem; overflow-y: auto;
+  padding: 1.5rem 1.25rem 7rem; background-color: var(--background-color--background-primary);
+}
+.navbar_drawer.is-open { display: flex; }
+.navbar_drawer-link {
+  display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border-color--border-primary);
+  color: var(--text-color--text-primary); text-decoration: none;
+  font-family: var(--font--heading); font-weight: 600; font-size: 1.375rem;
+}
+.navbar_drawer details > summary { list-style: none; cursor: pointer; }
+.navbar_drawer details > summary::-webkit-details-marker { display: none; }
+.navbar_drawer details[open] > summary svg { transform: rotate(180deg); }
+.navbar_drawer-sub { display: flex; flex-direction: column; padding: 0.5rem 0 0.75rem 0.75rem; }
+.navbar_drawer-sub a { padding: 0.5rem 0; color: var(--text-color--text-primary); text-decoration: none; font-size: 1.0625rem; }
+.navbar_drawer-contact { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+body.is-menu-open { overflow: hidden; }
+.status-dot { display: inline-block; width: 0.5rem; height: 0.5rem; margin-right: 0.375rem; border-radius: 50%; background-color: var(--base-color-system--success); vertical-align: 0.1em; }
+.status-dot.is-closed { background-color: var(--base-color-neutral--grey); }
+/* Section header row (heading left, button right) ----------------------- */
+.section-header_row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.section-header_row .section-header_component { flex: 1 1 28rem; }
+.heading-rule { display: block; width: 3rem; height: 0.25rem; border-radius: var(--radius--round); background-color: var(--base-color-brand--pond); }
+/* Services (4-up variant of service-card) ------------------------------------ */
+.service-card_list.is-4col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.service-card_component .image-slot_component { border-radius: 0; aspect-ratio: 4 / 3; min-height: 0; height: auto; }
+.service-card_icon {
+  display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; margin-top: -2.75rem; margin-bottom: 0.25rem;
+  position: relative; border-radius: 50%; border: 3px solid var(--background-color--background-primary);
+  background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate);
+}
+.service-card_link { display: inline-flex; align-items: center; gap: 0.375rem; font-family: var(--font--heading); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9375rem; color: var(--text-color--text-brand); }
+.service-card_link svg { transition: transform 150ms ease; }
+.service-card_component:hover .service-card_link svg { transform: translateX(0.25rem); }
+.team-card_component { display: flex; flex-direction: column; gap: 1.25rem; color: var(--text-color--text-primary); text-decoration: none; }
+.team-card_component:hover { color: var(--text-color--text-primary); }
+.team-card_image { aspect-ratio: 4 / 5; }
+.team-card_component .image-slot_component { transition: transform 300ms ease; }
+.team-card_image { overflow: hidden; border-radius: var(--arch-radius); }
+.team-card_component:hover .image-slot_component { transform: scale(1.02); }
+.team-card_role { color: var(--text-color--text-secondary); margin-top: 0.25rem; }
+.team-card_name { display: inline-flex; align-items: center; gap: 0.5rem; }
+.team-card_name svg { color: var(--text-color--text-brand); transition: transform 150ms ease; }
+.team-card_component:hover .team-card_name svg { transform: translateX(0.25rem); }
+/* Emergency strip ---------------------------------------------------------------- */
+/* Hours & location --------------------------------------------------------------- */
+.location_component { display: grid; grid-template-columns: 5fr 7fr; gap: 1.5rem; align-items: stretch; }
+.location_card { display: flex; flex-direction: column; gap: 1.5rem; padding: 2.25rem; border-radius: var(--radius--medium); background-color: var(--background-color--background-secondary); }
+.hours_table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 1rem; }
+.hours_table th, .hours_table td { padding: 0.625rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border-color--border-primary); font-weight: 400; vertical-align: top; }
+.hours_table th { font-weight: 600; width: 6.5rem; }
+.hours_table tr.is-today th, .hours_table tr.is-today td { color: var(--text-color--text-brand); font-weight: 600; }
+.hours_table tr.is-today th { box-shadow: inset 0.1875rem 0 0 var(--base-color-brand--pond); }
+.hours_note { color: var(--text-color--text-secondary); font-size: 0.875rem; font-weight: 400; }
+.hours_status { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: var(--radius--round); background-color: var(--base-color-system--success-background); color: var(--base-color-system--success); font-size: 0.875rem; font-weight: 600; }
+.hours_status.is-closed { background-color: var(--background-color--background-primary); color: var(--text-color--text-secondary); }
+.location_map {
+  position: relative; min-height: 30rem; overflow: hidden; border-radius: var(--radius--medium);
+  background:
+  linear-gradient(0deg, rgba(228, 238, 248, 0.6), rgba(228, 238, 248, 0.6)),
+  repeating-linear-gradient(0deg, transparent 0 3.9rem, rgba(31, 78, 121, 0.08) 3.9rem 4rem),
+  repeating-linear-gradient(90deg, transparent 0 3.9rem, rgba(31, 78, 121, 0.08) 3.9rem 4rem),
+  var(--base-color-brand--mist);
+}
+.location_map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Contact form ------------------------------------------------------------------- */
+.contact-form_component { display: grid; grid-template-columns: 5fr 7fr; gap: 5rem; align-items: start; }
+.contact-form_intro { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-form_next { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.contact-form_next li { display: flex; gap: 1rem; align-items: flex-start; margin: 0; }
+.contact-form_next-number { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; flex: none; border-radius: 50%; border: 2px solid var(--base-color-brand--pond); color: var(--text-color--text-brand); font-family: var(--font--heading); font-weight: 600; }
+.contact-form_aside { padding-top: 1.5rem; border-top: 1px solid var(--border-color--border-primary); display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-form_form-card { padding: 2.5rem; border-radius: var(--radius--medium); background-color: var(--background-color--background-primary); border: 1px solid var(--border-color--border-primary); }
+.form_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.form_grid .is-full { grid-column: 1 / -1; }
+.form_required { color: var(--base-color-system--error); }
+/* Blog ----------------------------------------------------------------------------- */
+.blog-card_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.blog-card_component { display: flex; flex-direction: column; gap: 1rem; color: var(--text-color--text-primary); text-decoration: none; }
+.blog-card_component:hover { color: var(--text-color--text-primary); }
+.blog-card_component .image-slot_component { aspect-ratio: 16 / 10; min-height: 0; height: auto; }
+.blog-card_meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--text-color--text-secondary); }
+.blog-card_component:hover .blog-card_title { color: var(--text-color--text-brand); text-decoration: underline; text-decoration-color: var(--link-color--link-underline); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+/* Footer ---------------------------------------------------------------------------- */
+.footer_component { background-color: var(--base-color-brand--deep-dark); color: rgba(255, 255, 255, 0.82); }
+.footer_cta { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding: 3.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+.footer_cta h2 { color: var(--text-color--text-alternate); }
+.footer_cta p { margin-top: 0.5rem; }
+.footer_top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.1fr; gap: 3rem; padding: 3.5rem 0; }
+.footer_heading { margin-bottom: 1rem; color: var(--base-color-brand--pond); font-family: var(--font--heading); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.footer_link-list { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.footer_link-list li { margin: 0; }
+.footer_link { color: rgba(255, 255, 255, 0.86); text-decoration: none; }
+.footer_link:hover { color: var(--text-color--text-alternate); text-decoration: underline; text-decoration-color: var(--base-color-brand--pond); }
+.footer_nap { font-style: normal; display: flex; flex-direction: column; gap: 0.375rem; margin-top: 1.25rem; }
+.footer_social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.footer_social a { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); color: var(--text-color--text-alternate); }
+.footer_social a:hover { background-color: var(--text-color--text-alternate); color: var(--base-color-brand--deep); }
+.footer_hours { display: grid; grid-template-columns: auto 1fr; gap: 0.375rem 1.25rem; font-variant-numeric: tabular-nums; }
+.footer_bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.5rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.875rem; }
+.footer_legal { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+/* Reveal on scroll (only when JS has run; respects reduced motion via global rule) */
+.js .reveal { opacity: 0; transform: translateY(1rem); transition: opacity 600ms ease, transform 600ms ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}
+@media screen and (max-width: 991px) {
+  .service-card_list.is-4col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .location_component { grid-template-columns: 1fr; }
+  .location_map { min-height: 22rem; }
+  .contact-form_component { grid-template-columns: 1fr; gap: 3rem; }
+  .blog-card_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .blog-card_list > :nth-child(3) { display: none; }
+  .footer_top { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 767px) {
+  :root { --navbar-height: 4rem; }
+  .navbar_container { min-height: var(--navbar-height); }
+  .navbar_menu-buttons .button { display: none; }
+  .service-card_list.is-4col { grid-template-columns: minmax(0, 1fr); }
+  .team-card_image { aspect-ratio: 1 / 1; }
+  .location_card { padding: 1.5rem; }
+  .location_map { min-height: 16rem; }
+  .contact-form_form-card { padding: 1.5rem; }
+  .form_grid { grid-template-columns: 1fr; }
+  .blog-card_list { grid-template-columns: 1fr; }
+  .blog-card_list > :nth-child(3) { display: flex; }
+  .footer_top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer_bottom { padding-bottom: 6.5rem; }
+}
+/* Stock photos inside image slots (object-position tuned per crop) */
+.image-slot_component img.image-cover { object-fit: cover; }
+
+/* FAQ accordion (native details/summary) ---------------------------------- */
+.faq_list { display: flex; flex-direction: column; gap: 0.75rem; }
+.faq_item {
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary);
+}
+.faq_item[open] { border-color: var(--border-color--border-brand); }
+.faq_question {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem;
+  cursor: pointer; list-style: none;
+  font-family: var(--font--heading); font-weight: 600; font-size: 1.25rem; line-height: 1.3;
+}
+.faq_question::-webkit-details-marker { display: none; }
+.faq_question:hover { color: var(--text-color--text-brand); }
+.faq_question:focus-visible { outline: 2px solid var(--base-color-brand--deep); outline-offset: 2px; border-radius: var(--radius--medium); }
+.faq_icon { flex: none; color: var(--text-color--text-brand); transition: transform 150ms ease; }
+.faq_item[open] .faq_icon { transform: rotate(180deg); }
+.faq_answer { padding: 0 1.5rem 1.5rem; color: var(--text-color--text-secondary); }
+.faq_answer > * { max-width: 42rem; }
+@media screen and (max-width: 767px) {
+  .faq_question { padding: 1rem 1.25rem; font-size: 1.125rem; }
+  .faq_answer { padding: 0 1.25rem 1.25rem; }
+}
+
+/* Contact form: method cards, links, validation states --------------------- */
+.contact-form_card {
+  display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary);
+}
+.contact-form_card.is-mist { background-color: var(--background-color--background-tertiary); border-color: transparent; }
+.contact-form_link { display: inline-flex; align-items: center; gap: 0.375rem; width: fit-content; font-family: var(--font--heading); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9375rem; color: var(--text-color--text-brand); }
+.contact-form_link svg { transition: transform 150ms ease; }
+.contact-form_link:hover svg { transform: translateX(0.25rem); }
+.contact-form_required-note { margin: 0.25rem 0 1.25rem; }
+.contact-form_summary { margin-bottom: 1.25rem; font-weight: 600; }
+.contact-form_summary:focus { outline: none; }
+.contact-form_submit { width: 100%; }
+/* Error state: colour + icon + text, never colour alone */
+.form_field-wrapper.is-error .form_input,
+.form_input[aria-invalid="true"] { border-color: var(--base-color-system--error); box-shadow: inset 0 0 0 1px var(--base-color-system--error); }
+.form_field-wrapper.is-error .form_field-label { color: var(--base-color-system--error); }
+.form_input[aria-invalid="true"]:focus { outline-color: var(--base-color-system--error); }
+.is-error .form_checkbox-icon { outline: 2px solid var(--base-color-system--error); outline-offset: 1px; }
+.contact-form_error { display: flex; align-items: flex-start; gap: 0.375rem; font-size: 0.875rem; font-weight: 500; line-height: 1.35; color: var(--base-color-system--error); }
+.contact-form_error[hidden] { display: none; }
+.contact-form_error::before {
+  content: "!"; display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 1.125rem; height: 1.125rem; margin-top: 0.05rem; border-radius: 50%;
+  background-color: var(--base-color-system--error); color: var(--base-color-neutral--white); font-size: 0.75rem; font-weight: 700;
+}
+.form_message-success:focus { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 2px; }
+/* Honeypot: off-screen, not display:none (some bots skip hidden fields) */
+.contact-form_honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ==========================================================================
+   Shared blocks used on several inner pages
+   ========================================================================== */
+
+/* Current page in the nav (Webflow adds w--current to links automatically;
+   set it by hand on a dropdown toggle when one of its pages is open) ------ */
+.navbar_dropdown-toggle.w--current { color: var(--text-color--text-brand); box-shadow: inset 0 -2px 0 var(--base-color-brand--pond); }
+.navbar_dropdown-link.w--current { background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand); font-weight: 600; }
+.navbar_drawer-link.w--current, .navbar_drawer-sub a.w--current { color: var(--text-color--text-brand); font-weight: 600; }
+
+/* Breadcrumb ---------------------------------------------------------------- */
+.breadcrumb_list { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; margin: 0; padding: 0; list-style: none; font-size: 0.9375rem; color: var(--text-color--text-secondary); }
+.breadcrumb_list.is-center { justify-content: center; }
+.breadcrumb_list li { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; }
+.breadcrumb_list li + li::before { content: "/"; color: var(--base-color-neutral--grey); }
+.breadcrumb_link { color: var(--text-color--text-secondary); text-decoration: none; }
+.breadcrumb_link:hover { color: var(--text-color--text-brand); text-decoration: underline; text-decoration-color: var(--link-color--link-underline); }
+.breadcrumb_list [aria-current="page"] { color: var(--text-color--text-primary); font-weight: 600; }
+
+/* Placeholder tag: content still to confirm with the practice.
+   Remove the tag (and its [TBC] text) once confirmed. --------------------- */
+.placeholder_tag {
+  display: inline; padding: 0.125rem 0.5rem; border: 1px dashed var(--base-color-system--notice); border-radius: var(--radius--small);
+  background-color: var(--base-color-system--notice-background); color: var(--base-color-system--notice);
+  font-family: var(--font--body); font-size: 0.875em; font-weight: 600; line-height: 1.5;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.placeholder_tag.is-dark { border-color: var(--base-color-brand--pond); background-color: transparent; color: var(--base-color-brand--pond); }
+
+/* Icon box: icon in a tinted square or circle --------------------------------- */
+.icon-box_component {
+  display: flex; align-items: center; justify-content: center; flex: none; width: 3.25rem; height: 3.25rem;
+  border-radius: var(--radius--small); background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand);
+}
+.icon-box_component.is-small { width: 2.75rem; height: 2.75rem; }
+.icon-box_component.is-large { width: 3.5rem; height: 3.5rem; }
+.icon-box_component.is-round { border-radius: 50%; }
+.icon-box_component.is-white { background-color: var(--background-color--background-primary); }
+.icon-box_component.is-outline { border: 1px solid var(--border-color--border-primary); }
+
+
+/* CTA band: short prompt + buttons, pond edge --------------------------------- */
+.cta-band_component {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding: 2.25rem 2.5rem;
+  border: 1px solid var(--border-color--border-primary); border-left: 0.375rem solid var(--base-color-brand--pond);
+  border-radius: var(--radius--medium); background-color: var(--background-color--background-primary);
+}
+.cta-band_component.is-mist { background-color: var(--background-color--background-tertiary); }
+.cta-band_content { display: flex; flex-direction: column; gap: 0.5rem; flex: 1 1 18rem; }
+
+/* Inline field error placement for full-width fields */
+.is-full > .contact-form_error { margin-top: 0.375rem; padding-left: 1.875rem; }
+
+@media screen and (max-width: 767px) {
+  .cta-band_component { padding: 1.5rem; }
+  .cta-band_component .button-group, .cta-band_component .button { width: 100%; }
+}
+
+/* Insurance & CDCP band (same on every page that shows it) --------------------- */
+/* Insurance & CDCP band ------------------------------------------------------- */
+.insurance_component { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; align-items: center; }
+.insurance_content { display: flex; flex-direction: column; gap: 1.25rem; }
+.insurance_content .text-style-tagline { color: var(--base-color-brand--pond); }
+.insurance_content h2 { color: var(--text-color--text-alternate); }
+.insurance_text { color: rgba(255, 255, 255, 0.86); }
+.insurance_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.insurance_item {
+  display: flex; flex-direction: column; gap: 0.75rem; margin: 0; padding: 1.5rem;
+  border: 1px solid rgba(151, 192, 232, 0.35); border-radius: var(--radius--medium);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.insurance_item h3 { color: var(--text-color--text-alternate); font-size: 1.25rem; }
+.insurance_item p { color: rgba(255, 255, 255, 0.8); font-size: 0.9375rem; line-height: 1.5; }
+.insurance_icon { color: var(--base-color-brand--pond); }
+.section_insurance { position: relative; overflow: hidden; }
+.insurance_ripple { position: absolute; right: -10rem; top: -10rem; width: 34rem; height: 34rem; border-radius: 50%; border: 1px solid rgba(151, 192, 232, 0.18); box-shadow: 0 0 0 4rem rgba(151, 192, 232, 0.05), 0 0 0 8rem rgba(151, 192, 232, 0.035); pointer-events: none; }
+@media screen and (max-width: 991px) {
+  .insurance_component { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media screen and (max-width: 767px) {
+  .insurance_list { grid-template-columns: 1fr; }
+}
+
+/* Hours & location: header row + holiday note --------------------------------- */
+.location_card { justify-content: center; gap: 1.75rem; padding: 2.5rem; }
+.location_header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.location_details { display: flex; flex-direction: column; gap: 0.5rem; }
+.location_address { font-size: 1.0625rem; line-height: 1.6; }
+.location_address a { font-weight: 600; color: var(--text-color--text-brand); }
+.location_holiday { font-size: 0.875rem; color: var(--text-color--text-secondary); }
+/* Hours & location after another white section: drop the top padding so the
+   gap isn't doubled. Add a page's last white section here if it changes. */
+:is(.section_home-emergency, .section_about-team, .section_team-cta, .section_service-detail-related) + .section_location .padding-section-large { padding-top: 0; }
+.section_home-emergency + .section_location .padding-section-large { padding-top: 2rem; }
+@media screen and (max-width: 767px) { .location_card { padding: 1.75rem 1.5rem; gap: 1.5rem; } }
+
+/* Emergency strip: easy to find in a hurry, calm for everyone else.
+   White card, thin red edge and a soft red icon; the phone number is the
+   largest thing in it, on the normal brand button. */
+.emergency-strip_component {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.25rem 2.5rem;
+  padding: 1.75rem 2rem; border: 1px solid var(--border-color--border-primary); border-left: 0.3125rem solid var(--base-color-system--error);
+  border-radius: var(--radius--medium); background-color: var(--background-color--background-primary);
+}
+.emergency-strip_main { display: flex; align-items: flex-start; gap: 1.25rem; }
+.emergency-strip_icon {
+  display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; flex: none;
+  border-radius: 50%; background-color: var(--base-color-system--error-background); color: var(--base-color-system--error);
+}
+.emergency-strip_heading { font-family: var(--font--heading); font-weight: 600; font-size: 1.625rem; line-height: 1.15; color: var(--text-color--text-primary); }
+.emergency-strip_lead { margin-top: 0.375rem; font-size: 1.0625rem; line-height: 1.55; color: var(--text-color--text-secondary); max-width: 40rem; }
+.emergency-strip_call {
+  display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1.5rem; border-radius: var(--radius--small);
+  background-color: var(--base-color-brand--deep); color: var(--base-color-neutral--white); text-decoration: none; white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+.emergency-strip_call:hover { background-color: var(--base-color-brand--deep-dark); color: var(--base-color-neutral--white); }
+.emergency-strip_call:focus-visible { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 0.1875rem; }
+.emergency-strip_call-label { display: block; font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+.emergency-strip_call-number { display: block; font-family: var(--font--heading); font-weight: 700; font-size: 1.375rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.emergency-strip_alert {
+  grid-column: 1 / -1; margin: 0; padding-top: 1rem; border-top: 1px solid var(--border-color--border-primary);
+  font-size: 1rem; color: var(--text-color--text-secondary);
+}
+.emergency-strip_alert strong { color: var(--text-color--text-primary); }
+@media screen and (max-width: 991px) {
+  .emergency-strip_component { grid-template-columns: 1fr; }
+  .emergency-strip_call { justify-content: center; }
+}
+@media screen and (max-width: 767px) {
+  .emergency-strip_component { padding: 1.5rem 1.25rem; }
+  .emergency-strip_main { gap: 1rem; }
+  .emergency-strip_icon { width: 2.75rem; height: 2.75rem; }
+  .emergency-strip_heading { font-size: 1.375rem; }
+  .emergency-strip_lead { font-size: 1rem; }
+}

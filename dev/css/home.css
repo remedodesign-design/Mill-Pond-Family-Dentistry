@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Mill Pond Dental Care — Home page sections (Client-First "folder_element")
+   Shared navbar, footer, cards, location and form styles are in components.css.
+   Load after client-first.css and components.css.
+   Every colour, radius and font comes from a variable in client-first.css.
+   Brand motif: the gentle arched top of the 4085 Hamilton Rd sign
+   (used as the "is-arch" image frame and the pond rule under headings).
+   ========================================================================== */
+
+/* Hero: full-bleed deep blue with a photo running off the right edge.
+   Deliberately unlike the light, contained split heroes on inner pages. ---- */
+.section_home-hero { position: relative; overflow: hidden; isolation: isolate; background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate); }
+.home-hero_ripple { position: absolute; left: -14rem; bottom: -18rem; z-index: -1; width: 40rem; height: 40rem; border-radius: 50%; border: 1px solid rgba(151, 192, 232, 0.2); box-shadow: 0 0 0 4.5rem rgba(151, 192, 232, 0.05), 0 0 0 9rem rgba(151, 192, 232, 0.035), 0 0 0 13.5rem rgba(151, 192, 232, 0.025); pointer-events: none; }
+.home-hero_component { display: flex; align-items: center; min-height: clamp(36rem, calc(88vh - var(--navbar-height)), 48rem); padding: 5rem 0 5.5rem; }
+.home-hero_content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1.5rem; width: 47%; }
+.home-hero_tagline { color: var(--base-color-brand--pond); }
+.home-hero_heading { font-size: 4.5rem; line-height: 0.98; color: var(--text-color--text-alternate); letter-spacing: -0.01em; }
+.home-hero_heading em { font-style: normal; color: var(--base-color-brand--pond); }
+.home-hero_text { color: rgba(255, 255, 255, 0.84); max-width: 34rem; }
+.home-hero_facts { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin: 0.75rem 0 0; padding: 1.25rem 0 0; list-style: none; border-top: 1px solid rgba(151, 192, 232, 0.28); font-size: 0.9375rem; font-weight: 500; }
+.home-hero_facts li { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; color: rgba(255, 255, 255, 0.9); }
+.home-hero_facts svg { color: var(--base-color-brand--pond); }
+.home-hero_facts a { color: inherit; text-decoration: underline; text-decoration-color: rgba(151, 192, 232, 0.6); text-underline-offset: 0.2em; }
+.home-hero_facts a:hover { color: var(--text-color--text-alternate); text-decoration-color: var(--base-color-brand--pond); }
+.home-hero_media { position: absolute; top: 0; right: 0; bottom: 0; width: 48%; border-top-left-radius: 18rem 100%; overflow: hidden; background-color: var(--base-color-brand--deep-dark); }
+.home-hero_media::after { content: ""; position: absolute; inset: 0; border-left: 0.5rem solid var(--base-color-brand--pond); border-top-left-radius: inherit; pointer-events: none; }
+.home-hero_media img.image-cover { position: absolute; inset: 0; object-position: 62% 50%; }
+.home-hero_status {
+  position: absolute; right: 2rem; bottom: 2rem; z-index: 2;
+  display: flex; align-items: center; gap: 0.875rem; padding: 1rem 1.25rem 1rem 1rem;
+  border-radius: var(--radius--medium); background-color: var(--background-color--background-primary); color: var(--text-color--text-primary);
+  box-shadow: var(--shadow--small);
+}
+.home-hero_status-icon {
+  display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand); flex: none;
+}
+.home-hero_status-title { font-family: var(--font--heading); font-weight: 600; font-size: 1.125rem; line-height: 1.2; }
+.home-hero_status-text { font-size: 0.875rem; color: var(--text-color--text-secondary); line-height: 1.3; }
+@media screen and (max-width: 1279px) { .home-hero_heading { font-size: 3.75rem; } }
+@media screen and (max-width: 991px) {
+  .home-hero_component { min-height: 0; padding: 4rem 0 3rem; }
+  .home-hero_content { width: 100%; }
+  .home-hero_heading { font-size: 3.25rem; }
+  .home-hero_media { position: relative; width: auto; height: 26rem; margin-left: 2.5rem; border-top-left-radius: 50% 6rem; }
+  .home-hero_media::after { border-left: 0; border-top: 0.5rem solid var(--base-color-brand--pond); }
+  .home-hero_ripple { bottom: auto; top: -16rem; left: auto; right: -18rem; }
+}
+@media screen and (max-width: 767px) {
+  .home-hero_component { padding: 3rem 0 2.5rem; }
+  .home-hero_heading { font-size: 2.625rem; }
+  .home-hero_media { height: 20rem; margin-left: 0; border-top-left-radius: 50% 3rem; border-top-right-radius: 50% 3rem; }
+  .home-hero_status { left: 1rem; right: 1rem; bottom: 1rem; }
+  .home-hero_facts { gap: 0.625rem 1.25rem; }
+}
+
+/* Trust strip (light version) ---------------------------------------------- */
+.home-trust_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.home-trust_item { display: flex; align-items: center; gap: 0.875rem; margin: 0; font-weight: 500; line-height: 1.3; }
+.home-trust_list { column-gap: 3rem; }
+.home-trust_item { position: relative; }
+.home-trust_item + .home-trust_item::before { content: ""; position: absolute; left: -1.5rem; top: 0.25rem; bottom: 0.25rem; width: 1px; background-color: var(--border-color--border-primary); }
+.home-trust_link { color: var(--text-color--text-brand); font-weight: 600; text-decoration: underline; text-decoration-color: var(--link-color--link-underline); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+.home-services_more { margin-top: 2rem; font-size: 1rem; color: var(--text-color--text-secondary); }
+/* Practice story ------------------------------------------------------------ */
+.home-story_component { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.home-story_image { position: relative; aspect-ratio: 872 / 532; border-radius: var(--arch-radius); overflow: hidden; border: 0.375rem solid var(--base-color-brand--pond); background-color: var(--base-color-neutral--white); }
+.home-story_image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.home-story_caption { margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-color--text-secondary); font-size: 0.9375rem; }
+.home-story_content { display: flex; flex-direction: column; gap: 1.25rem; }
+.home-story_facts { display: flex; gap: 2.5rem; margin-top: 0.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color--border-primary); }
+.home-story_fact-number { font-family: var(--font--heading); font-weight: 600; font-size: 2.25rem; line-height: 1; color: var(--text-color--text-brand); }
+.home-story_fact-label { margin-top: 0.375rem; font-size: 0.9375rem; color: var(--text-color--text-secondary); line-height: 1.35; }
+/* Why choose us: bento --------------------------------------------------------- */
+.home-why_bento { display: grid; grid-template-columns: 1.1fr 1fr 1fr; grid-auto-rows: minmax(12rem, auto); gap: 1.25rem; }
+.home-why_photo { grid-row: span 3; min-height: 30rem; }
+.home-why_tile {
+  display: flex; flex-direction: column; gap: 0.75rem; padding: 2rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary);
+}
+.home-why_tile.is-wide { grid-column: span 2; flex-direction: row; align-items: flex-start; gap: 1.5rem; }
+.home-why_tile.is-mist { background-color: var(--background-color--background-tertiary); border-color: transparent; }
+.home-why_tile.is-deep { background-color: var(--background-color--background-alternate); border-color: transparent; color: var(--text-color--text-alternate); justify-content: flex-end; }
+.home-why_tile.is-deep h3 { color: var(--text-color--text-alternate); }
+.home-why_tile.is-mist .icon-box_component { background-color: var(--background-color--background-primary); }
+.home-why_number { font-family: var(--font--heading); font-weight: 600; font-size: 5rem; line-height: 0.9; color: var(--base-color-brand--pond); letter-spacing: -0.01em; }
+.home-why_text { color: var(--text-color--text-secondary); }
+.home-why_tile.is-deep .home-why_text { color: rgba(255, 255, 255, 0.85); }
+.home-why_points { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 0; padding: 0; list-style: none; }
+.home-why_points li { margin: 0; }
+/* New patient journey ------------------------------------------------------- */
+.home-journey_component { display: grid; grid-template-columns: 5fr 7fr; gap: 5rem; align-items: start; }
+.home-journey_intro { position: sticky; top: calc(var(--navbar-height) + 2rem); display: flex; flex-direction: column; gap: 1.25rem; }
+.home-journey_checklist { margin-top: 0.75rem; padding: 1.5rem; border-radius: var(--radius--medium); background-color: var(--background-color--background-primary); border: 1px solid var(--border-color--border-primary); }
+.home-journey_checklist ul { margin: 0.75rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.home-journey_checklist li { display: flex; gap: 0.625rem; align-items: flex-start; margin: 0; }
+.home-journey_checklist li svg { color: var(--text-color--text-brand); margin-top: 0.25rem; }
+.home-journey_timeline { position: relative; display: flex; flex-direction: column; gap: 1.25rem; margin: 0; padding: 0 0 0 4.25rem; list-style: none; counter-reset: step; }
+.home-journey_timeline::before { content: ""; position: absolute; left: 1.375rem; top: 2rem; bottom: 2rem; width: 2px; background: repeating-linear-gradient(to bottom, var(--base-color-brand--pond) 0 0.5rem, transparent 0.5rem 0.875rem); }
+.home-journey_step {
+  position: relative; margin: 0; padding: 1.75rem 2rem;
+  border-radius: var(--radius--medium); background-color: var(--background-color--background-primary);
+  border: 1px solid var(--border-color--border-primary);
+}
+.home-journey_number {
+  position: absolute; left: -4.25rem; top: 1.5rem; display: flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate);
+  font-family: var(--font--heading); font-weight: 600; font-size: 1.25rem;
+  box-shadow: 0 0 0 0.375rem var(--background-color--background-secondary);
+}
+.home-journey_step p { margin-top: 0.5rem; color: var(--text-color--text-secondary); }
+.home-journey_chip {
+  display: inline-flex; align-items: center; gap: 0.375rem; margin-top: 1rem; padding: 0.3125rem 0.75rem;
+  border-radius: var(--radius--round); background-color: var(--background-color--background-tertiary);
+  color: var(--text-color--text-on-pond); font-size: 0.875rem; font-weight: 500;
+}
+/* Team ------------------------------------------------------------------------- */
+.home-team_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+/* Responsive ------------------------------------------------------------------------- */
+@media screen and (max-width: 991px) {
+  .home-trust_list { grid-template-columns: 1fr 1fr; }
+  .home-trust_item:nth-child(3)::before { display: none; }
+  .home-story_component { grid-template-columns: 1fr; gap: 3rem; }
+  .home-why_bento { grid-template-columns: 1fr 1fr; }
+  .home-why_photo { grid-row: auto; grid-column: span 2; min-height: 20rem; }
+  .home-journey_component { grid-template-columns: 1fr; gap: 3rem; }
+  .home-journey_intro { position: static; }
+  .home-team_list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+}
+@media screen and (max-width: 767px) {
+  .home-trust_list { grid-template-columns: 1fr; gap: 1rem; }
+  .home-trust_item + .home-trust_item::before { display: none; }
+  .home-story_facts { gap: 1.5rem; }
+  .home-why_bento { grid-template-columns: 1fr; }
+  .home-why_photo { grid-column: auto; min-height: 16rem; }
+  .home-why_tile { padding: 1.5rem; }
+  .home-why_tile.is-wide { grid-column: auto; flex-direction: column; }
+  .home-journey_timeline { padding-left: 3.25rem; }
+  .home-journey_timeline::before { left: 1.0625rem; }
+  .home-journey_number { left: -3.25rem; width: 2.25rem; height: 2.25rem; font-size: 1.0625rem; }
+  .home-journey_step { padding: 1.25rem 1.25rem; }
+  .home-team_list { grid-template-columns: 1fr; gap: 2.5rem; }
+  /* clear the sticky mobile bar */
+}
+/* Fixes after visual review */
+@media screen and (min-width: 992px) {
+}
+.home-why_tile.is-mist .tag_component { background-color: var(--background-color--background-primary); }
+.home-why_photo img.image-cover { object-position: 55% 50%; }

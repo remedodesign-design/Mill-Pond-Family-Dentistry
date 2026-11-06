@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Detail Wireframe</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body data-title="Service detail wireframe v1 (example: Dental Implants)">
+
+<details class="list">
+  <summary>Section list (6 blocks + global header and footer). One CMS template for every service. Click to expand.</summary>
+  <ol>
+    <li>Service hero: breadcrumb, H1, short summary, Book and Call, photo, 3 quick facts</li>
+    <li>Body with sticky sidebar: rich text (what it is, who it's for, benefits), sidebar card (book, call, hours, CDCP)</li>
+    <li>How it works: steps for this treatment</li>
+    <li>Cost and insurance: plain explainer, no price table</li>
+    <li>FAQs: accordion (CMS FAQs linked to this service, FAQ schema)</li>
+    <li>Related services: three cards</li>
+  </ol>
+</details>
+
+<div class="frame">
+  <header data-wf="header"></header>
+
+  <section>
+    <span class="tag">01 Service hero</span>
+    <div class="pagehero">
+      <div>
+        <div class="crumbs">Home / Services / Dental Implants</div>
+        <div class="h w60" style="height:34px;margin-top:.75rem"></div>
+        <div class="t" style="margin-top:1rem"></div><div class="t w80"></div>
+        <div class="row" style="margin-top:1.25rem"><span class="btn solid">Book a consultation</span><span class="btn">Call 519-268-3351</span></div>
+      </div>
+      <div class="box img" style="height:300px">Service photo (CMS main image)</div>
+    </div>
+    <div class="grid g3" style="margin-top:1.5rem">
+      <div class="box" style="height:56px">Quick fact 1: e.g. Treatment time</div>
+      <div class="box" style="height:56px">Quick fact 2: e.g. Sedation available</div>
+      <div class="box" style="height:56px">Quick fact 3: e.g. Insurance may cover part</div>
+    </div>
+    <div class="note">Quick facts are three short CMS fields so every service page answers "how long, how comfortable, what does it cost" up top.</div>
+  </section>
+
+  <section>
+    <span class="tag">02 Body + sticky sidebar</span>
+    <div class="withside">
+      <div>
+        <div class="h w40" style="height:22px"></div><div class="t"></div><div class="t"></div><div class="t w80"></div><div class="t"></div><div class="lbl">H2: What is it?</div>
+        <div class="h w40" style="height:22px;margin-top:2rem"></div><div class="t"></div><div class="t w80"></div><div class="lbl">H2: Who is it for?</div>
+        <div style="margin-top:.75rem;padding-left:1rem"><div class="t w60"></div><div class="t w60"></div><div class="t w40"></div><div class="lbl">Bullet list (pond dot bullets)</div></div>
+        <div class="box img" style="height:240px;margin-top:1.5rem">Inline image or diagram (figure + caption)</div>
+        <div class="h w40" style="height:22px;margin-top:2rem"></div><div class="t"></div><div class="t"></div><div class="t w60"></div><div class="lbl">H2: Benefits</div>
+      </div>
+      <aside class="side">
+        <div class="card" style="padding:1.25rem">
+          <div class="h w60"></div><div class="t w80"></div>
+          <div class="btn solid" style="width:100%;margin-top:1rem">Book a consultation</div>
+          <div class="btn" style="width:100%;margin-top:.5rem">Call 519-268-3351</div>
+          <div class="lbl" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:.75rem">Mon–Thu 8:00–5:30<br>4085 Hamilton Rd, Dorchester</div>
+          <div class="lbl" style="margin-top:.75rem">✓ CDCP accepted</div>
+        </div>
+        <div class="card" style="margin-top:1rem"><div class="h w60"></div><div class="lbl">Other services →<br>Invisalign<br>Smile Makeover<br>IV Sedation</div></div>
+      </aside>
+    </div>
+    <div class="note">Rich text uses the text-rich-text styles from the style guide. The sidebar sticks on desktop; on mobile it drops below the body and the sticky Book/Call bar takes over.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">03 How it works</span>
+    <div style="margin-top:.75rem"><div class="lbl">Step by step</div><div class="h w30" style="height:24px;margin-top:.4rem"></div></div>
+    <div class="timeline-h">
+      <div class="step"><div class="num">1</div><div class="h w60"></div><div class="t"></div><div class="lbl">Consultation and X-rays</div></div>
+      <div class="step"><div class="num">2</div><div class="h w60"></div><div class="t"></div><div class="lbl">Your plan and costs</div></div>
+      <div class="step"><div class="num">3</div><div class="h w60"></div><div class="t"></div><div class="lbl">Treatment</div></div>
+      <div class="step"><div class="num">4</div><div class="h w60"></div><div class="t"></div><div class="lbl">Healing and follow-up</div></div>
+    </div>
+    <div class="note">Optional per service (CMS switch). Simple services like check-ups can hide it.</div>
+  </section>
+
+  <section>
+    <span class="tag">04 Cost &amp; insurance</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:start">
+      <div><div class="h w60" style="height:24px"></div><div class="t"></div><div class="t"></div><div class="t w60"></div></div>
+      <div class="grid g3" style="gap:.6rem">
+        <div class="box" style="height:80px">Private insurance</div><div class="box" style="height:80px">CDCP</div><div class="box" style="height:80px">Payment options</div>
+      </div>
+    </div>
+    <div class="note">Explains how costs work, never a price list. Shared content block across services, with an optional per-service line.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">05 FAQs</span>
+    <div class="grid" style="grid-template-columns:1fr;max-width:820px;margin:1rem auto 0">
+      <div class="center"><div class="lbl">Questions</div><div class="h w40 mx" style="height:24px;margin-top:.4rem"></div></div>
+      <div style="margin-top:1rem">
+        <div class="acc open"><span>Does it hurt? −</span><div class="t"></div><div class="t w80"></div></div>
+        <div class="acc"><span>How long does it take?</span><span>+</span></div>
+        <div class="acc"><span>Will my insurance cover it?</span><span>+</span></div>
+        <div class="acc"><span>Am I a candidate?</span><span>+</span></div>
+        <div class="acc"><span>What about aftercare?</span><span>+</span></div>
+      </div>
+    </div>
+    <div class="note">4–6 questions from the CMS FAQs collection, filtered by service. Native details/summary for accessibility; FAQPage schema.</div>
+  </section>
+
+  <section>
+    <span class="tag">06 Related services</span>
+    <div class="row" style="justify-content:space-between;margin-top:.75rem"><div class="h w30" style="height:24px;flex:0 0 30%"></div><span class="btn">All services</span></div>
+    <div class="grid g3" style="margin-top:1.25rem">
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Smile Makeover →</div></div>
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">IV Sedation →</div></div>
+      <div class="card"><div class="box img" style="height:140px">photo</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Prosthetics &amp; Appliances →</div></div>
+    </div>
+  </section>
+
+  <footer class="dark" data-wf="footer"></footer>
+  <div class="sticky" data-wf="sticky"></div>
+</div>
+<script src="js/wireframe.js"></script>
+</body>
+</html>

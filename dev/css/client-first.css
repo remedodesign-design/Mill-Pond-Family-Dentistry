@@ -1,0 +1,585 @@
+/* ==========================================================================
+   Mill Pond Dental Care — Client-First global stylesheet
+   Framework: Finsweet Client-First (v2 naming, variables-first)
+   Source of values: brand/mill-pond-style-sheet.html (v1.1, 6 Nov 2026)
+   Units: rem (1rem = 16px). Breakpoints follow Webflow:
+     tablet <= 991px · mobile landscape <= 767px · mobile portrait <= 479px
+   Order matters: size utilities come before direction utilities so that
+   "margin-bottom margin-medium" works exactly like it does in Webflow.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variables (mirror these as Webflow Variables, same names)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Base color — raw palette. Never apply these directly to elements;
+     use the semantic variables below. */
+  --base-color-brand--pond: #97c0e8;        /* client brand blue */
+  --base-color-brand--deep: #1f4e79;        /* deep pond */
+  --base-color-brand--deep-dark: #163a5c;   /* deep pond hover */
+  --base-color-brand--mist: #e4eef8;        /* pale pond tint */
+  --base-color-neutral--white: #ffffff;
+  --base-color-neutral--cream: #f7f7f7;     /* client cream */
+  --base-color-neutral--border: #d9dee4;
+  --base-color-neutral--grey: #808080;      /* client grey, decorative only */
+  --base-color-neutral--slate: #5b6168;
+  --base-color-neutral--charcoal: #3b4046;  /* sign lettering */
+  --base-color-system--success: #2e6b3f;
+  --base-color-system--success-background: #e6f2ea;
+  --base-color-system--notice: #6b4a0e;
+  --base-color-system--notice-background: #fbefd9;
+  --base-color-system--error: #a13a2b;
+  --base-color-system--error-background: #f8e5e2;
+
+  /* Text color */
+  --text-color--text-primary: var(--base-color-neutral--charcoal);
+  --text-color--text-secondary: var(--base-color-neutral--slate);
+  --text-color--text-alternate: var(--base-color-neutral--white);
+  --text-color--text-brand: var(--base-color-brand--deep);
+  --text-color--text-on-pond: var(--base-color-brand--deep-dark);
+
+  /* Background color */
+  --background-color--background-primary: var(--base-color-neutral--white);
+  --background-color--background-secondary: var(--base-color-neutral--cream);
+  --background-color--background-tertiary: var(--base-color-brand--mist);
+  --background-color--background-alternate: var(--base-color-brand--deep);
+  --background-color--background-brand: var(--base-color-brand--pond);
+
+  /* Border color */
+  --border-color--border-primary: var(--base-color-neutral--border);
+  --border-color--border-input: #7b8590; /* 3.75:1 on white, 3.5:1 on cream (WCAG 1.4.11 needs 3:1) */
+  --border-color--border-brand: var(--base-color-brand--pond);
+  --border-color--border-alternate: rgba(255, 255, 255, 0.7);
+
+  /* Link color */
+  --link-color--link-primary: var(--base-color-brand--deep);
+  --link-color--link-hover: var(--base-color-brand--deep-dark);
+  --link-color--link-underline: var(--base-color-brand--pond);
+
+  /* Font */
+  --font--heading: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font--body: "Barlow", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Radius */
+  --radius--small: 0.5rem;   /* buttons, inputs */
+  --radius--medium: 0.75rem; /* images, cards */
+  --radius--round: 100vw;    /* pills */
+
+  /* Shadow (one only: menus and the sticky mobile bar) */
+  --shadow--small: 0 0.5rem 1.5rem rgba(31, 78, 121, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Global styles (Webflow: Body (All Pages) + tag selectors)
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--background-color--background-primary);
+  color: var(--text-color--text-primary);
+  font-family: var(--font--body);
+  font-size: 1.0625rem;          /* 17px */
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--font--heading);
+  font-weight: 600;
+  color: var(--text-color--text-primary);
+  text-wrap: balance;
+}
+h1 { font-size: 3.5rem;   line-height: 1.05; letter-spacing: -0.005em; }
+h2 { font-size: 2.625rem; line-height: 1.1; }
+h3 { font-size: 1.875rem; line-height: 1.2; }
+h4 { font-size: 1.375rem; line-height: 1.3; }
+h5 { font-size: 1.125rem; line-height: 1.4; }
+h6 { font-size: 1rem;     line-height: 1.4; }
+
+p { margin-top: 0; margin-bottom: 0; }
+
+a {
+  color: var(--link-color--link-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--link-color--link-hover); text-decoration-thickness: 2px; }
+
+ul, ol { margin-top: 0; margin-bottom: 0; padding-left: 1.25rem; }
+li { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+img { max-width: 100%; vertical-align: middle; display: inline-block; }
+label { display: block; margin-bottom: 0.375rem; font-weight: 600; }
+blockquote {
+  margin: 0; padding: 0.75rem 1.25rem;
+  border-left: 0.25rem solid var(--border-color--border-brand);
+  font-size: 1.25rem; line-height: 1.5;
+}
+figure { margin: 0; }
+figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-color--text-secondary); }
+hr { border: 0; border-top: 1px solid var(--border-color--border-primary); margin: 0; }
+strong, b { font-weight: 600; }
+
+:focus-visible {
+  outline: 0.1875rem solid var(--base-color-brand--deep);
+  outline-offset: 0.1875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Structure
+   -------------------------------------------------------------------------- */
+.page-wrapper { overflow: clip; }
+.main-wrapper { display: block; }
+
+.padding-global { padding-left: 2.5rem; padding-right: 2.5rem; }
+
+.container-large  { width: 100%; max-width: 75rem; margin-left: auto; margin-right: auto; } /* 1200px */
+.container-medium { width: 100%; max-width: 64rem; margin-left: auto; margin-right: auto; } /* 1024px */
+.container-small  { width: 100%; max-width: 48rem; margin-left: auto; margin-right: auto; } /* 768px */
+
+.padding-section-small  { padding-top: 3rem;   padding-bottom: 3rem; }
+.padding-section-medium { padding-top: 5rem;   padding-bottom: 5rem; }
+.padding-section-large  { padding-top: 7.5rem; padding-bottom: 7.5rem; }
+
+/* --------------------------------------------------------------------------
+   4. Typography utilities
+   -------------------------------------------------------------------------- */
+.heading-style-display {
+  font-family: var(--font--heading); font-weight: 600;
+  font-size: 4rem; line-height: 1.02; letter-spacing: 0.01em; text-transform: uppercase;
+}
+.heading-style-h1 { font-family: var(--font--heading); font-weight: 600; font-size: 3.5rem;   line-height: 1.05; letter-spacing: -0.005em; }
+.heading-style-h2 { font-family: var(--font--heading); font-weight: 600; font-size: 2.625rem; line-height: 1.1; }
+.heading-style-h3 { font-family: var(--font--heading); font-weight: 600; font-size: 1.875rem; line-height: 1.2; }
+.heading-style-h4 { font-family: var(--font--heading); font-weight: 600; font-size: 1.375rem; line-height: 1.3; }
+.heading-style-h5 { font-family: var(--font--heading); font-weight: 600; font-size: 1.125rem; line-height: 1.4; }
+.heading-style-h6 { font-family: var(--font--heading); font-weight: 600; font-size: 1rem;     line-height: 1.4; }
+
+.text-size-large   { font-size: 1.25rem;   line-height: 1.55; }
+.text-size-medium  { font-size: 1.125rem;  line-height: 1.55; }
+.text-size-regular { font-size: 1.0625rem; line-height: 1.6; }
+.text-size-small   { font-size: 0.875rem;  line-height: 1.5; }
+.text-size-tiny    { font-size: 0.75rem;   line-height: 1.5; }
+
+.text-weight-bold     { font-weight: 700; }
+.text-weight-semibold { font-weight: 600; }
+.text-weight-medium   { font-weight: 500; }
+.text-weight-normal   { font-weight: 400; }
+
+.text-style-tagline {          /* eyebrow above headings */
+  font-family: var(--font--heading); font-weight: 600;
+  font-size: 0.875rem; line-height: 1.3; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-color--text-brand);
+}
+.text-style-allcaps { text-transform: uppercase; letter-spacing: 0.06em; }
+.text-style-italic  { font-style: italic; }
+.text-style-muted   { color: var(--text-color--text-secondary); }
+.text-style-nowrap  { white-space: nowrap; }
+.text-style-strikethrough { text-decoration: line-through; }
+.text-style-link    { color: var(--link-color--link-primary); text-decoration: underline; }
+.text-style-quote {
+  padding: 0.75rem 1.25rem; border-left: 0.25rem solid var(--border-color--border-brand);
+  font-size: 1.25rem; line-height: 1.5;
+}
+.text-style-2lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.text-style-measure { max-width: 65ch; } /* readable line length for running text */
+
+.text-align-left   { text-align: left; }
+.text-align-center { text-align: center; }
+.text-align-right  { text-align: right; }
+
+.text-color-primary   { color: var(--text-color--text-primary); }
+.text-color-secondary { color: var(--text-color--text-secondary); }
+.text-color-alternate { color: var(--text-color--text-alternate); }
+.text-color-brand     { color: var(--text-color--text-brand); }
+
+/* Rich text: see section 13 */
+
+/* --------------------------------------------------------------------------
+   5. Color utilities
+   -------------------------------------------------------------------------- */
+.background-color-primary   { background-color: var(--background-color--background-primary); }
+.background-color-secondary { background-color: var(--background-color--background-secondary); }
+.background-color-tertiary  { background-color: var(--background-color--background-tertiary); }
+.background-color-alternate { background-color: var(--background-color--background-alternate); color: var(--text-color--text-alternate); }
+.background-color-brand     { background-color: var(--background-color--background-brand); color: var(--text-color--text-on-pond); }
+
+/* --------------------------------------------------------------------------
+   6. Buttons (base class + is- combo classes)
+   -------------------------------------------------------------------------- */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem;
+  min-height: 3rem; padding: 0.75rem 1.5rem;
+  border: 2px solid var(--base-color-brand--deep); border-radius: var(--radius--small);
+  background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate);
+  font-family: var(--font--heading); font-weight: 600; font-size: 1.0625rem; line-height: 1;
+  letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; text-align: center;
+  cursor: pointer; transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+.button:hover { background-color: var(--base-color-brand--deep-dark); border-color: var(--base-color-brand--deep-dark); color: var(--text-color--text-alternate); }
+.button.is-secondary { background-color: transparent; color: var(--base-color-brand--deep); }
+.button.is-secondary:hover { background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate); }
+.button.is-alternate { background-color: var(--base-color-brand--pond); border-color: var(--base-color-brand--pond); color: var(--text-color--text-on-pond); }
+.button.is-alternate:hover { background-color: var(--base-color-neutral--white); border-color: var(--base-color-neutral--white); }
+.button.is-secondary.is-alternate { background-color: transparent; border-color: var(--border-color--border-alternate); color: var(--text-color--text-alternate); }
+.button.is-secondary.is-alternate:hover { background-color: var(--base-color-neutral--white); color: var(--base-color-brand--deep); }
+.button.is-small { min-height: 2.5rem; padding: 0.5rem 1.125rem; font-size: 0.9375rem; }
+.button.is-large { min-height: 3.5rem; padding: 1rem 2rem; font-size: 1.125rem; }
+.button.is-text {
+  min-height: 0; padding: 0 0 0.125rem; border: 0; border-bottom: 2px solid var(--link-color--link-underline);
+  border-radius: 0; background-color: transparent; color: var(--link-color--link-primary);
+}
+.button.is-text:hover { background-color: transparent; color: var(--link-color--link-hover); border-color: var(--link-color--link-primary); }
+.button.is-icon { gap: 0.625rem; }
+
+.button-group { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+
+/* --------------------------------------------------------------------------
+   7. Icons
+   -------------------------------------------------------------------------- */
+.icon-embed-xxsmall { display: flex; width: 1rem;   height: 1rem;   flex: none; }
+.icon-embed-xsmall  { display: flex; width: 1.5rem; height: 1.5rem; flex: none; }
+.icon-embed-small   { display: flex; width: 2rem;   height: 2rem;   flex: none; }
+.icon-embed-medium  { display: flex; width: 3rem;   height: 3rem;   flex: none; }
+.icon-embed-large   { display: flex; width: 5rem;   height: 5rem;   flex: none; }
+.icon-1x1-small  { width: 2rem; height: 2rem; }
+.icon-1x1-medium { width: 3rem; height: 3rem; }
+.icon-1x1-large  { width: 5rem; height: 5rem; }
+
+/* --------------------------------------------------------------------------
+   8. Forms
+   -------------------------------------------------------------------------- */
+.form_component { margin-bottom: 0; }
+.form_field-wrapper { display: flex; flex-direction: column; gap: 0.375rem; }
+.form_field-label { margin-bottom: 0; font-size: 0.9375rem; font-weight: 600; }
+.form_input {
+  width: 100%; min-height: 3rem; margin-bottom: 0; padding: 0.5rem 0.875rem;
+  border: 1.5px solid var(--border-color--border-input); border-radius: var(--radius--small);
+  background-color: var(--base-color-neutral--white); color: var(--text-color--text-primary);
+  font-family: var(--font--body); font-size: 1rem; line-height: 1.5;
+}
+.form_input::placeholder { color: var(--text-color--text-secondary); }
+.form_input:focus { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 0; border-color: var(--base-color-brand--deep); }
+.form_input.is-text-area { min-height: 8rem; padding-top: 0.75rem; resize: vertical; }
+.form_input.is-select-input { appearance: auto; }
+.form_help-text { font-size: 0.8125rem; color: var(--text-color--text-secondary); }
+.form_checkbox { display: flex; align-items: flex-start; gap: 0.625rem; padding-left: 0; margin-bottom: 0; font-weight: 400; }
+.form_checkbox-icon { width: 1.25rem; height: 1.25rem; margin: 0.125rem 0 0; accent-color: var(--base-color-brand--deep); flex: none; }
+.form_message-success { padding: 1rem 1.25rem; border-radius: var(--radius--small); background-color: var(--base-color-system--success-background); color: var(--base-color-system--success); }
+.form_message-error   { padding: 1rem 1.25rem; border-radius: var(--radius--small); background-color: var(--base-color-system--error-background); color: var(--base-color-system--error); }
+
+/* --------------------------------------------------------------------------
+   9. Max width
+   -------------------------------------------------------------------------- */
+.max-width-full    { width: 100%; max-width: none; }
+.max-width-xxlarge { width: 100%; max-width: 80rem; }
+.max-width-xlarge  { width: 100%; max-width: 64rem; }
+.max-width-large   { width: 100%; max-width: 48rem; }
+.max-width-medium  { width: 100%; max-width: 35rem; }
+.max-width-small   { width: 100%; max-width: 30rem; }
+.max-width-xsmall  { width: 100%; max-width: 25rem; }
+.max-width-xxsmall { width: 100%; max-width: 20rem; }
+
+/* --------------------------------------------------------------------------
+   10. Spacing — size classes (apply alone = all sides)
+       tiny .125 · xxsmall .25 · xsmall .5 · small 1 · medium 2 · large 3
+       xlarge 4 · xxlarge 5 · huge 6 · xhuge 8 · xxhuge 12 (rem)
+   -------------------------------------------------------------------------- */
+.margin-0 { margin: 0; }
+.padding-0 { padding: 0; }
+
+.margin-tiny    { margin: 0.125rem; }
+.margin-xxsmall { margin: 0.25rem; }
+.margin-xsmall  { margin: 0.5rem; }
+.margin-small   { margin: 1rem; }
+.margin-medium  { margin: 2rem; }
+.margin-large   { margin: 3rem; }
+.margin-xlarge  { margin: 4rem; }
+.margin-xxlarge { margin: 5rem; }
+.margin-huge    { margin: 6rem; }
+.margin-xhuge   { margin: 8rem; }
+.margin-xxhuge  { margin: 12rem; }
+
+.padding-tiny    { padding: 0.125rem; }
+.padding-xxsmall { padding: 0.25rem; }
+.padding-xsmall  { padding: 0.5rem; }
+.padding-small   { padding: 1rem; }
+.padding-medium  { padding: 2rem; }
+.padding-large   { padding: 3rem; }
+.padding-xlarge  { padding: 4rem; }
+.padding-xxlarge { padding: 5rem; }
+.padding-huge    { padding: 6rem; }
+.padding-xhuge   { padding: 8rem; }
+.padding-xxhuge  { padding: 12rem; }
+
+/* Direction classes — pair with one size class: "margin-bottom margin-medium" */
+.margin-top        { margin-right: 0; margin-bottom: 0; margin-left: 0; }
+.margin-bottom     { margin-top: 0; margin-right: 0; margin-left: 0; }
+.margin-left       { margin-top: 0; margin-right: 0; margin-bottom: 0; }
+.margin-right      { margin-top: 0; margin-bottom: 0; margin-left: 0; }
+.margin-vertical   { margin-right: 0; margin-left: 0; }
+.margin-horizontal { margin-top: 0; margin-bottom: 0; }
+.padding-top        { padding-right: 0; padding-bottom: 0; padding-left: 0; }
+.padding-bottom     { padding-top: 0; padding-right: 0; padding-left: 0; }
+.padding-left       { padding-top: 0; padding-right: 0; padding-bottom: 0; }
+.padding-right      { padding-top: 0; padding-bottom: 0; padding-left: 0; }
+.padding-vertical   { padding-right: 0; padding-left: 0; }
+.padding-horizontal { padding-top: 0; padding-bottom: 0; }
+
+/* Spacer blocks (empty div between elements) */
+.spacer-tiny    { width: 100%; padding-top: 0.125rem; }
+.spacer-xxsmall { width: 100%; padding-top: 0.25rem; }
+.spacer-xsmall  { width: 100%; padding-top: 0.5rem; }
+.spacer-small   { width: 100%; padding-top: 1rem; }
+.spacer-medium  { width: 100%; padding-top: 2rem; }
+.spacer-large   { width: 100%; padding-top: 3rem; }
+.spacer-xlarge  { width: 100%; padding-top: 4rem; }
+.spacer-xxlarge { width: 100%; padding-top: 5rem; }
+.spacer-huge    { width: 100%; padding-top: 6rem; }
+.spacer-xhuge   { width: 100%; padding-top: 8rem; }
+.spacer-xxhuge  { width: 100%; padding-top: 12rem; }
+
+/* --------------------------------------------------------------------------
+   11. Misc utilities
+   -------------------------------------------------------------------------- */
+.hide { display: none; }
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.layer { position: absolute; inset: 0; }
+.z-index-1 { position: relative; z-index: 1; }
+.z-index-2 { position: relative; z-index: 2; }
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+.align-center { margin-left: auto; margin-right: auto; }
+.aspect-ratio-square    { aspect-ratio: 1 / 1;  max-width: 100%; }
+.aspect-ratio-landscape { aspect-ratio: 4 / 3;  max-width: 100%; }
+.aspect-ratio-widescreen{ aspect-ratio: 16 / 9; max-width: 100%; }
+.aspect-ratio-portrait  { aspect-ratio: 3 / 4;  max-width: 100%; }
+.image-cover { width: 100%; height: 100%; object-fit: cover; }
+.radius-small  { border-radius: var(--radius--small); }
+.radius-medium { border-radius: var(--radius--medium); overflow: hidden; }
+.radius-round  { border-radius: var(--radius--round); }
+.divider { width: 100%; height: 1px; background-color: var(--border-color--border-primary); }
+
+/* --------------------------------------------------------------------------
+   12. Responsive overrides
+   -------------------------------------------------------------------------- */
+/* Tablet */
+@media screen and (max-width: 991px) {
+  .padding-global { padding-left: 2rem; padding-right: 2rem; }
+  .padding-section-small  { padding-top: 3rem; padding-bottom: 3rem; }
+  .padding-section-medium { padding-top: 4rem; padding-bottom: 4rem; }
+  .padding-section-large  { padding-top: 5rem; padding-bottom: 5rem; }
+
+  h1, .heading-style-h1 { font-size: 3rem; }
+  h2, .heading-style-h2 { font-size: 2.25rem; }
+  h3, .heading-style-h3 { font-size: 1.625rem; }
+  .heading-style-display { font-size: 3.25rem; }
+
+  .margin-xlarge  { margin: 3rem; }   .padding-xlarge  { padding: 3rem; }
+  .margin-xxlarge { margin: 4rem; }   .padding-xxlarge { padding: 4rem; }
+  .margin-huge    { margin: 5rem; }   .padding-huge    { padding: 5rem; }
+  .margin-xhuge   { margin: 6rem; }   .padding-xhuge   { padding: 6rem; }
+  .margin-xxhuge  { margin: 8rem; }   .padding-xxhuge  { padding: 8rem; }
+  .spacer-xlarge { padding-top: 3rem; } .spacer-xxlarge { padding-top: 4rem; }
+  .spacer-huge { padding-top: 5rem; } .spacer-xhuge { padding-top: 6rem; } .spacer-xxhuge { padding-top: 8rem; }
+
+  .hide-tablet { display: none; }
+  .max-width-full-tablet { width: 100%; max-width: none; }
+}
+
+/* Mobile landscape */
+@media screen and (max-width: 767px) {
+  .padding-global { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .padding-section-small  { padding-top: 2rem; padding-bottom: 2rem; }
+  .padding-section-medium { padding-top: 3rem; padding-bottom: 3rem; }
+  .padding-section-large  { padding-top: 4rem; padding-bottom: 4rem; }
+
+  body { font-size: 1rem; }
+  h1, .heading-style-h1 { font-size: 2.5rem; }
+  h2, .heading-style-h2 { font-size: 2rem; }
+  h3, .heading-style-h3 { font-size: 1.5rem; }
+  h4, .heading-style-h4 { font-size: 1.25rem; }
+  .heading-style-display { font-size: 2.5rem; }
+  .text-size-large { font-size: 1.125rem; }
+  .text-size-regular { font-size: 1rem; }
+
+  .margin-large   { margin: 2rem; }   .padding-large   { padding: 2rem; }
+  .margin-xlarge  { margin: 2.5rem; } .padding-xlarge  { padding: 2.5rem; }
+  .margin-xxlarge { margin: 3rem; }   .padding-xxlarge { padding: 3rem; }
+  .margin-huge    { margin: 3.5rem; } .padding-huge    { padding: 3.5rem; }
+  .margin-xhuge   { margin: 4rem; }   .padding-xhuge   { padding: 4rem; }
+  .margin-xxhuge  { margin: 4.5rem; } .padding-xxhuge  { padding: 4.5rem; }
+  .spacer-large { padding-top: 2rem; } .spacer-xlarge { padding-top: 2.5rem; } .spacer-xxlarge { padding-top: 3rem; }
+  .spacer-huge { padding-top: 3.5rem; } .spacer-xhuge { padding-top: 4rem; } .spacer-xxhuge { padding-top: 4.5rem; }
+
+  .hide-mobile-landscape { display: none; }
+  .max-width-full-mobile-landscape { width: 100%; max-width: none; }
+}
+
+/* Mobile portrait */
+@media screen and (max-width: 479px) {
+  .hide-mobile-portrait { display: none; }
+  .max-width-full-mobile-portrait { width: 100%; max-width: none; }
+  .button-group .button { width: 100%; }
+}
+
+/* Direction classes must still win over the responsive size overrides above */
+@media screen and (max-width: 991px) {
+  .margin-top { margin-right: 0; margin-bottom: 0; margin-left: 0; }
+  .margin-bottom { margin-top: 0; margin-right: 0; margin-left: 0; }
+  .margin-left { margin-top: 0; margin-right: 0; margin-bottom: 0; }
+  .margin-right { margin-top: 0; margin-bottom: 0; margin-left: 0; }
+  .margin-vertical { margin-right: 0; margin-left: 0; }
+  .margin-horizontal { margin-top: 0; margin-bottom: 0; }
+  .padding-top { padding-right: 0; padding-bottom: 0; padding-left: 0; }
+  .padding-bottom { padding-top: 0; padding-right: 0; padding-left: 0; }
+  .padding-left { padding-top: 0; padding-right: 0; padding-bottom: 0; }
+  .padding-right { padding-top: 0; padding-bottom: 0; padding-left: 0; }
+  .padding-vertical { padding-right: 0; padding-left: 0; }
+  .padding-horizontal { padding-top: 0; padding-bottom: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   13. Rich text (Webflow Rich Text element + CMS rich text fields)
+       Base class: text-rich-text. Combo: is-small (sidebars, FAQs, cards).
+       Spacing rule: space ABOVE a heading is larger than space below it,
+       so each heading sits with the text it introduces.
+       Webflow output covered: h1–h6, p, a, strong, em, ul, ol, li (nested),
+       blockquote, figure + figcaption (w-richtext-align-*), img, hr, code,
+       and table (via embed), first/last child resets.
+   -------------------------------------------------------------------------- */
+.text-rich-text {
+  color: var(--text-color--text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.text-rich-text > :first-child { margin-top: 0; }
+.text-rich-text > :last-child  { margin-bottom: 0; }
+
+/* Headings */
+.text-rich-text h1 { margin-top: 0;      margin-bottom: 1.5rem; }
+.text-rich-text h2 { margin-top: 3rem;   margin-bottom: 1rem;    font-size: 2.25rem;  line-height: 1.15; }
+.text-rich-text h3 { margin-top: 2.5rem; margin-bottom: 0.75rem; font-size: 1.625rem; line-height: 1.2; }
+.text-rich-text h4 { margin-top: 2rem;   margin-bottom: 0.5rem;  font-size: 1.375rem; line-height: 1.3; }
+.text-rich-text h5 { margin-top: 1.75rem; margin-bottom: 0.5rem; font-size: 1.125rem; line-height: 1.4; }
+.text-rich-text h6 {
+  margin-top: 1.75rem; margin-bottom: 0.5rem;
+  font-size: 0.875rem; line-height: 1.4; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-color--text-brand);
+}
+.text-rich-text h2 + h3, .text-rich-text h3 + h4 { margin-top: 1rem; }
+
+/* Paragraphs and inline */
+.text-rich-text p { margin-top: 0; margin-bottom: 1.25rem; }
+.text-rich-text strong, .text-rich-text b { font-weight: 600; color: var(--text-color--text-primary); }
+.text-rich-text em, .text-rich-text i { font-style: italic; }
+.text-rich-text a {
+  color: var(--link-color--link-primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--link-color--link-underline);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.text-rich-text a:hover { color: var(--link-color--link-hover); text-decoration-color: currentColor; }
+.text-rich-text code {
+  padding: 0.125rem 0.375rem; border-radius: 0.25rem;
+  background-color: var(--background-color--background-tertiary); color: var(--text-color--text-on-pond);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.875em;
+  white-space: nowrap;
+}
+
+/* Lists: pond dot bullets, deep numbers */
+.text-rich-text ul, .text-rich-text ol { margin-top: 0; margin-bottom: 1.5rem; padding-left: 1.75rem; }
+.text-rich-text li { margin-top: 0; margin-bottom: 0.5rem; padding-left: 0.25rem; }
+.text-rich-text li:last-child { margin-bottom: 0; }
+.text-rich-text ul { list-style: none; }
+.text-rich-text ul > li { position: relative; }
+.text-rich-text ul > li::before {
+  content: ""; position: absolute; left: -1.25rem; top: 0.68em;
+  width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background-color: var(--base-color-brand--pond);
+}
+.text-rich-text ol { list-style: decimal; }
+.text-rich-text ol > li::marker {
+  color: var(--text-color--text-brand);
+  font-family: var(--font--heading); font-weight: 600;
+}
+.text-rich-text li > ul, .text-rich-text li > ol { margin-top: 0.5rem; margin-bottom: 0; }
+.text-rich-text li > ul > li::before {
+  background-color: transparent; border: 2px solid var(--base-color-brand--pond);
+  width: 0.4375rem; height: 0.4375rem;
+}
+
+/* Blockquote: callout for key facts (not testimonials — college rules) */
+.text-rich-text blockquote {
+  margin: 2rem 0; padding: 1.25rem 1.5rem;
+  border-left: 0.25rem solid var(--base-color-brand--pond);
+  border-radius: 0 var(--radius--small) var(--radius--small) 0;
+  background-color: var(--background-color--background-tertiary);
+  color: var(--text-color--text-primary);
+  font-size: 1.1875rem; line-height: 1.55;
+}
+.text-rich-text blockquote p:last-child { margin-bottom: 0; }
+
+/* Images and figures (Webflow figure classes) */
+.text-rich-text figure { margin: 2.5rem 0; max-width: 100%; }
+.text-rich-text figure > div { display: block; }
+.text-rich-text img { display: block; width: 100%; height: auto; border-radius: var(--radius--medium); }
+.text-rich-text figcaption {
+  margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; text-align: left;
+  color: var(--text-color--text-secondary);
+}
+.text-rich-text figure.w-richtext-align-center   { margin-left: auto; margin-right: auto; }
+.text-rich-text figure.w-richtext-align-fullwidth { width: 100%; max-width: none; }
+.text-rich-text figure.w-richtext-align-floatleft  { float: left;  width: 45%; margin: 0.375rem 2rem 1.5rem 0; }
+.text-rich-text figure.w-richtext-align-floatright { float: right; width: 45%; margin: 0.375rem 0 1.5rem 2rem; }
+.text-rich-text::after { content: ""; display: table; clear: both; }
+
+/* Divider */
+.text-rich-text hr { margin: 3rem 0; border: 0; border-top: 1px solid var(--border-color--border-primary); }
+
+/* Table (inserted with an HTML embed inside rich text, e.g. fees or hours) */
+.text-rich-text .w-embed { margin-bottom: 1.5rem; }
+.text-rich-text table {
+  width: 100%; margin: 0 0 1.5rem; border-collapse: collapse;
+  font-size: 0.9375rem; line-height: 1.5; font-variant-numeric: tabular-nums;
+}
+.text-rich-text th, .text-rich-text td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color--border-primary); text-align: left; vertical-align: top; }
+.text-rich-text th {
+  background-color: var(--background-color--background-secondary);
+  font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-color--text-secondary);
+}
+
+/* Combo: is-small (FAQ answers, sidebar cards) */
+.text-rich-text.is-small { font-size: 0.9375rem; line-height: 1.6; }
+.text-rich-text.is-small h2 { margin-top: 2rem;   font-size: 1.625rem; }
+.text-rich-text.is-small h3 { margin-top: 1.5rem; font-size: 1.375rem; }
+.text-rich-text.is-small h4 { margin-top: 1.25rem; font-size: 1.125rem; }
+.text-rich-text.is-small p  { margin-bottom: 1rem; }
+.text-rich-text.is-small ul, .text-rich-text.is-small ol { margin-bottom: 1rem; }
+.text-rich-text.is-small blockquote { margin: 1.5rem 0; padding: 1rem 1.25rem; font-size: 1rem; }
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+  .text-rich-text { font-size: 1rem; }
+  .text-rich-text h2 { margin-top: 2.25rem; font-size: 1.875rem; }
+  .text-rich-text h3 { margin-top: 2rem;    font-size: 1.5rem; }
+  .text-rich-text h4 { margin-top: 1.5rem;  font-size: 1.25rem; }
+  .text-rich-text blockquote { font-size: 1.0625rem; padding: 1rem 1.25rem; }
+  .text-rich-text figure.w-richtext-align-floatleft,
+  .text-rich-text figure.w-richtext-align-floatright { float: none; width: 100%; margin: 2rem 0; }
+  .text-rich-text table { font-size: 0.875rem; }
+  .text-rich-text th, .text-rich-text td { padding: 0.625rem 0.75rem; }
+}

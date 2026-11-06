@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "dev/style-guide.html"
+        ],
+        "createdAt": "2026-11-06T10:42:57.395Z",
+        "reason": "Claude triage: remaining hits are inline <code> chips (1px vertical inside line-height) and fixed-size 72x40px number ovals with flex-centred text; tag pills were fixed"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "dev/style-guide.html"
+        ],
+        "createdAt": "2026-11-06T10:42:57.874Z",
+        "reason": "Claude triage: text-style-tagline is a defined type style in the brand style sheet v1.1 the user approved; this style guide page exists to document it"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "dev/home.html"
+        ],
+        "createdAt": "2026-11-06T11:08:34.762Z",
+        "reason": "Project design system: wireframe v3 (named final by the user) places a Tagline label above section headings; text-style-tagline is a defined Client-First class in dev/css/client-first.css"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "dev/services.html"
+        ],
+        "createdAt": "2026-11-06T11:14:28.516Z",
+        "reason": "Approved wireframe dev/wireframe-services.html (approved 2026-11-06) specifies a 'Featured' label above the section heading; matches the home.html text-style-tagline pattern"
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "dev/about.html"
+        ],
+        "createdAt": "2026-11-06T11:14:38.142Z",
+        "reason": "Approved wireframe dev/wireframe-about.html (approved 2026-11-06) specifies a label above each section heading; matches the home.html text-style-tagline house pattern"
+      }
+    ]
+  }
+}

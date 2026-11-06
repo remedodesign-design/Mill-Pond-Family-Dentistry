@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Wireframe</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body data-title="Contact us wireframe v1">
+
+<details class="list">
+  <summary>Section list (6 blocks + global header and footer). Click to expand.</summary>
+  <ol>
+    <li>Page hero: breadcrumb, H1, one line, three contact method cards (call, email, visit)</li>
+    <li>Emergency notice: slim strip, phone first</li>
+    <li>Contact form: "what happens next" column plus form</li>
+    <li>Hours and location: hours table, directions, large map</li>
+    <li>Getting here: parking, accessibility, areas served</li>
+    <li>New patient prompt</li>
+  </ol>
+</details>
+
+<div class="frame">
+  <header data-wf="header"></header>
+
+  <section>
+    <span class="tag">01 Page hero + contact methods</span>
+    <div class="pagehero simple">
+      <div>
+        <div class="crumbs">Home / Contact</div>
+        <div class="h w30 mx" style="height:34px;margin-top:.75rem"></div>
+        <div class="t w40 mx" style="margin-top:1rem"></div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:1.75rem">
+      <div class="card center"><div class="box mx" style="width:48px;height:48px">☎</div><div class="h w40 mx" style="margin-top:.7rem"></div><div class="lbl">519-268-3351<br>Mon–Thu 8:00–5:30</div><div class="btn solid" style="margin-top:.75rem">Call now</div></div>
+      <div class="card center"><div class="box mx" style="width:48px;height:48px">@</div><div class="h w40 mx" style="margin-top:.7rem"></div><div class="lbl">reception@mpdental.ca<br>We reply within one business day (TBC)</div><div class="btn" style="margin-top:.75rem">Send an email</div></div>
+      <div class="card center"><div class="box mx" style="width:48px;height:48px">⌖</div><div class="h w40 mx" style="margin-top:.7rem"></div><div class="lbl">4085 Hamilton Rd<br>Dorchester, ON N0L 1G2</div><div class="btn" style="margin-top:.75rem">Get directions</div></div>
+    </div>
+    <div class="note">Three ways to reach us, each with one action. Phone is the solid button because it's the fastest route.</div>
+  </section>
+
+  <section style="padding-top:1rem;padding-bottom:1rem">
+    <span class="tag">02 Emergency notice</span>
+    <div class="row" style="justify-content:space-between;margin-top:1.5rem;border:2px solid #444;border-radius:8px;padding:.85rem 1rem">
+      <div class="lbl" style="margin:0;flex:1;min-width:200px">Dental emergency? Please call, don't use the form. After hours, follow the answering service. For facial swelling or trouble breathing, go to the ER.</div>
+      <span class="btn solid">Call 519-268-3351</span>
+    </div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">03 Contact form</span>
+    <div class="formsplit">
+      <div>
+        <div class="lbl">Send us a message</div>
+        <div class="h w80" style="height:28px;margin-top:.4rem"></div>
+        <div class="t" style="margin-top:1rem"></div><div class="t w80"></div>
+        <div class="card" style="margin-top:1.5rem">
+          <div class="h w40"></div>
+          <div class="lbl">What happens next<br>1. Reception reads your message<br>2. We reply within one business day (TBC)<br>3. We book a time that suits you</div>
+        </div>
+        <div class="card" style="margin-top:1rem"><div class="h w40"></div><div class="lbl">Want to book right away? Book online (Xact) →</div></div>
+      </div>
+      <div class="card" style="padding:1.5rem">
+        <div class="grid g2" style="gap:.5rem"><div class="box field">First name</div><div class="box field">Last name</div></div>
+        <div class="grid g2" style="gap:.5rem"><div class="box field">Phone</div><div class="box field">Email</div></div>
+        <div class="box field">I'm a… ▾ (new patient / current patient / question)</div>
+        <div class="box field">Best time to reach me ▾</div>
+        <div class="box" style="height:110px;margin-top:.5rem">Message (please don't include medical details)</div>
+        <div class="lbl">☐ Consent to be contacted (privacy policy link)</div>
+        <div class="lbl">Spam protection (invisible)</div>
+        <div class="btn solid" style="margin-top:.75rem;width:100%">Send message</div>
+        <div class="lbl">Success state: "Thanks, we'll be in touch within one business day." Error state inline per field.</div>
+      </div>
+    </div>
+    <div class="note">Same form as the home page, so it's one Webflow component. Sends to reception@mpdental.ca.</div>
+  </section>
+
+  <section>
+    <span class="tag">04 Hours &amp; location</span>
+    <div class="loc">
+      <div class="card">
+        <div class="lbl">Opening hours</div><div class="h w60" style="height:22px;margin-top:.4rem"></div>
+        <div class="hrs">
+          <span>Mon</span><span>8:00 – 5:30</span>
+          <span class="today">Tue</span><span class="today">8:00 – 5:30 · Open now</span>
+          <span>Wed</span><span>8:00 – 5:30</span>
+          <span>Thu</span><span>8:00 – 5:30</span>
+          <span>Fri</span><span>Occasional hygiene 8:00 – 2:00 (TBC)</span>
+          <span>Sat–Sun</span><span>Closed</span>
+        </div>
+        <div class="lbl" style="margin-top:1rem">Holiday closures note (editable)</div>
+        <div class="row" style="margin-top:1rem"><span class="btn solid">Get directions</span></div>
+      </div>
+      <div class="box img" style="min-height:380px">Google map (large, click to load)</div>
+    </div>
+    <div class="note">Same component as the home page section.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">05 Getting here</span>
+    <div class="grid g3" style="margin-top:1rem">
+      <div><div class="box" style="width:40px;height:40px">P</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Parking (TBC)</div></div>
+      <div><div class="box" style="width:40px;height:40px">♿</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Accessibility: entrance, washroom (TBC)</div></div>
+      <div><div class="box" style="width:40px;height:40px">⌖</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Serving Dorchester, Thames Centre, London, Ingersoll</div></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="tag">06 New patient prompt</span>
+    <div class="row" style="justify-content:space-between;margin-top:1rem;border:2px solid #444;border-radius:8px;padding:1.25rem">
+      <div style="flex:1;min-width:220px"><div class="h w40"></div><div class="lbl">First time with us? See what to expect and what to bring.</div></div>
+      <span class="btn">New patient info</span>
+    </div>
+  </section>
+
+  <footer class="dark" data-wf="footer"></footer>
+  <div class="sticky" data-wf="sticky"></div>
+</div>
+<script src="js/wireframe.js"></script>
+</body>
+</html>

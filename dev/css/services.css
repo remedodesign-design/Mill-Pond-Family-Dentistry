@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Mill Pond Dental Care — Services page (Client-First "folder_element")
+   Load after client-first.css and components.css. Only services-specific
+   section classes live here; navbar, footer, breadcrumb, placeholder tag,
+   icon box, CTA band, emergency strip, FAQ, location and contact form are
+   shared components in components.css.
+   ========================================================================== */
+
+/* 01 Page hero ----------------------------------------------------------------- */
+.services-hero_component { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center; max-width: 52rem; margin-left: auto; margin-right: auto; }
+.services-hero_jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.625rem; margin-top: 0.75rem; }
+.services-hero_jump-link {
+  display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5rem 1.125rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--round);
+  background-color: var(--background-color--background-primary); color: var(--text-color--text-primary); text-decoration: none;
+  font-family: var(--font--heading); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+.services-hero_jump-link:hover { border-color: var(--base-color-brand--pond); background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand); }
+/* 02 Featured treatments (2 × 2 large cards) ------------------------------------- */
+.services-featured_list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.services-featured_card .image-slot_component { aspect-ratio: 16 / 9; }
+.services-featured_card .image-slot_label { top: 1rem; bottom: auto; }
+/* keep clear of the overlapping icon */
+.services-featured_card .service-card_content { padding: 1.75rem 2rem 2rem; gap: 0.75rem; }
+.services-featured_card .service-card_icon { width: 3.5rem; height: 3.5rem; margin-top: -3.5rem; }
+.services-featured_card .service-card_description { font-size: 1.0625rem; }
+/* 03 All services by group --------------------------------------------------------- */
+.services-group_component { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 2.5rem; align-items: start; }
+.services-group_component + .services-group_component { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border-color--border-primary); }
+.services-group_header { display: flex; flex-direction: column; gap: 0.75rem; position: sticky; top: calc(var(--navbar-height) + 1.5rem); }
+.services-group_header::before { content: ""; display: block; width: 3rem; height: 0.25rem; border-radius: var(--radius--round); background-color: var(--base-color-brand--pond); }
+.services-group_text { color: var(--text-color--text-secondary); font-size: 1rem; }
+.services-group_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.services-item_component {
+  display: flex; flex-direction: column; gap: 0.625rem; padding: 1.5rem;
+  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--medium);
+  background-color: var(--background-color--background-primary); color: var(--text-color--text-primary); text-decoration: none;
+  transition: border-color 150ms ease;
+}
+.services-item_component:hover { border-color: var(--base-color-brand--pond); color: var(--text-color--text-primary); }
+.services-item_component .icon-box_component { margin-bottom: 0.25rem; }
+.services-item_text { color: var(--text-color--text-secondary); font-size: 0.9375rem; line-height: 1.5; }
+.services-item_link {
+  display: inline-flex; align-items: center; gap: 0.375rem; margin-top: auto; padding-top: 0.5rem;
+  font-family: var(--font--heading); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-color--text-brand);
+}
+.services-item_link svg { transition: transform 150ms ease; }
+.services-item_component:hover .services-item_link svg { transform: translateX(0.25rem); }
+/* 04 Not sure what you need? ------------------------------------------------------- */
+.services-help_component { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+.services-help_content { display: flex; flex-direction: column; gap: 1rem; }
+.services-help_buttons { justify-content: flex-end; }
+/* Responsive ------------------------------------------------------------------------ */
+@media screen and (max-width: 991px) {
+  .services-group_component { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .services-group_header { position: static; }
+  .services-group_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-help_component { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .services-help_buttons { justify-content: flex-start; }
+}
+@media screen and (max-width: 767px) {
+  .services-hero_component .heading-style-h1 { font-size: 2.5rem; }
+  .services-featured_list { grid-template-columns: minmax(0, 1fr); }
+  .services-featured_card .service-card_content { padding: 1.5rem; }
+  .services-featured_card .heading-style-h3 { font-size: 1.625rem; }
+  .services-group_list { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .services-group_component + .services-group_component { margin-top: 2.5rem; padding-top: 2.5rem; }
+  .services-help_buttons .button { width: 100%; }
+}

@@ -1,0 +1,29 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Tool scratch output (Playwright screenshots, console logs, page snapshots)
+.playwright-mcp/
+.impeccable/hook.cache.json
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Reference screenshots of other sites (large, regenerable)
+analysis/screenshots/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node (if added later)
+node_modules/
+
+# Vercel
+.vercel
+.env*.local
+
+.vercel
+.env*

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Wireframe</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body data-title="Meet the team wireframe v1">
+
+<details class="list">
+  <summary>Section list (5 blocks + global header and footer). Click to expand.</summary>
+  <ol>
+    <li>Page hero: breadcrumb, H1, intro, full-width group photo</li>
+    <li>Our dentists: large alternating rows (portrait, name, credentials, short bio, Read full bio)</li>
+    <li>Hygiene, assistant and reception teams: grouped card grids (CMS filtered by role)</li>
+    <li>Founder note: Dr. Lida Kiddie (if the client wants her shown)</li>
+    <li>New patient prompt: "Come meet us"</li>
+  </ol>
+</details>
+
+<div class="frame">
+  <header data-wf="header"></header>
+
+  <section>
+    <span class="tag">01 Page hero</span>
+    <div class="pagehero simple">
+      <div>
+        <div class="crumbs">Home / About / Our Team</div>
+        <div class="h w40 mx" style="height:34px;margin-top:.75rem"></div>
+        <div class="t w60 mx" style="margin-top:1rem"></div><div class="t w40 mx"></div>
+      </div>
+    </div>
+    <div class="box img" style="height:340px;margin-top:1.75rem">Group photo of the whole team (real)</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">02 Our dentists</span>
+    <div style="margin-top:.75rem"><div class="lbl">Our dentists</div><div class="h w30" style="height:24px;margin-top:.4rem"></div></div>
+    <div class="grid g2" style="margin-top:1.5rem;align-items:center">
+      <div class="box img" style="height:340px">Portrait: Dr. Steven MacHardy</div>
+      <div><div class="h w60" style="height:22px"></div><div class="lbl">DMD, Boston University · AEGD, University of Michigan</div>
+        <div class="t" style="margin-top:.75rem"></div><div class="t"></div><div class="t w80"></div><div class="t w60"></div>
+        <div class="anchor"><span class="chip">Implants</span><span class="chip">Invisalign</span><span class="chip">Sedation (TBC)</span></div>
+        <div class="btn" style="margin-top:1rem">Read full bio</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:2.5rem;align-items:center">
+      <div style="order:2;height:340px" class="box img mobile-first">Portrait: Dr. Aya Al Rafea</div>
+      <div style="order:1"><div class="h w60" style="height:22px"></div><div class="lbl">Credentials (TBC)</div>
+        <div class="t" style="margin-top:.75rem"></div><div class="t"></div><div class="t w80"></div>
+        <div class="btn" style="margin-top:1rem">Read full bio</div></div>
+    </div>
+    <div class="note">Alternating rows give each dentist room for a real bio and the services they focus on. Each links to a bio page (CMS Team item). Who is shown, and whether Dr. Al Rafea appears while on leave, is still open. Mobile: portrait always above text.</div>
+  </section>
+
+  <section>
+    <span class="tag">03 Our team, by role</span>
+    <div class="anchor" style="margin-top:.75rem"><span class="chip">All</span><span class="chip">Hygienists</span><span class="chip">Dental assistants</span><span class="chip">Reception</span></div>
+
+    <div class="h w30" style="margin-top:1.75rem"></div><div class="lbl">Hygienists</div>
+    <div class="grid g4 keep2" style="margin-top:.75rem">
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · RDH</div></div>
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · RDH</div></div>
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · RDH</div></div>
+    </div>
+
+    <div class="h w30" style="margin-top:1.75rem"></div><div class="lbl">Dental assistants</div>
+    <div class="grid g4 keep2" style="margin-top:.75rem">
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · Role</div></div>
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · Role</div></div>
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · Role</div></div>
+    </div>
+
+    <div class="h w30" style="margin-top:1.75rem"></div><div class="lbl">Reception</div>
+    <div class="grid g4 keep2" style="margin-top:.75rem">
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · Office manager</div></div>
+      <div class="card"><div class="box img" style="height:180px">portrait</div><div class="h w60" style="margin-top:.6rem"></div><div class="lbl">Name · Reception</div></div>
+    </div>
+    <div class="note">Smaller cards: name, role and a one-line fun fact on hover/tap (optional). Filter chips jump to each group. If someone has no portrait yet, use a neutral initials tile, never a stock face.</div>
+  </section>
+
+  <section class="alt">
+    <span class="tag">04 Founder note (optional)</span>
+    <div class="grid g2" style="margin-top:1rem;align-items:center">
+      <div><div class="lbl">Where it began</div><div class="h w80" style="height:22px;margin-top:.4rem"></div><div class="t"></div><div class="t"></div><div class="t w60"></div><div class="lbl">Dr. Lida Kiddie, founder · BSc Waterloo, DDS Toronto</div></div>
+      <div class="box img" style="height:240px">Portrait: Dr. Lida Kiddie</div>
+    </div>
+    <div class="note">Only if the client confirms her status. Her page exists today as an orphan, so it needs a home or a redirect.</div>
+  </section>
+
+  <section>
+    <span class="tag">05 Come meet us</span>
+    <div class="row" style="justify-content:space-between;margin-top:1rem;border:2px solid #444;border-radius:8px;padding:1.25rem">
+      <div style="flex:1;min-width:220px"><div class="h w40"></div><div class="t w60"></div><div class="lbl">New to Mill Pond? See what your first visit looks like.</div></div>
+      <div class="row"><span class="btn solid">Book your first visit</span><span class="btn">New patient info</span></div>
+    </div>
+  </section>
+
+  <footer class="dark" data-wf="footer"></footer>
+  <div class="sticky" data-wf="sticky"></div>
+</div>
+<script src="js/wireframe.js"></script>
+</body>
+</html>
