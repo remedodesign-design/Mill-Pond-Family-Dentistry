@@ -12,34 +12,55 @@
 /* 01 Page hero */
 .team-hero_content { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; max-width: 46rem; margin: 0 auto; text-align: center; }
 .team-hero_image { aspect-ratio: 21 / 8; }
-/* 02 Dentists: alternating rows */
-.team-dentist_list { display: flex; flex-direction: column; gap: 5rem; }
-.team-dentist_row { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-.team-dentist_row.is-reverse .team-dentist_image { order: 2; }
-.team-dentist_image { aspect-ratio: 4 / 4.6; }
-.team-dentist_content { display: flex; flex-direction: column; gap: 1.25rem; max-width: 34rem; }
+/* 02 Team by role: pill tabs + compact cards.
+   Without JS every panel shows, stacked, and the tab menu stays hidden. */
+.section_team-hero + .section_team-members .padding-section-large { padding-top: 3rem; }
+.team-tabs_component { scroll-margin-top: calc(var(--navbar-height) + 1.5rem); }
+.team-tabs_menu { display: none; }
+.js .team-tabs_menu {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem; width: fit-content; max-width: 100%;
+  margin: 0 auto 2.5rem; padding: 0.375rem; border-radius: var(--radius--round);
+  background-color: var(--background-color--background-tertiary);
+}
+.team-tabs_tab {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.25rem;
+  border: 0; border-radius: var(--radius--round); background: transparent; cursor: pointer;
+  font-family: var(--font--heading); font-weight: 600; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-color--text-on-pond); transition: background-color 150ms ease, color 150ms ease;
+}
+.team-tabs_tab:hover { background-color: rgba(255, 255, 255, 0.6); }
+.team-tabs_tab[aria-selected="true"] { background-color: var(--base-color-brand--deep); color: var(--text-color--text-alternate); }
+.team-tabs_tab:focus-visible { outline: 0.1875rem solid var(--base-color-brand--deep); outline-offset: 0.125rem; }
+.team-tabs_count { font-size: 0.8125rem; font-variant-numeric: tabular-nums; opacity: 0.7; }
+.team-tabs_panel + .team-tabs_panel { margin-top: 3.5rem; }
+.js .team-tabs_panel + .team-tabs_panel { margin-top: 0; }
+.team-tabs_panel:focus-visible { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 0.5rem; border-radius: var(--radius--small); }
+.team-tabs_intro { max-width: 38rem; margin: 0 auto 2rem; text-align: center; }
+.team-card_list {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 16rem)); justify-content: center; align-items: start;
+  gap: 2.5rem 1.5rem; margin: 0; padding: 0; list-style: none;
+}
+.team-card_item { display: flex; flex-direction: column; margin: 0; }
+.team-card_portrait { position: relative; aspect-ratio: 4 / 5; margin-bottom: 1rem; border-radius: var(--radius--medium); overflow: hidden; background-color: var(--background-color--background-tertiary); }
+.team-card_portrait.is-initials {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--base-color-brand--deep); font-family: var(--font--heading); font-weight: 600; font-size: 2.5rem; letter-spacing: 0.06em;
+}
+.team-card_role { font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-color--text-brand); }
+.team-card_name { margin-top: 0.25rem; font-family: var(--font--heading); font-weight: 600; font-size: 1.375rem; line-height: 1.2; color: var(--text-color--text-primary); }
+.team-card_credentials { margin-top: 0.375rem; font-size: 0.9375rem; line-height: 1.4; color: var(--text-color--text-secondary); }
+.team-card_bio { margin-top: 0.75rem; }
+.team-card_bio summary {
+  display: inline-flex; align-items: center; gap: 0.375rem; cursor: pointer; list-style: none;
+  font-family: var(--font--heading); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-color--text-brand);
+}
+.team-card_bio summary::-webkit-details-marker { display: none; }
+.team-card_bio summary svg { transition: transform 150ms ease; }
+.team-card_bio[open] summary svg { transform: rotate(180deg); }
+.team-card_bio p { margin-top: 0.75rem; font-size: 0.9375rem; line-height: 1.55; color: var(--text-color--text-secondary); }
+.team-card_focus { display: flex; flex-wrap: wrap; gap: 0.375rem; margin: 0.75rem 0 0; padding: 0; list-style: none; }
+.team-card_focus li { margin: 0; }
 .team-dentist_credentials { margin-top: 0.5rem; color: var(--text-color--text-brand); font-weight: 600; font-size: 1rem; }
-.team-dentist_focus { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
-.team-dentist_focus li { margin: 0; }
-/* 03 Team by role */
-.team-filter_list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.team-filter_link {
-  display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5rem 1.125rem;
-  border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--round);
-  color: var(--text-color--text-primary); text-decoration: none; font-weight: 500;
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
-}
-.team-filter_link:hover { border-color: var(--base-color-brand--pond); background-color: var(--background-color--background-tertiary); color: var(--text-color--text-brand); }
-.team-group_component { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border-color--border-primary); }
-.team-group_header { display: flex; flex-direction: column; gap: 0.5rem; max-width: 38rem; }
-.team-group_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 2rem 0 0; padding: 0; list-style: none; }
-.team-member_card { display: flex; flex-direction: column; gap: 0.25rem; margin: 0; }
-.team-member_initials {
-  display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 4.4; margin-bottom: 1rem;
-  border-radius: var(--arch-radius); background-color: var(--background-color--background-tertiary);
-  color: var(--base-color-brand--deep); font-family: var(--font--heading); font-weight: 600; font-size: 2.75rem; letter-spacing: 0.06em;
-}
-.team-member_role { color: var(--text-color--text-secondary); font-size: 0.9375rem; }
 /* 04 Founder note */
 .team-founder_component { display: grid; grid-template-columns: 7fr 5fr; gap: 5rem; align-items: center; }
 .team-founder_content { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -47,21 +68,16 @@
 .team-founder_image { aspect-ratio: 4 / 4.6; }
 /* Responsive */
 @media screen and (max-width: 991px) {
-  .team-group_list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .team-hero_image { aspect-ratio: 16 / 8; }
-  .team-dentist_row { gap: 3rem; }
   .team-founder_component { grid-template-columns: 1fr 1fr; gap: 3rem; }
 }
 @media screen and (max-width: 767px) {
-  .team-group_list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; }
+  .js .team-tabs_menu { border-radius: var(--radius--medium); }
+  .team-tabs_tab { padding: 0.5rem 0.875rem; font-size: 0.9375rem; }
+  .team-card_list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; }
+  .team-card_portrait.is-initials { font-size: 2rem; }
+  .team-card_name { font-size: 1.1875rem; }
   .team-hero_image { aspect-ratio: 4 / 3; }
-  .team-dentist_list { gap: 3.5rem; }
-  .team-dentist_row { grid-template-columns: 1fr; gap: 2rem; }
-  .team-dentist_row.is-reverse .team-dentist_image { order: 0; }
-  /* portrait always above text */
-  .team-dentist_image { aspect-ratio: 1 / 1; }
-  .team-member_initials { font-size: 2rem; }
-  .team-group_component { margin-top: 3rem; padding-top: 2rem; }
   .team-founder_component { grid-template-columns: 1fr; gap: 2rem; }
   .team-founder_image { order: -1; aspect-ratio: 1 / 1; }
 }

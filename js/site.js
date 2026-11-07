@@ -9,7 +9,7 @@
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
-  /* Hours: today's row, open/closed pill, hero status card -------------- */
+  /* Hours: today's row and open/closed pill ------------------------------ */
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Toronto' }));
   const day = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
   const openDay = day >= 1 && day <= 4;               // Mon–Thu
@@ -20,17 +20,6 @@
     pill.textContent = isOpen ? 'Open now' : 'Closed now';
     pill.classList.toggle('is-closed', !isOpen);
   });
-  const title = $('[data-status-title]'), text = $('[data-status-text]');
-  if (title && text) {
-    if (isOpen) { title.innerHTML = '<span class="status-dot"></span>Open today'; text.textContent = 'Until 5:30 p.m. · 519-268-3351'; }
-    else {
-      const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      let next = day; do { next = (next + 1) % 7; } while (!(next >= 1 && next <= 4));
-      if (openDay && mins < 480) next = day;
-      title.innerHTML = '<span class="status-dot is-closed"></span>Closed right now';
-      text.textContent = `Opens ${next === day ? 'today' : names[next]} at 8 a.m.`;
-    }
-  }
 
   /* Desktop dropdowns: keyboard + click support ------------------------- */
   $$('.navbar_dropdown').forEach(dd => {
@@ -100,6 +89,39 @@
       if (honeypot && honeypot.value) return; /* bot: silently ignore */
       if (success) { success.hidden = false; success.focus(); }
     });
+  });
+
+  /* Tabs (team page): ARIA tabs with arrow keys; #panel-id opens that tab */
+  $$('[data-tabs]').forEach(box => {
+    const tabs = $$('[role="tab"]', box);
+    const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+    const select = (i, focus) => {
+      tabs.forEach((t, n) => {
+        const on = n === i;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        panels[n].hidden = !on;
+      });
+      if (focus) tabs[i].focus();
+      $$('.reveal', panels[i]).forEach(el => el.classList.add('is-visible'));
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', e => {
+        const last = tabs.length - 1;
+        const next = { ArrowRight: i === last ? 0 : i + 1, ArrowLeft: i === 0 ? last : i - 1, Home: 0, End: last }[e.key];
+        if (next === undefined) return;
+        e.preventDefault(); select(next, true);
+      });
+    });
+    const fromHash = () => panels.findIndex(p => p && '#' + p.id === location.hash);
+    const start = fromHash();
+    select(start >= 0 ? start : 0);
+    if (start >= 0) {
+      const jump = () => box.scrollIntoView({ behavior: 'instant' });
+      if (document.readyState === 'complete') jump(); else window.addEventListener('load', jump, { once: true });
+    }
+    window.addEventListener('hashchange', () => { const i = fromHash(); if (i >= 0) { select(i); box.scrollIntoView(); } });
   });
 
   /* Reveal on scroll ----------------------------------------------------- */

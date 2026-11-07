@@ -65,10 +65,11 @@
       <div class="container-large">
         <div class="navbar_container">
           <a href="/" class="logo_component navbar_logo-link" aria-label="Mill Pond Dental Care home">
-            <img src="/assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon">
+            <img src="/assets/logo/mpdc-logo-240.png" alt="" class="logo_mark" width="56" height="56">
             <span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span>
           </a>
           <nav class="navbar_menu" aria-label="Main">
+            <a href="/" class="navbar_link">Home</a>
             <div class="navbar_dropdown">
               <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
               <div class="navbar_dropdown-list" id="dd-services">
@@ -99,13 +100,14 @@
           <div class="navbar_menu-buttons">
             <a href="tel:+15192683351" class="navbar_phone">519-268-3351</a>
             <!-- Xact booking URL TBC -->
-            <a href="#contact-form" class="button is-small">Book an Appointment</a>
+            <a href="#contact-form" class="button">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
           </div>
         </div>
       </div>
     </div>
     <nav class="navbar_drawer" id="drawer" aria-label="Mobile">
+      <a href="/" class="navbar_drawer-link">Home</a>
       <details>
         <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
@@ -159,139 +161,101 @@
       </div>
     </section>
 
-    <!-- 02 Our dentists ====================================================== -->
-    <section class="section_team-dentists background-color-secondary" id="dentists">
+    <!-- 02 Our team: tabs by role ========================================== -->
+    <section class="section_team-members" id="team-members">
       <div class="padding-global">
         <div class="container-large">
           <div class="padding-section-large">
-            <div class="section-header_component reveal">
-              <div class="text-style-tagline">Our dentists</div>
-              <h2 class="heading-style-h2">The dentists you’ll see</h2>
-            </div>
-            <div class="spacer-large"></div>
-            <div class="team-dentist_list">
-
-              <article class="team-dentist_row reveal">
-                <div class="team-dentist_image">
-                  <div class="image-slot_component is-arch"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Dr. Steven MacHardy, dentist at Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200">
-                  </div>
-                </div>
-                <div class="team-dentist_content">
-                  <div>
-                    <h3 class="heading-style-h3">Dr. Steven MacHardy</h3>
-                    <p class="team-dentist_credentials">DMD, Boston University · AEGD, University of Michigan</p>
-                  </div>
-                  <p class="text-size-medium">I’ve cared for numerous patients throughout my career as a dentist. To me, nothing matters more than your health and comfort. I look forward to building a trusting relationship with you.</p>
-                  <p class="text-style-muted">Practising since 2007, Dr. MacHardy joined Mill Pond Dental Care in 2020.</p>
-                  <!-- GENERIC COPY: confirm focus areas with the client. See CONTENT-TODO.md -->
-                  <ul class="team-dentist_focus" aria-label="Areas of focus">
-                    <li class="tag_component">Implants</li>
-                    <li class="tag_component">Invisalign</li>
-                    <li class="tag_component">Family dentistry</li>
-                  </ul>
-                  <div><a href="#" class="button is-secondary is-icon">Read full bio<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></div>
-                </div>
-              </article>
-
-              <!-- Whether Dr. Al Rafea is shown while on leave is still open with the client -->
-              <article class="team-dentist_row is-reverse reveal">
-                <div class="team-dentist_image">
-                  <div class="image-slot_component is-arch"><img src="/assets/stock/dentist-portrait-generic.jpg" alt="" class="image-cover" loading="lazy" width="960" height="1200"><!-- STOCK stand-in (no face) until Dr. Al Rafea's real portrait arrives -->
-                  </div>
-                </div>
-                <div class="team-dentist_content">
-                  <div>
-                    <h3 class="heading-style-h3">Dr. Aya Al Rafea</h3>
-                    <p class="team-dentist_credentials">Dentist</p>
-                  </div>
-                  <p class="text-size-medium">I take pride in what I do. My primary concern is what will best benefit our patients. I am excited to be working in such a great community and cannot wait to meet you!</p>
-                  <div><a href="#" class="button is-secondary is-icon">Read full bio<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></div>
-                </div>
-              </article>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 Our team, by role ================================================= -->
-    <section class="section_team-roles" id="team-roles">
-      <div class="padding-global">
-        <div class="container-large">
-          <div class="padding-section-large">
-            <div class="section-header_component reveal">
+            <div class="section-header_component is-center reveal">
               <div class="text-style-tagline">Our team</div>
               <h2 class="heading-style-h2">The people behind every visit</h2>
             </div>
-            <div class="spacer-medium"></div>
-            <nav class="team-filter_list" aria-label="Jump to a team">
-              <a href="#team-roles" class="team-filter_link">All</a>
-              <a href="#hygienists" class="team-filter_link">Hygienists</a>
-              <a href="#assistants" class="team-filter_link">Dental assistants</a>
-              <a href="#reception" class="team-filter_link">Reception</a>
-            </nav>
-
-            <div class="team-group_component" id="hygienists">
-              <div class="team-group_header reveal">
-                <h3 class="heading-style-h3">Dental hygienists</h3>
-                <p class="text-style-muted">We view each patient as a whole rather than a single symptom to be treated. Your oral health and your general health are deeply connected.</p>
+            <div class="spacer-large"></div>
+            <div class="team-tabs_component" data-tabs>
+              <div class="team-tabs_menu" role="tablist" aria-label="Team by role">
+                <button type="button" class="team-tabs_tab" role="tab" id="tab-dentists" aria-controls="dentists" aria-selected="true">Dentists<span class="team-tabs_count">2</span></button>
+                <button type="button" class="team-tabs_tab" role="tab" id="tab-hygienists" aria-controls="hygienists" aria-selected="false" tabindex="-1">Hygienists<span class="team-tabs_count">2</span></button>
+                <button type="button" class="team-tabs_tab" role="tab" id="tab-assistants" aria-controls="assistants" aria-selected="false" tabindex="-1">Dental assistants<span class="team-tabs_count">3</span></button>
+                <button type="button" class="team-tabs_tab" role="tab" id="tab-reception" aria-controls="reception" aria-selected="false" tabindex="-1">Reception<span class="team-tabs_count">2</span></button>
               </div>
-              <ul class="team-group_list" role="list">
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">CV</div>
-                  <h4 class="heading-style-h5">Cali VanBommel</h4>
-                  <p class="team-member_role">Registered dental hygienist</p>
-                </li>
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">JS</div>
-                  <h4 class="heading-style-h5">James Stemp</h4>
-                  <p class="team-member_role">Dental hygienist</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="team-group_component" id="assistants">
-              <div class="team-group_header reveal">
-                <h3 class="heading-style-h3">Dental assistants</h3>
-                <p class="text-style-muted">Your health and comfort is our number one priority. We achieve this by maintaining a clean and welcoming environment, assisting your dental provider, and providing you with individual care.</p>
+              <div class="team-tabs_panel" id="dentists" role="tabpanel" aria-labelledby="tab-dentists" tabindex="0">
+                <p class="team-tabs_intro text-style-muted">The dentists you’ll see at your check-ups and treatments.</p>
+                <ul class="team-card_list" role="list">
+                  <li class="team-card_item">
+                    <div class="team-card_portrait"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Dr. Steven MacHardy, dentist at Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200"></div>
+                    <p class="team-card_role">Dentist</p>
+                    <h3 class="team-card_name">Dr. Steven MacHardy</h3>
+                    <p class="team-card_credentials">DMD, Boston University · AEGD, University of Michigan</p>
+                    <details class="team-card_bio">
+                      <summary>Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                      <p>“I’ve cared for numerous patients throughout my career as a dentist. To me, nothing matters more than your health and comfort. I look forward to building a trusting relationship with you.”</p>
+                      <p>Practising since 2007, Dr. MacHardy joined Mill Pond Dental Care in 2020.</p>
+                      <!-- GENERIC COPY: confirm focus areas with the client. See CONTENT-TODO.md -->
+                      <ul class="team-card_focus" aria-label="Areas of focus"><li class="tag_component">Implants</li><li class="tag_component">Invisalign</li><li class="tag_component">Family dentistry</li></ul>
+                    </details>
+                  </li>
+                  <!-- Whether Dr. Al Rafea is shown while on leave is still open with the client -->
+                  <li class="team-card_item">
+                    <div class="team-card_portrait"><img src="/assets/stock/dentist-portrait-generic.jpg" alt="" class="image-cover" loading="lazy" width="960" height="1200"><!-- STOCK stand-in (no face) until Dr. Al Rafea's real portrait arrives --></div>
+                    <p class="team-card_role">Dentist</p>
+                    <h3 class="team-card_name">Dr. Aya Al Rafea</h3>
+                    <details class="team-card_bio">
+                      <summary>Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                      <p>“I take pride in what I do. My primary concern is what will best benefit our patients. I am excited to be working in such a great community and cannot wait to meet you!”</p>
+                    </details>
+                  </li>
+                </ul>
               </div>
-              <ul class="team-group_list" role="list">
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">HB</div>
-                  <h4 class="heading-style-h5">Heather Brulotte</h4>
-                  <p class="team-member_role">Dental assistant</p>
-                </li>
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">MD</div>
-                  <h4 class="heading-style-h5">Myranda Deml</h4>
-                  <p class="team-member_role">Dental assistant</p>
-                </li>
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">SZ</div>
-                  <h4 class="heading-style-h5">Sophie Zegers</h4>
-                  <p class="team-member_role">Dental assistant</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="team-group_component" id="reception">
-              <div class="team-group_header reveal">
-                <h3 class="heading-style-h3">Reception and administration</h3>
-                <p class="text-style-muted">We will be your first contact at Mill Pond Dental Care. We are here to help. We look forward to hearing from you and seeing you soon.</p>
+              <div class="team-tabs_panel" id="hygienists" role="tabpanel" aria-labelledby="tab-hygienists" tabindex="0">
+                <p class="team-tabs_intro text-style-muted">We view each patient as a whole rather than a single symptom to be treated. Your oral health and your general health are deeply connected.</p>
+                <ul class="team-card_list" role="list">
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">CV</div>
+                    <p class="team-card_role">Registered dental hygienist</p>
+                    <h3 class="team-card_name">Cali VanBommel</h3>
+                  </li>
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">JS</div>
+                    <p class="team-card_role">Dental hygienist</p>
+                    <h3 class="team-card_name">James Stemp</h3>
+                  </li>
+                </ul>
               </div>
-              <ul class="team-group_list" role="list">
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">CL</div>
-                  <h4 class="heading-style-h5">Cynthia Lope</h4>
-                  <p class="team-member_role">Dental administrative coordinator</p>
-                </li>
-                <li class="team-member_card reveal">
-                  <div class="team-member_initials" aria-hidden="true">JW</div>
-                  <h4 class="heading-style-h5">Jessica Wilton</h4>
-                  <p class="team-member_role">Dental administrative coordinator</p>
-                </li>
-              </ul>
+              <div class="team-tabs_panel" id="assistants" role="tabpanel" aria-labelledby="tab-assistants" tabindex="0">
+                <p class="team-tabs_intro text-style-muted">Your health and comfort is our number one priority. We achieve this by maintaining a clean and welcoming environment, assisting your dental provider, and providing you with individual care.</p>
+                <ul class="team-card_list" role="list">
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">HB</div>
+                    <p class="team-card_role">Dental assistant</p>
+                    <h3 class="team-card_name">Heather Brulotte</h3>
+                  </li>
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">MD</div>
+                    <p class="team-card_role">Dental assistant</p>
+                    <h3 class="team-card_name">Myranda Deml</h3>
+                  </li>
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">SZ</div>
+                    <p class="team-card_role">Dental assistant</p>
+                    <h3 class="team-card_name">Sophie Zegers</h3>
+                  </li>
+                </ul>
+              </div>
+              <div class="team-tabs_panel" id="reception" role="tabpanel" aria-labelledby="tab-reception" tabindex="0">
+                <p class="team-tabs_intro text-style-muted">We will be your first contact at Mill Pond Dental Care. We are here to help. We look forward to hearing from you and seeing you soon.</p>
+                <ul class="team-card_list" role="list">
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">CL</div>
+                    <p class="team-card_role">Dental administrative coordinator</p>
+                    <h3 class="team-card_name">Cynthia Lope</h3>
+                  </li>
+                  <li class="team-card_item">
+                    <div class="team-card_portrait is-initials" aria-hidden="true">JW</div>
+                    <p class="team-card_role">Dental administrative coordinator</p>
+                    <h3 class="team-card_name">Jessica Wilton</h3>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -427,22 +391,14 @@
                       <span class="contact-form_error" id="c-last-error" data-error-for="c-last" hidden></span>
                     </div>
                     <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-phone">Phone <span class="form_required" aria-hidden="true">*</span></label>
-                      <input class="form_input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+.\- ]{10,}" aria-describedby="c-phone-error">
-                      <span class="contact-form_error" id="c-phone-error" data-error-for="c-phone" hidden></span>
-                    </div>
-                    <div class="form_field-wrapper">
                       <label class="form_field-label" for="c-email">Email</label>
                       <input class="form_input" id="c-email" name="email" type="email" autocomplete="email" spellcheck="false" aria-describedby="c-email-error">
                       <span class="contact-form_error" id="c-email-error" data-error-for="c-email" hidden></span>
                     </div>
                     <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-type">I’m a…</label>
-                      <select class="form_input is-select-input" id="c-type" name="type"><option>New patient</option><option>Current patient</option><option>Just have a question</option></select>
-                    </div>
-                    <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-time">Best time to reach me</label>
-                      <select class="form_input is-select-input" id="c-time" name="time"><option>Any time</option><option>Morning</option><option>Afternoon</option></select>
+                      <label class="form_field-label" for="c-phone">Phone <span class="form_required" aria-hidden="true">*</span></label>
+                      <input class="form_input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+.\- ]{10,}" aria-describedby="c-phone-error">
+                      <span class="contact-form_error" id="c-phone-error" data-error-for="c-phone" hidden></span>
                     </div>
                     <div class="form_field-wrapper is-full">
                       <label class="form_field-label" for="c-msg">Message</label>
@@ -454,11 +410,8 @@
                       <label for="c-website">Leave this field empty</label>
                       <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="is-full">
-                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree to be contacted about my request. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
-                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
-                    </div>
-                    <div class="is-full"><button type="submit" class="button is-large contact-form_submit">Send message</button></div>
+                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button>
+                      <p class="contact-form_privacy text-size-small text-style-muted">We only use your details to reply to you. See our <a href="#">privacy policy</a>.</p></div>
                     <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
                   </div>
                 </form>
@@ -490,7 +443,7 @@
         <div class="footer_top">
           <div>
             <a href="/" class="logo_component is-alternate" aria-label="Mill Pond Dental Care home">
-              <img src="/assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon">
+              <img src="/assets/logo/mpdc-logo-240.png" alt="" class="logo_mark" width="56" height="56">
               <span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span>
             </a>
             <address class="footer_nap">

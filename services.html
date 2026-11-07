@@ -65,10 +65,11 @@
       <div class="container-large">
         <div class="navbar_container">
           <a href="/" class="logo_component navbar_logo-link" aria-label="Mill Pond Dental Care home">
-            <img src="/assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon">
+            <img src="/assets/logo/mpdc-logo-240.png" alt="" class="logo_mark" width="56" height="56">
             <span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span>
           </a>
           <nav class="navbar_menu" aria-label="Main">
+            <a href="/" class="navbar_link">Home</a>
             <div class="navbar_dropdown">
               <button type="button" class="navbar_dropdown-toggle w--current" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
               <div class="navbar_dropdown-list" id="dd-services">
@@ -99,13 +100,14 @@
           <div class="navbar_menu-buttons">
             <a href="tel:+15192683351" class="navbar_phone">519-268-3351</a>
             <!-- Xact booking URL TBC -->
-            <a href="#contact-form" class="button is-small">Book an Appointment</a>
+            <a href="#contact-form" class="button">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
           </div>
         </div>
       </div>
     </div>
     <nav class="navbar_drawer" id="drawer" aria-label="Mobile">
+      <a href="/" class="navbar_drawer-link">Home</a>
       <details>
         <summary class="navbar_drawer-link w--current">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
@@ -304,18 +306,12 @@
               </div>
 <!-- shared:emergency (edit partials/emergency.html, then run tools/sync-shared.py) -->
             <div class="emergency-strip_component" role="region" aria-labelledby="emergency-heading">
-              <div class="emergency-strip_main">
-                <span class="emergency-strip_icon" aria-hidden="true"><svg class="icon-embed-small"><use href="#i-alert"/></svg></span>
-                <div class="emergency-strip_content">
-                  <h2 class="emergency-strip_heading" id="emergency-heading">Dental emergency?</h2>
-                  <p class="emergency-strip_lead">Toothache, a broken tooth or a knocked-out tooth: call us right away rather than sending a message. After hours, our answering service will tell you what to do next.</p>
-                </div>
+              <div class="emergency-strip_content">
+                <h2 class="emergency-strip_heading" id="emergency-heading">Dental emergency?</h2>
+                <p class="emergency-strip_lead">Toothache, a broken tooth or a knocked-out tooth: call us right away rather than sending a message. After hours, our answering service will tell you what to do next.</p>
+                <p class="emergency-strip_alert">Facial swelling or trouble breathing? Go to the nearest emergency room or call 911.</p>
               </div>
-              <a href="tel:+15192683351" class="emergency-strip_call">
-                <svg class="icon-embed-small" aria-hidden="true"><use href="#i-phone"/></svg>
-                <span><span class="emergency-strip_call-label">Call now</span><span class="emergency-strip_call-number">519-268-3351</span></span>
-              </a>
-              <p class="emergency-strip_alert"><strong>Facial swelling or trouble breathing?</strong> Go to the nearest emergency room or call 911.</p>
+              <a href="tel:+15192683351" class="button is-icon emergency-strip_call"><svg class="icon-embed-xsmall" aria-hidden="true"><use href="#i-phone"/></svg>Call 519-268-3351</a>
             </div>
 <!-- /shared:emergency -->
             </div>
@@ -336,8 +332,8 @@
                 <p class="text-size-medium text-style-muted">Tell us what’s bothering you and we’ll point you to the right appointment. Nothing starts until you understand your options and costs.</p>
               </div>
               <div class="button-group services-help_buttons">
-                <a href="#contact-form" class="button is-large is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book a consultation</a>
-                <a href="tel:+15192683351" class="button is-large is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call us</a>
+                <a href="#contact-form" class="button is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book a consultation</a>
+                <a href="tel:+15192683351" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call us</a>
               </div>
             </div>
           </div>
@@ -463,22 +459,14 @@
                       <span class="contact-form_error" id="c-last-error" data-error-for="c-last" hidden></span>
                     </div>
                     <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-phone">Phone <span class="form_required" aria-hidden="true">*</span></label>
-                      <input class="form_input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+.\- ]{10,}" aria-describedby="c-phone-error">
-                      <span class="contact-form_error" id="c-phone-error" data-error-for="c-phone" hidden></span>
-                    </div>
-                    <div class="form_field-wrapper">
                       <label class="form_field-label" for="c-email">Email</label>
                       <input class="form_input" id="c-email" name="email" type="email" autocomplete="email" spellcheck="false" aria-describedby="c-email-error">
                       <span class="contact-form_error" id="c-email-error" data-error-for="c-email" hidden></span>
                     </div>
                     <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-type">I’m a…</label>
-                      <select class="form_input is-select-input" id="c-type" name="type"><option>New patient</option><option>Current patient</option><option>Just have a question</option></select>
-                    </div>
-                    <div class="form_field-wrapper">
-                      <label class="form_field-label" for="c-time">Best time to reach me</label>
-                      <select class="form_input is-select-input" id="c-time" name="time"><option>Any time</option><option>Morning</option><option>Afternoon</option></select>
+                      <label class="form_field-label" for="c-phone">Phone <span class="form_required" aria-hidden="true">*</span></label>
+                      <input class="form_input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+.\- ]{10,}" aria-describedby="c-phone-error">
+                      <span class="contact-form_error" id="c-phone-error" data-error-for="c-phone" hidden></span>
                     </div>
                     <div class="form_field-wrapper is-full">
                       <label class="form_field-label" for="c-msg">Message</label>
@@ -490,11 +478,8 @@
                       <label for="c-website">Leave this field empty</label>
                       <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="is-full">
-                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree to be contacted about my request. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
-                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
-                    </div>
-                    <div class="is-full"><button type="submit" class="button is-large contact-form_submit">Send message</button></div>
+                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button>
+                      <p class="contact-form_privacy text-size-small text-style-muted">We only use your details to reply to you. See our <a href="#">privacy policy</a>.</p></div>
                     <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
                   </div>
                 </form>
@@ -526,7 +511,7 @@
         <div class="footer_top">
           <div>
             <a href="/" class="logo_component is-alternate" aria-label="Mill Pond Dental Care home">
-              <img src="/assets/logo/01-tooth-icon-white-highlight.png" alt="" class="logo_icon">
+              <img src="/assets/logo/mpdc-logo-240.png" alt="" class="logo_mark" width="56" height="56">
               <span class="logo_text"><span class="logo_text-line">Mill Pond</span><span class="logo_text-line">Dental Care</span></span>
             </a>
             <address class="footer_nap">
