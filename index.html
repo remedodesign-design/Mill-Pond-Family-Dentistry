@@ -60,6 +60,22 @@
 
   <!-- 01 Header ============================================================ -->
 <!-- shared:header (edit partials/header.html, then run tools/sync-shared.py) -->
+  <div class="ribbon_component">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="ribbon_container">
+          <a href="#location" class="ribbon_item ribbon_address"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-pin"/></svg>4085 Hamilton Rd, Dorchester, ON N0L 1G2</a>
+          <div class="ribbon_right">
+            <a href="tel:+15192683351" class="ribbon_item ribbon_phone"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-phone"/></svg>519-268-3351</a>
+            <div class="ribbon_social">
+              <a href="https://www.facebook.com/millponddental" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Facebook" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+              <a href="https://www.instagram.com/millponddentalcare" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Instagram" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="navbar_component">
     <div class="padding-global">
       <div class="container-large">
@@ -70,6 +86,15 @@
           </a>
           <nav class="navbar_menu" aria-label="Main">
             <a href="/" class="navbar_link w--current" aria-current="page">Home</a>
+            <div class="navbar_dropdown">
+              <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
+              <div class="navbar_dropdown-list" id="dd-about">
+                <a href="/about.html" class="navbar_dropdown-link">About the practice</a>
+                <a href="/team.html" class="navbar_dropdown-link">Our Team</a>
+                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
+                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
+              </div>
+            </div>
             <div class="navbar_dropdown">
               <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
               <div class="navbar_dropdown-list" id="dd-services">
@@ -85,20 +110,10 @@
               </div>
             </div>
             <a href="/#new-patients" class="navbar_link">New Patients</a>
-            <div class="navbar_dropdown">
-              <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
-              <div class="navbar_dropdown-list" id="dd-about">
-                <a href="/about.html" class="navbar_dropdown-link">About the practice</a>
-                <a href="/team.html" class="navbar_dropdown-link">Our Team</a>
-                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
-                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
-              </div>
-            </div>
             <a href="/#blog" class="navbar_link">Blog</a>
             <a href="/contact.html" class="navbar_link">Contact</a>
           </nav>
           <div class="navbar_menu-buttons">
-            <a href="tel:+15192683351" class="navbar_phone">519-268-3351</a>
             <!-- Xact booking URL TBC -->
             <a href="#contact-form" class="button">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
@@ -109,18 +124,18 @@
     <nav class="navbar_drawer" id="drawer" aria-label="Mobile">
       <a href="/" class="navbar_drawer-link w--current" aria-current="page">Home</a>
       <details>
+        <summary class="navbar_drawer-link">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
+        <div class="navbar_drawer-sub">
+          <a href="/about.html">About the practice</a><a href="/team.html">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
+        </div>
+      </details>
+      <details>
         <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
           <a href="/services.html#featured">Dental Implants</a><a href="/services.html#featured">Invisalign</a><a href="/services.html#featured">Smile Makeover</a><a href="/services.html#featured">IV Sedation</a><a href="/service-detail.html">Family Dentistry</a><a href="/services.html#emergency">Emergencies</a><a href="/services.html">All services</a>
         </div>
       </details>
       <a href="/#new-patients" class="navbar_drawer-link">New Patients</a>
-      <details>
-        <summary class="navbar_drawer-link">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
-        <div class="navbar_drawer-sub">
-          <a href="/about.html">About the practice</a><a href="/team.html">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
-        </div>
-      </details>
       <a href="/#blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact.html" class="navbar_drawer-link">Contact</a>
       <div class="navbar_drawer-contact">
@@ -164,17 +179,20 @@
 
     <!-- 03 Trust strip ===================================================== -->
     <section class="section_home-trust background-color-secondary" aria-label="Why patients trust us">
-      <div class="padding-global">
-        <div class="container-large">
-          <div class="padding-section-small">
-            <ul class="home-trust_list">
-              <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-shield"/></svg></span>CDCP accepted</li>
-              <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-pin"/></svg></span>Serving Dorchester since 1982</li>
-              <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-receipt"/></svg></span>Direct billing to most insurers</li>
-              <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-star"/></svg></span><a href="#" class="home-trust_link">Read our Google reviews</a></li>
-            </ul>
-          </div>
-        </div>
+      <!-- Marquee: two identical groups scroll left in a loop; the copy is hidden from screen readers -->
+      <div class="home-trust_marquee">
+        <ul class="home-trust_group" role="list">
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-shield"/></svg></span>CDCP accepted</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-pin"/></svg></span>Serving Dorchester since 1982</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-receipt"/></svg></span>Direct billing to most insurers</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-star"/></svg></span><a href="#" class="home-trust_link">Read our Google reviews</a></li>
+        </ul>
+        <ul class="home-trust_group" role="list" aria-hidden="true">
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-shield"/></svg></span>CDCP accepted</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-pin"/></svg></span>Serving Dorchester since 1982</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-receipt"/></svg></span>Direct billing to most insurers</li>
+          <li class="home-trust_item"><span class="icon-box_component is-small is-round is-white is-outline"><svg class="icon-embed-xsmall"><use href="#i-star"/></svg></span><a href="#" class="home-trust_link" tabindex="-1">Read our Google reviews</a></li>
+        </ul>
       </div>
     </section>
 
@@ -242,7 +260,14 @@
         <div class="container-large">
           <div class="padding-section-large">
             <div class="home-story_component">
-              <div class="home-story_image reveal"><img src="/assets/reference/sign-4085-hamilton-rd-cropped.webp" alt="The Mill Pond Dental Care sign at 4085 Hamilton Road, Dorchester" loading="lazy" width="872" height="509"></div>
+              <div class="home-story_visual reveal">
+                <span class="home-story_ripple" aria-hidden="true"></span>
+                <div class="home-story_photo">
+                  <img src="/assets/reference/sign-4085-hamilton-rd-cropped.webp" alt="The Mill Pond Dental Care sign at 4085 Hamilton Road, Dorchester" loading="lazy" width="872" height="509">
+                  <img src="/assets/logo/mpdc-logo-240.png" alt="" class="home-story_badge" width="96" height="96" loading="lazy">
+                </div>
+                <a href="#location" class="home-story_address"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-pin"/></svg>4085 Hamilton Rd, Dorchester, ON</a>
+              </div>
               <div class="home-story_content reveal">
                 <div class="text-style-tagline">Our story</div>
                 <h2 class="heading-style-h2">Dorchester’s neighbourhood dental office for over 40 years</h2>
@@ -561,8 +586,11 @@
                       <label for="c-website">Leave this field empty</label>
                       <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button>
-                      <p class="contact-form_privacy text-size-small text-style-muted">We only use your details to reply to you. See our <a href="#">privacy policy</a>.</p></div>
+                    <div class="is-full">
+                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree that Mill Pond Dental Care may use this information to contact me about my appointment and treatment. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
+                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
+                    </div>
+                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button></div>
                     <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
                   </div>
                 </form>

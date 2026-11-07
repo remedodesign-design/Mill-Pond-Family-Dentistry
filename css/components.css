@@ -21,6 +21,24 @@
 .logo_component.is-stacked .logo_text { font-size: 1.75rem; }
 .logo_component.is-alternate { color: var(--text-color--text-alternate); }
 
+/* Ribbon: thin bar above the navbar (address, phone, social). Scrolls away;
+   only the navbar below it is sticky. */
+.ribbon_component { background-color: var(--background-color--background-alternate); color: var(--text-color--text-alternate); font-size: 0.875rem; }
+.ribbon_container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 2.5rem; }
+.ribbon_right { display: flex; align-items: center; gap: 1.5rem; }
+.ribbon_item { display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255, 255, 255, 0.9); text-decoration: none; white-space: nowrap; }
+.ribbon_item svg { color: var(--base-color-brand--pond); }
+.ribbon_item:hover { color: var(--text-color--text-alternate); text-decoration: underline; text-underline-offset: 0.2em; }
+.ribbon_phone { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ribbon_social { display: flex; align-items: center; gap: 0.25rem; padding-left: 1.25rem; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+.ribbon_social-link { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; color: rgba(255, 255, 255, 0.9); }
+.ribbon_social-link:hover { background-color: rgba(255, 255, 255, 0.12); color: var(--text-color--text-alternate); }
+.ribbon_item:focus-visible, .ribbon_social-link:focus-visible { outline: 0.125rem solid var(--base-color-brand--pond); outline-offset: 0.125rem; }
+@media screen and (max-width: 767px) {
+  .ribbon_address { display: none; }
+  .ribbon_container { justify-content: center; }
+}
+
 /* Navbar ------------------------------------------------------------------ */
 .navbar_component {
   position: sticky; top: 0; z-index: 100;
@@ -35,14 +53,10 @@
 }
 .navbar_link:hover, .navbar_link.w--current { color: var(--text-color--text-brand); box-shadow: inset 0 -2px 0 var(--base-color-brand--pond); }
 .navbar_menu-buttons { display: flex; align-items: center; gap: 1.25rem; }
-.navbar_phone { color: var(--text-color--text-primary); font-weight: 600; text-decoration: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.navbar_phone:hover { color: var(--text-color--text-brand); }
 .navbar_menu-button { display: none; }
 
-/* Small desktops: the menu (now with Home) needs the room, so the phone
-   number moves out (it stays in the hero, drawer and footer) and gaps tighten. */
+/* Small desktops: tighten the menu so it stays on one line. */
 @media screen and (max-width: 1279px) {
-  .navbar_phone { display: none; }
   .navbar_container { gap: 1.25rem; }
   .navbar_menu { gap: 1.25rem; }
 }
@@ -57,9 +71,6 @@
     border: 1px solid var(--border-color--border-primary); border-radius: var(--radius--small);
     background: transparent; color: var(--text-color--text-primary); cursor: pointer;
   }
-}
-@media screen and (max-width: 767px) {
-  .navbar_phone { display: none; }
 }
 
 /* Section header (tagline + heading + intro) ------------------------------ */
@@ -361,8 +372,6 @@ body.is-menu-open { overflow: hidden; }
 .contact-form_summary { margin-bottom: 1.25rem; font-weight: 600; }
 .contact-form_summary:focus { outline: none; }
 .contact-form_submit { width: 100%; }
-.contact-form_privacy { margin-top: 0.75rem; text-align: center; }
-.contact-form_privacy a { color: inherit; }
 /* Error state: colour + icon + text, never colour alone */
 .form_field-wrapper.is-error .form_input,
 .form_input[aria-invalid="true"] { border-color: var(--base-color-system--error); box-shadow: inset 0 0 0 1px var(--base-color-system--error); }

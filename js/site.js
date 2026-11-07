@@ -33,6 +33,7 @@
   const menuBtn = $('.navbar_menu-button'), drawer = document.getElementById('drawer');
   if (menuBtn && drawer) {
     const setMenu = open => {
+      if (open) drawer.style.top = Math.round(menuBtn.closest('.navbar_component').getBoundingClientRect().bottom) + 'px'; /* below the ribbon + bar */
       drawer.classList.toggle('is-open', open); document.body.classList.toggle('is-menu-open', open);
       menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       $('use', menuBtn)?.setAttribute('href', open ? '#i-close' : '#i-menu');
@@ -56,7 +57,7 @@
     const fields = $$('input[required], input[type="email"], select[required], textarea[required]', form).filter(f => f !== honeypot);
     const messageFor = f => {
       const v = f.validity, name = $(`label[for="${f.id}"]`, form)?.textContent.replace('*', '').trim() || 'This field';
-      if (f.type === 'checkbox') return v.valueMissing ? 'Please agree to be contacted so we can reply.' : '';
+      if (f.type === 'checkbox') return v.valueMissing ? 'Please tick the box so we can contact you about your appointment.' : '';
       if (v.valueMissing) return `Please enter your ${name.toLowerCase()}.`;
       if (v.typeMismatch) return 'Please enter a valid email address, like name@example.com.';
       if (v.patternMismatch) return 'Please enter a phone number with area code, like 519-555-0123.';

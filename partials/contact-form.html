@@ -58,8 +58,11 @@
                       <label for="c-website">Leave this field empty</label>
                       <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button>
-                      <p class="contact-form_privacy text-size-small text-style-muted">We only use your details to reply to you. See our <a href="#">privacy policy</a>.</p></div>
+                    <div class="is-full">
+                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree that Mill Pond Dental Care may use this information to contact me about my appointment and treatment. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
+                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
+                    </div>
+                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button></div>
                     <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
                   </div>
                 </form>

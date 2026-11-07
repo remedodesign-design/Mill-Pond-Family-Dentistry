@@ -1,3 +1,19 @@
+  <div class="ribbon_component">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="ribbon_container">
+          <a href="#location" class="ribbon_item ribbon_address"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-pin"/></svg>4085 Hamilton Rd, Dorchester, ON N0L 1G2</a>
+          <div class="ribbon_right">
+            <a href="tel:+15192683351" class="ribbon_item ribbon_phone"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-phone"/></svg>519-268-3351</a>
+            <div class="ribbon_social">
+              <a href="https://www.facebook.com/millponddental" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Facebook" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+              <a href="https://www.instagram.com/millponddentalcare" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Instagram" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="navbar_component">
     <div class="padding-global">
       <div class="container-large">
@@ -8,6 +24,15 @@
           </a>
           <nav class="navbar_menu" aria-label="Main">
             <a href="/" class="navbar_link" data-nav="home">Home</a>
+            <div class="navbar_dropdown">
+              <button type="button" class="navbar_dropdown-toggle" data-nav-group="about team" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
+              <div class="navbar_dropdown-list" id="dd-about">
+                <a href="/about.html" class="navbar_dropdown-link" data-nav="about">About the practice</a>
+                <a href="/team.html" class="navbar_dropdown-link" data-nav="team">Our Team</a>
+                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
+                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
+              </div>
+            </div>
             <div class="navbar_dropdown">
               <button type="button" class="navbar_dropdown-toggle" data-nav-group="services service-detail" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
               <div class="navbar_dropdown-list" id="dd-services">
@@ -23,20 +48,10 @@
               </div>
             </div>
             <a href="/#new-patients" class="navbar_link">New Patients</a>
-            <div class="navbar_dropdown">
-              <button type="button" class="navbar_dropdown-toggle" data-nav-group="about team" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
-              <div class="navbar_dropdown-list" id="dd-about">
-                <a href="/about.html" class="navbar_dropdown-link" data-nav="about">About the practice</a>
-                <a href="/team.html" class="navbar_dropdown-link" data-nav="team">Our Team</a>
-                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
-                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
-              </div>
-            </div>
             <a href="/#blog" class="navbar_link">Blog</a>
             <a href="/contact.html" class="navbar_link" data-nav="contact">Contact</a>
           </nav>
           <div class="navbar_menu-buttons">
-            <a href="tel:+15192683351" class="navbar_phone">519-268-3351</a>
             <!-- Xact booking URL TBC -->
             <a href="#contact-form" class="button">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
@@ -47,18 +62,18 @@
     <nav class="navbar_drawer" id="drawer" aria-label="Mobile">
       <a href="/" class="navbar_drawer-link" data-nav="home">Home</a>
       <details>
+        <summary class="navbar_drawer-link" data-nav-group="about team">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
+        <div class="navbar_drawer-sub">
+          <a href="/about.html" data-nav="about">About the practice</a><a href="/team.html" data-nav="team">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
+        </div>
+      </details>
+      <details>
         <summary class="navbar_drawer-link" data-nav-group="services service-detail">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
           <a href="/services.html#featured">Dental Implants</a><a href="/services.html#featured">Invisalign</a><a href="/services.html#featured">Smile Makeover</a><a href="/services.html#featured">IV Sedation</a><a href="/service-detail.html" data-nav="service-detail">Family Dentistry</a><a href="/services.html#emergency">Emergencies</a><a href="/services.html" data-nav="services">All services</a>
         </div>
       </details>
       <a href="/#new-patients" class="navbar_drawer-link">New Patients</a>
-      <details>
-        <summary class="navbar_drawer-link" data-nav-group="about team">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
-        <div class="navbar_drawer-sub">
-          <a href="/about.html" data-nav="about">About the practice</a><a href="/team.html" data-nav="team">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
-        </div>
-      </details>
       <a href="/#blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact.html" class="navbar_drawer-link" data-nav="contact">Contact</a>
       <div class="navbar_drawer-contact">

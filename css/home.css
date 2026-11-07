@@ -35,24 +35,73 @@
   .home-hero_ripple { bottom: auto; top: -16rem; left: auto; right: -18rem; }
 }
 @media screen and (max-width: 767px) {
+  .home-trust_marquee { padding: 1.25rem 0; }
+  .home-trust_group { gap: 2.5rem; padding: 0 1.25rem; animation-duration: 24s; }
   .home-hero_component { padding: 3rem 0 2.5rem; }
   .home-hero_heading { font-size: 2.625rem; }
   .home-hero_media { height: 20rem; margin-left: 0; border-top-left-radius: 50% 3rem; border-top-right-radius: 50% 3rem; }
   .home-hero_facts { gap: 0.625rem 1.25rem; }
 }
 
-/* Trust strip (light version) ---------------------------------------------- */
-.home-trust_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
-.home-trust_item { display: flex; align-items: center; gap: 0.875rem; margin: 0; font-weight: 500; line-height: 1.3; }
-.home-trust_list { column-gap: 3rem; }
-.home-trust_item { position: relative; }
-.home-trust_item + .home-trust_item::before { content: ""; position: absolute; left: -1.5rem; top: 0.25rem; bottom: 0.25rem; width: 1px; background-color: var(--border-color--border-primary); }
+/* Trust strip: looping marquee. Each group is at least as wide as the screen,
+   so moving both by -100% of their own width loops without a seam. --------- */
+.section_home-trust { overflow: hidden; }
+.home-trust_marquee {
+  display: flex; padding: 1.5rem 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.home-trust_group {
+  flex: none; display: flex; align-items: center; justify-content: space-around; gap: 4rem;
+  min-width: 100%; margin: 0; padding: 0 2rem; list-style: none;
+  animation: home-trust-scroll 32s linear infinite;
+}
+.home-trust_marquee:hover .home-trust_group, .home-trust_marquee:focus-within .home-trust_group { animation-play-state: paused; }
+@keyframes home-trust-scroll { to { transform: translateX(-100%); } }
+.home-trust_item { display: flex; align-items: center; gap: 0.875rem; margin: 0; font-weight: 500; line-height: 1.3; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .home-trust_marquee { -webkit-mask-image: none; mask-image: none; }
+  .home-trust_group { animation: none; flex-wrap: wrap; justify-content: center; gap: 1rem 3rem; }
+  .home-trust_group[aria-hidden="true"] { display: none; }
+}
 .home-trust_link { color: var(--text-color--text-brand); font-weight: 600; text-decoration: underline; text-decoration-color: var(--link-color--link-underline); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 .home-services_more { margin-top: 2rem; font-size: 1rem; color: var(--text-color--text-secondary); }
 /* Practice story: the whole sign photo, plain rounded corners; three facts in a row ---- */
-.home-story_component { display: grid; grid-template-columns: 6fr 5fr; gap: 4.5rem; align-items: center; }
-.home-story_image { aspect-ratio: 872 / 509; border-radius: var(--radius--medium); overflow: hidden; background-color: var(--base-color-neutral--white); }
-.home-story_image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
+.home-story_component { display: grid; grid-template-columns: 6fr 5fr; gap: 4.5rem; align-items: stretch; }
+/* Image side: deep-blue panel as tall as the text, arched top like the
+   Hamilton Rd sign, pond ripples behind; sign photo inside with the
+   practice's logo tile pinned to its corner. */
+.home-story_visual {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
+  min-height: 34rem; padding: 6rem 3rem 3rem;
+  border-radius: 50% 50% var(--radius--medium) var(--radius--medium) / 8rem 8rem var(--radius--medium) var(--radius--medium);
+  background-color: var(--base-color-brand--deep);
+}
+.home-story_visual::before {
+  content: ""; position: absolute; inset: 1rem 1rem auto; height: 10rem; z-index: -1; pointer-events: none;
+  border: 1px solid rgba(151, 192, 232, 0.35); border-bottom: 0;
+  border-radius: 50% 50% 0 0 / 7.25rem 7.25rem 0 0;
+}
+.home-story_ripple {
+  position: absolute; right: -12rem; bottom: -14rem; z-index: -1; width: 30rem; height: 30rem; border-radius: 50%; pointer-events: none;
+  border: 1px solid rgba(151, 192, 232, 0.25);
+  box-shadow: 0 0 0 3.5rem rgba(151, 192, 232, 0.06), 0 0 0 7rem rgba(151, 192, 232, 0.04), 0 0 0 10.5rem rgba(151, 192, 232, 0.03);
+}
+.home-story_photo { position: relative; width: 100%; max-width: 34rem; }
+.home-story_photo > img:first-child {
+  display: block; width: 100%; height: auto; aspect-ratio: 872 / 509; object-fit: cover;
+  border: 0.375rem solid var(--base-color-neutral--white); border-radius: var(--radius--medium);
+  box-shadow: 0 1.5rem 3rem rgba(9, 27, 45, 0.35);
+}
+.home-story_badge {
+  position: absolute; top: -2.25rem; right: -1.25rem; width: 6rem; height: 6rem;
+  border-radius: var(--radius--small); transform: rotate(6deg);
+  box-shadow: 0 0.75rem 1.5rem rgba(9, 27, 45, 0.3);
+}
+.home-story_address { display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255, 255, 255, 0.9); font-size: 0.9375rem; text-decoration: none; }
+.home-story_address svg { color: var(--base-color-brand--pond); }
+.home-story_address:hover { color: var(--text-color--text-alternate); text-decoration: underline; text-underline-offset: 0.2em; }
 .home-story_content { display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
 .home-story_facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0.75rem 0 0.5rem; border-top: 1px solid var(--border-color--border-primary); border-bottom: 1px solid var(--border-color--border-primary); }
 .home-story_fact { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 0.5rem; padding: 1.25rem 1.25rem 1.25rem 0; }
@@ -108,9 +157,8 @@
 .home-team_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
 /* Responsive ------------------------------------------------------------------------- */
 @media screen and (max-width: 991px) {
-  .home-trust_list { grid-template-columns: 1fr 1fr; }
-  .home-trust_item:nth-child(3)::before { display: none; }
   .home-story_component { grid-template-columns: 1fr; gap: 3rem; }
+  .home-story_visual { min-height: 0; }
   .home-why_bento { grid-template-columns: 1fr 1fr; }
   .home-why_photo { grid-row: auto; grid-column: span 2; min-height: 20rem; }
   .home-journey_component { grid-template-columns: 1fr; gap: 3rem; }
@@ -118,9 +166,10 @@
   .home-team_list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 }
 @media screen and (max-width: 767px) {
-  .home-trust_list { grid-template-columns: 1fr; gap: 1rem; }
-  .home-trust_item + .home-trust_item::before { display: none; }
   .home-story_fact-number { font-size: 2.25rem; }
+  .home-story_visual { padding: 4.5rem 1.25rem 1.75rem; gap: 1.5rem; border-radius: 50% 50% var(--radius--medium) var(--radius--medium) / 4.5rem 4.5rem var(--radius--medium) var(--radius--medium); }
+  .home-story_visual::before { height: 6rem; border-radius: 50% 50% 0 0 / 3.75rem 3.75rem 0 0; }
+  .home-story_badge { width: 4.5rem; height: 4.5rem; top: -1.75rem; right: -0.5rem; }
   .home-story_fact { padding-right: 0.75rem; }
   .home-story_fact + .home-story_fact { padding-left: 0.75rem; }
   .home-why_bento { grid-template-columns: 1fr; }

@@ -60,6 +60,22 @@
 
   <!-- 01 Header ============================================================ -->
 <!-- shared:header (edit partials/header.html, then run tools/sync-shared.py) -->
+  <div class="ribbon_component">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="ribbon_container">
+          <a href="#location" class="ribbon_item ribbon_address"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-pin"/></svg>4085 Hamilton Rd, Dorchester, ON N0L 1G2</a>
+          <div class="ribbon_right">
+            <a href="tel:+15192683351" class="ribbon_item ribbon_phone"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-phone"/></svg>519-268-3351</a>
+            <div class="ribbon_social">
+              <a href="https://www.facebook.com/millponddental" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Facebook" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+              <a href="https://www.instagram.com/millponddentalcare" class="ribbon_social-link" aria-label="Mill Pond Dental Care on Instagram" target="_blank" rel="noopener"><svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="navbar_component">
     <div class="padding-global">
       <div class="container-large">
@@ -70,6 +86,15 @@
           </a>
           <nav class="navbar_menu" aria-label="Main">
             <a href="/" class="navbar_link">Home</a>
+            <div class="navbar_dropdown">
+              <button type="button" class="navbar_dropdown-toggle w--current" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
+              <div class="navbar_dropdown-list" id="dd-about">
+                <a href="/about.html" class="navbar_dropdown-link">About the practice</a>
+                <a href="/team.html" class="navbar_dropdown-link w--current" aria-current="page">Our Team</a>
+                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
+                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
+              </div>
+            </div>
             <div class="navbar_dropdown">
               <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
               <div class="navbar_dropdown-list" id="dd-services">
@@ -85,20 +110,10 @@
               </div>
             </div>
             <a href="/#new-patients" class="navbar_link">New Patients</a>
-            <div class="navbar_dropdown">
-              <button type="button" class="navbar_dropdown-toggle w--current" aria-expanded="false" aria-controls="dd-about">About <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
-              <div class="navbar_dropdown-list" id="dd-about">
-                <a href="/about.html" class="navbar_dropdown-link">About the practice</a>
-                <a href="/team.html" class="navbar_dropdown-link w--current" aria-current="page">Our Team</a>
-                <a href="#location" class="navbar_dropdown-link">Hours &amp; Location</a>
-                <a href="/services.html#insurance" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
-              </div>
-            </div>
             <a href="/#blog" class="navbar_link">Blog</a>
             <a href="/contact.html" class="navbar_link">Contact</a>
           </nav>
           <div class="navbar_menu-buttons">
-            <a href="tel:+15192683351" class="navbar_phone">519-268-3351</a>
             <!-- Xact booking URL TBC -->
             <a href="#contact-form" class="button">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
@@ -109,18 +124,18 @@
     <nav class="navbar_drawer" id="drawer" aria-label="Mobile">
       <a href="/" class="navbar_drawer-link">Home</a>
       <details>
+        <summary class="navbar_drawer-link w--current">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
+        <div class="navbar_drawer-sub">
+          <a href="/about.html">About the practice</a><a href="/team.html" class="w--current" aria-current="page">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
+        </div>
+      </details>
+      <details>
         <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
           <a href="/services.html#featured">Dental Implants</a><a href="/services.html#featured">Invisalign</a><a href="/services.html#featured">Smile Makeover</a><a href="/services.html#featured">IV Sedation</a><a href="/service-detail.html">Family Dentistry</a><a href="/services.html#emergency">Emergencies</a><a href="/services.html">All services</a>
         </div>
       </details>
       <a href="/#new-patients" class="navbar_drawer-link">New Patients</a>
-      <details>
-        <summary class="navbar_drawer-link w--current">About <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
-        <div class="navbar_drawer-sub">
-          <a href="/about.html">About the practice</a><a href="/team.html" class="w--current" aria-current="page">Our Team</a><a href="#location">Hours &amp; Location</a><a href="/services.html#insurance">CDCP &amp; Insurance</a>
-        </div>
-      </details>
       <a href="/#blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact.html" class="navbar_drawer-link">Contact</a>
       <div class="navbar_drawer-contact">
@@ -173,7 +188,7 @@
             <div class="spacer-large"></div>
             <div class="team-tabs_component" data-tabs>
               <div class="team-tabs_menu" role="tablist" aria-label="Team by role">
-                <button type="button" class="team-tabs_tab" role="tab" id="tab-dentists" aria-controls="dentists" aria-selected="true">Dentists<span class="team-tabs_count">2</span></button>
+                <button type="button" class="team-tabs_tab" role="tab" id="tab-dentists" aria-controls="dentists" aria-selected="true">Dentists<span class="team-tabs_count">3</span></button>
                 <button type="button" class="team-tabs_tab" role="tab" id="tab-hygienists" aria-controls="hygienists" aria-selected="false" tabindex="-1">Hygienists<span class="team-tabs_count">2</span></button>
                 <button type="button" class="team-tabs_tab" role="tab" id="tab-assistants" aria-controls="assistants" aria-selected="false" tabindex="-1">Dental assistants<span class="team-tabs_count">3</span></button>
                 <button type="button" class="team-tabs_tab" role="tab" id="tab-reception" aria-controls="reception" aria-selected="false" tabindex="-1">Reception<span class="team-tabs_count">2</span></button>
@@ -204,6 +219,16 @@
                       <p>“I take pride in what I do. My primary concern is what will best benefit our patients. I am excited to be working in such a great community and cannot wait to meet you!”</p>
                     </details>
                   </li>
+                  <li class="team-card_item">
+                    <div class="team-card_portrait"><img src="/assets/photos/team/dr-lida-kiddie.jpg" alt="Dr. Lida Kiddie, founder of Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200"></div>
+                    <p class="team-card_role">Founder · Dentist</p>
+                    <h3 class="team-card_name">Dr. Lida Kiddie</h3>
+                    <p class="team-card_credentials">BSc, University of Waterloo · DDS, University of Toronto</p>
+                    <details class="team-card_bio">
+                      <summary>Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                      <p>“I feel fortunate and grateful to practice dentistry, my passion, in Dorchester. Dorchester is a community with a vibrant spirit and exceptional people. I am pleased to call Dorchester my hometown.”</p>
+                      <p>Dr. Kiddie opened Mill Pond Dental Care in 1982.</p>
+                    </details>
                 </ul>
               </div>
               <div class="team-tabs_panel" id="hygienists" role="tabpanel" aria-labelledby="tab-hygienists" tabindex="0">
@@ -410,8 +435,11 @@
                       <label for="c-website">Leave this field empty</label>
                       <input id="c-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button>
-                      <p class="contact-form_privacy text-size-small text-style-muted">We only use your details to reply to you. See our <a href="#">privacy policy</a>.</p></div>
+                    <div class="is-full">
+                      <label class="form_checkbox"><input type="checkbox" class="form_checkbox-icon" id="c-consent" name="consent" required aria-describedby="c-consent-error"><span class="text-size-small">I agree that Mill Pond Dental Care may use this information to contact me about my appointment and treatment. See our <a href="#">privacy policy</a>. <span class="form_required" aria-hidden="true">*</span></span></label>
+                      <span class="contact-form_error" id="c-consent-error" data-error-for="c-consent" hidden></span>
+                    </div>
+                    <div class="is-full"><button type="submit" class="button contact-form_submit">Send message</button></div>
                     <div class="is-full form_message-success" data-form-success hidden role="status" tabindex="-1">Thanks, we’ll be in touch within one business day. (Design preview: nothing was sent.)</div>
                   </div>
                 </form>
