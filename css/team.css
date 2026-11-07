@@ -49,17 +49,25 @@
 .team-card_role { font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-color--text-brand); }
 .team-card_name { margin-top: 0.25rem; font-family: var(--font--heading); font-weight: 600; font-size: 1.375rem; line-height: 1.2; color: var(--text-color--text-primary); }
 .team-card_credentials { margin-top: 0.375rem; font-size: 0.9375rem; line-height: 1.4; color: var(--text-color--text-secondary); }
-.team-card_bio { margin-top: 0.75rem; }
-.team-card_bio summary {
-  display: inline-flex; align-items: center; gap: 0.375rem; cursor: pointer; list-style: none;
+/* Card = one block. Today it is a <div> (not clickable).
+   When bio pages exist, make it <a class="team-card_link" href="/team/NAME">:
+   the whole card becomes the link and "Read bio" shows up. */
+.team-card_link { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
+.team-card_more { display: none; }
+a.team-card_link { border-radius: var(--radius--medium); }
+a.team-card_link:hover, a.team-card_link:focus-visible { color: inherit; }
+a.team-card_link:focus-visible { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 0.5rem; }
+a.team-card_link .team-card_more {
+  display: inline-flex; align-self: flex-start; align-items: center; gap: 0.375rem; margin-top: 0.75rem;
   font-family: var(--font--heading); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-color--text-brand);
 }
-.team-card_bio summary::-webkit-details-marker { display: none; }
-.team-card_bio summary svg { transition: transform 150ms ease; }
-.team-card_bio[open] summary svg { transform: rotate(180deg); }
-.team-card_bio p { margin-top: 0.75rem; font-size: 0.9375rem; line-height: 1.55; color: var(--text-color--text-secondary); }
-.team-card_focus { display: flex; flex-wrap: wrap; gap: 0.375rem; margin: 0.75rem 0 0; padding: 0; list-style: none; }
-.team-card_focus li { margin: 0; }
+a.team-card_link .team-card_portrait img, a.team-card_link .team-card_more svg { transition: transform 300ms ease; }
+a.team-card_link:hover .team-card_portrait img { transform: scale(1.03); }
+a.team-card_link:hover .team-card_name { color: var(--text-color--text-brand); }
+a.team-card_link:hover .team-card_more svg { transform: translateX(0.25rem); }
+@media (prefers-reduced-motion: reduce) {
+  a.team-card_link .team-card_portrait img, a.team-card_link .team-card_more svg { transition: none; transform: none; }
+}
 .team-dentist_credentials { margin-top: 0.5rem; color: var(--text-color--text-brand); font-weight: 600; font-size: 1rem; }
 /* 04 Founder note */
 .team-founder_component { display: grid; grid-template-columns: 7fr 5fr; gap: 5rem; align-items: center; }

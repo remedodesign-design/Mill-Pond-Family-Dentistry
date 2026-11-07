@@ -18,11 +18,11 @@ Generic copy is in place so the pages read as finished. Each line below is still
 
 | Where | Generic copy now | Needs | From |
 |---|---|---|---|
-| Dr. MacHardy focus tags | Implants · Invisalign · Family dentistry | Confirm focus areas. Only list sedation if his credentials allow it | Client |
+| Dr. MacHardy focus tags | Removed from the card (were Implants · Invisalign · Family dentistry) | Confirm focus areas for his bio page. Only list sedation if his credentials allow it | Client |
 | Dr. Al Rafea credentials | "Dentist" | Degree, school, year; bio; whether she is shown while on leave | Client |
 | Dr. Al Rafea portrait | Placeholder slot (no stock faces on team cards) | A real portrait | Client |
 | Dr. Kiddie founder section | Kept | Confirm she should still appear | Client |
-| "Read full bio" buttons | Link to `#` | Decide: bio pages or not | Content team |
+| Team bio pages | Cards are plain blocks, not clickable. The old "Read bio" dropdown copy (dentists' quotes) is in git history before this change and on mpdental.ca | Write one bio page per person (`/team/NAME`), then change each card's `<div class="team-card_link">` to `<a class="team-card_link" href="/team/NAME">`; the whole card becomes the link and "Read bio" appears | Content team |
 
 ## Services (`services.html`)
 
