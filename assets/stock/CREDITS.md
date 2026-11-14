@@ -28,3 +28,11 @@ These are Wix's built-in stock photos. Wix licenses them for use on Wix sites on
 | dentist-portrait-generic.jpg | Dr. Al Rafea card on Home and Team (tools in a coat pocket, no face, so it is not mistaken for her). Replace with her real portrait |
 
 Real practice photos from the current site live in `assets/photos/team/` (Dr. MacHardy, Dr. Kiddie, dental assistants). Confirm with the client that they can be reused.
+
+## Home page options (hotlinked, not downloaded)
+
+| Used in | Source |
+|---|---|
+| home-v1 hero | https://images.unsplash.com/photo-1756526511266-00ddcf925418 |
+| home-v2 hero | https://images.unsplash.com/photo-1663229049306-33b5cd9c2134 |
+| home-v3 hero | https://images.unsplash.com/photo-1685580388390-576100ae9ce3 |

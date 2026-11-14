@@ -57,3 +57,12 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Privacy policy and accessibility pages | Footer links go to `#` | Content team |
 | Photos | Stock and current-site photos are temporary. See `assets/stock/CREDITS.md`. The Wix stock photos must be replaced before launch | Client (photo shoot) |
 | Permission to reuse current-site team photos | Dr. MacHardy, Dr. Kiddie, dental assistants | Client |
+
+## Home page options (`/home-options`, 14 Nov 2026)
+
+| Item | Status | From |
+|---|---|---|
+| Hero family photos (options 1-3) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) once an option is picked | Client / photo shoot |
+| CEREC crowns and night guards (icon row, options 2 and 3) | Taken from the client's reference image. Confirm the practice offers both | Client |
+| Reception photo (option 2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
+| Chosen option | `index.html` is unchanged. Once the client picks, the chosen `home-vN.html` replaces it and the client theme rolls out to the other pages | Client |

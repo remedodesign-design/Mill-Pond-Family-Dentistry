@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Mill Pond Dental Care: client-recommended theme (feedback, 14 Nov 2026)
+   Load AFTER client-first.css + components.css. Remaps the base variables to
+   the client's palette and swaps the type to Montserrat (headings + nav) and
+   Lato (body). Used by the three home page options (home-v1/v2/v3).
+
+   Client palette            Role here
+   #91BCE5 Soft Blue         accents, rules, icon tints
+   #397BAE Dental Blue       buttons, links, brand text (4.55:1 on white)
+   #263E50 Navy              headings, body text, dark sections
+   #F2F7FB Light Blue        tinted section backgrounds
+   #F7F7F5 Off White         neutral section backgrounds
+   #777E84 Grey              decorative only (fails 4.5:1 for small text)
+   + Slate Blue #4D6A86      secondary dark accent (our addition, 5.6:1 on white)
+   ========================================================================== */
+:root {
+  --base-color-brand--pond: #91bce5;        /* Soft Blue */
+  --base-color-brand--deep: #397bae;        /* Dental Blue */
+  --base-color-brand--deep-dark: #2c6591;   /* Dental Blue hover */
+  --base-color-brand--mist: #f2f7fb;        /* Light Blue */
+  --base-color-brand--navy: #263e50;        /* Navy */
+  --base-color-brand--slate: #4d6a86;       /* Slate Blue */
+  --base-color-brand--slate-light: #dfe7ef; /* Slate Blue tint */
+  --base-color-neutral--cream: #f7f7f5;     /* Off White */
+  --base-color-neutral--grey: #777e84;      /* Grey */
+  --base-color-neutral--slate: #56616b;     /* secondary text, 6.2:1 on white */
+  --base-color-neutral--charcoal: #263e50;  /* primary text = Navy */
+  --base-color-neutral--border: #dde5ec;
+
+  --text-color--text-on-pond: #1d3242;
+  --background-color--background-alternate: var(--base-color-brand--navy);
+  --link-color--link-hover: var(--base-color-brand--navy);
+
+  --font--heading: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font--body: "Lato", "Segoe UI", Roboto, Arial, sans-serif;
+
+  --radius--small: 0.625rem;
+  --radius--medium: 1rem;
+  --radius--large: 1.5rem;
+  --shadow--small: 0 0.5rem 1.5rem rgba(38, 62, 80, 0.1);
+  --shadow--soft: 0 1.25rem 3rem rgba(38, 62, 80, 0.1);
+}
+
+/* Montserrat is much wider than Barlow Semi Condensed: step the scale down */
+h1, .heading-style-h1 { font-size: 3rem; line-height: 1.12; letter-spacing: -0.015em; }
+h2, .heading-style-h2 { font-size: 2.25rem; line-height: 1.18; letter-spacing: -0.01em; }
+h3, .heading-style-h3 { font-size: 1.625rem; line-height: 1.25; }
+h4, .heading-style-h4 { font-size: 1.1875rem; line-height: 1.35; }
+h1, h2, h3, h4, h5, h6,
+.heading-style-h1, .heading-style-h2, .heading-style-h3, .heading-style-h4 { font-weight: 600; }
+body { font-size: 1.0625rem; line-height: 1.65; }
+
+/* Eyebrow: spaced capitals in Dental Blue, as in the client reference */
+.text-style-tagline { font-family: var(--font--heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.18em; color: var(--base-color-brand--deep); }
+
+/* Buttons: rounded pills, sentence case (reference style) */
+.button {
+  border-radius: var(--radius--round); padding: 0.875rem 1.75rem;
+  font-family: var(--font--heading); font-weight: 600; font-size: 1rem; letter-spacing: 0; text-transform: none;
+}
+.button.is-secondary { border-color: var(--base-color-brand--deep); }
+.button.is-alternate { color: var(--base-color-brand--navy); }
+.button svg { flex: none; }
+
+/* Navigation: title case, Montserrat medium */
+.navbar_link, .navbar_dropdown-toggle {
+  font-family: var(--font--heading); font-weight: 500; font-size: 0.9375rem; letter-spacing: 0; text-transform: none;
+  color: var(--base-color-brand--navy);
+}
+.navbar_drawer-link { font-size: 1.1875rem; }
+.logo_text { font-family: var(--font--heading); font-weight: 500; text-transform: none; letter-spacing: 0; font-size: 1.1875rem; line-height: 1.1; color: var(--base-color-brand--navy); }
+.service-card_link, .contact-form_link, .tag_component { font-family: var(--font--heading); letter-spacing: 0.04em; }
+.tag_component { color: var(--base-color-brand--slate); }
+.ribbon_component { background-color: var(--base-color-brand--navy); }
+.footer_component { background-color: var(--base-color-brand--navy); }
+.footer_heading { color: var(--base-color-brand--pond); }
+.faq_question { font-family: var(--font--heading); font-size: 1.0625rem; }
+.service-card_component, .contact-form_form-card, .location_card, .location_map, .image-slot_component { border-radius: var(--radius--medium); }
+
+@media screen and (max-width: 991px) {
+  h1, .heading-style-h1 { font-size: 2.625rem; }
+  h2, .heading-style-h2 { font-size: 2rem; }
+}
+@media screen and (max-width: 767px) {
+  h1, .heading-style-h1 { font-size: 2.125rem; }
+  h2, .heading-style-h2 { font-size: 1.75rem; }
+  h3, .heading-style-h3 { font-size: 1.375rem; }
+  h4, .heading-style-h4 { font-size: 1.125rem; }
+  body { font-size: 1rem; }
+}
+
+/* Service icon row (shared by home options 2 and 3) -------------------------------------------------------- */
+.icon-row_list { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.icon-row_item { margin: 0; }
+.icon-row_item + .icon-row_item { border-left: 1px solid var(--border-color--border-primary); }
+.icon-row_link { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 0.75rem 1rem; text-align: center; text-decoration: none; color: var(--base-color-brand--navy); font-family: var(--font--heading); font-weight: 500; font-size: 1.0625rem; line-height: 1.3; }
+.icon-row_link svg { width: 3.25rem; height: 3.25rem; color: var(--base-color-brand--deep); stroke-width: 1.4; transition: transform 200ms ease; }
+.icon-row_link:hover { color: var(--base-color-brand--deep); }
+.icon-row_link:hover svg { transform: translateY(-0.25rem); }
+
+@media screen and (max-width: 991px) {
+  .icon-row_list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2rem; }
+  .icon-row_item:nth-child(4) { border-left: 0; }
+}
+@media screen and (max-width: 767px) {
+  .icon-row_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .icon-row_item:nth-child(n) { border-left: 0; }
+  .icon-row_item:nth-child(even) { border-left: 1px solid var(--border-color--border-primary); }
+  .icon-row_link { font-size: 0.9375rem; }
+  .icon-row_link svg { width: 2.75rem; height: 2.75rem; }
+}

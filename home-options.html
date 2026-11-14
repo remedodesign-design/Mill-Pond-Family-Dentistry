@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home page options | Mill Pond Dental Care</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Lato:wght@400;700&display=swap">
+<link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
+<style>
+  /* Review wrapper only (not part of the site): three home page options in tabs. */
+  :root { --navy: #263e50; --blue: #397bae; --soft: #91bce5; --light: #f2f7fb; --bar: 3.75rem; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { display: flex; flex-direction: column; background: var(--light); color: var(--navy); font-family: "Lato", "Segoe UI", Arial, sans-serif; }
+  .options_bar { flex: none; display: flex; align-items: center; gap: 1.5rem; min-height: var(--bar); padding: 0 1.25rem; background: var(--navy); color: #fff; }
+  .options_title { flex: none; font-family: "Montserrat", Arial, sans-serif; font-weight: 600; font-size: 0.9375rem; white-space: nowrap; }
+  .options_title span { color: var(--soft); font-weight: 500; }
+  .options_tabs { display: flex; gap: 0.375rem; overflow-x: auto; scrollbar-width: none; padding: 0.5rem 0; }
+  .options_tabs::-webkit-scrollbar { display: none; }
+  .options_tab {
+    flex: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.22); border-radius: 100vw;
+    background: transparent; color: rgba(255,255,255,0.88); font: 500 0.875rem/1.2 "Montserrat", Arial, sans-serif; cursor: pointer; white-space: nowrap;
+  }
+  .options_tab:hover { border-color: var(--soft); color: #fff; }
+  .options_tab[aria-selected="true"] { background: #fff; border-color: #fff; color: var(--navy); }
+  .options_num { display: inline-flex; align-items: center; justify-content: center; width: 1.375rem; height: 1.375rem; border-radius: 50%; background: rgba(145,188,229,0.25); font-size: 0.75rem; font-weight: 600; }
+  .options_tab[aria-selected="true"] .options_num { background: var(--blue); color: #fff; }
+  .options_tab:focus-visible, .options_open:focus-visible { outline: 3px solid var(--soft); outline-offset: 2px; }
+  .options_open { margin-left: auto; flex: none; color: rgba(255,255,255,0.85); font-size: 0.8125rem; text-decoration: underline; text-underline-offset: 0.2em; white-space: nowrap; }
+  .options_open:hover { color: #fff; }
+  .options_note { flex: none; padding: 0.5rem 1.25rem; background: #fff; border-bottom: 1px solid #dde5ec; font-size: 0.875rem; color: #56616b; }
+  .options_note strong { color: var(--navy); }
+  .options_panel { flex: 1; min-height: 0; }
+  .options_panel[hidden] { display: none; }
+  .options_panel iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+  @media (max-width: 1023px) { .options_title span { display: none; } }
+  @media (max-width: 767px) {
+    .options_bar { flex-wrap: wrap; gap: 0 1rem; padding: 0.625rem 1rem 0; }
+    .options_title { padding-top: 0.25rem; }
+    .options_open { margin-left: auto; }
+    .options_tabs { order: 3; width: 100%; padding: 0.5rem 0 0.625rem; }
+    .options_note { padding: 0.5rem 1rem; font-size: 0.8125rem; }
+  }
+</style>
+</head>
+<body>
+  <header class="options_bar">
+    <div class="options_title">Mill Pond Dental Care <span>· Home page options</span></div>
+    <div class="options_tabs" role="tablist" aria-label="Home page options">
+      <button type="button" class="options_tab" role="tab" id="tab-v1" aria-controls="panel-v1" aria-selected="true" data-src="/home-v1.html"><span class="options_num">1</span>Refreshed current design</button>
+      <button type="button" class="options_tab" role="tab" id="tab-v2" aria-controls="panel-v2" aria-selected="false" tabindex="-1" data-src="/home-v2.html"><span class="options_num">2</span>Client reference</button>
+      <button type="button" class="options_tab" role="tab" id="tab-v3" aria-controls="panel-v3" aria-selected="false" tabindex="-1" data-src="/home-v3.html"><span class="options_num">3</span>Blend of both</button>
+    </div>
+    <a class="options_open" href="/home-v1.html" target="_blank" rel="noopener">Open full page ↗</a>
+  </header>
+  <p class="options_note" data-note></p>
+
+  <div class="options_panel" role="tabpanel" id="panel-v1" aria-labelledby="tab-v1"></div>
+  <div class="options_panel" role="tabpanel" id="panel-v2" aria-labelledby="tab-v2" hidden></div>
+  <div class="options_panel" role="tabpanel" id="panel-v3" aria-labelledby="tab-v3" hidden></div>
+
+<script>
+(() => {
+  const notes = {
+    v1: '<strong>Option 1.</strong> Our current home page with the recommended colours and fonts (Montserrat + Lato), a new hero modelled on your reference, and Slate Blue as a secondary accent.',
+    v2: '<strong>Option 2.</strong> A new home page built on your reference image: light family hero, service icon row, “welcoming dental home” split, pill buttons.',
+    v3: '<strong>Option 3.</strong> A blend: our original layout and arched “sign” shapes, combined with your reference’s family photo, icon row and welcome section.'
+  };
+  const tabs = [...document.querySelectorAll('.options_tab')];
+  const open = document.querySelector('.options_open');
+  const note = document.querySelector('[data-note]');
+  const key = t => t.id.replace('tab-', '');
+
+  function select(tab, focus) {
+    tabs.forEach(t => {
+      const on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panel.hidden = !on;
+      if (on && !panel.firstChild) {            // load each option once, on first view
+        const f = document.createElement('iframe');
+        f.src = t.dataset.src; f.title = t.textContent.trim() + ' (home page option)';
+        panel.appendChild(f);
+      }
+    });
+    open.href = tab.dataset.src; note.innerHTML = notes[key(tab)];
+    if (focus) tab.focus();
+    history.replaceState(null, '', '#' + key(tab));
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => {
+      const n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (n === undefined) return;
+      e.preventDefault(); select(tabs[(n + tabs.length) % tabs.length], true);
+    });
+  });
+  const start = tabs.find(t => '#' + key(t) === location.hash) || tabs[0];
+  select(start);
+})();
+</script>
+</body>
+</html>

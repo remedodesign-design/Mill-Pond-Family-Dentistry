@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Home option 2: "Client reference": a new home page built on the layout
+   and mood of the client's reference image: airy light-blue hero with a
+   family photo, a row of line-icon services, a welcome split with a tooth
+   outline, pill buttons, soft rounded panels. Montserrat + Lato.
+   Load after client-first.css, components.css, theme-client.css.
+   ========================================================================== */
+.v2-page { background-color: var(--base-color-neutral--white); }
+.v2-topbar { height: 0.375rem; background: linear-gradient(90deg, var(--base-color-brand--pond), #cfe2f4 50%, var(--base-color-brand--pond)); }
+
+/* Header ------------------------------------------------------------------ */
+.navbar_component.is-v2 { border-bottom: 0; background-color: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); }
+.navbar_component.is-v2 .navbar_container { min-height: 5.75rem; }
+.v2-logo { display: inline-flex; align-items: center; gap: 1.125rem; text-decoration: none; color: var(--base-color-brand--navy); }
+.v2-logo img { width: auto; height: 4.25rem; }
+.v2-logo_divider { width: 1px; align-self: stretch; margin: 0.25rem 0; background-color: var(--base-color-brand--navy); opacity: 0.6; }
+.v2-logo_text { font-family: var(--font--heading); font-weight: 500; font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.01em; }
+.v2-logo_text span { display: block; }
+.navbar_component.is-v2 .navbar_menu { gap: 2.25rem; }
+.navbar_component.is-v2 .navbar_link:hover, .navbar_component.is-v2 .navbar_link.w--current { box-shadow: none; color: var(--base-color-brand--deep); }
+.v2-book { box-shadow: 0 0.5rem 1.25rem rgba(57, 123, 174, 0.28); }
+
+/* Hero -------------------------------------------------------------------- */
+.section_v2-hero { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(115deg, #e9f2fb 0%, #f4f8fc 45%, #ffffff 100%); }
+.v2-hero_media { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: -2; }
+.v2-hero_media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+.v2-hero_media::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #edf4fb 0%, rgba(237, 244, 251, 0.6) 14%, rgba(237, 244, 251, 0) 38%); }
+.v2-hero_component { display: flex; align-items: center; min-height: clamp(32rem, calc(80vh - 5.75rem), 42rem); padding: 4.5rem 0 8rem; }
+.v2-hero_content { display: flex; flex-direction: column; gap: 1.75rem; width: 46%; }
+.v2-hero_heading { font-size: 3.75rem; line-height: 1.12; font-weight: 500; letter-spacing: -0.025em; color: var(--base-color-brand--navy); }
+.v2-hero_text { font-size: 1.375rem; line-height: 1.5; color: var(--base-color-brand--navy); max-width: 30rem; }
+.v2-hero_wave { position: absolute; left: 0; bottom: -1px; z-index: -1; width: 62%; height: 7.5rem; pointer-events: none; }
+
+/* Welcome split ------------------------------------------------------------ */
+.section_v2-welcome { position: relative; overflow: hidden; }
+.v2-welcome_component { display: grid; grid-template-columns: 1.05fr 1fr; gap: 4rem; align-items: center; }
+.v2-welcome_image { border-radius: var(--radius--large); overflow: hidden; aspect-ratio: 16 / 10; box-shadow: var(--shadow--soft); }
+.v2-welcome_image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.v2-welcome_content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1.25rem; }
+.v2-welcome_text { color: var(--text-color--text-secondary); font-size: 1.125rem; }
+.v2-tooth-outline { position: absolute; right: -6rem; top: 50%; width: 22rem; height: auto; transform: translateY(-50%); color: #d6e6f5; pointer-events: none; z-index: 0; }
+
+/* Featured treatments ------------------------------------------------------ */
+.section_v2-treatments { background-color: var(--base-color-brand--mist); }
+.v2-card_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.v2-card { display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius--large); background-color: var(--base-color-neutral--white); color: var(--base-color-brand--navy); text-decoration: none; box-shadow: 0 0.25rem 1rem rgba(38, 62, 80, 0.05); transition: transform 200ms ease, box-shadow 200ms ease; }
+.v2-card:hover { transform: translateY(-0.25rem); box-shadow: var(--shadow--soft); color: var(--base-color-brand--navy); }
+.v2-card_image { aspect-ratio: 4 / 3; overflow: hidden; }
+.v2-card_image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.v2-card_body { display: flex; flex-direction: column; gap: 0.625rem; padding: 1.5rem 1.5rem 1.75rem; flex: 1; }
+.v2-card_body p { color: var(--text-color--text-secondary); font-size: 1rem; }
+.v2-card_more { margin-top: auto; padding-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font--heading); font-weight: 600; font-size: 0.9375rem; color: var(--base-color-brand--deep); }
+
+/* Why families choose us ---------------------------------------------------- */
+.v2-why_component { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5rem; align-items: center; }
+.v2-why_photo { position: relative; }
+.v2-why_photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12rem 12rem var(--radius--large) var(--radius--large); display: block; }
+.v2-why_stat { position: absolute; right: -2rem; bottom: 2.5rem; padding: 1.25rem 1.5rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
+.v2-why_stat strong { display: block; font-family: var(--font--heading); font-weight: 600; font-size: 2.25rem; line-height: 1; color: var(--base-color-brand--deep); }
+.v2-why_stat span { font-size: 0.9375rem; color: var(--text-color--text-secondary); }
+.v2-why_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; margin-top: 2.5rem; padding: 0; list-style: none; }
+.v2-why_grid li { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.v2-why_grid p { color: var(--text-color--text-secondary); font-size: 1rem; }
+.v2-why_icon { display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--base-color-brand--mist); color: var(--base-color-brand--deep); }
+
+/* Team ---------------------------------------------------------------------- */
+.section_v2-team { background-color: var(--base-color-neutral--cream); }
+.v2-team_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.v2-team_card { display: flex; flex-direction: column; gap: 1.25rem; text-align: center; }
+.v2-team_photo { aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden; width: 78%; margin: 0 auto; border: 0.5rem solid var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
+.v2-team_photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+.v2-team_role { color: var(--text-color--text-secondary); font-size: 1rem; margin-top: 0.25rem; }
+
+/* New patients + coverage -------------------------------------------------- */
+.v2-steps_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; counter-reset: v2step; }
+.v2-steps_item { position: relative; margin: 0; padding: 2rem; border-radius: var(--radius--large); border: 1px solid var(--border-color--border-primary); background-color: var(--base-color-neutral--white); }
+.v2-steps_number { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-bottom: 1.25rem; border-radius: 50%; background-color: var(--base-color-brand--deep); color: var(--base-color-neutral--white); font-family: var(--font--heading); font-weight: 600; }
+.v2-steps_item p { margin-top: 0.5rem; color: var(--text-color--text-secondary); font-size: 1rem; }
+.v2-cover { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; padding: 3rem; border-radius: var(--radius--large); background-color: var(--base-color-brand--navy); color: rgba(255, 255, 255, 0.86); }
+.v2-cover h3 { color: var(--base-color-neutral--white); }
+.v2-cover_text { margin-top: 0.75rem; }
+.v2-cover_list { display: flex; flex-direction: column; gap: 0.875rem; margin: 0; padding: 0; list-style: none; }
+.v2-cover_list li { display: flex; align-items: center; gap: 0.75rem; margin: 0; font-weight: 700; color: var(--base-color-neutral--white); }
+.v2-cover_list svg { color: var(--base-color-brand--pond); }
+
+/* Responsive --------------------------------------------------------------- */
+@media screen and (max-width: 1279px) {
+  .v2-hero_heading { font-size: 3.25rem; }
+  .navbar_component.is-v2 .navbar_menu { gap: 1.5rem; }
+  .v2-logo_text { font-size: 1.25rem; }
+}
+@media screen and (max-width: 991px) {
+  .navbar_component.is-v2 .navbar_container { min-height: 4.75rem; }
+  .v2-hero_component { min-height: 0; padding: 3.5rem 0 2.5rem; }
+  .v2-hero_content { width: 100%; max-width: 36rem; }
+  .v2-hero_heading { font-size: 2.75rem; }
+  .v2-hero_media { position: relative; width: 100%; height: 24rem; }
+  .v2-hero_media::before { background: linear-gradient(180deg, #f2f7fb 0%, rgba(242, 247, 251, 0) 30%); }
+  .v2-hero_wave { width: 100%; height: 4rem; }
+  .v2-welcome_component, .v2-why_component { grid-template-columns: 1fr; gap: 3rem; }
+  .v2-why_photo { max-width: 26rem; }
+  .v2-card_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v2-cover { grid-template-columns: 1fr; padding: 2.5rem; }
+  .v2-team_list { gap: 1.25rem; }
+}
+@media screen and (max-width: 767px) {
+  .v2-logo img { height: 3.25rem; }
+  .v2-logo { gap: 0.75rem; }
+  .v2-logo_text { font-size: 1.0625rem; }
+  .v2-hero_heading { font-size: 2.25rem; }
+  .v2-hero_text { font-size: 1.125rem; }
+  .v2-hero_media { height: 18rem; }
+  .v2-hero_content .button { width: 100%; }
+  .v2-tooth-outline { display: none; }
+  .v2-card_list, .v2-steps_list, .v2-why_grid { grid-template-columns: 1fr; }
+  .v2-team_list { grid-template-columns: 1fr; gap: 2.5rem; }
+  .v2-team_photo { width: 70%; }
+  .v2-why_stat { right: 1rem; bottom: 1rem; }
+  .v2-cover { padding: 2rem 1.5rem; }
+}
