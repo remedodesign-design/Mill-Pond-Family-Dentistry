@@ -151,3 +151,13 @@
 /* Trust badge marquee (same look as the home page) */
 .section_home-trust { background-color: var(--base-color-brand--mist); border-top: 1px solid var(--base-color-brand--slate-light); border-bottom: 1px solid var(--base-color-brand--slate-light); }
 .home-trust_item .icon-box_component { color: var(--base-color-brand--slate); border-color: var(--base-color-brand--pond); }
+
+/* Emergency card: even space above and below (it follows the light-blue journey section here) */
+.v2-page .section_home-emergency { padding-top: 5rem; }
+.v2-page .section_home-emergency + .section_location .padding-section-large { padding-top: 0; }
+@media screen and (max-width: 991px) {
+  .v2-page .section_home-emergency { padding-top: 4rem; }
+}
+@media screen and (max-width: 767px) {
+  .v2-page .section_home-emergency { padding-top: 3rem; }
+}
