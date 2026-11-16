@@ -77,4 +77,4 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Google Reviews | Elfsight floating widget is on both home designs. Add it to the other pages too once the client is happy with it | Remedo |
 | Links still pointing to `#` | Privacy policy and Accessibility (footer + form consent), "Read our Google reviews" in the trust strip | Content team / Google listing URL |
 | Links pointing to a stand-in page | Each featured service and the service dropdown go to `/services.html` or the one sample `/service-detail.html`; blog cards and "All articles" go to `#blog`. Real pages come with the Webflow build (Services and Blog CMS) | Remedo (in development) |
-| Founder history | Dr. Kiddie is retired: her name, team card and founder section are removed. The "since 1982" history stays without her name. Confirm the client is happy with that | Client |
+| Dr. Kiddie (retired) | The client said she has retired, but on our request she is shown again as Founder: team cards on both home pages and the Team page, and named in the 1982 story and About timeline. Confirm with the client | Client |
