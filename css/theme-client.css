@@ -68,7 +68,9 @@ body { font-size: 1.0625rem; line-height: 1.65; }
   color: var(--base-color-brand--navy);
 }
 .navbar_drawer-link { font-size: 1.1875rem; }
-.logo_text { font-family: var(--font--heading); font-weight: 500; text-transform: none; letter-spacing: 0; font-size: 1.1875rem; line-height: 1.1; color: var(--base-color-brand--navy); }
+.logo_text { font-family: var(--font--heading); font-weight: 500; text-transform: none; letter-spacing: 0; font-size: 1.1875rem; line-height: 1.1; }
+.logo_component { color: var(--base-color-brand--navy); }
+.logo_component.is-alternate, .logo_component.is-alternate:hover { color: var(--base-color-neutral--white); } /* footer: name in white on Navy */
 .service-card_link, .contact-form_link, .tag_component { font-family: var(--font--heading); letter-spacing: 0.04em; }
 .tag_component { color: var(--base-color-brand--slate); }
 .ribbon_component { background-color: var(--base-color-brand--navy); }

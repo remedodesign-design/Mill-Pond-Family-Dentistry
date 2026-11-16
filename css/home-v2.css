@@ -11,11 +11,6 @@
 /* Header ------------------------------------------------------------------ */
 .navbar_component.is-v2 { border-bottom: 0; background-color: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); }
 .navbar_component.is-v2 .navbar_container { min-height: 5.75rem; }
-.v2-logo { display: inline-flex; align-items: center; gap: 1.125rem; text-decoration: none; color: var(--base-color-brand--navy); }
-.v2-logo img { width: auto; height: 4.25rem; }
-.v2-logo_divider { width: 1px; align-self: stretch; margin: 0.25rem 0; background-color: var(--base-color-brand--navy); opacity: 0.6; }
-.v2-logo_text { font-family: var(--font--heading); font-weight: 500; font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.01em; }
-.v2-logo_text span { display: block; }
 .navbar_component.is-v2 .navbar_menu { gap: 2.25rem; }
 .navbar_component.is-v2 .navbar_link:hover, .navbar_component.is-v2 .navbar_link.w--current { box-shadow: none; color: var(--base-color-brand--deep); }
 .v2-book { box-shadow: 0 0.5rem 1.25rem rgba(57, 123, 174, 0.28); }
@@ -23,7 +18,7 @@
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar_component.is-v2 .navbar_menu { gap: 1rem; }
   .navbar_component.is-v2 .navbar_container { gap: 1rem; }
-  .v2-logo_divider, .v2-book svg { display: none; }
+  .v2-book svg { display: none; }
   .v2-book { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
 
@@ -94,7 +89,6 @@
 @media screen and (max-width: 1279px) {
   .v2-hero_heading { font-size: 3.25rem; }
   .navbar_component.is-v2 .navbar_menu { gap: 1.5rem; }
-  .v2-logo_text { font-size: 1.25rem; }
 }
 @media screen and (max-width: 991px) {
   .navbar_component.is-v2 .navbar_container { min-height: 4.75rem; }
@@ -111,9 +105,6 @@
   .v2-team_list { gap: 1.25rem; }
 }
 @media screen and (max-width: 767px) {
-  .v2-logo img { height: 3.25rem; }
-  .v2-logo { gap: 0.75rem; }
-  .v2-logo_text { font-size: 1.0625rem; }
   .v2-hero_heading { font-size: 2.25rem; }
   .v2-hero_text { font-size: 1.125rem; }
   .v2-hero_media { height: 18rem; }
