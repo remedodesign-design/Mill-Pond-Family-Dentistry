@@ -111,3 +111,24 @@ body { font-size: 1.0625rem; line-height: 1.65; }
   .icon-row_link { font-size: 0.9375rem; }
   .icon-row_link svg { width: 2.75rem; height: 2.75rem; }
 }
+
+/* Why Mill Pond: arched photo + four light-blue cards (home page and home-v2) */
+.why-split_component { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5rem; align-items: center; }
+.why-split_photo { position: relative; }
+.why-split_photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12rem 12rem var(--radius--large) var(--radius--large); display: block; }
+.why-split_stat { position: absolute; right: -2rem; bottom: 2.5rem; padding: 1.25rem 1.5rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
+.why-split_stat strong { display: block; font-family: var(--font--heading); font-weight: 600; font-size: 2.25rem; line-height: 1; color: var(--base-color-brand--deep); }
+.why-split_stat span { font-size: 0.9375rem; color: var(--text-color--text-secondary); }
+.why-split_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; padding: 0; list-style: none; }
+.why-split_grid li { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; padding: 1.75rem; border: 1px solid #dbe7f2; border-radius: var(--radius--large); background-color: var(--base-color-brand--mist); }
+.why-split_grid p { color: var(--text-color--text-secondary); font-size: 1rem; }
+.why-split_icon { display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--base-color-neutral--white); color: var(--base-color-brand--deep); box-shadow: 0 0.25rem 0.75rem rgba(38, 62, 80, 0.06); }
+@media screen and (max-width: 991px) {
+  .why-split_component { grid-template-columns: 1fr; gap: 3rem; }
+  .why-split_photo { max-width: 26rem; }
+}
+@media screen and (max-width: 767px) {
+  .why-split_grid { grid-template-columns: 1fr; }
+  .why-split_grid li { padding: 1.5rem; }
+  .why-split_stat { right: 1rem; bottom: 1rem; }
+}
