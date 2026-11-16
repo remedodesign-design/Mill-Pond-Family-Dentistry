@@ -53,3 +53,8 @@
 .home-journey_number { background-color: var(--base-color-brand--slate); font-family: var(--font--heading); font-size: 1.0625rem; box-shadow: 0 0 0 0.375rem var(--base-color-neutral--cream); }
 .home-journey_chip { background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--navy); }
 .section_insurance.background-color-alternate { background-color: var(--base-color-brand--slate); }
+
+/* Team: two dentists as two larger cards (Dr. Kiddie retired, Nov 2026) */
+@media screen and (min-width: 768px) {
+  .home-team_list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; max-width: 52rem; margin-left: auto; margin-right: auto; }
+}

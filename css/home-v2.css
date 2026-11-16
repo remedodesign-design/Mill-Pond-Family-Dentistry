@@ -6,7 +6,6 @@
    Load after client-first.css, components.css, theme-client.css.
    ========================================================================== */
 .v2-page { background-color: var(--base-color-neutral--white); }
-.v2-topbar { height: 0.375rem; background: linear-gradient(90deg, var(--base-color-brand--pond), #cfe2f4 50%, var(--base-color-brand--pond)); }
 
 /* Header ------------------------------------------------------------------ */
 /* No backdrop-filter here: it would make the fixed mobile drawer position inside the header and clip it */
@@ -124,4 +123,27 @@
   .v2-team_list { grid-template-columns: 1fr; gap: 2.5rem; }
   .v2-team_photo { width: 70%; }
   .v2-cover { padding: 2rem 1.5rem; }
+}
+
+/* Team: two dentists (Dr. Kiddie retired, Nov 2026) */
+@media screen and (min-width: 768px) {
+  .v2-team_list { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 46rem; margin-left: auto; margin-right: auto; }
+}
+
+/* Slate Blue accents (feedback 16 Nov: explore blues/greys on this version;
+   the main home page keeps its colours) ----------------------------------- */
+.v2-page .text-style-tagline { color: var(--base-color-brand--slate); }
+.v2-page .icon-row_link svg { color: var(--base-color-brand--slate); }
+.v2-page .icon-row_link:hover, .v2-page .icon-row_link:hover svg { color: var(--base-color-brand--deep); }
+.v2-page .why-split_icon { background-color: var(--base-color-brand--slate); color: var(--base-color-neutral--white); }
+.v2-page .why-split_stat strong { color: var(--base-color-brand--slate); }
+.section_v2-team { background-color: var(--base-color-brand--slate-light); }
+.v2-team_photo { border-color: var(--base-color-neutral--white); }
+.v2-journey_number { background-color: var(--base-color-brand--slate); }
+.v2-journey_list::after { background: linear-gradient(90deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); }
+.v2-journey_icon { background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--slate); }
+.v2-cover { background-color: var(--base-color-brand--slate); }
+.v2-cover_list svg { color: #c9dcee; }
+@media screen and (max-width: 991px) {
+  .v2-journey_list::after { background: linear-gradient(180deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); }
 }

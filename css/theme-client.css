@@ -132,3 +132,23 @@ body { font-size: 1.0625rem; line-height: 1.65; }
   .why-split_grid li { padding: 1.5rem; }
   .why-split_stat { right: 1rem; bottom: 1rem; }
 }
+
+/* Feedback 16 Nov (Dr. MacHardy) ----------------------------------------------
+   1. No arched image tops: square images with rounded corners everywhere. */
+:root { --arch-radius: var(--radius--large); }
+.home-story_visual { border-radius: var(--radius--large); padding-top: 3rem; }
+.home-story_visual::before { display: none; }
+.why-split_photo img { border-radius: var(--radius--large); }
+@media screen and (max-width: 767px) {
+  .home-story_visual { border-radius: var(--radius--large); padding-top: 1.75rem; }
+}
+
+/* 2. Top ribbon (address, phone, social) stays on screen with the navbar */
+:root { --ribbon-height: 2.5rem; }
+.ribbon_component { position: sticky; top: 0; z-index: 101; }
+.ribbon_container { height: var(--ribbon-height); min-height: 0; }
+.ribbon_component + .navbar_component { top: var(--ribbon-height); }
+html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1rem); }
+
+/* 3. Footer logo keeps its grey frame on the Navy footer */
+.footer_component .logo_mark { box-shadow: 0 0 0 2px #c4c4c4; border-radius: 2px; }

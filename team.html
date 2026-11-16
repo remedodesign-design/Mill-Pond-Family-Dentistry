@@ -8,10 +8,11 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="/css/client-first.css">
 <link rel="stylesheet" href="/css/components.css">
-<link rel="stylesheet" href="/css/team.css">
+<link rel="stylesheet" href="/css/team.css?v=2">
+<link rel="stylesheet" href="/css/theme-client.css?v=3">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -100,9 +101,7 @@
               <div class="navbar_dropdown-list" id="dd-services">
                 <span class="navbar_dropdown-group">Featured</span>
                 <a href="/services.html#featured" class="navbar_dropdown-link">Dental Implants</a>
-                <a href="/services.html#featured" class="navbar_dropdown-link">Invisalign</a>
                 <a href="/services.html#featured" class="navbar_dropdown-link">Smile Makeover</a>
-                <a href="/services.html#featured" class="navbar_dropdown-link">IV Sedation</a>
                 <span class="navbar_dropdown-divider"></span>
                 <a href="/service-detail.html" class="navbar_dropdown-link">Family Dentistry</a>
                 <a href="/services.html#emergency" class="navbar_dropdown-link">Emergencies</a>
@@ -114,8 +113,7 @@
             <a href="/contact.html" class="navbar_link">Contact</a>
           </nav>
           <div class="navbar_menu-buttons">
-            <!-- Xact booking URL TBC -->
-            <a href="#contact-form" class="button">Book an Appointment</a>
+            <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="button" target="_blank" rel="noopener">Book an Appointment</a>
             <button type="button" class="navbar_menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon-embed-xsmall"><use href="#i-menu"/></svg></button>
           </div>
         </div>
@@ -132,14 +130,14 @@
       <details>
         <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
         <div class="navbar_drawer-sub">
-          <a href="/services.html#featured">Dental Implants</a><a href="/services.html#featured">Invisalign</a><a href="/services.html#featured">Smile Makeover</a><a href="/services.html#featured">IV Sedation</a><a href="/service-detail.html">Family Dentistry</a><a href="/services.html#emergency">Emergencies</a><a href="/services.html">All services</a>
+          <a href="/services.html#featured">Dental Implants</a><a href="/services.html#featured">Smile Makeover</a><a href="/service-detail.html">Family Dentistry</a><a href="/services.html#emergency">Emergencies</a><a href="/services.html">All services</a>
         </div>
       </details>
       <a href="/#new-patients" class="navbar_drawer-link">New Patients</a>
       <a href="/#blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact.html" class="navbar_drawer-link">Contact</a>
       <div class="navbar_drawer-contact">
-        <a href="#contact-form" class="button is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a>
+        <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="button is-icon" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a>
         <a href="tel:+15192683351" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>519-268-3351</a>
         <p class="text-size-small text-style-muted">4085 Hamilton Rd, Dorchester, ON · Mon–Thu 8 a.m.–5:30 p.m.</p>
       </div>
@@ -186,14 +184,9 @@
               <h2 class="heading-style-h2">The people behind every visit</h2>
             </div>
             <div class="spacer-large"></div>
-            <div class="team-tabs_component" data-tabs>
-              <div class="team-tabs_menu" role="tablist" aria-label="Team by role">
-                <button type="button" class="team-tabs_tab" role="tab" id="tab-dentists" aria-controls="dentists" aria-selected="true">Dentists<span class="team-tabs_count">3</span></button>
-                <button type="button" class="team-tabs_tab" role="tab" id="tab-hygienists" aria-controls="hygienists" aria-selected="false" tabindex="-1">Hygienists<span class="team-tabs_count">2</span></button>
-                <button type="button" class="team-tabs_tab" role="tab" id="tab-assistants" aria-controls="assistants" aria-selected="false" tabindex="-1">Dental assistants<span class="team-tabs_count">3</span></button>
-                <button type="button" class="team-tabs_tab" role="tab" id="tab-reception" aria-controls="reception" aria-selected="false" tabindex="-1">Reception<span class="team-tabs_count">2</span></button>
-              </div>
-              <div class="team-tabs_panel" id="dentists" role="tabpanel" aria-labelledby="tab-dentists" tabindex="0">
+            <div class="team-groups_component">
+              <div class="team-group_component" id="dentists" aria-labelledby="dentists-title">
+                <h3 class="team-group_title" id="dentists-title">Dentists</h3>
                 <p class="team-tabs_intro text-style-muted">The dentists you’ll see at your check-ups and treatments.</p>
                 <ul class="team-card_list" role="list">
                   <!-- Each card is one block. When bio pages exist, change <div class="team-card_link"> to <a class="team-card_link" href="/team/NAME"> and the whole card becomes clickable; "Read bio" appears automatically. -->
@@ -201,122 +194,80 @@
                     <div class="team-card_link">
                       <div class="team-card_portrait"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Dr. Steven MacHardy, dentist at Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200"></div>
                       <p class="team-card_role">Dentist</p>
-                      <h3 class="team-card_name">Dr. Steven MacHardy</h3>
+                      <h4 class="team-card_name">Dr. Steven MacHardy</h4>
                       <p class="team-card_credentials">DMD, Boston University · AEGD, University of Michigan</p>
                       <span class="team-card_more">Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-arrow"/></svg></span>
                     </div>
                   </li>
-                  <!-- Whether Dr. Al Rafea is shown while on leave is still open with the client -->
                   <li class="team-card_item">
                     <div class="team-card_link">
                       <div class="team-card_portrait"><img src="/assets/stock/dentist-portrait-generic.jpg" alt="" class="image-cover" loading="lazy" width="960" height="1200"><!-- STOCK stand-in (no face) until Dr. Al Rafea's real portrait arrives --></div>
                       <p class="team-card_role">Dentist</p>
-                      <h3 class="team-card_name">Dr. Aya Al Rafea</h3>
-                      <span class="team-card_more">Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-                    </div>
-                  </li>
-                  <li class="team-card_item">
-                    <div class="team-card_link">
-                      <div class="team-card_portrait"><img src="/assets/photos/team/dr-lida-kiddie.jpg" alt="Dr. Lida Kiddie, founder of Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200"></div>
-                      <p class="team-card_role">Founder · Dentist</p>
-                      <h3 class="team-card_name">Dr. Lida Kiddie</h3>
-                      <p class="team-card_credentials">BSc, University of Waterloo · DDS, University of Toronto</p>
+                      <h4 class="team-card_name">Dr. Aya Al Rafea</h4>
                       <span class="team-card_more">Read bio<svg class="icon-embed-xxsmall" aria-hidden="true"><use href="#i-arrow"/></svg></span>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div class="team-tabs_panel" id="hygienists" role="tabpanel" aria-labelledby="tab-hygienists" tabindex="0">
+              <div class="team-group_component" id="hygienists" aria-labelledby="hygienists-title">
+                <h3 class="team-group_title" id="hygienists-title">Dental hygienists</h3>
                 <p class="team-tabs_intro text-style-muted">We view each patient as a whole rather than a single symptom to be treated. Your oral health and your general health are deeply connected.</p>
                 <ul class="team-card_list" role="list">
                   <li class="team-card_item">
                     <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">CV</div>
-                      <p class="team-card_role">Registered dental hygienist</p>
-                      <h3 class="team-card_name">Cali VanBommel</h3>
-                    </div>
-                  </li>
-                  <li class="team-card_item">
-                    <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">JS</div>
+                      <div class="team-card_portrait is-initials" aria-hidden="true">SB</div><!-- photo TBC from the client -->
                       <p class="team-card_role">Dental hygienist</p>
-                      <h3 class="team-card_name">James Stemp</h3>
+                      <h4 class="team-card_name">Samantha Brown</h4>
+                    </div>
+                  </li>
+                  <li class="team-card_item">
+                    <div class="team-card_link">
+                      <div class="team-card_portrait is-initials" aria-hidden="true">AA</div><!-- photo TBC from the client -->
+                      <p class="team-card_role">Dental hygienist</p>
+                      <h4 class="team-card_name">Arwa Ali</h4>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div class="team-tabs_panel" id="assistants" role="tabpanel" aria-labelledby="tab-assistants" tabindex="0">
-                <p class="team-tabs_intro text-style-muted">Your health and comfort is our number one priority. We achieve this by maintaining a clean and welcoming environment, assisting your dental provider, and providing you with individual care.</p>
+              <div class="team-group_component" id="assistants" aria-labelledby="assistants-title">
+                <h3 class="team-group_title" id="assistants-title">Dental assistants</h3>
+                <p class="team-tabs_intro text-style-muted">Your health and comfort is our number one priority. We keep a clean, welcoming office, assist your dentist and look after you during your visit.</p>
                 <ul class="team-card_list" role="list">
                   <li class="team-card_item">
                     <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">HB</div>
+                      <div class="team-card_portrait is-initials" aria-hidden="true">HB</div><!-- photo TBC from the client -->
                       <p class="team-card_role">Dental assistant</p>
-                      <h3 class="team-card_name">Heather Brulotte</h3>
+                      <h4 class="team-card_name">Heather Brulotte</h4>
                     </div>
                   </li>
                   <li class="team-card_item">
                     <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">MD</div>
+                      <div class="team-card_portrait is-initials" aria-hidden="true">MD</div><!-- photo TBC from the client -->
                       <p class="team-card_role">Dental assistant</p>
-                      <h3 class="team-card_name">Myranda Deml</h3>
-                    </div>
-                  </li>
-                  <li class="team-card_item">
-                    <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">SZ</div>
-                      <p class="team-card_role">Dental assistant</p>
-                      <h3 class="team-card_name">Sophie Zegers</h3>
+                      <h4 class="team-card_name">Myranda Deml</h4>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div class="team-tabs_panel" id="reception" role="tabpanel" aria-labelledby="tab-reception" tabindex="0">
-                <p class="team-tabs_intro text-style-muted">We will be your first contact at Mill Pond Dental Care. We are here to help. We look forward to hearing from you and seeing you soon.</p>
+              <div class="team-group_component" id="office" aria-labelledby="office-title">
+                <h3 class="team-group_title" id="office-title">Office team</h3>
+                <p class="team-tabs_intro text-style-muted">We will be your first contact at Mill Pond Dental Care. We look forward to hearing from you and seeing you soon.</p>
                 <ul class="team-card_list" role="list">
                   <li class="team-card_item">
                     <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">CL</div>
-                      <p class="team-card_role">Dental administrative coordinator</p>
-                      <h3 class="team-card_name">Cynthia Lope</h3>
+                      <div class="team-card_portrait is-initials" aria-hidden="true">CL</div><!-- photo TBC from the client -->
+                      <p class="team-card_role">Office manager</p>
+                      <h4 class="team-card_name">Cynthia Lope</h4>
                     </div>
                   </li>
                   <li class="team-card_item">
                     <div class="team-card_link">
-                      <div class="team-card_portrait is-initials" aria-hidden="true">JW</div>
-                      <p class="team-card_role">Dental administrative coordinator</p>
-                      <h3 class="team-card_name">Jessica Wilton</h3>
+                      <div class="team-card_portrait is-initials" aria-hidden="true">JW</div><!-- photo TBC from the client -->
+                      <p class="team-card_role">Office administration</p>
+                      <h4 class="team-card_name">Jessica Wilton</h4>
                     </div>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 Founder note (show only if the client confirms Dr. Kiddie's status) -->
-    <section class="section_team-founder background-color-secondary" id="founder">
-      <div class="padding-global">
-        <div class="container-large">
-          <div class="padding-section-large">
-            <div class="team-founder_component">
-              <div class="team-founder_content reveal">
-                <div class="text-style-tagline">Where it began</div>
-                <h2 class="heading-style-h2">A hometown practice since 1982</h2>
-                <blockquote class="team-founder_quote">
-                  <p>I feel fortunate and grateful to practice dentistry, my passion, in Dorchester. Dorchester is a community with a vibrant spirit and exceptional people. I am pleased to call Dorchester my hometown.</p>
-                  <p>It is through study groups that I met Dr. Steven MacHardy. I invited him to join Mill Pond Dental Care as I know he will be an asset to the patients I have cared for over the years.</p>
-                </blockquote>
-                <div>
-                  <p class="heading-style-h5">Dr. Lida Kiddie, founder</p>
-                  <p class="team-dentist_credentials">BSc, University of Waterloo · DDS, University of Toronto</p>
-                </div>
-              </div>
-              <div class="team-founder_image reveal">
-                <div class="image-slot_component is-arch"><img src="/assets/photos/team/dr-lida-kiddie.jpg" alt="Dr. Lida Kiddie, founder of Mill Pond Dental Care" class="image-cover" loading="lazy" width="960" height="1200">
-                </div>
               </div>
             </div>
           </div>
@@ -335,8 +286,7 @@
                 <p class="text-style-muted">New to Mill Pond? See what your first visit looks like.</p>
               </div>
               <div class="button-group">
-                <!-- Xact booking URL TBC -->
-                <a href="#contact-form" class="button is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book your first visit</a>
+                <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="button is-icon" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book your first visit</a>
                 <a href="/#new-patients" class="button is-secondary">New patient info</a>
               </div>
             </div>
@@ -404,8 +354,7 @@
                 <div class="contact-form_card is-mist">
                   <h3 class="heading-style-h5">Want to book right away?</h3>
                   <p class="text-style-muted">Pick a time online in a couple of minutes.</p>
-                  <!-- PLACEHOLDER: Xact online booking URL TBC -->
-                  <a href="#" class="contact-form_link">Book online<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+                  <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="contact-form_link" target="_blank" rel="noopener">Book online<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
                 </div>
               </div>
               <div class="contact-form_form-card reveal">
@@ -473,7 +422,7 @@
             <p class="text-size-medium">New patients welcome. CDCP accepted.</p>
           </div>
           <div class="button-group">
-            <a href="#contact-form" class="button is-alternate is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a>
+            <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="button is-alternate is-icon" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a>
             <a href="tel:+15192683351" class="button is-secondary is-alternate is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>519-268-3351</a>
           </div>
         </div>
@@ -497,9 +446,7 @@
             <div class="footer_heading">Services</div>
             <ul class="footer_link-list">
               <li><a href="/services.html#featured" class="footer_link">Dental Implants</a></li>
-              <li><a href="/services.html#featured" class="footer_link">Invisalign</a></li>
               <li><a href="/services.html#featured" class="footer_link">Smile Makeover</a></li>
-              <li><a href="/services.html#featured" class="footer_link">IV Sedation</a></li>
               <li><a href="/service-detail.html" class="footer_link">Family Dentistry</a></li>
               <li><a href="/services.html" class="footer_link">All services</a></li>
             </ul>
@@ -535,7 +482,7 @@
 
   <!-- Mobile sticky Book / Call -->
   <div class="mobile-cta_component">
-    <a href="#contact-form" class="button is-icon"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book</a>
+    <a href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" class="button is-icon" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book</a>
     <a href="tel:+15192683351" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call</a>
   </div>
 <!-- /shared:footer -->
