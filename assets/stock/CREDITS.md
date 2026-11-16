@@ -29,9 +29,9 @@ These are Wix's built-in stock photos. Wix licenses them for use on Wix sites on
 
 Real practice photos from the current site live in `assets/photos/team/` (Dr. MacHardy, Dr. Kiddie, dental assistants). Confirm with the client that they can be reused.
 
-## Home page options (hotlinked, not downloaded)
+## Home page heroes (hotlinked, not downloaded)
 
 | Used in | Source |
 |---|---|
-| home-v1 hero | https://images.unsplash.com/photo-1756526511266-00ddcf925418 |
+| Home page (index) hero | https://images.unsplash.com/photo-1756526511266-00ddcf925418 |
 | home-v2 hero | https://images.unsplash.com/photo-1663229049306-33b5cd9c2134 |

@@ -2,7 +2,7 @@
    Mill Pond Dental Care: client-recommended theme (feedback, 14 Nov 2026)
    Load AFTER client-first.css + components.css. Remaps the base variables to
    the client's palette and swaps the type to Montserrat (headings + nav) and
-   Lato (body). Used by the two home page options (home-v1, home-v2).
+   Lato (body). Used by the home page (index.html) and home-v2.html.
 
    Client palette            Role here
    #91BCE5 Soft Blue         accents, rules, icon tints
@@ -91,7 +91,7 @@ body { font-size: 1.0625rem; line-height: 1.65; }
   body { font-size: 1rem; }
 }
 
-/* Service icon row (home option 2) -------------------------------------------------------- */
+/* Service icon row (home-v2) -------------------------------------------------------- */
 .icon-row_list { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
 .icon-row_item { margin: 0; }
 .icon-row_item + .icon-row_item { border-left: 1px solid var(--border-color--border-primary); }

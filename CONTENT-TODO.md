@@ -58,11 +58,13 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Photos | Stock and current-site photos are temporary. See `assets/stock/CREDITS.md`. The Wix stock photos must be replaced before launch | Client (photo shoot) |
 | Permission to reuse current-site team photos | Dr. MacHardy, Dr. Kiddie, dental assistants | Client |
 
-## Home page options (`/home-options`, 14 Nov 2026)
+## Home page refresh (client feedback, 14-16 Nov 2026)
+
+`index.html` now has our design updated with the client palette, Montserrat + Lato and a reference-style hero. `/home-v2` is the alternative built on the client's reference image. The previous home page is kept at `/home-backup`.
 
 | Item | Status | From |
 |---|---|---|
-| Hero family photos (options 1 and 2) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) once an option is picked | Client / photo shoot |
-| CEREC crowns and night guards (icon row, option 2) | Taken from the client's reference image. Confirm the practice offers both | Client |
-| Reception photo (option 2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
-| Chosen option | `index.html` is unchanged. Once the client picks, the chosen `home-vN.html` replaces it and the client theme rolls out to the other pages | Client |
+| Hero family photos (home and home-v2) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) | Client / photo shoot |
+| CEREC crowns and night guards (home-v2 icon row) | Taken from the client's reference image. Confirm the practice offers both | Client |
+| Reception photo (home-v2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
+| Other pages | Still on Barlow and the old colours. Load `css/theme-client.css` on them once the client signs off on the home page | Remedo |

@@ -4,6 +4,8 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/home-options", "destination": "/", "permanent": false },
+    { "source": "/home-v1", "destination": "/", "permanent": false },
     { "source": "/index", "destination": "/", "permanent": true },
     { "source": "/dev", "destination": "/", "permanent": true },
     { "source": "/dev/home", "destination": "/", "permanent": true },
