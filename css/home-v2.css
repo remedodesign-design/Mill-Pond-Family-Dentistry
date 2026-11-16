@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Home option 2: "Client reference": a new home page built on the layout
+   and mood of the client's reference image: airy light-blue hero with a
+   family photo, a row of line-icon services, a welcome split with a tooth
+   outline, pill buttons, soft rounded panels. Montserrat + Lato.
+   Load after client-first.css, components.css, theme-client.css.
+   ========================================================================== */
+.v2-page { background-color: var(--base-color-neutral--white); }
+
+/* Header ------------------------------------------------------------------ */
+/* No backdrop-filter here: it would make the fixed mobile drawer position inside the header and clip it */
+.navbar_component.is-v2 { border-bottom: 0; background-color: var(--base-color-neutral--white); }
+.navbar_component.is-v2 .navbar_container { min-height: 5.75rem; }
+.navbar_component.is-v2 .navbar_menu { gap: 2.25rem; }
+.navbar_component.is-v2 .navbar_link:hover, .navbar_component.is-v2 .navbar_link.w--current { box-shadow: none; color: var(--base-color-brand--deep); }
+.v2-book { box-shadow: 0 0.5rem 1.25rem rgba(57, 123, 174, 0.28); }
+.navbar_component.is-v2 .navbar_link, .navbar_component.is-v2 .navbar_dropdown-toggle, .v2-book { white-space: nowrap; }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar_component.is-v2 .navbar_container { gap: 1rem; }
+  .v2-book svg { display: none; }
+  .v2-book { padding-left: 1.125rem; padding-right: 1.125rem; font-size: 0.9375rem; }
+  .navbar_component.is-v2 .navbar_menu { gap: 0.875rem; }
+  .navbar_component.is-v2 .navbar_link, .navbar_component.is-v2 .navbar_dropdown-toggle { font-size: 0.875rem; }
+  .navbar_component.is-v2 .logo_text { font-size: 1.0625rem; }
+  .navbar_component.is-v2 .logo_mark { width: 3rem; height: 3rem; }
+}
+
+/* Hero -------------------------------------------------------------------- */
+.section_v2-hero { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(115deg, #e9f2fb 0%, #f4f8fc 45%, #ffffff 100%); }
+.v2-hero_media { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: -2; }
+.v2-hero_media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+.v2-hero_media::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #edf4fb 0%, rgba(237, 244, 251, 0.6) 14%, rgba(237, 244, 251, 0) 38%); }
+.v2-hero_component { display: flex; align-items: center; min-height: clamp(32rem, calc(80vh - 5.75rem), 42rem); padding: 4.5rem 0 8rem; }
+.v2-hero_content { display: flex; flex-direction: column; gap: 1.75rem; width: 46%; }
+.v2-hero_heading { font-size: 3.75rem; line-height: 1.12; font-weight: 500; letter-spacing: -0.025em; color: var(--base-color-brand--navy); }
+.v2-hero_text { font-size: 1.375rem; line-height: 1.5; color: var(--base-color-brand--navy); max-width: 30rem; }
+.v2-hero_wave { position: absolute; left: 0; right: 0; bottom: -1px; z-index: -1; width: 100%; height: 7.5rem; pointer-events: none; } /* full width so the photo never shows a hard edge below the wave */
+
+/* Welcome split ------------------------------------------------------------ */
+.section_v2-welcome { position: relative; overflow: hidden; }
+.v2-welcome_component { display: grid; grid-template-columns: 1.05fr 1fr; gap: 4rem; align-items: center; }
+.v2-welcome_image { border-radius: var(--radius--large); overflow: hidden; aspect-ratio: 16 / 10; box-shadow: var(--shadow--soft); }
+.v2-welcome_image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.v2-welcome_content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1.25rem; }
+.v2-welcome_text { color: var(--text-color--text-secondary); font-size: 1.125rem; }
+.v2-tooth-outline { position: absolute; right: -6rem; top: 50%; width: 22rem; height: auto; transform: translateY(-50%); color: #d6e6f5; pointer-events: none; z-index: 0; }
+
+/* Services: the home page's section (service-card, components.css) on Light Blue,
+   icon discs in Slate Blue to match the home page ----------------------------- */
+.section_v2-treatments { background-color: var(--base-color-brand--mist); }
+.section_v2-treatments .service-card_icon { background-color: var(--base-color-brand--slate); }
+
+/* Team ---------------------------------------------------------------------- */
+.section_v2-team { background-color: var(--base-color-neutral--cream); }
+.v2-team_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.v2-team_card { display: flex; flex-direction: column; gap: 1.25rem; text-align: center; }
+.v2-team_photo { aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden; width: 78%; margin: 0 auto; border: 0.5rem solid var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
+.v2-team_photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+.v2-team_role { color: var(--text-color--text-secondary); font-size: 1rem; margin-top: 0.25rem; }
+
+/* New patients + coverage -------------------------------------------------- */
+/* New-patient journey: numbered nodes on a line that draws in on scroll ------ */
+.section_v2-journey { background: linear-gradient(180deg, var(--base-color-neutral--white) 0%, var(--base-color-brand--mist) 100%); }
+.v2-journey_list { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.v2-journey_list::before, .v2-journey_list::after {
+  content: ""; position: absolute; top: 1.875rem; left: 12.5%; right: 12.5%; height: 3px; border-radius: 3px; pointer-events: none;
+}
+.v2-journey_list::before { background: repeating-linear-gradient(90deg, #c9dcee 0 0.5rem, transparent 0.5rem 0.875rem); }
+.v2-journey_list::after { background: linear-gradient(90deg, var(--base-color-brand--pond), var(--base-color-brand--deep)); transform: scaleX(0); transform-origin: left center; transition: transform 1.4s cubic-bezier(.65,0,.35,1) 0.2s; }
+.v2-journey_list.is-visible::after, html:not(.js) .v2-journey_list::after { transform: scaleX(1); }
+.v2-journey_step { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.v2-journey_node { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 3.75rem; height: 3.75rem; border-radius: 50%; background-color: var(--base-color-neutral--white); box-shadow: 0 0 0 1px #d6e6f5, 0 0.5rem 1.25rem rgba(57, 123, 174, 0.18); }
+.v2-journey_number { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--base-color-brand--deep); color: var(--base-color-neutral--white); font-family: var(--font--heading); font-weight: 600; font-size: 1.125rem; }
+.v2-journey_step.is-last .v2-journey_number { background-color: var(--base-color-brand--navy); }
+.v2-journey_card { position: relative; flex: 1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 1.75rem 1.5rem; border-radius: var(--radius--large); border: 1px solid #dbe7f2; background-color: var(--base-color-neutral--white); box-shadow: 0 0.5rem 1.5rem rgba(38, 62, 80, 0.05); transition: transform 200ms ease, box-shadow 200ms ease; }
+.v2-journey_card::before { content: ""; position: absolute; top: -0.5rem; left: 50%; width: 1rem; height: 1rem; transform: translateX(-50%) rotate(45deg); background-color: var(--base-color-neutral--white); border-top: 1px solid #dbe7f2; border-left: 1px solid #dbe7f2; }
+.v2-journey_step:hover .v2-journey_card { transform: translateY(-0.25rem); box-shadow: var(--shadow--soft); }
+.v2-journey_icon { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-bottom: 0.25rem; border-radius: var(--radius--small); background-color: var(--base-color-brand--mist); color: var(--base-color-brand--deep); }
+.v2-journey_card p { color: var(--text-color--text-secondary); font-size: 1rem; }
+.v2-journey_chip { display: inline-flex; align-items: center; gap: 0.375rem; margin-top: auto; padding: 0.3125rem 0.75rem; border-radius: var(--radius--round); background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--navy); font-size: 0.8125rem; font-weight: 700; }
+.v2-journey_chip svg { color: var(--base-color-brand--slate); }
+.v2-journey_card p + .v2-journey_chip { margin-top: auto; }
+.v2-journey_card p { margin-bottom: 0.75rem; }
+
+.v2-cover { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; padding: 3rem; border-radius: var(--radius--large); background-color: var(--base-color-brand--navy); color: rgba(255, 255, 255, 0.86); }
+.v2-cover h3 { color: var(--base-color-neutral--white); }
+.v2-cover_text { margin-top: 0.75rem; }
+.v2-cover_list { display: flex; flex-direction: column; gap: 0.875rem; margin: 0; padding: 0; list-style: none; }
+.v2-cover_list li { display: flex; align-items: center; gap: 0.75rem; margin: 0; font-weight: 700; color: var(--base-color-neutral--white); }
+.v2-cover_list svg { color: var(--base-color-brand--pond); }
+
+/* Responsive --------------------------------------------------------------- */
+@media screen and (max-width: 1279px) {
+  .v2-hero_heading { font-size: 3.25rem; }
+  .navbar_component.is-v2 .navbar_menu { gap: 1.5rem; }
+}
+@media screen and (max-width: 991px) {
+  .v2-journey_list { grid-template-columns: 1fr; gap: 1.25rem; }
+  .v2-journey_list::before, .v2-journey_list::after { top: 1.875rem; bottom: 1.875rem; left: 1.8125rem; right: auto; width: 3px; height: auto; }
+  .v2-journey_list::before { background: repeating-linear-gradient(180deg, #c9dcee 0 0.5rem, transparent 0.5rem 0.875rem); }
+  .v2-journey_list::after { background: linear-gradient(180deg, var(--base-color-brand--pond), var(--base-color-brand--deep)); transform: scaleY(0); transform-origin: center top; }
+  .v2-journey_list.is-visible::after, html:not(.js) .v2-journey_list::after { transform: scaleY(1); }
+  .v2-journey_step { flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+  .v2-journey_node { flex: none; }
+  .v2-journey_card::before { top: 1.375rem; left: -0.5rem; transform: rotate(-45deg); }
+  .navbar_component.is-v2 .navbar_container { min-height: 4.75rem; }
+  .v2-hero_component { min-height: 0; padding: 3.5rem 0 2.5rem; }
+  .v2-hero_content { width: 100%; max-width: 36rem; }
+  .v2-hero_heading { font-size: 2.75rem; }
+  .v2-hero_media { position: relative; width: 100%; height: 24rem; }
+  .v2-hero_media::before { background: linear-gradient(180deg, #f2f7fb 0%, rgba(242, 247, 251, 0) 30%); }
+  .v2-hero_wave { width: 100%; height: 4rem; }
+  .v2-welcome_component { grid-template-columns: 1fr; gap: 3rem; }
+  .v2-cover { grid-template-columns: 1fr; padding: 2.5rem; }
+  .v2-team_list { gap: 1.25rem; }
+}
+@media screen and (max-width: 767px) {
+  .v2-hero_heading { font-size: 2.25rem; }
+  .v2-hero_text { font-size: 1.125rem; }
+  .v2-hero_media { height: 18rem; }
+  .v2-hero_content .button { width: 100%; }
+  .v2-tooth-outline { display: none; }
+  .v2-team_list { grid-template-columns: 1fr; gap: 2.5rem; }
+  .v2-team_photo { width: 70%; }
+  .v2-cover { padding: 2rem 1.5rem; }
+}
+
+/* Slate Blue accents (feedback 16 Nov: explore blues/greys on this version;
+   the main home page keeps its colours) ----------------------------------- */
+.v2-page .text-style-tagline { color: var(--base-color-brand--slate); }
+.v2-page .icon-row_link svg { color: var(--base-color-brand--slate); }
+.v2-page .icon-row_link:hover, .v2-page .icon-row_link:hover svg { color: var(--base-color-brand--deep); }
+.v2-page .why-split_icon { background-color: var(--base-color-brand--slate); color: var(--base-color-neutral--white); }
+.v2-page .why-split_stat strong { color: var(--base-color-brand--slate); }
+.section_v2-team { background-color: var(--base-color-brand--slate-light); }
+.v2-team_photo { border-color: var(--base-color-neutral--white); }
+.v2-journey_number { background-color: var(--base-color-brand--slate); }
+.v2-journey_list::after { background: linear-gradient(90deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); }
+.v2-journey_icon { background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--slate); }
+.v2-cover { background-color: var(--base-color-brand--slate); }
+.v2-cover_list svg { color: #c9dcee; }
+@media screen and (max-width: 991px) {
+  .v2-journey_list::after { background: linear-gradient(180deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); }
+}
+
+/* Trust badge marquee (same look as the home page) */
+.section_home-trust { background-color: var(--base-color-brand--mist); border-top: 1px solid var(--base-color-brand--slate-light); border-bottom: 1px solid var(--base-color-brand--slate-light); }
+.home-trust_item .icon-box_component { color: var(--base-color-brand--slate); border-color: var(--base-color-brand--pond); }
+
+/* Emergency card: even space above and below (it follows the light-blue journey section here) */
+.v2-page .section_home-emergency { padding-top: 5rem; }
+.v2-page .section_home-emergency + .section_location .padding-section-large { padding-top: 0; }
+@media screen and (max-width: 991px) {
+  .v2-page .section_home-emergency { padding-top: 4rem; }
+}
+@media screen and (max-width: 767px) {
+  .v2-page .section_home-emergency { padding-top: 3rem; }
+}

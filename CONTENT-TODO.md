@@ -57,3 +57,24 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Privacy policy and accessibility pages | Footer links go to `#` | Content team |
 | Photos | Stock and current-site photos are temporary. See `assets/stock/CREDITS.md`. The Wix stock photos must be replaced before launch | Client (photo shoot) |
 | Permission to reuse current-site team photos | Dr. MacHardy, Dr. Kiddie, dental assistants | Client |
+
+## Home page refresh (client feedback, 14-16 Nov 2026)
+
+`index.html` now has our design updated with the client palette, Montserrat + Lato and a reference-style hero. `/home-v2` is the alternative built on the client's reference image. The previous home page is kept at `/home-backup`.
+
+| Item | Status | From |
+|---|---|---|
+| Hero family photos (home and home-v2) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) | Client / photo shoot |
+| CEREC crowns and night guards (home-v2 icon row) | Taken from the client's reference image. Confirm the practice offers both | Client |
+| Reception photo (home-v2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
+| Other pages | Still on Barlow and the old colours. Load `css/theme-client.css` on them once the client signs off on the home page | Remedo |
+
+## Client + Dr. MacHardy feedback (16 Nov 2026): what is still open
+
+| Item | Status | From |
+|---|---|---|
+| Team photos + bios | Initials placeholders for hygienists, assistants and office team; Dr. Al Rafea uses a stock stand-in | Client (gathering) |
+| Google Reviews | Elfsight floating widget is on both home designs. Add it to the other pages too once the client is happy with it | Remedo |
+| Links still pointing to `#` | Privacy policy and Accessibility (footer + form consent), "Read our Google reviews" in the trust strip | Content team / Google listing URL |
+| Links pointing to a stand-in page | Each featured service and the service dropdown go to `/services.html` or the one sample `/service-detail.html`; blog cards and "All articles" go to `#blog`. Real pages come with the Webflow build (Services and Blog CMS) | Remedo (in development) |
+| Dr. Kiddie (retired) | The client said she has retired, but on our request she is shown again as Founder: team cards on both home pages and the Team page, and named in the 1982 story and About timeline. Confirm with the client | Client |
