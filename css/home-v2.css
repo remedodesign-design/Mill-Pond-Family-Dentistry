@@ -125,11 +125,6 @@
   .v2-cover { padding: 2rem 1.5rem; }
 }
 
-/* Team: two dentists (Dr. Kiddie retired, Nov 2026) */
-@media screen and (min-width: 768px) {
-  .v2-team_list { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 46rem; margin-left: auto; margin-right: auto; }
-}
-
 /* Slate Blue accents (feedback 16 Nov: explore blues/greys on this version;
    the main home page keeps its colours) ----------------------------------- */
 .v2-page .text-style-tagline { color: var(--base-color-brand--slate); }

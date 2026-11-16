@@ -54,11 +54,6 @@
 .home-journey_chip { background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--navy); }
 .section_insurance.background-color-alternate { background-color: var(--base-color-brand--slate); }
 
-/* Team: two dentists as two larger cards (Dr. Kiddie retired, Nov 2026) */
-@media screen and (min-width: 768px) {
-  .home-team_list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; max-width: 52rem; margin-left: auto; margin-right: auto; }
-}
-
 /* Our Story: photo fills more of the slate panel (16 Nov feedback) */
 .home-story_visual { padding: 2rem; gap: 1.5rem; }
 .home-story_photo { max-width: none; }
