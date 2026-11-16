@@ -46,16 +46,10 @@
 .v2-welcome_text { color: var(--text-color--text-secondary); font-size: 1.125rem; }
 .v2-tooth-outline { position: absolute; right: -6rem; top: 50%; width: 22rem; height: auto; transform: translateY(-50%); color: #d6e6f5; pointer-events: none; z-index: 0; }
 
-/* Featured treatments ------------------------------------------------------ */
+/* Services: the home page's section (service-card, components.css) on Light Blue,
+   icon discs in Slate Blue to match the home page ----------------------------- */
 .section_v2-treatments { background-color: var(--base-color-brand--mist); }
-.v2-card_list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
-.v2-card { display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius--large); background-color: var(--base-color-neutral--white); color: var(--base-color-brand--navy); text-decoration: none; box-shadow: 0 0.25rem 1rem rgba(38, 62, 80, 0.05); transition: transform 200ms ease, box-shadow 200ms ease; }
-.v2-card:hover { transform: translateY(-0.25rem); box-shadow: var(--shadow--soft); color: var(--base-color-brand--navy); }
-.v2-card_image { aspect-ratio: 4 / 3; overflow: hidden; }
-.v2-card_image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.v2-card_body { display: flex; flex-direction: column; gap: 0.625rem; padding: 1.5rem 1.5rem 1.75rem; flex: 1; }
-.v2-card_body p { color: var(--text-color--text-secondary); font-size: 1rem; }
-.v2-card_more { margin-top: auto; padding-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font--heading); font-weight: 600; font-size: 0.9375rem; color: var(--base-color-brand--deep); }
+.section_v2-treatments .service-card_icon { background-color: var(--base-color-brand--slate); }
 
 /* Why families choose us ---------------------------------------------------- */
 .v2-why_component { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5rem; align-items: center; }
@@ -104,7 +98,6 @@
   .v2-hero_wave { width: 100%; height: 4rem; }
   .v2-welcome_component, .v2-why_component { grid-template-columns: 1fr; gap: 3rem; }
   .v2-why_photo { max-width: 26rem; }
-  .v2-card_list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .v2-cover { grid-template-columns: 1fr; padding: 2.5rem; }
   .v2-team_list { gap: 1.25rem; }
 }
@@ -114,7 +107,6 @@
   .v2-hero_media { height: 18rem; }
   .v2-hero_content .button { width: 100%; }
   .v2-tooth-outline { display: none; }
-  .v2-card_list, .v2-steps_list, .v2-why_grid { grid-template-columns: 1fr; }
   .v2-team_list { grid-template-columns: 1fr; gap: 2.5rem; }
   .v2-team_photo { width: 70%; }
   .v2-why_stat { right: 1rem; bottom: 1rem; }
