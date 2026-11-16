@@ -58,10 +58,10 @@
 .v2-why_stat { position: absolute; right: -2rem; bottom: 2.5rem; padding: 1.25rem 1.5rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
 .v2-why_stat strong { display: block; font-family: var(--font--heading); font-weight: 600; font-size: 2.25rem; line-height: 1; color: var(--base-color-brand--deep); }
 .v2-why_stat span { font-size: 0.9375rem; color: var(--text-color--text-secondary); }
-.v2-why_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; margin-top: 2.5rem; padding: 0; list-style: none; }
-.v2-why_grid li { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.v2-why_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; padding: 0; list-style: none; }
+.v2-why_grid li { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; padding: 1.75rem; border: 1px solid #dbe7f2; border-radius: var(--radius--large); background-color: var(--base-color-brand--mist); }
 .v2-why_grid p { color: var(--text-color--text-secondary); font-size: 1rem; }
-.v2-why_icon { display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--base-color-brand--mist); color: var(--base-color-brand--deep); }
+.v2-why_icon { display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--base-color-neutral--white); color: var(--base-color-brand--deep); box-shadow: 0 0.25rem 0.75rem rgba(38, 62, 80, 0.06); }
 
 /* Team ---------------------------------------------------------------------- */
 .section_v2-team { background-color: var(--base-color-neutral--cream); }
@@ -102,6 +102,8 @@
   .v2-team_list { gap: 1.25rem; }
 }
 @media screen and (max-width: 767px) {
+  .v2-steps_list, .v2-why_grid { grid-template-columns: 1fr; }
+  .v2-why_grid li { padding: 1.5rem; }
   .v2-hero_heading { font-size: 2.25rem; }
   .v2-hero_text { font-size: 1.125rem; }
   .v2-hero_media { height: 18rem; }
