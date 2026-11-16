@@ -58,3 +58,11 @@
 @media screen and (min-width: 768px) {
   .home-team_list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; max-width: 52rem; margin-left: auto; margin-right: auto; }
 }
+
+/* Our Story: photo fills more of the slate panel (16 Nov feedback) */
+.home-story_visual { padding: 2rem; gap: 1.5rem; }
+.home-story_photo { max-width: none; }
+.home-story_photo > img:first-child { aspect-ratio: 4 / 3; }
+@media screen and (max-width: 767px) {
+  .home-story_visual { padding: 1.25rem 1.25rem 1.5rem; }
+}
