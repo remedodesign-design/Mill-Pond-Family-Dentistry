@@ -62,7 +62,7 @@ Generic copy is in place so the pages read as finished. Each line below is still
 
 | Item | Status | From |
 |---|---|---|
-| Hero family photos (options 1-3) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) once an option is picked | Client / photo shoot |
-| CEREC crowns and night guards (icon row, options 2 and 3) | Taken from the client's reference image. Confirm the practice offers both | Client |
+| Hero family photos (options 1 and 2) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) once an option is picked | Client / photo shoot |
+| CEREC crowns and night guards (icon row, option 2) | Taken from the client's reference image. Confirm the practice offers both | Client |
 | Reception photo (option 2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
 | Chosen option | `index.html` is unchanged. Once the client picks, the chosen `home-vN.html` replaces it and the client theme rolls out to the other pages | Client |

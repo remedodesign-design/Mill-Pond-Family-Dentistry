@@ -35,4 +35,3 @@ Real practice photos from the current site live in `assets/photos/team/` (Dr. Ma
 |---|---|
 | home-v1 hero | https://images.unsplash.com/photo-1756526511266-00ddcf925418 |
 | home-v2 hero | https://images.unsplash.com/photo-1663229049306-33b5cd9c2134 |
-| home-v3 hero | https://images.unsplash.com/photo-1685580388390-576100ae9ce3 |

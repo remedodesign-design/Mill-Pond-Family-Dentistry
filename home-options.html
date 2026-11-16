@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Lato:wght@400;700&display=swap">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <style>
-  /* Review wrapper only (not part of the site): three home page options in tabs. */
+  /* Review wrapper only (not part of the site): two home page options in tabs. */
   :root { --navy: #263e50; --blue: #397bae; --soft: #91bce5; --light: #f2f7fb; --bar: 3.75rem; }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
@@ -50,9 +50,8 @@
   <header class="options_bar">
     <div class="options_title">Mill Pond Dental Care <span>· Home page options</span></div>
     <div class="options_tabs" role="tablist" aria-label="Home page options">
-      <button type="button" class="options_tab" role="tab" id="tab-v1" aria-controls="panel-v1" aria-selected="true" data-src="/home-v1.html"><span class="options_num">1</span>Refreshed current design</button>
-      <button type="button" class="options_tab" role="tab" id="tab-v2" aria-controls="panel-v2" aria-selected="false" tabindex="-1" data-src="/home-v2.html"><span class="options_num">2</span>Client reference</button>
-      <button type="button" class="options_tab" role="tab" id="tab-v3" aria-controls="panel-v3" aria-selected="false" tabindex="-1" data-src="/home-v3.html"><span class="options_num">3</span>Blend of both</button>
+      <button type="button" class="options_tab" role="tab" id="tab-v1" aria-controls="panel-v1" aria-selected="true" data-src="/home-v1.html"><span class="options_num">1</span>Our design, updated</button>
+      <button type="button" class="options_tab" role="tab" id="tab-v2" aria-controls="panel-v2" aria-selected="false" tabindex="-1" data-src="/home-v2.html"><span class="options_num">2</span>Based on your reference</button>
     </div>
     <a class="options_open" href="/home-v1.html" target="_blank" rel="noopener">Open full page ↗</a>
   </header>
@@ -60,14 +59,12 @@
 
   <div class="options_panel" role="tabpanel" id="panel-v1" aria-labelledby="tab-v1"></div>
   <div class="options_panel" role="tabpanel" id="panel-v2" aria-labelledby="tab-v2" hidden></div>
-  <div class="options_panel" role="tabpanel" id="panel-v3" aria-labelledby="tab-v3" hidden></div>
 
 <script>
 (() => {
   const notes = {
-    v1: '<strong>Option 1.</strong> Our current home page with the recommended colours and fonts (Montserrat + Lato), a new hero modelled on your reference, and Slate Blue as a secondary accent.',
-    v2: '<strong>Option 2.</strong> A new home page built on your reference image: light family hero, service icon row, “welcoming dental home” split, pill buttons.',
-    v3: '<strong>Option 3.</strong> A blend: our original layout and arched “sign” shapes, combined with your reference’s family photo, icon row and welcome section.'
+    v1: '<strong>Option 1.</strong> Our home page design with the recommended colours and fonts (Montserrat + Lato), a new hero modelled on your reference, and Slate Blue as a secondary accent.',
+    v2: '<strong>Option 2.</strong> A new home page built on your reference image: light family hero, service icon row, “welcoming dental home” split, pill buttons.'
   };
   const tabs = [...document.querySelectorAll('.options_tab')];
   const open = document.querySelector('.options_open');
