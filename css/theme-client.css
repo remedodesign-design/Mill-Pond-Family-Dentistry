@@ -152,3 +152,19 @@ html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1r
 
 /* 3. Footer logo keeps its grey frame on the Navy footer */
 .footer_component .logo_mark { box-shadow: 0 0 0 2px #c4c4c4; border-radius: 2px; }
+
+/* Tighter section spacing so pages scroll less (16 Nov feedback) */
+.padding-section-large  { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+.padding-section-medium { padding-top: 4rem;   padding-bottom: 4rem; }
+@media screen and (max-width: 991px) {
+  .padding-section-large  { padding-top: 4rem; padding-bottom: 4rem; }
+  .padding-section-medium { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+@media screen and (max-width: 767px) {
+  .padding-section-large  { padding-top: 3rem; padding-bottom: 3rem; }
+  .padding-section-medium { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+}
+
+/* Elfsight adds an edit/share toolbar (shown to the account owner) whose hidden share
+   panel hangs below the footer and leaves empty space. The reviews badge is unaffected. */
+.eapps-widget-toolbar { display: none !important; }
