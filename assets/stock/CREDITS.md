@@ -35,3 +35,4 @@ Real practice photos from the current site live in `assets/photos/team/` (Dr. Ma
 |---|---|
 | Home page (index) hero | https://images.unsplash.com/photo-1756526511266-00ddcf925418 |
 | home-v2 hero | https://images.unsplash.com/photo-1663229049306-33b5cd9c2134 |
+| Home page, Our Story panel (replaces the sign photo for now) | https://images.unsplash.com/photo-1704455306251-b4634215d98f |
