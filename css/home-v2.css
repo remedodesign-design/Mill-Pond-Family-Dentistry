@@ -147,3 +147,7 @@
 @media screen and (max-width: 991px) {
   .v2-journey_list::after { background: linear-gradient(180deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); }
 }
+
+/* Trust badge marquee (same look as the home page) */
+.section_home-trust { background-color: var(--base-color-brand--mist); border-top: 1px solid var(--base-color-brand--slate-light); border-bottom: 1px solid var(--base-color-brand--slate-light); }
+.home-trust_item .icon-box_component { color: var(--base-color-brand--slate); border-color: var(--base-color-brand--pond); }
