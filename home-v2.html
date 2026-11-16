@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/components.css">
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/theme-client.css?v=2">
-<link rel="stylesheet" href="/css/home-v2.css?v=7">
+<link rel="stylesheet" href="/css/home-v2.css?v=8">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -325,20 +325,53 @@
     </section>
 
     <!-- New patients + coverage ============================================== -->
-    <section class="section_v2-steps" id="new-patients">
+    <section class="section_v2-steps section_v2-journey" id="new-patients">
       <div class="padding-global">
         <div class="container-large">
           <div class="padding-section-large">
             <div class="section-header_component reveal">
               <div class="text-style-tagline">New patients</div>
-              <h2 class="heading-style-h2">Your first visit, made easy</h2>
+              <h2 class="heading-style-h2">Your first visit, step by step</h2>
               <p class="text-size-medium text-style-muted">Switching dentists or haven’t been in a while? No judgement here. This is what to expect.</p>
             </div>
             <div class="spacer-large"></div>
-            <ol class="v2-steps_list">
-              <li class="v2-steps_item reveal"><span class="v2-steps_number" aria-hidden="true">1</span><h3 class="heading-style-h4">Book online or call</h3><p>Pick a time that suits you, or call reception and we’ll find one together.</p></li>
-              <li class="v2-steps_item reveal"><span class="v2-steps_number" aria-hidden="true">2</span><h3 class="heading-style-h4">Your first visit</h3><p>A full exam, any X-rays you need, a cleaning and plenty of time for questions.</p></li>
-              <li class="v2-steps_item reveal"><span class="v2-steps_number" aria-hidden="true">3</span><h3 class="heading-style-h4">Your plan, explained</h3><p>We walk you through your options and costs. Nothing starts until you’re comfortable.</p></li>
+            <ol class="v2-journey_list reveal">
+              <li class="v2-journey_step">
+                <div class="v2-journey_node" aria-hidden="true"><span class="v2-journey_number">1</span></div>
+                <div class="v2-journey_card">
+                  <span class="v2-journey_icon"><svg class="icon-embed-small"><use href="#i-cal"/></svg></span>
+                  <h3 class="heading-style-h5">Book online or call</h3>
+                  <p>Pick a time that suits you, or call reception and we’ll find one together.</p>
+                  <span class="v2-journey_chip"><svg class="icon-embed-xxsmall"><use href="#i-clock"/></svg>About 2 minutes</span>
+                </div>
+              </li>
+              <li class="v2-journey_step">
+                <div class="v2-journey_node" aria-hidden="true"><span class="v2-journey_number">2</span></div>
+                <div class="v2-journey_card">
+                  <span class="v2-journey_icon"><svg class="icon-embed-small"><use href="#i-receipt"/></svg></span>
+                  <h3 class="heading-style-h5">Fill in your forms</h3>
+                  <p>Send your health history before you arrive, so your visit is all about you.</p>
+                  <span class="v2-journey_chip"><svg class="icon-embed-xxsmall"><use href="#i-check"/></svg>Online or at reception</span>
+                </div>
+              </li>
+              <li class="v2-journey_step">
+                <div class="v2-journey_node" aria-hidden="true"><span class="v2-journey_number">3</span></div>
+                <div class="v2-journey_card">
+                  <span class="v2-journey_icon"><svg class="icon-embed-small"><use href="#i-tooth"/></svg></span>
+                  <h3 class="heading-style-h5">Your first visit</h3>
+                  <p>A full exam, any X-rays you need, a cleaning and plenty of time for questions.</p>
+                  <span class="v2-journey_chip"><svg class="icon-embed-xxsmall"><use href="#i-clock"/></svg>About 60–90 minutes</span>
+                </div>
+              </li>
+              <li class="v2-journey_step is-last">
+                <div class="v2-journey_node" aria-hidden="true"><span class="v2-journey_number">4</span></div>
+                <div class="v2-journey_card">
+                  <span class="v2-journey_icon"><svg class="icon-embed-small"><use href="#i-heart"/></svg></span>
+                  <h3 class="heading-style-h5">Your plan, explained</h3>
+                  <p>We walk you through your options and costs. Nothing starts until you’re comfortable.</p>
+                  <span class="v2-journey_chip"><svg class="icon-embed-xxsmall"><use href="#i-shield"/></svg>Written estimate first</span>
+                </div>
+              </li>
             </ol>
             <div class="v2-cover reveal">
               <div>
@@ -482,6 +515,40 @@
                   </div>
                 </form>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog (same section as the home page) ============================================================= -->
+    <section class="section_home-blog" id="blog">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="section-header_row reveal">
+              <div class="section-header_component">
+                <h2 class="heading-style-h2">Tips for healthier smiles</h2>
+              </div>
+              <a href="#blog" class="button is-secondary is-icon">All articles<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="spacer-large"></div>
+            <div class="blog-card_list">
+              <a href="#blog" class="blog-card_component reveal">
+                <div class="image-slot_component"><img src="/assets/stock/blog-whitening.jpg" alt="A smiling woman holding a toothbrush" class="image-cover" loading="lazy"></div>
+                <div class="blog-card_meta"><span class="tag_component">Cosmetic</span><span>July 24, 2026 · 3 min read</span></div>
+                <h3 class="heading-style-h4 blog-card_title">Teeth whitening: a safe and effective way to brighten your smile</h3>
+              </a>
+              <a href="#blog" class="blog-card_component reveal">
+                <div class="image-slot_component"><img src="/assets/stock/blog-cdcp.jpg" alt="A dentist explaining a treatment plan on screen" class="image-cover" loading="lazy"></div>
+                <div class="blog-card_meta"><span class="tag_component">Insurance</span><span>Sample post</span></div>
+                <h3 class="heading-style-h4 blog-card_title">What the Canadian Dental Care Plan covers, and how to apply</h3>
+              </a>
+              <a href="#blog" class="blog-card_component reveal">
+                <div class="image-slot_component"><img src="/assets/stock/blog-kids.jpg" alt="A dentist checking a young boy’s teeth" class="image-cover" loading="lazy"></div>
+                <div class="blog-card_meta"><span class="tag_component">Kids</span><span>Sample post</span></div>
+                <h3 class="heading-style-h4 blog-card_title">Your child’s first dental visit: how to make it a good one</h3>
+              </a>
             </div>
           </div>
         </div>
