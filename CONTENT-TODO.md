@@ -74,7 +74,7 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Item | Status | From |
 |---|---|---|
 | Team photos + bios | Initials placeholders for hygienists, assistants and office team; Dr. Al Rafea uses a stock stand-in | Client (gathering) |
-| Google Reviews | Elfsight floating widget is on both home designs. Add it to the other pages too once the client is happy with it | Remedo |
-| Links still pointing to `#` | Privacy policy and Accessibility (footer + form consent), "Read our Google reviews" in the trust strip | Content team / Google listing URL |
+| Google Reviews | Elfsight floating badge (always on screen) on both home designs; offered the client a full section / footer reviews as an option. In the Elfsight dashboard: badge is set to desktop only and appears after 50 px of scroll, so change to all devices + show immediately, and lift it above the mobile Book/Call bar. Add to the other pages once approved | Remedo |
+| Links still pointing to `#` | Privacy policy and Accessibility (footer + form consent). "Read our Google reviews" now opens the Google listing. Client told this is a first draft; full pages after design approval | Content team |
 | Links pointing to a stand-in page | Each featured service and the service dropdown go to `/services.html` or the one sample `/service-detail.html`; blog cards and "All articles" go to `#blog`. Real pages come with the Webflow build (Services and Blog CMS) | Remedo (in development) |
 | Dr. Kiddie (retired) | The client said she has retired, but on our request she is shown again as Founder: team cards on both home pages and the Team page, and named in the 1982 story and About timeline. Confirm with the client | Client |
