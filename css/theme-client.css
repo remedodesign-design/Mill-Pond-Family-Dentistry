@@ -313,3 +313,6 @@ html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1r
 
 .home-services_footer { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
 .home-services_footer .home-services_more { margin-top: 0; }
+
+/* Mobile sticky bar: keep "Book online" on one line */
+.mobile-cta_component .button { white-space: nowrap; padding-left: 1rem; padding-right: 1rem; }

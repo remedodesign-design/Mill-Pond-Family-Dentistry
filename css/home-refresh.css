@@ -60,3 +60,14 @@
 @media screen and (max-width: 767px) {
   .home-story_visual { padding: 1.25rem 1.25rem 1.5rem; }
 }
+
+/* Phones and tablets: family photo first, then the headline (22 Nov feedback) */
+@media screen and (max-width: 991px) {
+  .section_v1-hero { display: flex; flex-direction: column; }
+  .v1-hero_media { order: -1; }
+  .v1-hero_media::before { background: linear-gradient(0deg, var(--base-color-brand--mist) 0%, rgba(242, 247, 251, 0) 35%); }
+  .v1-hero_component { padding: 1.5rem 0 4.5rem; }
+}
+@media screen and (max-width: 767px) {
+  .v1-hero_component { padding: 1rem 0 3.5rem; }
+}
