@@ -3,15 +3,146 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/dev", "destination": "/", "permanent": true },
-    { "source": "/dev/home", "destination": "/", "permanent": true },
-    { "source": "/dev/wireframe-:page", "destination": "/wireframes/:page", "permanent": true },
-    { "source": "/dev/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/Pages", "destination": "/", "permanent": true },
-    { "source": "/pages", "destination": "/", "permanent": true },
-    { "source": "/Pages/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/pages/:path*", "destination": "/:path*", "permanent": true }
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-options",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/home-v1",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/dev",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dev/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dev/wireframe-:page",
+      "destination": "/wireframes/:page",
+      "permanent": true
+    },
+    {
+      "source": "/dev/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Pages",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Pages/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/service-detail",
+      "destination": "/family-dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/invisalign",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/dr-aya-al-rafea",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/dr-lida-kiddie",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/cali-vanbommel",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/sophie-zegers",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/james-stemp",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/covid-19-announcement",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/millponddentalcare",
+      "permanent": true
+    },
+    {
+      "source": "/home-v2",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/home-backup",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/style-guide",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/wireframes/:path*",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }

@@ -7,7 +7,7 @@ Each page gets the same markup between <!-- shared:NAME --> markers; the
 only difference per page is the current-nav state, taken from the file name:
 
   data-nav="about"            -> class w--current + aria-current="page"
-  data-nav-group="about team" -> class w--current (dropdown toggle / summary)
+  data-nav-group="about our-team" -> class w--current (dropdown toggle / summary)
 
 These blocks map 1:1 to Webflow Components (Navbar, Footer, Mobile CTA).
 """
@@ -15,7 +15,15 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["home", "about", "team", "services", "service-detail", "contact"]
+CORE = ["home", "about", "our-team", "services", "family-dentistry", "contact"]
+# Pages added for the beta (22 Nov 2026). They get location / contact form only where they have markers.
+EXTRA = ["preventative-care-dental-check", "restorative-treatment", "dental-implants", "same-day-crowns",
+         "prosthetics-and-appliances", "teeth-whitening", "emergencies", "canadiandentalcareplan", "hours",
+         "blog", "post/teeth-whitening-a-safe-and-effective-way-to-brighten-your-smile",
+         "post/canadian-dental-care-plan-what-it-covers-and-how-to-apply", "post/your-childs-first-dental-visit",
+         "dr-steven-machardy", "cynthia-lope", "jessica-wilton", "heather-brulotte", "myranda-deml",
+         "privacy-policy", "accessibility", "404"]
+PAGES = CORE + EXTRA
 NAMES = ("sprite", "header", "footer", "insurance", "location", "contact-form", "emergency")
 PARTS = {name: (ROOT / "partials" / f"{name}.html").read_text(encoding="utf-8").rstrip() for name in NAMES}
 
@@ -71,9 +79,9 @@ def sync(page):
             html = marked.sub(lambda _: block, html, count=1)
         elif LEGACY[name].search(html):
             html = LEGACY[name].sub(lambda _: block, html, count=1)
-        elif name in ON_EVERY_PAGE:
+        elif name in ON_EVERY_PAGE and page in CORE:
             html = html.replace("  </main>", f"{block}\n\n  </main>", 1)
-        elif name in OPTIONAL:
+        elif name in OPTIONAL or name in ON_EVERY_PAGE:
             continue
         else:
             raise SystemExit(f"{page}: could not find the {name} block")

@@ -8,3 +8,14 @@ partials/
 tools/
 .env*
 .vercel/
+
+# Not part of the beta site (22 Nov 2026): design options, style guide, wireframes
+home-v2.html
+home-backup.html
+style-guide.html
+wireframes/
+brand/
+css/wireframe.css
+css/styleguide.css
+css/home-v2.css
+js/wireframe.js

@@ -1,0 +1,6 @@
+# Beta: keep search engines out until launch. At launch replace with:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://www.mpdental.ca/sitemap.xml
+User-agent: *
+Disallow: /

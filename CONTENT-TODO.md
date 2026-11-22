@@ -14,15 +14,15 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Comfort & technology: Comfort extras | "Tell us what helps you relax…" | Which extras they offer (blankets, headphones, TV, etc.) | Client |
 | Getting here card | "Ask us about parking and access when you book." | Parking, wheelchair access, floor level | Client |
 
-## Team (`team.html`, `home.html`)
+## Team (`our-team.html`, `index.html`)
 
 | Where | Generic copy now | Needs | From |
 |---|---|---|---|
 | Dr. MacHardy focus tags | Removed from the card (were Implants · Invisalign · Family dentistry) | Confirm focus areas for his bio page. Only list sedation if his credentials allow it | Client |
-| Dr. Al Rafea credentials | "Dentist" | Degree, school, year; bio; whether she is shown while on leave | Client |
-| Dr. Al Rafea portrait | Placeholder slot (no stock faces on team cards) | A real portrait | Client |
-| Dr. Kiddie founder section | Kept | Confirm she should still appear | Client |
-| Team bio pages | Cards are plain blocks, not clickable. The old "Read bio" dropdown copy (dentists' quotes) is in git history before this change and on mpdental.ca | Write one bio page per person (`/team/NAME`), then change each card's `<div class="team-card_link">` to `<a class="team-card_link" href="/team/NAME">`; the whole card becomes the link and "Read bio" appears | Content team |
+| Dr. Al Rafea | Removed from every page (18 Nov: no longer with the practice) | Nothing | Done |
+| Dr. Kiddie | Named as founder only (home Our Story, About, one line on Team); not listed as a provider (18 Nov) | Nothing | Done |
+| Staff photos + bios | Home "Familiar faces" uses the group photo and a phone icon for the office team; Team page uses initials | Photos and bios (client is gathering them) | Client |
+| Team bio pages | Cards are plain blocks, not clickable. The old "Read bio" dropdown copy (dentists' quotes) is in git history before this change and on mpdental.ca | Write one bio page per person at the old root-level URL (`/dr-steven-machardy`, `/cynthia-lope`…; see URL-MAP.md), then change each card's `<div class="team-card_link">` to `<a class="team-card_link" href="/NAME">`; the whole card becomes the link and "Read bio" appears | Content team |
 
 ## Services (`services.html`)
 
@@ -30,10 +30,12 @@ Generic copy is in place so the pages read as finished. Each line below is still
 |---|---|---|---|
 | Gum Care | "Cleanings, checks and treatment to keep your gums healthy…" | Client asked for "gum specialist". "Specialist" is a regulated title in Ontario, so we need the provider's credentials before using it | Client |
 | Root Canal | "Treats an infected or damaged tooth so you can keep it." | Final description | Content team |
-| Facial Rejuvenation | "Ask us about cosmetic treatments to refresh your appearance…" | Which treatments, and who provides them | Client |
+| Facial Rejuvenation / Smile Makeover | Removed (18 Nov: no cosmetic work other than whitening) | Nothing | Done |
+| Same-Day CEREC Crowns | Stock treatment-room photo on the home and Services cards | A photo of their CEREC unit or a crown being fitted; a CEREC service page | Client |
+| Night guards | In the home icon row and "Also offered" | Confirm offered (taken from the client's reference image) | Client |
 | Insurance band: Direct billing | "Direct billing" (shared band on Home, Services, Service detail) | Confirm they direct bill | Client |
 
-## Service detail (`service-detail.html`, Family Dentistry example)
+## Service detail (`family-dentistry.html`, Family Dentistry example)
 
 | Where | Generic copy now | Needs | From |
 |---|---|---|---|
@@ -57,3 +59,40 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Privacy policy and accessibility pages | Footer links go to `#` | Content team |
 | Photos | Stock and current-site photos are temporary. See `assets/stock/CREDITS.md`. The Wix stock photos must be replaced before launch | Client (photo shoot) |
 | Permission to reuse current-site team photos | Dr. MacHardy, Dr. Kiddie, dental assistants | Client |
+
+## Home page refresh (client feedback, 14-16 Nov 2026)
+
+`index.html` now has our design updated with the client palette, Montserrat + Lato and a reference-style hero. `/home-v2` is the alternative built on the client's reference image. The previous home page is kept at `/home-backup`.
+
+| Item | Status | From |
+|---|---|---|
+| Hero family photos (home and home-v2) | Unsplash images hotlinked for the draft. Swap for a real Mill Pond family photo (or download + credit the chosen stock) | Client / photo shoot |
+| CEREC crowns and night guards (home-v2 icon row) | Taken from the client's reference image. Confirm the practice offers both | Client |
+| Reception photo (home-v2 welcome section) | Wix stock, must be replaced before launch | Client (photo shoot) |
+| Other pages | Still on Barlow and the old colours. Load `css/theme-client.css` on them once the client signs off on the home page | Remedo |
+
+## Client + Dr. MacHardy feedback (16 Nov 2026): what is still open
+
+| Item | Status | From |
+|---|---|---|
+| Team photos + bios | Initials placeholders for hygienists, assistants and office team; Dr. Al Rafea uses a stock stand-in | Client (gathering) |
+| Google Reviews | Elfsight floating badge (always on screen) on both home designs; offered the client a full section / footer reviews as an option. In the Elfsight dashboard: badge is set to desktop only and appears after 50 px of scroll, so change to all devices + show immediately, and lift it above the mobile Book/Call bar. Add to the other pages once approved | Remedo |
+| Links still pointing to `#` | Privacy policy and Accessibility (footer + form consent). "Read our Google reviews" now opens the Google listing. Client told this is a first draft; full pages after design approval | Content team |
+| Links pointing to a stand-in page | Service links already use the preserved old URLs (`/teeth-whitening`, `/emergencies`…), served by temporary rewrites until each page is built; see URL-MAP.md. Two blog cards still go to `#blog` | Remedo (in development) |
+| Dr. Kiddie (retired) | The client said she has retired, but on our request she is shown again as Founder: team cards on both home pages and the Team page, and named in the 1982 story and About timeline. Confirm with the client | Client |
+
+## Online booking (18 Nov)
+
+Online booking (myformsathome) is for **existing patients only**: emergencies, cleanings and check-ups. Every main CTA is now "Request an Appointment" (contact form) or the phone number; the booking link appears as "Existing patients: book online" in the top ribbon, under the home hero, in the contact-form card, the footer CTA and the mobile menu.
+
+## Beta pages (22 Nov): copy the client should approve
+
+| Page | Where the copy came from | Needs |
+|---|---|---|
+| Check-ups, Restorative, Prosthetics, Whitening, Emergencies, CDCP, Hours | Old mpdental.ca pages, rewritten and expanded in our template | Client read-through |
+| `/dental-implants`, `/same-day-crowns` | New (no old page) | Confirm how implants are handled (placed in-house or with a specialist), CEREC appointment length, real CEREC photo |
+| Bios: Dr. MacHardy, Cynthia, Jessica, Heather | Old mpdental.ca bios, lightly edited | Client is sending updated bios and photos |
+| Bio: Myranda | Placeholder ("full bio coming soon") | Bio and photo |
+| Blog: CDCP guide, child's first visit | New articles | Client approval; CDCP income limit and rules checked against Canada.ca before launch |
+| Privacy policy, Accessibility | New drafts | Client (and their privacy officer) to approve; office access details |
+| Contact form | Validates but does not send yet | Connect to reception@mpdental.ca (Webflow forms at launch, or a form service for the beta) |
