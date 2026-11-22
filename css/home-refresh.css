@@ -45,8 +45,7 @@
 /* Slate Blue accents through the rest of the page ------------------------ */
 .section_home-trust { background-color: var(--base-color-brand--mist); }
 .home-trust_item .icon-box_component { color: var(--base-color-brand--slate); border-color: var(--base-color-brand--pond); }
-.section_home-story.background-color-secondary,
-.section_home-journey.background-color-secondary { background-color: var(--base-color-neutral--cream); }
+.section_home-story.background-color-secondary { background-color: var(--base-color-brand--mist); }
 .home-story_visual { background-color: var(--base-color-brand--slate); }
 .home-story_fact-number { color: var(--base-color-brand--deep); font-weight: 500; font-size: 2.5rem; }
 .service-card_icon { background-color: var(--base-color-brand--slate); }

@@ -9,7 +9,7 @@ How to move the local style system (`index.html` and the other page files at the
 | `css/styleguide.css` | `fs-styleguide_*` classes | Classes on the `/style-guide` page only |
 | `style-guide.html` | Every class shown in use | The `/style-guide` page |
 
-Preview locally: run `python -m http.server 5173` in the project folder and open `http://localhost:5173/` (home) or `http://localhost:5173/style-guide.html`. Links are root-relative (`/css/...`, `/team.html`), so serve the folder rather than opening files directly.
+Preview locally: run `python tools/dev-server.py 5173` in the project folder and open `http://localhost:5173/`. It follows `vercel.json` (clean URLs, redirects, rewrites), so links like `/our-team` and the preserved mpdental.ca URLs work. Page URLs and redirects for the Webflow build: see URL-MAP.md.
 
 ## 1. Start point
 

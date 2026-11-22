@@ -9,7 +9,7 @@
    #397BAE Dental Blue       buttons, links, brand text (4.55:1 on white)
    #263E50 Navy              headings, body text, dark sections
    #F2F7FB Light Blue        tinted section backgrounds
-   #F7F7F5 Off White         neutral section backgrounds
+   #F7F7F5 Off White         retired 22 Nov (client: no cream); sections use Light Blue or white
    #777E84 Grey              decorative only (fails 4.5:1 for small text)
    + Slate Blue #4D6A86      secondary dark accent (our addition, 5.6:1 on white)
    ========================================================================== */
@@ -21,7 +21,7 @@
   --base-color-brand--navy: #263e50;        /* Navy */
   --base-color-brand--slate: #4d6a86;       /* Slate Blue */
   --base-color-brand--slate-light: #dfe7ef; /* Slate Blue tint */
-  --base-color-neutral--cream: #f7f7f5;     /* Off White */
+  --base-color-neutral--cream: #f2f7fb;     /* was Off White #F7F7F5; cream retired 22 Nov, maps to Light Blue */
   --base-color-neutral--grey: #777e84;      /* Grey */
   --base-color-neutral--slate: #56616b;     /* secondary text, 6.2:1 on white */
   --base-color-neutral--charcoal: #263e50;  /* primary text = Navy */
@@ -168,3 +168,148 @@ html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1r
 /* Elfsight adds an edit/share toolbar (shown to the account owner) whose hidden share
    panel hangs below the footer and leaves empty space. The reviews badge is unaffected. */
 .eapps-widget-toolbar { display: none !important; }
+
+/* ==========================================================================
+   Design language v3 (feedback 18 Nov: Version 1 chosen, with Version 2's
+   icons, new-patient journey and round team portraits). One calm system on
+   every page: white and Light Blue sections, soft-bordered white cards,
+   Slate Blue line icons, and the tooth outline as the recurring motif.
+   ========================================================================== */
+:root {
+  --background-color--background-secondary: var(--base-color-brand--mist); /* calmer than the warm off-white */
+  --card-border: #dbe7f2;
+  --card-shadow: 0 0.5rem 1.5rem rgba(38, 62, 80, 0.05);
+  --card-shadow-hover: 0 1.25rem 2.5rem rgba(38, 62, 80, 0.1);
+}
+
+/* Eyebrows and section rules in Slate Blue */
+.text-style-tagline { color: var(--base-color-brand--slate); }
+
+/* Cards: one recipe everywhere -------------------------------------------- */
+.service-card_component, .services-item_component, .contact-form_card, .contact-form_form-card {
+  border: 1px solid var(--card-border); border-radius: var(--radius--large); background-color: var(--base-color-neutral--white);
+  box-shadow: var(--card-shadow);
+}
+.contact-form_card.is-mist { background-color: var(--base-color-brand--mist); border-color: var(--card-border); box-shadow: none; }
+.service-card_component, .services-item_component { transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+.service-card_component:hover, .services-item_component:hover { transform: translateY(-0.25rem); box-shadow: var(--card-shadow-hover); border-color: var(--base-color-brand--pond); }
+.service-card_component .image-slot_component { border-radius: 0; }
+.location_card { background-color: var(--base-color-brand--mist); border-radius: var(--radius--large); }
+.location_map, .image-slot_component { border-radius: var(--radius--large); }
+@media (prefers-reduced-motion: reduce) {
+  .service-card_component:hover, .services-item_component:hover { transform: none; }
+}
+
+/* Icons: Slate Blue line icons in round discs (service cards) or soft squares */
+.service-card_icon { background-color: var(--base-color-brand--slate); color: var(--base-color-neutral--white); }
+.icon-box_component { color: var(--base-color-brand--slate); }
+.icon-row_link svg { color: var(--base-color-brand--slate); }
+.icon-row_link:hover, .icon-row_link:hover svg { color: var(--base-color-brand--deep); }
+.why-split_icon { background-color: var(--base-color-brand--slate); color: var(--base-color-neutral--white); }
+.why-split_stat strong { color: var(--base-color-brand--slate); }
+
+/* Tooth outline motif (from Version 2) ------------------------------------ */
+.tooth-outline_component { position: absolute; top: 2rem; right: -4rem; width: 19rem; height: 21rem; color: #d6e6f5; pointer-events: none; z-index: 0; }
+.section_home-services { position: relative; overflow: hidden; }
+.section_home-services > .padding-global { position: relative; z-index: 1; }
+/* Inner page heroes share the home hero's light blue wash and the tooth motif */
+.section_about-hero, .section_services-hero, .section_team-hero, .section_service-detail-hero, .section_contact-hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(180deg, #eaf3fb 0%, var(--base-color-brand--mist) 70%, var(--base-color-neutral--white) 100%);
+}
+.section_about-hero::after, .section_services-hero::after, .section_team-hero::after, .section_service-detail-hero::after, .section_contact-hero::after {
+  content: ""; position: absolute; z-index: -1; top: 2rem; right: -5rem; width: 20rem; height: 22rem; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 220' fill='none' stroke='%23d6e6f5' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M62 18c18 0 30 10 48 10s30-10 48-10c26 0 38 22 38 48 0 34-12 68-23 97-6 17-11 39-24 39-17 0-15-58-39-58s-22 58-39 58c-13 0-18-22-24-39C36 134 24 100 24 66c0-26 12-48 38-48Z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+@media screen and (max-width: 767px) {
+  .tooth-outline_component { display: none; }
+  .section_about-hero::after, .section_services-hero::after, .section_team-hero::after, .section_service-detail-hero::after, .section_contact-hero::after { width: 11rem; height: 12rem; right: -4rem; top: 1rem; }
+}
+
+/* Services icon row inside the home services section */
+.section_home-services .icon-row_list { padding: 1.75rem 0; border-radius: var(--radius--large); background-color: var(--base-color-neutral--white); border: 1px solid var(--card-border); box-shadow: var(--card-shadow); }
+
+/* New-patient journey: numbered nodes on a line that draws in on scroll ---- */
+.section_journey { background: linear-gradient(180deg, var(--base-color-neutral--white) 0%, var(--base-color-brand--mist) 100%); }
+.journey_list { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.journey_list::before, .journey_list::after { content: ""; position: absolute; top: 1.875rem; left: 12.5%; right: 12.5%; height: 3px; border-radius: 3px; pointer-events: none; }
+.journey_list::before { background: repeating-linear-gradient(90deg, #c9dcee 0 0.5rem, transparent 0.5rem 0.875rem); }
+.journey_list::after { background: linear-gradient(90deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); transform: scaleX(0); transform-origin: left center; transition: transform 1.4s cubic-bezier(.65,0,.35,1) 0.2s; }
+.journey_list.is-visible::after, html:not(.js) .journey_list::after { transform: scaleX(1); }
+.journey_step { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.journey_node { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 3.75rem; height: 3.75rem; border-radius: 50%; background-color: var(--base-color-neutral--white); box-shadow: 0 0 0 1px #d6e6f5, 0 0.5rem 1.25rem rgba(57, 123, 174, 0.18); }
+.journey_number { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background-color: var(--base-color-brand--slate); color: var(--base-color-neutral--white); font-family: var(--font--heading); font-weight: 600; font-size: 1.125rem; }
+.journey_step.is-last .journey_number { background-color: var(--base-color-brand--navy); }
+.journey_card { position: relative; flex: 1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 1.75rem 1.5rem; border-radius: var(--radius--large); border: 1px solid var(--card-border); background-color: var(--base-color-neutral--white); box-shadow: var(--card-shadow); transition: transform 200ms ease, box-shadow 200ms ease; }
+.journey_card::before { content: ""; position: absolute; top: -0.5rem; left: 50%; width: 1rem; height: 1rem; transform: translateX(-50%) rotate(45deg); background-color: var(--base-color-neutral--white); border-top: 1px solid var(--card-border); border-left: 1px solid var(--card-border); }
+.journey_step:hover .journey_card { transform: translateY(-0.25rem); box-shadow: var(--card-shadow-hover); }
+.journey_icon { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-bottom: 0.25rem; border-radius: var(--radius--small); background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--slate); }
+.journey_card p { margin-bottom: 0.75rem; color: var(--text-color--text-secondary); font-size: 1rem; }
+.journey_chip { display: inline-flex; align-items: center; gap: 0.375rem; margin-top: auto; padding: 0.3125rem 0.75rem; border-radius: var(--radius--round); background-color: var(--base-color-brand--slate-light); color: var(--base-color-brand--navy); font-size: 0.8125rem; font-weight: 700; }
+.journey_chip svg { color: var(--base-color-brand--slate); }
+
+/* Coverage panel (sits under the journey) */
+.coverage_component { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; padding: 3rem; border-radius: var(--radius--large); background-color: var(--base-color-brand--slate); color: rgba(255, 255, 255, 0.88); scroll-margin-top: calc(var(--ribbon-height) + var(--navbar-height) + 1rem); }
+.coverage_component h3 { color: var(--base-color-neutral--white); }
+.coverage_text { margin-top: 0.75rem; }
+.coverage_list { display: flex; flex-direction: column; gap: 0.875rem; margin: 0; padding: 0; list-style: none; }
+.coverage_list li { display: flex; align-items: center; gap: 0.75rem; margin: 0; font-weight: 700; color: var(--base-color-neutral--white); }
+.coverage_list svg { flex: none; color: #c9dcee; }
+
+@media screen and (max-width: 991px) {
+  .journey_list { grid-template-columns: 1fr; gap: 1.25rem; }
+  .journey_list::before, .journey_list::after { top: 1.875rem; bottom: 1.875rem; left: 1.8125rem; right: auto; width: 3px; height: auto; }
+  .journey_list::before { background: repeating-linear-gradient(180deg, #c9dcee 0 0.5rem, transparent 0.5rem 0.875rem); }
+  .journey_list::after { background: linear-gradient(180deg, var(--base-color-brand--pond), var(--base-color-brand--slate)); transform: scaleY(0); transform-origin: center top; }
+  .journey_list.is-visible::after, html:not(.js) .journey_list::after { transform: scaleY(1); }
+  .journey_step { flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+  .journey_node { flex: none; }
+  .journey_card::before { top: 1.375rem; left: -0.5rem; transform: rotate(-45deg); }
+  .coverage_component { grid-template-columns: 1fr; padding: 2.5rem; gap: 2rem; }
+}
+@media screen and (max-width: 767px) {
+  .coverage_component { padding: 2rem 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey_list::after { transition: none; }
+  .journey_step:hover .journey_card { transform: none; }
+}
+
+/* Round team portraits (from Version 2) ----------------------------------- */
+.section_team-circles { background-color: var(--base-color-brand--slate-light); }
+.team-circles_list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; max-width: 60rem; margin: 0 auto; }
+.team-circles_card { display: flex; flex-direction: column; gap: 1.25rem; text-align: center; }
+.team-circles_photo { aspect-ratio: 1 / 1; width: 78%; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 0.5rem solid var(--base-color-neutral--white); background-color: var(--base-color-brand--mist); box-shadow: var(--shadow--soft); }
+.team-circles_photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+.team-circles_photo.is-icon { display: flex; align-items: center; justify-content: center; color: var(--base-color-brand--slate); }
+.team-circles_photo.is-icon svg { width: 30%; height: 30%; }
+.team-circles_role { margin-top: 0.25rem; color: var(--text-color--text-secondary); font-size: 1rem; }
+@media screen and (max-width: 767px) {
+  .team-circles_list { grid-template-columns: 1fr; gap: 2.5rem; }
+  .team-circles_photo { width: 62%; }
+}
+.team-circles_list.is-1col { grid-template-columns: minmax(0, 1fr); max-width: 20rem; }
+.team-founder_note { max-width: 38rem; margin: 2rem auto 0; text-align: center; font-size: 0.9375rem; }
+
+/* Booking: online booking is for existing patients only (feedback 18 Nov) -- */
+.ribbon_book { font-weight: 700; }
+@media screen and (max-width: 991px) { .ribbon_book { display: none; } }
+.v1-hero_book { font-size: 0.9375rem; color: var(--base-color-brand--navy); }
+.v1-hero_book a { color: var(--base-color-brand--deep); font-weight: 700; }
+.navbar_drawer-book { color: var(--base-color-brand--deep); font-weight: 700; }
+.footer_cta-note { margin-top: 0.5rem; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.78); }
+.footer_cta-note a { color: var(--base-color-neutral--white); text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* Google reviews in the footer (Dr. MacHardy feedback) -------------------- */
+.footer_reviews { display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; padding: 0.625rem 1rem 0.625rem 0.625rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); color: var(--base-color-brand--navy); text-decoration: none; box-shadow: var(--shadow--small); transition: transform 200ms ease; }
+.footer_reviews:hover { transform: translateY(-2px); color: var(--base-color-brand--navy); }
+.footer_reviews:focus-visible { outline: 0.1875rem solid var(--base-color-brand--pond); outline-offset: 0.25rem; }
+.footer_reviews-g { display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--base-color-brand--mist); font-family: Arial, sans-serif; font-weight: 700; font-size: 1.125rem; color: #4285f4; }
+.footer_reviews-text { display: flex; flex-direction: column; line-height: 1.2; }
+.footer_reviews-score { display: inline-flex; align-items: center; gap: 0.375rem; }
+.footer_reviews-score strong { font-family: var(--font--heading); font-size: 1rem; }
+.footer_reviews-stars { color: #f4b400; letter-spacing: 0.05em; font-size: 0.9375rem; }
+.footer_reviews-count { font-size: 0.8125rem; color: var(--text-color--text-secondary); }
+
+.home-services_footer { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+.home-services_footer .home-services_more { margin-top: 0; }
