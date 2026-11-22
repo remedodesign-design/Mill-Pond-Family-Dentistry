@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CORE = ["home", "about", "our-team", "services", "family-dentistry", "contact"]
 # Pages added for the beta (22 Nov 2026). They get location / contact form only where they have markers.
 EXTRA = ["preventative-care-dental-check", "restorative-treatment", "dental-implants", "same-day-crowns",
-         "prosthetics-and-appliances", "teeth-whitening", "emergencies", "canadiandentalcareplan", "hours",
+         "prosthetics-and-appliances", "teeth-whitening", "emergencies", "canadiandentalcareplan", "hours", "new-patients",
          "blog", "post/teeth-whitening-a-safe-and-effective-way-to-brighten-your-smile",
          "post/canadian-dental-care-plan-what-it-covers-and-how-to-apply", "post/your-childs-first-dental-visit",
          "dr-steven-machardy", "cynthia-lope", "jessica-wilton", "heather-brulotte", "myranda-deml",

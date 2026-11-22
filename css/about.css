@@ -107,3 +107,11 @@
 
 /* Sits right above the shared Hours & location section: keep the gap at ~80px */
 @media screen and (min-width: 768px) { .section_about-team .padding-section-large { padding-bottom: 5rem; } }
+
+/* Gallery: image boxes fill their grid cell exactly (their 12rem minimum made
+   them spill into the next row on phones), with even gaps (22 Nov feedback) */
+.about-gallery_item .image-slot_component { min-height: 0; height: 100%; }
+.about-gallery_item, .about-gallery_photo { overflow: hidden; border-radius: var(--radius--large); }
+@media screen and (max-width: 767px) {
+  .about-gallery_grid { grid-auto-rows: 10.5rem; gap: 1rem; }
+}

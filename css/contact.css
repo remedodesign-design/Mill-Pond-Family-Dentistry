@@ -36,6 +36,12 @@ a.contact-method_value:hover { color: var(--text-color--text-brand); text-decora
   .contact-getting_list { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
 }
 
-/* Hero, emergency strip and form share one grey surface: even 64px gaps around the strip */
-.section_contact-hero .padding-section-medium { padding-bottom: 2.5rem; }
-.section_contact-emergency + .section_contact-form .padding-section-large { padding-top: 2.5rem; }
+/* Hero and emergency strip sit on white (the hero wash fades to white); the form
+   starts its own Light Blue section with full section spacing (22 Nov feedback) */
+.section_contact-hero .padding-section-medium { padding-bottom: 3rem; }
+.section_contact-emergency { padding: 1rem 0 5rem; }
+@media screen and (max-width: 991px) { .section_contact-emergency { padding-bottom: 4rem; } }
+@media screen and (max-width: 767px) {
+  .section_contact-hero .padding-section-medium { padding-bottom: 2rem; }
+  .section_contact-emergency { padding: 0.5rem 0 3rem; }
+}
