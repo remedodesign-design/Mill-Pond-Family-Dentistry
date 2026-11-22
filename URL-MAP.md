@@ -28,7 +28,7 @@ In the Vercel beta, `vercel.json` holds the redirects. Every kept URL is now a r
 | `/heather-brulotte` | Bio | Built |
 | `/myranda-deml` | Bio | Built |
 
-New pages with no old URL: `/about`, `/dental-implants`, `/same-day-crowns`, `/post/canadian-dental-care-plan-what-it-covers-and-how-to-apply`, `/post/your-childs-first-dental-visit`, `/privacy-policy`, `/accessibility`, plus `404.html`. Samantha Brown and Arwa Ali had no bio pages on the old site; if they get one, use `/samantha-brown` and `/arwa-ali` (same root-level pattern).
+New pages with no old URL: `/about`, `/new-patients`, `/dental-implants`, `/same-day-crowns`, `/post/canadian-dental-care-plan-what-it-covers-and-how-to-apply`, `/post/your-childs-first-dental-visit`, `/privacy-policy`, `/accessibility`, plus `404.html`. Samantha Brown and Arwa Ali had no bio pages on the old site; if they get one, use `/samantha-brown` and `/arwa-ali` (same root-level pattern).
 
 Not deployed (kept in the repo only, see `.vercelignore`): `home-v2`, `home-backup`, `style-guide`, `wireframes/`; their old draft URLs redirect to `/`. The whole beta sends `X-Robots-Tag: noindex` and `robots.txt` blocks crawlers; switch both at launch.
 
