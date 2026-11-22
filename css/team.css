@@ -153,3 +153,11 @@ a.team-member_item:hover .team-member_arrow { transform: translateX(0.25rem); }
   .team-dentist_facts strong { font-size: 1.375rem; }
   .team-role_card { padding: 1.5rem; }
 }
+
+/* 2. Small phones: Dr. MacHardy's quick facts fit three across (responsive audit, 22 Nov) */
+@media screen and (max-width: 479px) {
+  .team-dentist_facts li { padding-right: 0.5rem; }
+  .team-dentist_facts li + li { padding-left: 0.75rem; }
+  .team-dentist_facts strong { font-size: 1.125rem; }
+  .team-dentist_facts span { font-size: 0.8125rem; }
+}
