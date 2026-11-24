@@ -10,6 +10,7 @@ All from Unsplash under the free Unsplash License (no attribution required, comm
 | service-smile-makeover.jpg | Service card: Smile Makeover | https://unsplash.com/photos/RCQnbyQsnUg |
 | service-iv-sedation.jpg | Service card: IV Sedation | https://images.unsplash.com/photo-1606811842243-af7e16970c1f |
 | why-patient-smiling.jpg | Why choose us, tall photo | https://images.unsplash.com/photo-1663755489920-5e09f66d011a |
+| why-family-smiling.jpg | Home: Why Mill Pond photo (cropped to 4:5 from the original) | https://unsplash.com/photos/a-happy-family-of-three-posing-for-a-photo-SwaEMQAzP_8 |
 | blog-whitening.jpg | Blog card 1 | https://images.unsplash.com/photo-1674775372064-8c75d3f8c757 |
 | blog-cdcp.jpg | Blog card 2 | https://images.unsplash.com/photo-1606811811225-10635e4c9a39 |
 | blog-kids.jpg | Blog card 3 | https://images.unsplash.com/photo-1758205307836-0829c799890b |
