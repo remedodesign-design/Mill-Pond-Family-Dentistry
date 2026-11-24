@@ -349,3 +349,87 @@ html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1r
 .navbar_drawer-book { display: inline-block; padding: 0.75rem 0; }
 .contact-form_link { min-height: 2.75rem; }
 .form_checkbox-icon { width: 1.5rem; height: 1.5rem; margin-top: 0; }
+
+/* Home doctor feature (feedback 23 Nov): large uncropped portrait + bio ----- */
+.section_doctor { background-color: var(--base-color-brand--slate-light); }
+.doctor-feature_component { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 4.5rem; align-items: center; }
+.doctor-feature_visual { position: relative; max-width: 30rem; width: 100%; }
+.doctor-feature_photo { aspect-ratio: 4 / 5; border-radius: var(--radius--large); overflow: hidden; border: 0.5rem solid var(--base-color-neutral--white); background-color: var(--base-color-brand--mist); box-shadow: var(--shadow--soft); }
+.doctor-feature_photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.doctor-feature_badge { position: absolute; right: -1.5rem; bottom: 2rem; display: flex; flex-direction: column; gap: 0.125rem; padding: 1rem 1.375rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
+.doctor-feature_badge strong { font-size: 2rem; line-height: 1; color: var(--base-color-brand--deep); }
+.doctor-feature_badge span { font-size: 0.875rem; color: var(--text-color--text-secondary); }
+.doctor-feature_content { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+.doctor-feature_role { margin: -0.5rem 0 0; font-weight: 700; color: var(--base-color-brand--deep); }
+.doctor-feature_facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: 100%; margin: 0.5rem 0 0; }
+.doctor-feature_fact { margin: 0; padding: 1rem 1.25rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); border: 1px solid #dbe7f2; }
+.doctor-feature_fact dt { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-color--text-secondary); }
+.doctor-feature_fact dd { margin: 0.25rem 0 0; font-weight: 700; color: var(--base-color-brand--navy); }
+.doctor-feature_buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+@media screen and (max-width: 991px) {
+  .doctor-feature_component { grid-template-columns: 1fr; gap: 3rem; }
+  .doctor-feature_visual { margin: 0 auto; max-width: 26rem; }
+  .doctor-feature_badge { right: 1rem; }
+}
+@media screen and (max-width: 479px) {
+  .doctor-feature_facts { grid-template-columns: 1fr; }
+  .doctor-feature_buttons .button { width: 100%; justify-content: center; }
+}
+
+/* Services not yet live: plain, non-clickable items (feedback 23 Nov) ------- */
+.service-card_component.is-static { cursor: default; }
+.service-card_component.is-static:hover { transform: none; box-shadow: none; border-color: inherit; }
+span.icon-row_link { cursor: default; }
+span.icon-row_link:hover svg { transform: none; }
+
+/* Dental implants page: long-form sections (feedback 23 Nov) --------------- */
+.chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.625rem; margin-top: 1.5rem; }
+.chip-row_label { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-color--text-secondary); margin-right: 0.25rem; }
+.chip-row_link { padding: 0.375rem 0.875rem; border: 1px solid #cfdeec; border-radius: 999px; background-color: var(--base-color-neutral--white); color: var(--base-color-brand--navy); font-size: 0.9375rem; text-decoration: none; transition: border-color 200ms ease, color 200ms ease; }
+.chip-row_link:hover { border-color: var(--base-color-brand--pond); color: var(--base-color-brand--deep); }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.feature-card { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 1.75rem; border: 1px solid #dbe7f2; border-radius: var(--radius--large); background-color: var(--base-color-neutral--white); }
+.feature-card p { margin: 0; color: var(--text-color--text-secondary); font-size: 1rem; }
+.feature-card_icon { display: flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; margin-bottom: 0.5rem; border-radius: 50%; background-color: var(--base-color-brand--mist); color: var(--base-color-brand--deep); }
+.background-color-secondary .feature-card { border-color: #d5e3f1; }
+.feature-note { max-width: 48rem; margin: 2.5rem auto 0; text-align: center; color: var(--text-color--text-secondary); }
+.compare-table_wrapper { overflow-x: auto; border: 1px solid #dbe7f2; border-radius: var(--radius--large); background-color: var(--base-color-neutral--white); }
+.compare-table { width: 100%; min-width: 40rem; border-collapse: collapse; text-align: left; }
+.compare-table th, .compare-table td { padding: 1rem 1.25rem; border-bottom: 1px solid #e6eef6; vertical-align: top; }
+.compare-table thead th { background-color: var(--base-color-brand--mist); color: var(--base-color-brand--navy); font-size: 1rem; }
+.compare-table tbody th { font-weight: 700; color: var(--base-color-brand--navy); width: 20%; }
+.compare-table td { color: var(--text-color--text-secondary); }
+.compare-table td:nth-child(2) { background-color: #f4f9fd; color: var(--base-color-brand--navy); font-weight: 600; }
+.compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: 0; }
+.compare-table.is-timeline { min-width: 36rem; }
+.compare-table.is-timeline td:nth-child(2) { background-color: transparent; color: var(--text-color--text-secondary); font-weight: 400; }
+.cost-notes { max-width: 48rem; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
+.cost-notes p { margin: 0; }
+.candidate_component { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 4rem; align-items: center; }
+.candidate_content { display: flex; flex-direction: column; gap: 1.25rem; }
+.candidate_cards { display: flex; flex-direction: column; gap: 1.25rem; }
+.candidate_card { padding: 1.75rem; border: 1px solid #dbe7f2; border-radius: var(--radius--large); background-color: var(--base-color-brand--mist); }
+.candidate_card.is-note { background-color: var(--base-color-neutral--white); }
+.candidate_list { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.625rem; }
+.candidate_list li { position: relative; margin: 0; padding-left: 1.75rem; }
+.candidate_list li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 0.75rem; height: 0.75rem; border-radius: 50%; background-color: var(--base-color-brand--deep); }
+.candidate_card.is-note .candidate_list li::before { background-color: var(--base-color-brand--slate); }
+.dentist-band_component { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 4rem; align-items: center; }
+.dentist-band_photo { max-width: 22rem; width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius--large); overflow: hidden; border: 0.5rem solid var(--base-color-neutral--white); background-color: var(--base-color-brand--mist); box-shadow: var(--shadow--soft); }
+.dentist-band_photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.dentist-band_content { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin: 0.5rem 0 0; }
+.stat-row_item { display: flex; flex-direction: column-reverse; gap: 0.125rem; margin: 0; }
+.stat-row_item dd { margin: 0; font-size: 2rem; font-weight: 700; line-height: 1.1; color: var(--base-color-brand--deep); }
+.stat-row_item dt { font-size: 0.9375rem; color: var(--text-color--text-secondary); }
+.stat-row_item dt a { color: inherit; }
+@media screen and (max-width: 991px) {
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .candidate_component, .dentist-band_component { grid-template-columns: 1fr; gap: 2.5rem; }
+  .dentist-band_photo { margin: 0 auto; }
+}
+@media screen and (max-width: 639px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature-card, .candidate_card { padding: 1.5rem; }
+  .chip-row_label { width: 100%; }
+}
