@@ -357,10 +357,12 @@ html { scroll-padding-top: calc(var(--ribbon-height) + var(--navbar-height) + 1r
 .doctor-feature_photo { position: relative; flex: 1 1 auto; min-height: 28rem; border-radius: var(--radius--large); overflow: hidden; border: 0.5rem solid var(--base-color-neutral--white); background-color: var(--base-color-brand--mist); box-shadow: var(--shadow--soft); }
 .doctor-feature_photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
 .doctor-feature_badge { position: absolute; right: -1.5rem; bottom: 2rem; display: flex; flex-direction: column; gap: 0.125rem; padding: 1rem 1.375rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); box-shadow: var(--shadow--soft); }
-.doctor-feature_badge strong { font-size: 2rem; line-height: 1; color: var(--base-color-brand--deep); }
+.doctor-feature_badge strong { font-size: 2rem; line-height: 1; color: var(--doctor-accent); }
 .doctor-feature_badge span { font-size: 0.875rem; color: var(--text-color--text-secondary); }
 .doctor-feature_content { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
-.doctor-feature_role { margin: -0.5rem 0 0; font-weight: 700; color: var(--base-color-brand--deep); }
+.section_doctor { --doctor-accent: #2c6390; } /* darker than Dental Blue: 5.1:1 on the slate tint */
+.doctor-feature_role { margin: -0.5rem 0 0; font-weight: 700; color: var(--doctor-accent); }
+.section_doctor .button.is-secondary { color: var(--doctor-accent); border-color: var(--doctor-accent); }
 .doctor-feature_facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; width: 100%; margin: 0.5rem 0 0; }
 .doctor-feature_fact { margin: 0; padding: 1rem 1.25rem; border-radius: var(--radius--medium); background-color: var(--base-color-neutral--white); border: 1px solid #dbe7f2; }
 .doctor-feature_fact dt { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-color--text-secondary); }
