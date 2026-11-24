@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/css/client-first.css">
 <link rel="stylesheet" href="/css/components.css">
 <link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/theme-client.css?v=13">
+<link rel="stylesheet" href="/css/theme-client.css?v=14">
 <link rel="stylesheet" href="/css/home-refresh.css?v=8">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <script>document.documentElement.classList.add('js');</script>
@@ -104,22 +104,7 @@
                 <a href="/canadiandentalcareplan" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
               </div>
             </div>
-            <div class="navbar_dropdown">
-              <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
-              <div class="navbar_dropdown-list" id="dd-services">
-                <span class="navbar_dropdown-group">Featured</span>
-                <a href="/dental-implants" class="navbar_dropdown-link">Dental Implants</a>
-                <a href="/same-day-crowns" class="navbar_dropdown-link">Same-Day CEREC Crowns</a>
-                <span class="navbar_dropdown-divider"></span>
-                <a href="/family-dentistry" class="navbar_dropdown-link">Family Dentistry</a>
-                <a href="/preventative-care-dental-check" class="navbar_dropdown-link">Check-ups &amp; Preventive Care</a>
-                <a href="/restorative-treatment" class="navbar_dropdown-link">Restorative Treatment</a>
-                <a href="/prosthetics-and-appliances" class="navbar_dropdown-link">Prosthetics &amp; Appliances</a>
-                <a href="/teeth-whitening" class="navbar_dropdown-link">Teeth Whitening</a>
-                <a href="/emergencies" class="navbar_dropdown-link">Emergencies</a>
-                <a href="/services" class="navbar_dropdown-link">All services</a>
-              </div>
-            </div>
+            <a href="/dental-implants" class="navbar_link">Dental Implants</a>
             <a href="/new-patients" class="navbar_link">New Patients</a>
             <a href="/blog" class="navbar_link">Blog</a>
             <a href="/contact" class="navbar_link">Contact</a>
@@ -139,12 +124,7 @@
           <a href="/about">About the practice</a><a href="/our-team">Our Team</a><a href="/hours">Hours &amp; Location</a><a href="/canadiandentalcareplan">CDCP &amp; Insurance</a>
         </div>
       </details>
-      <details>
-        <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
-        <div class="navbar_drawer-sub">
-          <a href="/dental-implants">Dental Implants</a><a href="/same-day-crowns">Same-Day CEREC Crowns</a><a href="/family-dentistry">Family Dentistry</a><a href="/preventative-care-dental-check">Check-ups &amp; Preventive Care</a><a href="/restorative-treatment">Restorative Treatment</a><a href="/prosthetics-and-appliances">Prosthetics &amp; Appliances</a><a href="/teeth-whitening">Teeth Whitening</a><a href="/emergencies">Emergencies</a><a href="/services">All services</a>
-        </div>
-      </details>
+      <a href="/dental-implants" class="navbar_drawer-link">Dental Implants</a>
       <a href="/new-patients" class="navbar_drawer-link">New Patients</a>
       <a href="/blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact" class="navbar_drawer-link">Contact</a>
@@ -226,12 +206,12 @@
             </div>
             <div class="spacer-large"></div>
             <ul class="icon-row_list reveal" role="list" aria-label="Our services">
-              <li class="icon-row_item"><a href="/preventative-care-dental-check" class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth"/></svg>General<br>Dentistry</a></li>
-              <li class="icon-row_item"><a href="/family-dentistry" class="icon-row_link"><svg aria-hidden="true"><use href="#i-child"/></svg>Children’s<br>Dentistry</a></li>
-              <li class="icon-row_item"><a href="/teeth-whitening" class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth-sparkle"/></svg>Teeth<br>Whitening</a></li>
-              <li class="icon-row_item"><a href="/emergencies" class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth-shield"/></svg>Emergency<br>Dental Care</a></li>
-              <li class="icon-row_item"><a href="/same-day-crowns" class="icon-row_link"><svg aria-hidden="true"><use href="#i-crown"/></svg>CEREC<br>Crowns</a></li>
-              <li class="icon-row_item"><a href="/prosthetics-and-appliances" class="icon-row_link"><svg aria-hidden="true"><use href="#i-moon"/></svg>Night<br>Guards</a></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth"/></svg>General<br>Dentistry</span></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-child"/></svg>Children’s<br>Dentistry</span></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth-sparkle"/></svg>Teeth<br>Whitening</span></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-tooth-shield"/></svg>Emergency<br>Dental Care</span></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-crown"/></svg>CEREC<br>Crowns</span></li>
+              <li class="icon-row_item"><span class="icon-row_link"><svg aria-hidden="true"><use href="#i-moon"/></svg>Night<br>Guards</span></li>
             </ul>
             <div class="spacer-large"></div>
             <div class="service-card_list is-4col">
@@ -244,39 +224,33 @@
                   <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
                 </div>
               </a>
-              <a href="/family-dentistry" class="service-card_component reveal">
+              <div class="service-card_component is-static reveal">
                 <div class="image-slot_component"><img src="/assets/stock/hero-dentist-patient.jpg" alt="A dentist chatting with a smiling patient in the chair" class="image-cover" loading="lazy"></div>
                 <div class="service-card_content">
                   <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-child"/></svg></span>
                   <h3 class="heading-style-h4">Family Dentistry</h3>
                   <p class="service-card_description">Check-ups, cleanings and fillings for kids, adults and seniors.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
                 </div>
-              </a>
-              <a href="/same-day-crowns" class="service-card_component reveal">
+              </div>
+              <div class="service-card_component is-static reveal">
                 <!-- STOCK: replace with a photo of the practice's CEREC unit or a crown being fitted -->
                 <div class="image-slot_component"><img src="/assets/stock/treatment-room.jpg" alt="A modern dental treatment room" class="image-cover" loading="lazy"></div>
                 <div class="service-card_content">
                   <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-crown"/></svg></span>
                   <h3 class="heading-style-h4">Same-Day Crowns – CEREC Crowns</h3>
                   <p class="service-card_description">A custom crown designed, made and fitted in one visit, with no temporary crown.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
                 </div>
-              </a>
-              <a href="/emergencies" class="service-card_component reveal">
+              </div>
+              <div class="service-card_component is-static reveal">
                 <div class="image-slot_component"><img src="/assets/stock/patient-in-chair.jpg" alt="A patient being looked after in the dental chair" class="image-cover" loading="lazy"><!-- WIX STOCK: replace before launch --></div>
                 <div class="service-card_content">
                   <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-tooth-shield"/></svg></span>
                   <h3 class="heading-style-h4">Emergency Care</h3>
                   <p class="service-card_description">Toothache or a broken tooth? Call us and we’ll see you as soon as we can.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
                 </div>
-              </a>
+              </div>
             </div>
-            <div class="home-services_footer">
-              <p class="home-services_more">Also offered: fillings, root canals, dentures, teeth whitening and night guards.</p>
-              <a href="/services" class="button is-secondary is-icon">View all services<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -410,24 +384,34 @@
       </div>
     </section>
 
-    <!-- 08 Meet the dentists (version 2 layout: round portraits) -->
-    <section class="section_team-circles" id="team">
+    <!-- 08 Meet the dentist (feature layout: large portrait + bio, feedback 23 Nov) -->
+    <section class="section_doctor" id="team">
       <div class="padding-global">
         <div class="container-large">
           <div class="padding-section-large">
-            <div class="section-header_component is-center reveal">
-              <div class="text-style-tagline">Our dentist</div>
-              <h2 class="heading-style-h2">Familiar faces, every visit</h2>
-            </div>
-            <div class="spacer-xlarge"></div>
-            <div class="team-circles_list is-1col">
-              <div class="team-circles_card reveal">
-                <div class="team-circles_photo"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Dr. Steven MacHardy" loading="lazy"></div>
-                <div><h3 class="heading-style-h4">Dr. Steven MacHardy</h3><p class="team-circles_role">Dentist · DMD, Boston University</p></div>
+            <div class="doctor-feature_component">
+              <div class="doctor-feature_visual reveal">
+                <div class="doctor-feature_photo"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Portrait of Dr. Steven MacHardy" width="960" height="1200" loading="lazy"></div>
+                <div class="doctor-feature_badge"><strong>2007</strong><span>practising dentistry since</span></div>
+              </div>
+              <div class="doctor-feature_content reveal">
+                <div class="text-style-tagline">Our dentist</div>
+                <h2 class="heading-style-h2">Meet Dr. Steven MacHardy</h2>
+                <p class="doctor-feature_role">Dentist · DMD, Boston University</p>
+                <p class="text-size-medium">Dr. MacHardy joined Mill Pond Dental Care in 2020, when Dr. Lida Kiddie, who founded the practice in 1982, invited him to carry it forward. He grew up just across London in Komoka, so many of our families are his neighbours.</p>
+                <p class="text-style-muted">He came to dentistry through science: a chemical engineering degree from Queen’s, a year of electrochemistry research in the Netherlands, then dental school at Boston University, where he graduated summa cum laude. He went on to a residency at the University of Michigan and a certificate in Advanced Education in General Dentistry.</p>
+                <dl class="doctor-feature_facts">
+                  <div class="doctor-feature_fact"><dt>Dental degree</dt><dd>DMD, Boston University (summa cum laude, 2007)</dd></div>
+                  <div class="doctor-feature_fact"><dt>Residency</dt><dd>AEGD, University of Michigan</dd></div>
+                  <div class="doctor-feature_fact"><dt>Undergraduate</dt><dd>BSc Chemical Engineering, Queen’s University</dd></div>
+                  <div class="doctor-feature_fact"><dt>At Mill Pond</dt><dd>Since 2020</dd></div>
+                </dl>
+                <div class="doctor-feature_buttons">
+                  <a href="/dr-steven-machardy" class="button is-icon">Read Dr. MacHardy’s story<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+                  <a href="/our-team" class="button is-secondary is-icon">Meet the whole team<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+                </div>
               </div>
             </div>
-            <div class="spacer-large"></div>
-            <div class="text-align-center"><a href="/our-team" class="button is-secondary is-icon">Meet the whole team<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></div>
           </div>
         </div>
       </div>
@@ -645,9 +629,6 @@
             <div class="footer_heading">Services</div>
             <ul class="footer_link-list">
               <li><a href="/dental-implants" class="footer_link">Dental Implants</a></li>
-              <li><a href="/same-day-crowns" class="footer_link">Same-Day CEREC Crowns</a></li>
-              <li><a href="/family-dentistry" class="footer_link">Family Dentistry</a></li>
-              <li><a href="/services" class="footer_link">All services</a></li>
             </ul>
           </div>
           <div>
@@ -655,7 +636,6 @@
             <ul class="footer_link-list">
               <li><a href="/new-patients" class="footer_link">New Patients</a></li>
               <li><a href="/canadiandentalcareplan" class="footer_link">CDCP &amp; Insurance</a></li>
-              <li><a href="/emergencies" class="footer_link">Emergencies</a></li>
               <li><a href="/about" class="footer_link">About the practice</a></li>
               <li><a href="/our-team" class="footer_link">Our Team</a></li>
               <li><a href="/blog" class="footer_link">Blog</a></li>

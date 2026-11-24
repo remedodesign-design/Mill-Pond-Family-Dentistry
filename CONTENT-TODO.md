@@ -96,3 +96,9 @@ Online booking (myformsathome) is for **existing patients only**: emergencies, c
 | Blog: CDCP guide, child's first visit | New articles | Client approval; CDCP income limit and rules checked against Canada.ca before launch |
 | Privacy policy, Accessibility | New drafts | Client (and their privacy officer) to approve; office access details |
 | Contact form | Validates but does not send yet | Connect to reception@mpdental.ca (Webflow forms at launch, or a form service for the beta) |
+
+## 23 Nov 2026 feedback pass
+- Only Dental Implants is linked on the site for now. Home service icons/cards, nav, footer and the implants page no longer link to the other service pages (files kept, URLs unchanged). Re-link when each page is approved.
+- Implants page copy is generic educational text (no old-site page existed). Confirm with the client whether implants are placed in-house or by a specialist before launch.
+- Home doctor section: ask the client for a better, wider colour portrait of Dr. MacHardy.
+- Implants page now mirrors the Fremont Star structure. Left out on purpose (need real data from the client): before/after photos, patient reviews, implant counts, technology claims (3D imaging), and a price table. Confirm timeline figures (3 to 6 months healing) with Dr. MacHardy.

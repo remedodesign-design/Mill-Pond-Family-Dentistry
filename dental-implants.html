@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/css/client-first.css">
 <link rel="stylesheet" href="/css/components.css">
 <link rel="stylesheet" href="/css/service-detail.css">
-<link rel="stylesheet" href="/css/theme-client.css?v=13">
+<link rel="stylesheet" href="/css/theme-client.css?v=14">
 <link rel="stylesheet" href="/css/pages.css?v=3">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <script>document.documentElement.classList.add('js');</script>
@@ -104,22 +104,7 @@
                 <a href="/canadiandentalcareplan" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
               </div>
             </div>
-            <div class="navbar_dropdown">
-              <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
-              <div class="navbar_dropdown-list" id="dd-services">
-                <span class="navbar_dropdown-group">Featured</span>
-                <a href="/dental-implants" class="navbar_dropdown-link">Dental Implants</a>
-                <a href="/same-day-crowns" class="navbar_dropdown-link">Same-Day CEREC Crowns</a>
-                <span class="navbar_dropdown-divider"></span>
-                <a href="/family-dentistry" class="navbar_dropdown-link">Family Dentistry</a>
-                <a href="/preventative-care-dental-check" class="navbar_dropdown-link">Check-ups &amp; Preventive Care</a>
-                <a href="/restorative-treatment" class="navbar_dropdown-link">Restorative Treatment</a>
-                <a href="/prosthetics-and-appliances" class="navbar_dropdown-link">Prosthetics &amp; Appliances</a>
-                <a href="/teeth-whitening" class="navbar_dropdown-link">Teeth Whitening</a>
-                <a href="/emergencies" class="navbar_dropdown-link">Emergencies</a>
-                <a href="/services" class="navbar_dropdown-link">All services</a>
-              </div>
-            </div>
+            <a href="/dental-implants" class="navbar_link w--current" aria-current="page">Dental Implants</a>
             <a href="/new-patients" class="navbar_link">New Patients</a>
             <a href="/blog" class="navbar_link">Blog</a>
             <a href="/contact" class="navbar_link">Contact</a>
@@ -139,12 +124,7 @@
           <a href="/about">About the practice</a><a href="/our-team">Our Team</a><a href="/hours">Hours &amp; Location</a><a href="/canadiandentalcareplan">CDCP &amp; Insurance</a>
         </div>
       </details>
-      <details>
-        <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
-        <div class="navbar_drawer-sub">
-          <a href="/dental-implants">Dental Implants</a><a href="/same-day-crowns">Same-Day CEREC Crowns</a><a href="/family-dentistry">Family Dentistry</a><a href="/preventative-care-dental-check">Check-ups &amp; Preventive Care</a><a href="/restorative-treatment">Restorative Treatment</a><a href="/prosthetics-and-appliances">Prosthetics &amp; Appliances</a><a href="/teeth-whitening">Teeth Whitening</a><a href="/emergencies">Emergencies</a><a href="/services">All services</a>
-        </div>
-      </details>
+      <a href="/dental-implants" class="navbar_drawer-link w--current" aria-current="page">Dental Implants</a>
       <a href="/new-patients" class="navbar_drawer-link">New Patients</a>
       <a href="/blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact" class="navbar_drawer-link">Contact</a>
@@ -165,12 +145,12 @@
       <div class="padding-global">
         <div class="container-large">
           <div class="padding-section-medium">
-            <nav class="breadcrumb_component" aria-label="Breadcrumb"><ol class="breadcrumb_list"><li><a href="/" class="breadcrumb_link">Home</a></li><li><a href="/services" class="breadcrumb_link">Services</a></li><li><span aria-current="page">Dental Implants</span></li></ol></nav>
+            <nav class="breadcrumb_component" aria-label="Breadcrumb"><ol class="breadcrumb_list"><li><a href="/" class="breadcrumb_link">Home</a></li><li><span aria-current="page">Dental Implants</span></li></ol></nav>
             <div class="service-detail-hero_component">
               <div class="service-detail-hero_content">
                 <div class="text-style-tagline">Replace a missing tooth</div>
                 <h1 class="heading-style-h1">Dental Implants</h1>
-                <p class="text-size-large text-style-muted max-width-medium">A dental implant replaces the root of a missing tooth and supports a crown, a bridge or a denture. It looks, feels and works much like a natural tooth.</p>
+                <p class="text-size-large text-style-muted max-width-medium">A dental implant replaces the root of a missing tooth and supports a crown, a bridge or a denture. If you are missing teeth, we can help you restore your smile with a personalized, long-lasting solution, right here in Dorchester.</p>
                 <div class="button-group">
                   <a class="button is-icon" href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a>
                   <a href="tel:+15192683351" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call 519-268-3351</a>
@@ -194,33 +174,47 @@
                 <div><div class="service-detail-facts_label">Costs</div><div class="service-detail-facts_value">Written estimate before treatment</div></div>
               </li>
             </ul>
+            <nav class="chip-row" aria-label="On this page">
+              <span class="chip-row_label">On this page</span>
+              <a href="#types" class="chip-row_link">Types of implants</a>
+              <a href="#advantages" class="chip-row_link">Advantages</a>
+              <a href="#implants-vs-dentures" class="chip-row_link">Implants vs dentures</a>
+              <a href="#candidates" class="chip-row_link">Who is a candidate</a>
+              <a href="#cost" class="chip-row_link">Timeline &amp; cost</a>
+              <a href="#faqs" class="chip-row_link">FAQs</a>
+            </nav>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 02 Body + sticky sidebar ============================================ -->
-    <section class="section_service-detail-body">
+    <section class="section_service-detail-body" id="about-implants">
       <div class="padding-global">
         <div class="container-large">
           <div class="padding-section-medium">
             <div class="service-detail-body_component">
               <div class="text-rich-text service-detail-body_rich-text">
                 <h2>What is a dental implant?</h2>
-                <p>An implant is a small post placed in the jawbone where a tooth is missing. Once it has bonded with the bone, it holds a crown, a bridge or a denture firmly in place, so there is nothing to take out at night and no need to file down the neighbouring teeth.</p>
-                <h2>Who is it for?</h2>
+                <p>A dental implant is a small titanium post placed in the jawbone to replace the root of a missing tooth. Once it has healed and bonded with the bone, it holds a custom-made crown, bridge or denture firmly in place. The result looks, feels and works like a natural tooth, with nothing to take out at night and no need to file down the teeth beside it.</p>
+                <p>Implants are an option for people who have lost teeth to gum disease, decay or injury, or who were born without a tooth. If you are missing several teeth, implants can also support a bridge or a denture, so you can eat, speak and smile with confidence again.</p>
+                <h2>Why choose Mill Pond Dental Care for dental implants?</h2>
+                <p>Here is what you can expect when you plan implant treatment with us:</p>
                 <ul>
-                  <li>Adults missing one or more teeth</li>
-                  <li>People whose bridge or denture no longer fits well</li>
-                  <li>Denture wearers who want their denture held more securely</li>
+                  <li><strong>A practice you can trust.</strong> Dorchester’s neighbourhood dental office for over 40 years, with many families who have been with us for generations.</li>
+                  <li><strong>An experienced dentist.</strong> Dr. Steven MacHardy has been practising since 2007 and completed a residency in advanced education in general dentistry at the University of Michigan.</li>
+                  <li><strong>Care from start to finish.</strong> Your exam, planning, follow-up and everyday dental care stay with one familiar team.</li>
+                  <li><strong>Specialist support when needed.</strong> If your case calls for extra procedures, such as bone grafting, we coordinate your care with a dental specialist.</li>
+                  <li><strong>Clear costs up front.</strong> A written estimate before any treatment begins, with no surprises.</li>
+                  <li><strong>Help with coverage.</strong> We accept the Canadian Dental Care Plan and send claims to most insurers electronically.</li>
                 </ul>
-                <p>Healthy gums and enough jawbone are needed. Your dentist will check both at your consultation and, when needed, coordinate care with a dental specialist.</p>
-                <h2>Benefits</h2>
-                <ul>
-                  <li><strong>Natural look and feel.</strong> The crown is shaded to match your other teeth.</li>
-                  <li><strong>Eat with confidence.</strong> Implants are fixed, so they don’t slip.</li>
-                  <li><strong>Protects your other teeth.</strong> No need to reshape the neighbouring teeth.</li>
-                </ul>
+                <h2>How do dental implants work?</h2>
+                <ol>
+                  <li><strong>Placement.</strong> A small titanium implant is placed into the jawbone where the tooth is missing.</li>
+                  <li><strong>Healing.</strong> Over the next few months the implant bonds with the bone in a process called osseointegration, forming a strong, stable foundation.</li>
+                  <li><strong>Extraction, if needed.</strong> A damaged or decayed tooth may need to be removed first, so the area can heal before the implant goes in.</li>
+                  <li><strong>Your new tooth.</strong> An abutment and a custom crown are added, shaded to match your natural teeth, restoring both the look and the function of the tooth.</li>
+                </ol>
               </div>
 
               <aside class="service-detail-sidebar_component" aria-label="Book this service">
@@ -237,19 +231,124 @@
                   </ul>
                   <div class="badge_component"><span class="badge_icon"><svg class="icon-embed-xxsmall"><use href="#i-check"/></svg></span>CDCP accepted</div>
                 </div>
-                <nav class="service-detail-sidebar_card is-secondary" aria-label="Other services">
-                  <h2 class="heading-style-h6 text-style-allcaps text-style-muted">Other services</h2>
-                  <ul class="service-detail-sidebar_links">
-                    <li><a href="/family-dentistry" class="service-detail-sidebar_link">Family Dentistry<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/preventative-care-dental-check" class="service-detail-sidebar_link">Check-ups &amp; Preventive Care<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/restorative-treatment" class="service-detail-sidebar_link">Restorative Treatment<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/same-day-crowns" class="service-detail-sidebar_link">Same-Day CEREC Crowns<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/prosthetics-and-appliances" class="service-detail-sidebar_link">Prosthetics &amp; Appliances<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/teeth-whitening" class="service-detail-sidebar_link">Teeth Whitening<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                    <li><a href="/emergencies" class="service-detail-sidebar_link">Emergency Care<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></li>
-                  </ul>
-                </nav>
               </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_implant-types background-color-secondary" id="types">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="section-header_component is-center reveal">
+              <div class="text-style-tagline">Treatment options</div>
+              <h2 class="heading-style-h2">Types of dental implant treatment</h2>
+              <p class="text-size-medium text-style-muted">Every implant plan is tailored to your oral health, your bone structure and your smile goals. These are the options your dentist may discuss with you.</p>
+            </div>
+            <div class="spacer-large"></div>
+            <ul class="feature-grid" role="list">
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-tooth"/></svg></span><h3 class="heading-style-h5">Single tooth implant</h3><p>One implant and a custom crown replace a single missing tooth, restoring full function and a natural look without touching the teeth beside it.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-implant"/></svg></span><h3 class="heading-style-h5">Multiple missing teeth</h3><p>Several missing teeth can be replaced with an implant-supported bridge: a stable, permanent solution that does not need a removable appliance.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-denture"/></svg></span><h3 class="heading-style-h5">Full arch and implant-supported dentures</h3><p>If you are missing all of your teeth in an arch, implants can support a full bridge or a denture that stays firmly in place.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-face"/></svg></span><h3 class="heading-style-h5">Sinus augmentation</h3><p>When the upper jaw lacks height, bone can be built up below the sinus to create the foundation an implant needs. This is arranged with a dental specialist.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-root"/></svg></span><h3 class="heading-style-h5">Bone grafting and ridge rebuilding</h3><p>Where bone has been lost, a graft rebuilds the jaw so it can support an implant. We coordinate this with a specialist when your case calls for it.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-xray"/></svg></span><h3 class="heading-style-h5">Careful planning</h3><p>An exam and X-rays map your bone, gums and bite before any treatment begins, so your plan is precise and every step is explained.</p></li>
+            </ul>
+            <p class="feature-note reveal">If you have discomfort, swelling or sudden pain during or after treatment, call us right away and we will see you as soon as we can. If your child has lost a tooth through injury, we can assess the area and help you plan for the future.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_implant-advantages" id="advantages">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="section-header_component is-center reveal">
+              <div class="text-style-tagline">Why implants</div>
+              <h2 class="heading-style-h2">Advantages of dental implants</h2>
+              <p class="text-size-medium text-style-muted">Many people choose implants as their long-term answer to tooth loss. Here is why.</p>
+            </div>
+            <div class="spacer-large"></div>
+            <ul class="feature-grid" role="list">
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-sparkle"/></svg></span><h3 class="heading-style-h5">A natural look</h3><p>Implants closely resemble your own teeth in appearance, feel and function, for a smile that looks like yours.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-face"/></svg></span><h3 class="heading-style-h5">Clear speech</h3><p>Loose dentures can shift and change how you speak. Implants stay put, so you can talk with confidence.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-calm"/></svg></span><h3 class="heading-style-h5">A comfortable fit</h3><p>Removable options can rub and irritate over time. Implants become part of your mouth and feel like it.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-mirror"/></svg></span><h3 class="heading-style-h5">Easier maintenance</h3><p>Implants do not rely on the neighbouring teeth for support, which makes cleaning simpler and protects your overall oral health.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-shield"/></svg></span><h3 class="heading-style-h5">Long-term durability</h3><p>Built to handle daily wear, implants can last for many years, and often decades, with proper care.</p></li>
+              <li class="feature-card reveal"><span class="feature-card_icon"><svg class="icon-embed-small" aria-hidden="true"><use href="#i-heart"/></svg></span><h3 class="heading-style-h5">A healthier jawbone</h3><p>An implant stimulates the bone beneath it, helping to prevent the bone loss that follows tooth loss and to preserve the shape of your face.</p></li>
+            </ul>
+            <p class="feature-note reveal">Implants are one of the most reliable ways to replace one tooth or several. They give you a firm foundation for fixed teeth made to match your natural smile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_implant-compare background-color-secondary" id="implants-vs-dentures">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="section-header_component is-center reveal">
+              <div class="text-style-tagline">Compare your options</div>
+              <h2 class="heading-style-h2">Dental implants vs. bridges and dentures</h2>
+              <p class="text-size-medium text-style-muted">If you are missing teeth, you are probably asking which option is best. This table shows how they compare.</p>
+            </div>
+            <div class="spacer-large"></div>
+            <div class="compare-table_wrapper reveal">
+              <table class="compare-table">
+                <caption class="hide">Dental implants compared with bridges and dentures</caption>
+                <thead><tr><th scope="col"><span class="hide">Feature</span></th><th scope="col">Dental implant</th><th scope="col">Bridge</th><th scope="col">Denture</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Stability</th><td>Fixed in the jaw and does not slip</td><td>Fixed, but cemented to the neighbouring teeth</td><td>Removable and can shift when you eat or speak</td></tr>
+                  <tr><th scope="row">Effect on neighbouring teeth</th><td>None. They are left untouched</td><td>Neighbouring teeth are reshaped to hold the bridge</td><td>Partial dentures may clasp onto nearby teeth</td></tr>
+                  <tr><th scope="row">Jawbone</th><td>Stimulates and helps preserve the bone</td><td>Bone under the missing tooth is not stimulated</td><td>Bone can gradually shrink over time</td></tr>
+                  <tr><th scope="row">Eating and speaking</th><td>Comfortable chewing and clear speech</td><td>Comfortable chewing</td><td>May limit some foods and affect speech</td></tr>
+                  <tr><th scope="row">Daily care</th><td>Brush and floss like natural teeth</td><td>Needs special floss under the bridge</td><td>Remove, clean and soak every day</td></tr>
+                  <tr><th scope="row">Typical lifespan</th><td>Many years, often decades, with good care</td><td>Often around 10 to 15 years</td><td>Usually relined or replaced every 5 to 10 years</td></tr>
+                  <tr><th scope="row">Up-front cost</th><td>Highest</td><td>Moderate</td><td>Lowest</td></tr>
+                  <tr><th scope="row">Treatment time</th><td>Several months, including healing</td><td>A few weeks</td><td>A few weeks</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="feature-note reveal">Implants can cost more at first, but they last longer than most alternatives, which often makes them the better long-term value. We will talk through all three options at your consultation so you can choose what suits your health, your budget and your lifestyle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_implant-candidates" id="candidates">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="candidate_component">
+              <div class="candidate_content reveal">
+                <div class="text-style-tagline">Is it right for you?</div>
+                <h2 class="heading-style-h2">Who is a good candidate for dental implants?</h2>
+                <p class="text-size-medium">Most healthy adults who are missing teeth can have dental implants. The best candidates have healthy gums, enough jawbone to support the implant, and good oral hygiene.</p>
+                <p class="text-style-muted">People who smoke, have uncontrolled diabetes or have lost a lot of bone may need extra treatment before surgery, such as a bone graft. At your consultation we assess your gums, bone and general health carefully, so we can tell you honestly whether implants are right for you and what it will take to give them the best chance of lasting. If you have lost just one tooth, a single implant may be an ideal, natural-looking solution.</p>
+              </div>
+              <div class="candidate_cards reveal">
+                <div class="candidate_card">
+                  <h3 class="heading-style-h5">You may be a good candidate if you</h3>
+                  <ul class="candidate_list">
+                    <li>are missing one or more teeth</li>
+                    <li>have healthy gums and enough jawbone</li>
+                    <li>brush, floss and keep up with dental visits</li>
+                    <li>want a fixed alternative to a bridge or denture</li>
+                  </ul>
+                </div>
+                <div class="candidate_card is-note">
+                  <h3 class="heading-style-h5">You may need extra care first if you</h3>
+                  <ul class="candidate_list">
+                    <li>smoke or use tobacco</li>
+                    <li>have diabetes that is not well controlled</li>
+                    <li>have lost bone in the jaw</li>
+                    <li>have active gum disease or decay</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -262,8 +361,8 @@
         <div class="container-large">
           <div class="padding-section-large">
             <div class="section-header_component reveal">
-              <div class="text-style-tagline">Step by step</div>
-              <h2 class="heading-style-h2">How implant treatment works</h2>
+              <div class="text-style-tagline">Your journey</div>
+              <h2 class="heading-style-h2">How implant treatment works at Mill Pond</h2>
             </div>
             <div class="spacer-large"></div>
             <ol class="service-detail-steps_list">
@@ -280,14 +379,49 @@
               <li class="service-detail-steps_item reveal">
                 <span class="service-detail-steps_number" aria-hidden="true">3</span>
                 <h3 class="heading-style-h4">Implant placement</h3>
-                <p>The implant is placed and left to bond with the bone over a few months.</p>
+                <p>The implant is placed with the area numbed, then left to bond with the bone over a few months. Your dentist will explain how to look after it while it heals.</p>
               </li>
               <li class="service-detail-steps_item reveal">
                 <span class="service-detail-steps_number" aria-hidden="true">4</span>
                 <h3 class="heading-style-h4">Your new tooth</h3>
-                <p>We fit the crown, bridge or denture on the implant and check your bite.</p>
+                <p>We fit the crown, bridge or denture on the implant, check your bite and book follow-up visits to make sure everything is healing well.</p>
               </li>
             </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_implant-cost" id="cost">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-large">
+            <div class="section-header_component is-center reveal">
+              <div class="text-style-tagline">Timeline and cost</div>
+              <h2 class="heading-style-h2">Dental implant timeline and pricing</h2>
+              <p class="text-size-medium text-style-muted">Every smile is different, so every plan is too. This is how treatment typically unfolds.</p>
+            </div>
+            <div class="spacer-large"></div>
+            <div class="compare-table_wrapper reveal">
+              <table class="compare-table is-timeline">
+                <caption class="hide">Typical dental implant treatment stages</caption>
+                <thead><tr><th scope="col">Stage</th><th scope="col">What it includes</th><th scope="col">Typical time</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Consultation and planning</th><td>Exam, X-rays, a talk about your goals, your options and a written estimate</td><td>One visit</td></tr>
+                  <tr><th scope="row">Tooth extraction, if needed</th><td>Gentle removal of a damaged or decayed tooth so the area can heal</td><td>One visit, plus healing</td></tr>
+                  <tr><th scope="row">Bone grafting, if needed</th><td>Rebuilds jawbone volume so it can support an implant, arranged with a specialist</td><td>Several months of healing</td></tr>
+                  <tr><th scope="row">Implant placement</th><td>The titanium post is placed in the jaw with the area numbed</td><td>One visit, then about 3 to 6 months of healing</td></tr>
+                  <tr><th scope="row">Abutment and crown</th><td>The connector and your custom, colour-matched crown are fitted and your bite is checked</td><td>One to two visits after healing</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="feature-note reveal">Timelines vary from case to case. Your dentist will give you a schedule that fits yours.</p>
+            <div class="cost-notes reveal">
+              <h3 class="heading-style-h4">What affects the cost of dental implants?</h3>
+              <p>The price of treatment depends on the number of teeth being replaced, the type of restoration (a crown, a bridge or a denture), and whether any preparation is needed first, such as an extraction or a bone graft. More complex cases involve more steps, so they cost more.</p>
+              <p>Because every mouth is different, we do not quote a price before your exam. After your consultation you will receive a <strong>written estimate</strong> that breaks down each stage, and nothing starts until you are comfortable with it. We accept the Canadian Dental Care Plan and send your claims and estimates to most insurers electronically.</p>
+              <div class="button-group"><a class="button is-icon" href="https://millponddentalcare.myformsathome.com/TrackerCloud/NewBooking/" target="_blank" rel="noopener"><svg class="icon-embed-xsmall"><use href="#i-cal"/></svg>Book an Appointment</a><a href="tel:+15192683351" class="button is-secondary is-icon"><svg class="icon-embed-xsmall"><use href="#i-phone"/></svg>Call 519-268-3351</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -330,79 +464,93 @@
     </section>
 <!-- /shared:insurance -->
 
-    <!-- 05 FAQs ============================================================= -->
-    <section class="section_service-detail-faq background-color-secondary">
+    <section class="section_implant-dentist" id="dentist">
       <div class="padding-global">
-        <div class="container-medium">
+        <div class="container-large">
           <div class="padding-section-large">
-            <div class="section-header_component is-center reveal">
-              <div class="text-style-tagline">Questions</div>
-              <h2 class="heading-style-h2">Dental implant FAQs</h2>
-            </div>
-            <div class="spacer-large"></div>
-            <div class="faq_list">
-              <details class="faq_item" open>
-                <summary class="faq_question">How long does an implant take?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
-                <div class="text-rich-text is-small faq_answer"><p>Usually a few months from start to finish, because the implant needs time to bond with the bone. Your dentist will give you a timeline for your case.</p></div>
-              </details>
-              <details class="faq_item">
-                <summary class="faq_question">Does getting an implant hurt?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
-                <div class="text-rich-text is-small faq_answer"><p>The area is numbed for the procedure. Most people have some tenderness for a few days afterwards, which over-the-counter pain relief usually manages.</p></div>
-              </details>
-              <details class="faq_item">
-                <summary class="faq_question">How long do implants last?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
-                <div class="text-rich-text is-small faq_answer"><p>With good home care and regular check-ups, implants can last for many years.</p></div>
-              </details>
-              <details class="faq_item">
-                <summary class="faq_question">Is an implant covered by insurance?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
-                <div class="text-rich-text is-small faq_answer"><p>Coverage varies by plan. We’ll send an estimate to your insurer electronically so you know what to expect before treatment.</p></div>
-              </details>
+            <div class="dentist-band_component">
+              <div class="dentist-band_photo reveal"><img src="/assets/photos/team/dr-steven-machardy.jpg" alt="Portrait of Dr. Steven MacHardy" width="960" height="1200" loading="lazy"></div>
+              <div class="dentist-band_content reveal">
+                <div class="text-style-tagline">Your dentist</div>
+                <h2 class="heading-style-h2">Dr. Steven MacHardy</h2>
+                <p class="text-size-medium">Dr. MacHardy graduated summa cum laude from Boston University School of Dental Medicine and completed a residency in advanced education in general dentistry at the University of Michigan. He has been practising since 2007 and joined Mill Pond Dental Care in 2020.</p>
+                <p class="text-style-muted">He takes the time to explain your options in plain language, checks your bone and gum health carefully, and brings in a dental specialist whenever your case needs one, so you always know what comes next.</p>
+                <dl class="stat-row">
+                  <div class="stat-row_item"><dt>Practising dentistry since</dt><dd>2007</dd></div>
+                  <div class="stat-row_item"><dt>Mill Pond founded in Dorchester</dt><dd>1982</dd></div>
+                  <div class="stat-row_item"><dt><a href="https://www.google.com/maps?cid=11895227291720441064" target="_blank" rel="noopener">147 Google reviews</a></dt><dd>5.0 ★</dd></div>
+                </dl>
+                <div class="button-group"><a href="/dr-steven-machardy" class="button is-secondary is-icon">Read Dr. MacHardy’s story<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 06 Related services ================================================= -->
-    <section class="section_service-detail-related">
+    <!-- 05 FAQs ============================================================= -->
+    <section class="section_service-detail-faq background-color-secondary" id="faqs">
       <div class="padding-global">
-        <div class="container-large">
+        <div class="container-medium">
           <div class="padding-section-large">
-            <div class="section-header_row reveal">
-              <div class="section-header_component">
-                <h2 class="heading-style-h2">Related services</h2>
-              </div>
-              <a href="/services" class="button is-secondary is-icon">All services<svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></a>
+            <div class="section-header_component is-center reveal">
+              <div class="text-style-tagline">Questions</div>
+              <h2 class="heading-style-h2">Dental implants: your questions answered</h2>
             </div>
             <div class="spacer-large"></div>
-            <div class="service-card_list">
-              <a href="/restorative-treatment" class="service-card_component reveal">
-                <div class="image-slot_component"><img src="/assets/stock/patient-in-chair.jpg" alt="" class="image-cover" loading="lazy"></div>
-                <div class="service-card_content">
-                  <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-root"/></svg></span>
-                  <h3 class="heading-style-h4">Restorative Treatment</h3>
-                  <p class="service-card_description">Fillings, crowns, bridges and dentures to repair a broken or lost tooth.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
-                </div>
-              </a>
-              <a href="/same-day-crowns" class="service-card_component reveal">
-                <div class="image-slot_component"><img src="/assets/stock/treatment-room.jpg" alt="" class="image-cover" loading="lazy"></div>
-                <div class="service-card_content">
-                  <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-crown"/></svg></span>
-                  <h3 class="heading-style-h4">Same-Day CEREC Crowns</h3>
-                  <p class="service-card_description">A custom crown designed, made and fitted in one visit.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
-                </div>
-              </a>
-              <a href="/prosthetics-and-appliances" class="service-card_component reveal">
-                <div class="image-slot_component"><img src="/assets/stock/dentist-with-patient.jpg" alt="" class="image-cover" loading="lazy"></div>
-                <div class="service-card_content">
-                  <span class="service-card_icon"><svg class="icon-embed-xsmall"><use href="#i-moon"/></svg></span>
-                  <h3 class="heading-style-h4">Prosthetics &amp; Appliances</h3>
-                  <p class="service-card_description">Dentures, night guards, sports guards and retainers made for you.</p>
-                  <span class="service-card_link">Learn more <svg class="icon-embed-xxsmall"><use href="#i-arrow"/></svg></span>
-                </div>
-              </a>
+            <div class="faq_list">
+              <details class="faq_item" open>
+                <summary class="faq_question">What are dental implants, and do you offer them?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Dental implants are permanent tooth replacements anchored in the jawbone. We offer implant consultations and treatment planning at our Hamilton Road office, and we coordinate with a dental specialist when a case calls for it.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Who is a good candidate for dental implants?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Most healthy adults with missing teeth and enough healthy bone qualify. We assess your gums, bone and general health at your consultation.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">How long does an implant take?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Usually a few months from start to finish, because the implant needs time to bond with the bone before the final crown is fitted. Your dentist will give you a timeline for your case.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Does getting an implant hurt?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>The area is numbed for the procedure, so you should not feel pain. Mild soreness for a few days afterwards is normal and is usually managed with over-the-counter pain relief.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">How many teeth can implants replace?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Implants can replace one tooth, several teeth or a whole arch. Your dentist will recommend how many implants you need and which type of restoration suits you, whether that is a crown, a bridge or a denture.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Are dental implants expensive?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Implants can cost more up front than a bridge or a denture, but they last longer, so many people find them the better value over time. We give you a written estimate before any work begins.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Are dental implants safe, and how long do they last?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Yes. Implants are made of biocompatible titanium, which bonds naturally with your jawbone, and they have been studied extensively. With good home care and regular check-ups they can last for many years, and often for decades.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Is an implant covered by insurance?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Coverage varies by plan. We will send an estimate to your insurer electronically so you know what to expect before treatment.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Am I too old for a dental implant?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>There is no upper age limit. Your general health and the condition of your gums and jawbone matter more than your age.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">What if I don’t have enough jawbone?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>We check your bone with X-rays at your consultation. If it needs support, we will explain the options, which may include a bone graft arranged with a dental specialist.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">Can I get an implant if I smoke or have a health condition?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>Often yes, but smoking and some conditions, such as uncontrolled diabetes, can slow healing. We will review your health history and tell you honestly what to expect.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">How do I look after an implant?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>The same way as your natural teeth: brush, clean between them and keep your regular check-ups. An implant cannot decay, but the gums around it still need healthy habits.</p></div>
+              </details>
+              <details class="faq_item">
+                <summary class="faq_question">What happens at the first consultation?<svg class="icon-embed-xsmall faq_icon"><use href="#i-chevron"/></svg></summary>
+                <div class="text-rich-text is-small faq_answer"><p>We examine your mouth, take X-rays, listen to your goals and explain your options. You will leave with a clear plan and a written estimate, with no obligation to go ahead.</p></div>
+              </details>
             </div>
           </div>
         </div>
@@ -564,10 +712,7 @@
           <div>
             <div class="footer_heading">Services</div>
             <ul class="footer_link-list">
-              <li><a href="/dental-implants" class="footer_link">Dental Implants</a></li>
-              <li><a href="/same-day-crowns" class="footer_link">Same-Day CEREC Crowns</a></li>
-              <li><a href="/family-dentistry" class="footer_link">Family Dentistry</a></li>
-              <li><a href="/services" class="footer_link">All services</a></li>
+              <li><a href="/dental-implants" class="footer_link w--current" aria-current="page">Dental Implants</a></li>
             </ul>
           </div>
           <div>
@@ -575,7 +720,6 @@
             <ul class="footer_link-list">
               <li><a href="/new-patients" class="footer_link">New Patients</a></li>
               <li><a href="/canadiandentalcareplan" class="footer_link">CDCP &amp; Insurance</a></li>
-              <li><a href="/emergencies" class="footer_link">Emergencies</a></li>
               <li><a href="/about" class="footer_link">About the practice</a></li>
               <li><a href="/our-team" class="footer_link">Our Team</a></li>
               <li><a href="/blog" class="footer_link">Blog</a></li>
@@ -615,10 +759,26 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "What are dental implants, and do you offer them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dental implants are permanent tooth replacements anchored in the jawbone. We offer implant consultations and treatment planning at our Hamilton Road office, and we coordinate with a dental specialist when a case calls for it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is a good candidate for dental implants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most healthy adults with missing teeth and enough healthy bone qualify. We assess your gums, bone and general health at your consultation."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How long does an implant take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usually a few months from start to finish, because the implant needs time to bond with the bone. Your dentist will give you a timeline for your case."
+        "text": "Usually a few months from start to finish, because the implant needs time to bond with the bone before the final crown is fitted. Your dentist will give you a timeline for your case."
       }
     },
     {
@@ -626,15 +786,31 @@
       "name": "Does getting an implant hurt?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The area is numbed for the procedure. Most people have some tenderness for a few days afterwards, which over-the-counter pain relief usually manages."
+        "text": "The area is numbed for the procedure, so you should not feel pain. Mild soreness for a few days afterwards is normal and is usually managed with over-the-counter pain relief."
       }
     },
     {
       "@type": "Question",
-      "name": "How long do implants last?",
+      "name": "How many teeth can implants replace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "With good home care and regular check-ups, implants can last for many years."
+        "text": "Implants can replace one tooth, several teeth or a whole arch. Your dentist will recommend how many implants you need and which type of restoration suits you, whether that is a crown, a bridge or a denture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are dental implants expensive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Implants can cost more up front than a bridge or a denture, but they last longer, so many people find them the better value over time. We give you a written estimate before any work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are dental implants safe, and how long do they last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Implants are made of biocompatible titanium, which bonds naturally with your jawbone, and they have been studied extensively. With good home care and regular check-ups they can last for many years, and often for decades."
       }
     },
     {
@@ -642,7 +818,47 @@
       "name": "Is an implant covered by insurance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Coverage varies by plan. We’ll send an estimate to your insurer electronically so you know what to expect before treatment."
+        "text": "Coverage varies by plan. We will send an estimate to your insurer electronically so you know what to expect before treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I too old for a dental implant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no upper age limit. Your general health and the condition of your gums and jawbone matter more than your age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don’t have enough jawbone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We check your bone with X-rays at your consultation. If it needs support, we will explain the options, which may include a bone graft arranged with a dental specialist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get an implant if I smoke or have a health condition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often yes, but smoking and some conditions, such as uncontrolled diabetes, can slow healing. We will review your health history and tell you honestly what to expect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I look after an implant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The same way as your natural teeth: brush, clean between them and keep your regular check-ups. An implant cannot decay, but the gums around it still need healthy habits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens at the first consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We examine your mouth, take X-rays, listen to your goals and explain your options. You will leave with a clear plan and a written estimate, with no obligation to go ahead."
       }
     }
   ]
