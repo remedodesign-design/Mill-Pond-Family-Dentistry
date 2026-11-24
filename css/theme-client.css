@@ -436,3 +436,10 @@ span.icon-row_link:hover svg { transform: none; }
   .feature-card, .candidate_card { padding: 1.5rem; }
   .chip-row_label { width: 100%; }
 }
+
+/* Services menu: only Dental Implants is a link, the rest are plain text */
+.navbar_dropdown-link.is-static { cursor: default; display: block; }
+.navbar_dropdown-link.is-static:hover { background-color: transparent; color: var(--text-color--text-primary); }
+.navbar_dropdown-list a.navbar_dropdown-link[href="/dental-implants"] { color: var(--text-color--text-brand); font-weight: 600; }
+.navbar_drawer-sub span { padding: 0.5rem 0; color: var(--text-color--text-primary); font-size: 1.0625rem; }
+.navbar_drawer-sub a[href="/dental-implants"] { color: var(--text-color--text-brand); font-weight: 600; }
