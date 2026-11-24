@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/css/client-first.css">
 <link rel="stylesheet" href="/css/components.css">
 <link rel="stylesheet" href="/css/services.css">
-<link rel="stylesheet" href="/css/theme-client.css?v=16">
+<link rel="stylesheet" href="/css/theme-client.css?v=17">
 <link rel="icon" href="/assets/logo/01-tooth-icon-white-highlight.png">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -103,7 +103,21 @@
                 <a href="/canadiandentalcareplan" class="navbar_dropdown-link">CDCP &amp; Insurance</a>
               </div>
             </div>
-            <a href="/dental-implants" class="navbar_link">Dental Implants</a>
+            <div class="navbar_dropdown">
+              <button type="button" class="navbar_dropdown-toggle" aria-expanded="false" aria-controls="dd-services">Services <svg class="icon-embed-xxsmall"><use href="#i-chevron"/></svg></button>
+              <div class="navbar_dropdown-list" id="dd-services">
+                <span class="navbar_dropdown-group">Featured</span>
+                <a href="/dental-implants" class="navbar_dropdown-link">Dental Implants</a>
+                <span class="navbar_dropdown-link is-static">Same-Day CEREC Crowns</span>
+                <span class="navbar_dropdown-divider"></span>
+                <span class="navbar_dropdown-link is-static">Family Dentistry</span>
+                <span class="navbar_dropdown-link is-static">Check-ups &amp; Preventive Care</span>
+                <span class="navbar_dropdown-link is-static">Restorative Treatment</span>
+                <span class="navbar_dropdown-link is-static">Prosthetics &amp; Appliances</span>
+                <span class="navbar_dropdown-link is-static">Teeth Whitening</span>
+                <span class="navbar_dropdown-link is-static">Emergencies</span>
+              </div>
+            </div>
             <a href="/new-patients" class="navbar_link">New Patients</a>
             <a href="/blog" class="navbar_link">Blog</a>
             <a href="/contact" class="navbar_link">Contact</a>
@@ -123,7 +137,12 @@
           <a href="/about">About the practice</a><a href="/our-team">Our Team</a><a href="/hours">Hours &amp; Location</a><a href="/canadiandentalcareplan">CDCP &amp; Insurance</a>
         </div>
       </details>
-      <a href="/dental-implants" class="navbar_drawer-link">Dental Implants</a>
+      <details>
+        <summary class="navbar_drawer-link">Services <svg class="icon-embed-xsmall"><use href="#i-chevron"/></svg></summary>
+        <div class="navbar_drawer-sub">
+          <a href="/dental-implants">Dental Implants</a><span>Same-Day CEREC Crowns</span><span>Family Dentistry</span><span>Check-ups &amp; Preventive Care</span><span>Restorative Treatment</span><span>Prosthetics &amp; Appliances</span><span>Teeth Whitening</span><span>Emergencies</span>
+        </div>
+      </details>
       <a href="/new-patients" class="navbar_drawer-link">New Patients</a>
       <a href="/blog" class="navbar_drawer-link">Blog</a>
       <a href="/contact" class="navbar_drawer-link">Contact</a>

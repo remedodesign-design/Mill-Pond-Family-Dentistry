@@ -53,6 +53,18 @@
         "value": "arial",
         "createdAt": "2026-11-24T03:59:38.778Z",
         "reason": "Footer Google reviews badge: Arial approximates the Google 'G' logo glyph (css L307); site typography stays Montserrat + Lato. Decided by Claude from the CSS context, not user confirmed."
+      },
+      {
+        "rule": "overused-font",
+        "value": "lato",
+        "createdAt": "2026-11-24T04:02:40.529Z",
+        "reason": "Client brand typefaces (Montserrat headings, Lato body) set by the Mill Pond style sheet, per project notes; not user confirmed in this session."
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-11-24T04:02:40.755Z",
+        "reason": "Client brand typefaces (Montserrat headings, Lato body) set by the Mill Pond style sheet, per project notes; not user confirmed in this session."
       }
     ]
   }
