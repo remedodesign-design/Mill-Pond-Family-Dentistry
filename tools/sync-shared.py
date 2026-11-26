@@ -21,7 +21,7 @@ EXTRA = ["preventative-care-dental-check", "restorative-treatment", "dental-impl
          "prosthetics-and-appliances", "teeth-whitening", "emergencies", "canadiandentalcareplan", "hours", "new-patients",
          "blog", "post/teeth-whitening-a-safe-and-effective-way-to-brighten-your-smile",
          "post/canadian-dental-care-plan-what-it-covers-and-how-to-apply", "post/your-childs-first-dental-visit",
-         "dr-steven-machardy", "cynthia-lope", "jessica-wilton", "heather-brulotte", "myranda-deml",
+         "dr-steven-machardy", "samantha-brown", "arwa-ali", "cynthia-lope", "jessica-wilton", "heather-brulotte", "myranda-deml",
          "privacy-policy", "accessibility", "404"]
 PAGES = CORE + EXTRA
 NAMES = ("sprite", "header", "footer", "insurance", "location", "contact-form", "emergency")

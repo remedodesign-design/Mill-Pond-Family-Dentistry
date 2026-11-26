@@ -54,6 +54,7 @@
 .navbar_link:hover, .navbar_link.w--current { color: var(--text-color--text-brand); box-shadow: inset 0 -2px 0 var(--base-color-brand--pond); }
 .navbar_menu-buttons { display: flex; align-items: center; gap: 1.25rem; }
 .navbar_menu-button { display: none; }
+.navbar_menu-buttons .button { white-space: nowrap; }
 
 /* Small desktops: tighten the menu so it stays on one line. */
 @media screen and (max-width: 1279px) {
@@ -61,8 +62,13 @@
   .navbar_menu { gap: 1.25rem; }
 }
 @media screen and (max-width: 1199px) {
-  .navbar_menu { gap: 1rem; }
-  .navbar_menu .navbar_link, .navbar_menu .navbar_dropdown-toggle { font-size: 0.9375rem; letter-spacing: 0.04em; }
+  .navbar_container { gap: 1rem; }
+  .navbar_menu { gap: 0.75rem; }
+  .navbar_menu .navbar_link, .navbar_menu .navbar_dropdown-toggle { font-size: 0.9375rem; letter-spacing: 0.04em; white-space: nowrap; }
+  .navbar_menu-buttons .button { padding-left: 1rem; padding-right: 1rem; font-size: 0.875rem; }
+}
+@media screen and (max-width: 1079px) {
+  .navbar_menu { gap: 0.5rem; }
 }
 @media screen and (max-width: 991px) {
   .navbar_menu { display: none; }
@@ -137,7 +143,11 @@
     background-color: var(--background-color--background-primary);
     box-shadow: var(--shadow--small);
   }
-  .mobile-cta_component .button { width: 100%; }
+  .mobile-cta_component .button { width: 100%; min-width: 0; }
+  .mobile-cta_component { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+}
+@media screen and (max-width: 479px) {
+  .mobile-cta_extra { display: none; }
 }
 
 /* ==========================================================================

@@ -21,7 +21,7 @@ Generic copy is in place so the pages read as finished. Each line below is still
 | Dr. MacHardy focus tags | Removed from the card (were Implants · Invisalign · Family dentistry) | Confirm focus areas for his bio page. Only list sedation if his credentials allow it | Client |
 | Dr. Al Rafea | Removed from every page (18 Nov: no longer with the practice) | Nothing | Done |
 | Dr. Kiddie | Named as founder only (home Our Story, About, one line on Team); not listed as a provider (18 Nov) | Nothing | Done |
-| Staff photos + bios | Home "Familiar faces" uses the group photo and a phone icon for the office team; Team page uses initials | Photos and bios (client is gathering them) | Client |
+| Staff photos | Bios are in (client's 24 Nov doc). Team page and bio pages still use initials | Team photos (client sending separately) | Client |
 | Team bio pages | Cards are plain blocks, not clickable. The old "Read bio" dropdown copy (dentists' quotes) is in git history before this change and on mpdental.ca | Write one bio page per person at the old root-level URL (`/dr-steven-machardy`, `/cynthia-lope`…; see URL-MAP.md), then change each card's `<div class="team-card_link">` to `<a class="team-card_link" href="/NAME">`; the whole card becomes the link and "Read bio" appears | Content team |
 
 ## Services (`services.html`)
@@ -91,8 +91,8 @@ Online booking (myformsathome) is for **existing patients only**: emergencies, c
 |---|---|---|
 | Check-ups, Restorative, Prosthetics, Whitening, Emergencies, CDCP, Hours | Old mpdental.ca pages, rewritten and expanded in our template | Client read-through |
 | `/dental-implants`, `/same-day-crowns` | New (no old page) | Confirm how implants are handled (placed in-house or with a specialist), CEREC appointment length, real CEREC photo |
-| Bios: Dr. MacHardy, Cynthia, Jessica, Heather | Old mpdental.ca bios, lightly edited | Client is sending updated bios and photos |
-| Bio: Myranda | Placeholder ("full bio coming soon") | Bio and photo |
+| Bios: all seven team members | Client's 24 Nov bios, typos fixed only (e.g. "Suma Cum Lauda" → summa cum laude) | Photos still pending |
+| Bio pages: Samantha Brown, Arwa Ali | New pages /samantha-brown and /arwa-ali (26 Nov) | Photos still pending |
 | Blog: CDCP guide, child's first visit | New articles | Client approval; CDCP income limit and rules checked against Canada.ca before launch |
 | Privacy policy, Accessibility | New drafts | Client (and their privacy officer) to approve; office access details |
 | Contact form | Validates but does not send yet | Connect to reception@mpdental.ca (Webflow forms at launch, or a form service for the beta) |
